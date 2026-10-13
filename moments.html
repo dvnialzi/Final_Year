@@ -396,6 +396,11 @@ html[lang="zh"] .arc-card:not(.no-zh) .zh{display:revert}
 @media(max-width:900px){.arc-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.arc-body{padding:1.2rem 1.1rem 1.3rem}.arc-photos button{width:72px;height:56px}}
 
+/* Staff login link (footer) */
+.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.4);transition:color var(--t)}
+.staff-link:hover{color:rgba(255,255,255,.9)}
+.staff-link i{font-size:.65rem}
+
 /* Scroll reveal (content stays visible if JavaScript is off) */
 .js .aos{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
 .js .aos-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
@@ -470,6 +475,7 @@ html[lang="zh"] .arc-card:not(.no-zh) .zh{display:revert}
       <a href="our-care.html" data-i18n="nav.care">Our Care</a>
       <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
       <a href="moments.html" class="on" aria-current="page" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </nav>
@@ -485,6 +491,7 @@ html[lang="zh"] .arc-card:not(.no-zh) .zh{display:revert}
     <a href="our-care.html" data-i18n="nav.care">Our Care</a>
     <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
     <a href="moments.html" class="on" aria-current="page" data-i18n="nav.moments">Moments</a>
+    <a href="blog.html" data-i18n="nav.blog">Blog</a>
     <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
     <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     <a href="#" data-wa="help" target="_blank" rel="noopener" class="mob-seek"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
@@ -806,6 +813,7 @@ html[lang="zh"] .arc-card:not(.no-zh) .zh{display:revert}
       <a href="index.html#credentials" data-i18n="foot.cred">Credentials</a>
       <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -826,6 +834,7 @@ html[lang="zh"] .arc-card:not(.no-zh) .zh{display:revert}
     </div>
   </div>
   <div class="foot-bot">
+    <a class="staff-link" href="admin.html"><i class="fa fa-lock"></i> <span data-i18n="foot.staff">Staff login</span></a>
     <p data-i18n="foot.copy">© 2026 Amitabha Foundation (1179489T) · Children Home Programme · All rights reserved.</p>
     <p class="disclaimer" data-i18n="foot.disclaimer">Some images featured on this site are stock photos used solely for illustrative and representational purposes.</p>
   </div>
@@ -836,6 +845,8 @@ html[lang="zh"] .arc-card:not(.no-zh) .zh{display:revert}
   <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
 </div>
 
+<!-- Connection to the admin database (campaigns + visitor statistics): edit supabase-config.js -->
+<script src="supabase-config.js"></script>
 <script>
 /* ── Site links: edit here only ─────────────────────────────── */
 const CONFIG = {
@@ -853,6 +864,42 @@ document.querySelectorAll('[data-donate]').forEach(a => a.href = CONFIG.donate);
 document.querySelectorAll('[data-wa]').forEach(a => {
   a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(WA_TEXT[a.dataset.wa] || WA_TEXT.help);
 });
+
+/* Visitor statistics for the admin dashboard.
+   Anonymous: no names, emails or personal details. Not counted when "Do Not Track" is on,
+   or in a browser where staff have logged in to the admin dashboard. */
+(function(){
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
+  window.chTrack = function(){};
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  let staff = false; try { staff = !!localStorage.getItem('ch_staff'); } catch(e){}
+  if (!S.url || !KEY || /^sb_secret_/.test(KEY) || /YOUR-|PASTE-/.test(S.url + KEY) || staff || navigator.webdriver || navigator.doNotTrack === '1') return;
+  const headers = { apikey: KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+  if (!/^sb_/.test(KEY)) headers.Authorization = 'Bearer ' + KEY;          // older "anon" keys also go here
+  const send = (table, row) => fetch(BASE + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
+  let visitor = null, lang = 'en';
+  try {
+    visitor = localStorage.getItem('ch_vid');
+    if (!visitor){ visitor = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)).slice(0, 36); localStorage.setItem('ch_vid', visitor); }
+    lang = localStorage.getItem('site_lang') === 'zh' ? 'zh' : 'en';
+  } catch(e){}
+  const page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html?$/, '') || 'index';
+  const device = innerWidth < 640 ? 'mobile' : innerWidth < 1024 ? 'tablet' : 'desktop';
+  let referrer = null;
+  try { const r = new URL(document.referrer); if (r.hostname && r.hostname !== location.hostname) referrer = r.hostname.replace(/^www\./, '').slice(0, 120); } catch(e){}
+  send('page_views', { page, visitor, referrer, device, lang });
+  window.chTrack = (name, label) => send('events', { page, name, label: label ? String(label).slice(0, 60) : null, visitor });
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a'); if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-donate')) chTrack('donate');
+    else if (a.hasAttribute('data-wa')) chTrack('whatsapp', a.dataset.wa);
+    else if (href.startsWith('tel:')) chTrack('phone', href.slice(4));
+    else if (/google\.[a-z.]+\/maps/.test(href)) chTrack('directions');
+    else if (href.includes('volunteer-now')) chTrack('volunteer_form');
+    else if (href.includes('give-hope')) chTrack('give_hope');
+  }, true);
+})();
 
 /* Header scroll + burger */
 const hdr = document.getElementById('hdr');
@@ -938,17 +985,23 @@ document.querySelectorAll('.news-card').forEach(card => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 
-/* Campaign archive: amounts count up, bars fill, total is added up, earlier campaigns fold away */
+/* Campaign archive: campaigns you end in the admin dashboard appear first (newest first), then the ones
+   written in this page. Amounts count up, bars fill, the total is added up, earlier campaigns fold away. */
 (function(){
   const grid = document.getElementById('arcGrid'); if (!grid) return;
-  const cards = [...grid.querySelectorAll('.arc-card')];
+  let cards = [];
   const moreBtn = document.getElementById('arcMore'), totalEl = document.getElementById('arcTotal');
   const LIMIT = 4;
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  const live = !!(S.url && KEY && !/^sb_secret_/.test(KEY) && !/YOUR-|PASTE-/.test(S.url + KEY));
   const T = {
     en: { of: g => 'raised of ' + g + ' goal', only: 'raised', reached: 'Goal reached', pct: p => p + '% of goal',
-          more: 'Show earlier campaigns', less: 'Show fewer', total: (a, n) => '<i class="fa fa-trophy"></i> <b>' + a + '</b> raised across ' + n + (n === 1 ? ' campaign' : ' campaigns') },
+          more: 'Show earlier campaigns', less: 'Show fewer', done: 'Campaign complete',
+          total: (a, n) => '<i class="fa fa-trophy"></i> <b>' + a + '</b> raised across ' + n + (n === 1 ? ' campaign' : ' campaigns') },
     zh: { of: g => '已筹得 · 目标 ' + g, only: '已筹得', reached: '达成目标', pct: p => '已达目标 ' + p + '%',
-          more: '查看更早的活动', less: '收起', total: (a, n) => '<i class="fa fa-trophy"></i> 共筹得 <b>' + a + '</b>（' + n + ' 项活动）' }
+          more: '查看更早的活动', less: '收起', done: '活动圆满结束',
+          total: (a, n) => '<i class="fa fa-trophy"></i> 共筹得 <b>' + a + '</b>（' + n + ' 项活动）' }
   };
   const lang = () => document.documentElement.lang === 'zh' ? 'zh' : 'en';
   const t = () => T[lang()];
@@ -992,6 +1045,8 @@ document.querySelectorAll('.news-card').forEach(card => {
       const zh = card.querySelector('.zh');
       if (!zh || !zh.textContent.trim()) card.classList.add('no-zh');
       card.querySelector('.arc-date').textContent = when(card.dataset.date);
+      const badge = card.querySelector('[data-badge]');
+      if (badge){ badge.querySelector('.en').textContent = T.en[badge.dataset.badge]; badge.querySelector('.zh').textContent = T.zh[badge.dataset.badge]; }
       amount(card);
       if (+card.dataset.raised){ sum += +card.dataset.raised; n++; }
     });
@@ -999,15 +1054,54 @@ document.querySelectorAll('.news-card').forEach(card => {
     limit();
   }
   moreBtn.addEventListener('click', () => { grid._all = !grid._all; limit(); });
-  draw();
-  if ('IntersectionObserver' in window){
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      io.unobserve(e.target); e.target.classList.add('go'); countUp(e.target);
-    }), { threshold: .3 });
-    cards.forEach(c => io.observe(c));
-  } else cards.forEach(c => { c.classList.add('go'); c._counted = true; draw(); });
-  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+  // a card for a campaign that was ended in the admin dashboard (built with textContent: nothing is run as code)
+  const el = (tag, cls, text) => { const x = document.createElement(tag); if (cls) x.className = cls; if (text != null) x.textContent = text; return x; };
+  function dbCard(r){
+    const a = el('article', 'arc-card'), reached = +r.goal && +r.raised >= +r.goal;
+    a.id = 'campaign-' + String(r.id).slice(0, 8);
+    a.dataset.date = String(r.ended_at || r.end_date || '').slice(0, 10);
+    if (+r.raised) a.dataset.raised = r.raised;
+    if (+r.goal) a.dataset.goal = r.goal;
+    const cover = el('div', 'arc-cover'), img = el('img'); img.src = r.image_url || 'assets/img/home-building-front.jpg'; img.alt = ''; img.loading = 'lazy';
+    const badge = el('span', 'arc-badge'); badge.dataset.badge = reached ? 'reached' : 'done';
+    badge.innerHTML = '<i class="fa fa-circle-check"></i> <span class="en"></span><span class="zh"></span>';
+    cover.append(img, badge);
+    const body = el('div', 'arc-body'); body.appendChild(el('div', 'arc-date'));
+    [['en', r.name_en, r.summary_en, r.result_en], ['zh', r.name_zh || r.name_en, r.summary_zh || r.summary_en, r.result_zh || r.result_en]].forEach(([cls, name, sum, res]) => {
+      const blk = el('div', cls); blk.appendChild(el('h3', null, name));
+      if (sum) blk.appendChild(el('p', 'arc-summary', sum));
+      if (res) blk.appendChild(el('p', 'arc-thanks', res));
+      body.appendChild(blk);
+    });
+    a.append(cover, body);
+    return a;
+  }
+  let booted = false;
+  function boot(){
+    if (booted) return; booted = true;
+    grid.style.visibility = '';
+    cards = [...grid.querySelectorAll('.arc-card')];
+    draw();
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target); e.target.classList.add('go'); countUp(e.target);
+      }), { threshold: .3 });
+      cards.forEach(c => io.observe(c));
+    } else cards.forEach(c => { c.classList.add('go'); c._counted = true; draw(); });
+    new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
+  if (!live){ boot(); return; }
+  grid.style.visibility = 'hidden';                       // brief wait so the cards don't jump around
+  const ctl = 'AbortController' in window ? new AbortController() : null;
+  const timer = setTimeout(() => { if (ctl) ctl.abort(); boot(); }, 3000);
+  fetch(BASE + '/rest/v1/campaigns?status=eq.ended&order=ended_at.desc&limit=24&select=id,name_en,name_zh,summary_en,summary_zh,result_en,result_zh,goal,raised,image_url,ended_at,end_date',
+        { headers: { apikey: KEY }, cache: 'no-store', signal: ctl ? ctl.signal : undefined })
+    .then(r => { if (!r.ok) throw 0; return r.json(); })
+    .then(rows => { if (Array.isArray(rows) && !booted) grid.prepend(...rows.map(dbCard)); })
+    .catch(() => {})
+    .then(() => { clearTimeout(timer); boot(); });
 })();
 
 /* Moving drawings: pause while off screen (saves battery on phones) */
@@ -1081,7 +1175,9 @@ document.querySelectorAll('.news-card').forEach(card => {
     'ph.moments.h': '温馨时刻', 'ph.moments.p': '记录孩子们日常的喜悦、成长的里程碑与真挚的情感连结。',
     'nav.involved': '参与我们',
     'cta.more': '更多参与方式',
-    'arc.link': '往期活动', 'arc.eyebrow': '活动回顾', 'arc.h2': '您的善心，<em>成就了这些</em>', 'arc.p': '每一场完成的筹款活动都会记录在这里：筹得多少善款、用在了哪里，以及我们衷心的感谢。'
+    'arc.link': '往期活动', 'arc.eyebrow': '活动回顾', 'arc.h2': '您的善心，<em>成就了这些</em>', 'arc.p': '每一场完成的筹款活动都会记录在这里：筹得多少善款、用在了哪里，以及我们衷心的感谢。',
+    'nav.blog': '博客',
+    'foot.staff': '职员登录'
   };
   const origTitle = document.title;
   function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e) { return null; } }

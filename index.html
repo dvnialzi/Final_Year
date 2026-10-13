@@ -468,9 +468,50 @@ body{padding-top:var(--header-h)}
 .hdr-r .btn-donate:hover{transform:translateY(-2px)}
 .mob-menu a.mob-seek{color:#d9467a;font-weight:700}
 
+/* ═══ Featured campaign (Home page + top of the Blog page); numbers come from campaign.js ═══ */
+.camp-band{background:linear-gradient(180deg,var(--cream) 0%,var(--bg) 100%);overflow:hidden}
+.camp-band .wrap{position:relative;z-index:1}
+.camp{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center;background:#fff;border:1px solid #f4e1bd;border-radius:var(--r-xl);box-shadow:var(--shadow);padding:clamp(1rem,2.4vw,1.6rem)}
+.camp{transition:opacity .5s ease}
+.camp.loading{opacity:0}
+.camp-photo{position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--leaf-100)}
+.camp-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.2,.7,.3,1)}
+.camp:hover .camp-photo img{transform:scale(1.05)}
+.camp-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,26,28,.35));pointer-events:none}
+.camp-ribbon{position:absolute;left:1rem;top:1rem;z-index:1;display:inline-flex;align-items:center;gap:.5rem;background:var(--brand-red);color:#fff;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem .9rem;border-radius:999px;box-shadow:0 10px 24px rgba(171,26,31,.4);animation:donatePulse 2.8s ease-in-out infinite}
+.camp-main{min-width:0;padding:.4rem clamp(0rem,1vw,.6rem) .4rem 0}
+.camp-main .section-h{font-size:clamp(1.6rem,3.6vw,2.5rem);margin-bottom:.7rem}
+.camp-sum{font-size:clamp(.92rem,2vw,1.02rem);color:var(--ink-500);line-height:1.7;max-width:560px}
+.camp-panel{display:flex;align-items:center;gap:1.2rem;background:var(--cream);border:1px solid #f4e1bd;border-radius:18px;padding:1.1rem 1.2rem;margin:1.2rem 0}
+.camp-nums{flex:1;min-width:0}
+.camp-top{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.camp-top b{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.4rem);color:var(--brand-red);font-weight:600;line-height:1.05}
+.camp-top span{font-size:.84rem;color:var(--ink-500);font-weight:600}
+.camp-bar{position:relative;height:16px;border-radius:99px;background:#f2e0c0;overflow:hidden;margin:.75rem 0 .55rem}
+.camp-bar i{position:relative;display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--brand-red));overflow:hidden;transition:width 2s cubic-bezier(.2,.7,.3,1)}
+.camp-bar i::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-100%);animation:campShine 2.8s ease-in-out 2s infinite}
+@keyframes campShine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.camp-bar s{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,255,255,.75)}
+.camp.go .camp-bar i{width:var(--p)}
+.camp-foot{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;font-size:.8rem;font-weight:700;color:var(--ink-500)}
+.camp-foot .ended{color:var(--ink-400)}
+.camp-foot .days{color:var(--brand-red)}
+/* the house fills with colour as the money comes in */
+.camp-house{--hw:150px;--hh:143px;position:relative;flex-shrink:0;width:var(--hw);height:var(--hh)}
+.camp-house svg{position:absolute;left:0;bottom:0;width:var(--hw);height:var(--hh);display:block}
+.camp-house-fill{position:absolute;left:0;right:0;bottom:0;height:0;overflow:hidden;transition:height 2.2s cubic-bezier(.2,.7,.3,1)}
+.camp.go .camp-house-fill{height:var(--p)}
+.camp-house-fill::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,213,138,.95),transparent);z-index:1}
+.camp-puff{position:absolute;left:73%;top:15%;width:12px;height:12px;border-radius:50%;background:rgba(154,169,174,.55);opacity:0;animation:campSmoke 3.4s ease-out infinite}
+.camp-puff:nth-of-type(2){animation-delay:-1.1s}.camp-puff:nth-of-type(3){animation-delay:-2.2s}
+@keyframes campSmoke{0%{transform:translate(0,0) scale(.4);opacity:0}20%{opacity:.8}100%{transform:translate(14px,-46px) scale(1.5);opacity:0}}
+.camp-btns{display:flex;flex-wrap:wrap;gap:.7rem}
+@media(max-width:900px){.camp{grid-template-columns:1fr}.camp-photo{aspect-ratio:16/9}}
+@media(max-width:480px){.camp-panel{gap:.8rem;padding:.95rem .9rem}.camp-house{--hw:96px;--hh:91px}.camp-btns .btn{width:100%}}
+
 /* Staff login link (footer) */
-.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.32);transition:color var(--t)}
-.staff-link:hover{color:rgba(255,255,255,.85)}
+.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.4);transition:color var(--t)}
+.staff-link:hover{color:rgba(255,255,255,.9)}
 .staff-link i{font-size:.65rem}
 
 /* Scroll reveal (content stays visible if JavaScript is off) */
@@ -591,6 +632,7 @@ body{padding-top:var(--header-h)}
       <a href="our-care.html" data-i18n="nav.care">Our Care</a>
       <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </nav>
@@ -606,6 +648,7 @@ body{padding-top:var(--header-h)}
     <a href="our-care.html" data-i18n="nav.care">Our Care</a>
     <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
     <a href="moments.html" data-i18n="nav.moments">Moments</a>
+    <a href="blog.html" data-i18n="nav.blog">Blog</a>
     <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
     <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     <a href="#" data-wa="help" target="_blank" rel="noopener" class="mob-seek"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
@@ -703,6 +746,43 @@ body{padding-top:var(--header-h)}
   <div class="hero-dots" id="heroDots"></div>
   <div class="scroll-cue"><div class="bar"></div></div>
 </section>
+
+<!-- FEATURED CAMPAIGN: the words and numbers are in campaign.js -->
+<section class="sec camp-band" id="campaign">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <symbol id="camp-house" viewBox="0 0 200 190">
+      <rect x="140" y="34" width="17" height="40" rx="2" fill="#a5472f"/><rect x="137" y="30" width="23" height="8" rx="2" fill="#8a3a26"/>
+      <rect x="36" y="90" width="128" height="88" rx="4" fill="#fff6e6" stroke="#2e7d6b" stroke-width="3"/>
+      <path d="M14 94L100 24L186 94Z" fill="#ab1a1f" stroke="#7f1216" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M100 76c-8-5-13-10-13-15a6.5 6.5 0 0 1 13-2a6.5 6.5 0 0 1 13 2c0 5-5 10-13 15Z" fill="#fff"/>
+      <rect x="88" y="122" width="26" height="56" rx="13" fill="#2e7d6b"/><circle cx="108" cy="152" r="2" fill="#ffd58a"/>
+      <rect x="48" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#2e7d6b" stroke-width="3"/><path d="M62 108v28M48 122h28" stroke="#2e7d6b" stroke-width="2.5"/>
+      <rect x="126" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#2e7d6b" stroke-width="3"/><path d="M140 108v28M126 122h28" stroke="#2e7d6b" stroke-width="2.5"/>
+      <path d="M8 178H192" stroke="#6bb5a1" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="camp-house-out" viewBox="0 0 200 190">
+      <g fill="#fbf7ee" stroke="#b9c7c2" stroke-width="3" stroke-dasharray="7 6" stroke-linejoin="round">
+        <rect x="140" y="34" width="17" height="40" rx="2"/><rect x="36" y="90" width="128" height="88" rx="4"/><path d="M14 94L100 24L186 94Z"/>
+        <rect x="88" y="122" width="26" height="56" rx="13"/><rect x="48" y="108" width="28" height="28" rx="3"/><rect x="126" y="108" width="28" height="28" rx="3"/>
+      </g>
+      <path d="M8 178H192" stroke="#d3dedb" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+  </defs></svg>
+  <div class="deco" aria-hidden="true">
+    <svg class="a-pxtwinkle" style="--x:25.4%;--y:48.2%;--s:9px;--d:3.8s;--delay:-0.9s;--p:1.8s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:90.9%;--y:39.0%;--s:23px;--d:3.7s;--delay:-2.2s;--p:1.8s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:58.3%;--y:35.7%;--s:9px;--d:3.0s;--delay:-3.9s;--p:2.1s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:4.7%;--y:26.7%;--s:11px;--d:3.8s;--delay:-0.7s;--p:1.8s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow" style="--x:37.3%;--y:73.1%;--s:23px;--d:3.7s;--delay:-0.8s;--p:2.0s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:44.1%;--y:77.7%;--s:8px;--d:4.0s;--delay:-3.9s;--p:2.0s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:81.3%;--y:76.1%;--s:12px;--d:2.5s;--delay:-3.9s;--p:1.7s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:3.6%;--y:42.2%;--s:18px;--d:2.6s;--delay:-3.8s;--p:1.3s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="camp" id="campBox" data-updates="1"></div>
+  </div>
+</section>
+<script src="campaign.js"></script>
 
 <!-- IMPACT FIGURES -->
 <div class="stats">
@@ -979,6 +1059,7 @@ body{padding-top:var(--header-h)}
       <a href="index.html#credentials" data-i18n="foot.cred">Credentials</a>
       <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -1010,7 +1091,7 @@ body{padding-top:var(--header-h)}
   <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
 </div>
 
-<!-- Connection to the admin database (visitor statistics + blog posts): edit supabase-config.js -->
+<!-- Connection to the admin database (campaigns + visitor statistics): edit supabase-config.js -->
 <script src="supabase-config.js"></script>
 <script>
 /* ── Site links: edit here only ─────────────────────────────── */
@@ -1031,13 +1112,17 @@ document.querySelectorAll('[data-wa]').forEach(a => {
 });
 
 /* Visitor statistics for the admin dashboard.
-   Anonymous: no names, emails or personal details; skipped when "Do Not Track" is switched on. */
+   Anonymous: no names, emails or personal details. Not counted when "Do Not Track" is on,
+   or in a browser where staff have logged in to the admin dashboard. */
 (function(){
-  const S = window.CH_SUPABASE;
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
   window.chTrack = function(){};
-  if (!S || !S.url || /YOUR-PROJECT/.test(S.url) || /YOUR-ANON/.test(S.anonKey) || navigator.webdriver || navigator.doNotTrack === '1') return;
-  const headers = { apikey: S.anonKey, Authorization: 'Bearer ' + S.anonKey, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
-  const send = (table, row) => fetch(S.url + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  let staff = false; try { staff = !!localStorage.getItem('ch_staff'); } catch(e){}
+  if (!S.url || !KEY || /^sb_secret_/.test(KEY) || /YOUR-|PASTE-/.test(S.url + KEY) || staff || navigator.webdriver || navigator.doNotTrack === '1') return;
+  const headers = { apikey: KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+  if (!/^sb_/.test(KEY)) headers.Authorization = 'Bearer ' + KEY;          // older "anon" keys also go here
+  const send = (table, row) => fetch(BASE + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
   let visitor = null, lang = 'en';
   try {
     visitor = localStorage.getItem('ch_vid');
@@ -1200,6 +1285,110 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 
+/* Featured campaign: the campaign marked "shown at the front" in the admin dashboard; campaign.js is the fallback.
+   Counts up the amount, fills the bar and the house. */
+(function(){
+  const box = document.getElementById('campBox');
+  if (!box) return;
+  // campaign.js is optional: it only supplies backup values. The numbers normally come from the database.
+  const C = window.CAMPAIGN = window.CAMPAIGN || { image: 'assets/img/home-building-front.jpg', goal: 0, raised: 0, end: '', en: {}, zh: {} };
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  const live = !!(S.url && KEY && !/^sb_secret_/.test(KEY) && !/YOUR-|PASTE-/.test(S.url + KEY));
+  const T = {
+    en: { eyebrow: 'Current campaign', now: 'Help us now', of: g => 'raised of ' + g + ' goal', first: 'Be among the first to give', need: n => n + ' still needed',
+          done: 'Goal reached. Thank you!', left: d => d === 1 ? '1 day left' : d + ' days left', ended: 'Campaign ended',
+          donate: 'Donate now', share: 'Share on WhatsApp', updates: 'Read campaign updates' },
+    zh: { eyebrow: '当前筹款活动', now: '现在就帮忙', of: g => '已筹得 · 目标 ' + g, first: '成为第一批捐款的人', need: n => '尚需 ' + n,
+          done: '目标达成，感谢您！', left: d => '剩余 ' + d + ' 天', ended: '活动已结束',
+          donate: '立即捐款', share: '分享到 WhatsApp', updates: '查看活动动态' }
+  };
+  const lang = () => document.documentElement.lang === 'zh' ? 'zh' : 'en';
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+  const rm = n => 'RM' + Math.round(Number(n) || 0).toLocaleString('en-MY');
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let goal = 0, raised = 0, pct = 0, counted = false, ready = false, visible = false, started = false, none = false;
+  const recalc = () => { goal = +C.goal || 0; raised = +C.raised || 0; pct = goal ? Math.min(100, Math.round(raised / goal * 100)) : 0; };
+
+  function render(){
+    const t = T[lang()], L = C[lang()] || C.en || {};
+    const left = Math.max(0, goal - raised);
+    let days = '', ended = false;
+    if (C.end){
+      const d = Math.ceil((new Date(C.end + 'T23:59:59') - new Date()) / 864e5);
+      ended = d <= 0; days = ended ? t.ended : t.left(d);
+    }
+    const msg = raised >= goal && goal ? t.done : (raised ? t.need(rm(left)) : t.first);
+    const donate = (typeof CONFIG !== 'undefined' && CONFIG.donate) || '#';
+    const page = new URL('blog.html#campaign', location.href).href;
+    box.innerHTML =
+      '<div class="camp-photo"><img src="' + esc(C.image) + '" alt="" loading="lazy"><span class="camp-ribbon"><i class="fa fa-house-chimney-user"></i> ' + t.now + '</span></div>' +
+      '<div class="camp-main"><div class="eyebrow">' + t.eyebrow + '</div>' +
+      '<h2 class="section-h">' + esc(L.name) + '</h2>' +
+      '<p class="camp-sum">' + esc(L.summary) + '</p>' +
+      '<div class="camp-panel"><div class="camp-nums">' +
+        '<div class="camp-top"><b>' + rm(counted ? raised : 0) + '</b><span>' + t.of(rm(goal)) + '</span></div>' +
+        '<div class="camp-bar"><i style="--p:' + pct + '%"></i><s style="left:25%"></s><s style="left:50%"></s><s style="left:75%"></s></div>' +
+        '<div class="camp-foot"><span>' + pct + '% · ' + msg + '</span><span class="' + (ended ? 'ended' : 'days') + '">' + days + '</span></div>' +
+      '</div><div class="camp-house" aria-hidden="true" style="--p:' + pct + '%"><svg viewBox="0 0 200 190"><use href="#camp-house-out"/></svg>' +
+        '<div class="camp-house-fill"><svg viewBox="0 0 200 190"><use href="#camp-house"/></svg></div>' +
+        '<i class="camp-puff"></i><i class="camp-puff"></i><i class="camp-puff"></i></div></div>' +
+      '<div class="camp-btns">' + (ended ? '' : '<a class="btn btn-lg btn-donate" data-donate href="' + esc(donate) + '" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> ' + t.donate + '</a>') +
+        '<a class="btn btn-lg btn-wa" href="https://wa.me/?text=' + encodeURIComponent((L.name || '') + ' ' + page) + '" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> ' + t.share + '</a>' +
+        (box.dataset.updates === '1' ? '<a class="btn btn-lg btn-ghost" href="blog.html"><i class="fa fa-newspaper"></i> ' + t.updates + '</a>' : '') +
+      '</div></div>';
+  }
+  function countUp(){
+    if (!raised){ counted = true; return; }
+    const finish = () => { counted = true; const b = box.querySelector('.camp-top b'); if (b) b.textContent = rm(raised); };
+    if (calm){ finish(); return; }
+    const t0 = performance.now();
+    (function step(now){
+      const p = Math.min(1, (now - t0) / 1700), b = box.querySelector('.camp-top b');
+      if (b) b.textContent = rm(raised * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step); else finish();
+    })(t0);
+  }
+  function tryStart(){ if (ready && visible && !started){ started = true; box.classList.add('go'); countUp(); } }
+  // numbers saved in the admin dashboard replace the ones in campaign.js
+  function merge(r){
+    if (!r){ none = true; return; }                 // the database answered, and no campaign is shown at the front
+    C.id = r.id;
+    if (r.image_url) C.image = r.image_url;
+    if (r.goal != null) C.goal = Number(r.goal);
+    if (r.raised != null) C.raised = Number(r.raised);
+    C.end = r.end_date || '';
+    C.en = Object.assign({}, C.en, r.name_en ? { name: r.name_en } : {}, r.summary_en ? { summary: r.summary_en } : {});
+    C.zh = Object.assign({}, C.zh, r.name_zh ? { name: r.name_zh } : {}, r.summary_zh ? { summary: r.summary_zh } : {});
+  }
+  function finish(){
+    if (ready) return;
+    ready = true; recalc(); render(); box.classList.remove('loading');
+    if (none || !(C.en && C.en.name)){ C.none = true; box.closest('section').hidden = true; }   // nothing to show: no campaign at the front
+    window.CAMPAIGN_READY = true;
+    window.dispatchEvent(new Event('campaign:ready'));
+    tryStart();
+  }
+
+  recalc(); render();
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ visible = true; io.disconnect(); tryStart(); } }), { threshold: .3 });
+    io.observe(box);
+  } else visible = true;
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+  if (!live){ finish(); return; }
+  box.classList.add('loading');
+  const ctl = 'AbortController' in window ? new AbortController() : null;
+  const timer = setTimeout(() => { if (ctl) ctl.abort(); finish(); }, 3000);
+  fetch(BASE + '/rest/v1/campaigns?featured=eq.true&status=eq.active&select=id,goal,raised,end_date,image_url,name_en,name_zh,summary_en,summary_zh&limit=1',
+        { headers: { apikey: KEY }, cache: 'no-store', signal: ctl ? ctl.signal : undefined })
+    .then(r => { if (!r.ok) throw 0; return r.json(); })
+    .then(rows => merge(Array.isArray(rows) ? rows[0] : null))
+    .catch(() => {})
+    .then(() => { clearTimeout(timer); finish(); });
+})();
+
 /* Moving drawings: pause while off screen (saves battery on phones) */
 (function(){
   if (!('IntersectionObserver' in window)) return;
@@ -1282,6 +1471,7 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
     'nav.involved': '参与我们',
     'cta.more': '更多参与方式',
     'ct.eyebrow': '欢迎来访', 'ct.h2': '联系<em>我们</em>', 'ct.p': '我们诚挚欢迎您到访。请提前致电或通过 WhatsApp 预约探访。', 'ct.phone': '联系电话', 'ct.addr': '地址', 'ct.dir': '获取路线',
+    'nav.blog': '博客',
     'foot.staff': '职员登录'
   };
   const origTitle = document.title;

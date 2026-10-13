@@ -377,8 +377,8 @@ body{padding-top:var(--header-h)}
 .mob-menu a.mob-seek{color:#d9467a;font-weight:700}
 
 /* Staff login link (footer) */
-.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.32);transition:color var(--t)}
-.staff-link:hover{color:rgba(255,255,255,.85)}
+.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.4);transition:color var(--t)}
+.staff-link:hover{color:rgba(255,255,255,.9)}
 .staff-link i{font-size:.65rem}
 
 /* Scroll reveal (content stays visible if JavaScript is off) */
@@ -461,6 +461,7 @@ body{padding-top:var(--header-h)}
       <a href="our-care.html" data-i18n="nav.care">Our Care</a>
       <a href="success-stories.html" class="on" aria-current="page" data-i18n="nav.stories">Success Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </nav>
@@ -476,6 +477,7 @@ body{padding-top:var(--header-h)}
     <a href="our-care.html" data-i18n="nav.care">Our Care</a>
     <a href="success-stories.html" class="on" aria-current="page" data-i18n="nav.stories">Success Stories</a>
     <a href="moments.html" data-i18n="nav.moments">Moments</a>
+    <a href="blog.html" data-i18n="nav.blog">Blog</a>
     <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
     <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     <a href="#" data-wa="help" target="_blank" rel="noopener" class="mob-seek"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
@@ -698,6 +700,7 @@ body{padding-top:var(--header-h)}
       <a href="index.html#credentials" data-i18n="foot.cred">Credentials</a>
       <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </div>
@@ -729,7 +732,7 @@ body{padding-top:var(--header-h)}
   <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
 </div>
 
-<!-- Connection to the admin database (visitor statistics + blog posts): edit supabase-config.js -->
+<!-- Connection to the admin database (campaigns + visitor statistics): edit supabase-config.js -->
 <script src="supabase-config.js"></script>
 <script>
 /* ── Site links: edit here only ─────────────────────────────── */
@@ -750,13 +753,17 @@ document.querySelectorAll('[data-wa]').forEach(a => {
 });
 
 /* Visitor statistics for the admin dashboard.
-   Anonymous: no names, emails or personal details; skipped when "Do Not Track" is switched on. */
+   Anonymous: no names, emails or personal details. Not counted when "Do Not Track" is on,
+   or in a browser where staff have logged in to the admin dashboard. */
 (function(){
-  const S = window.CH_SUPABASE;
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
   window.chTrack = function(){};
-  if (!S || !S.url || /YOUR-PROJECT/.test(S.url) || /YOUR-ANON/.test(S.anonKey) || navigator.webdriver || navigator.doNotTrack === '1') return;
-  const headers = { apikey: S.anonKey, Authorization: 'Bearer ' + S.anonKey, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
-  const send = (table, row) => fetch(S.url + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  let staff = false; try { staff = !!localStorage.getItem('ch_staff'); } catch(e){}
+  if (!S.url || !KEY || /^sb_secret_/.test(KEY) || /YOUR-|PASTE-/.test(S.url + KEY) || staff || navigator.webdriver || navigator.doNotTrack === '1') return;
+  const headers = { apikey: KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+  if (!/^sb_/.test(KEY)) headers.Authorization = 'Bearer ' + KEY;          // older "anon" keys also go here
+  const send = (table, row) => fetch(BASE + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
   let visitor = null, lang = 'en';
   try {
     visitor = localStorage.getItem('ch_vid');
@@ -967,6 +974,7 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
     'ph.stories.h': '成功故事', 'ph.stories.p': '在这里成长的孩子们，勇气与蜕变的旅程。',
     'nav.involved': '参与我们',
     'cta.more': '更多参与方式',
+    'nav.blog': '博客',
     'foot.staff': '职员登录'
   };
   const origTitle = document.title;

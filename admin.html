@@ -12,7 +12,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <!-- Your Supabase connection (edit supabase-config.js, not this file) -->
 <script src="supabase-config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -30,7 +30,6 @@ button{cursor:pointer;border:none;background:none}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 [hidden]{display:none!important}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* buttons & form controls */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.9rem;padding:.72rem 1.2rem;border-radius:999px;transition:background var(--t),color var(--t),box-shadow var(--t),transform var(--t),opacity var(--t);white-space:nowrap}
@@ -235,22 +234,101 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
   .auth-card{padding:2rem 1.4rem 1.6rem}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── Campaigns ── */
+.lead{font-size:.93rem;color:var(--ink-500);max-width:720px;margin-bottom:1.2rem}
+.front{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;margin-bottom:1rem;background:linear-gradient(135deg,var(--cream),#fff);border-color:#f4e1bd}
+.front .fc-main{flex:1;min-width:220px}
+.front .fc-label{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-400)}
+.front b.fc-name{display:block;font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--ink-900);line-height:1.25;margin:.15rem 0 .4rem}
+.front .fc-nums{font-size:.9rem;font-weight:700;color:var(--ink-700)}
+.front .fc-bar{height:10px;border-radius:99px;background:#f2e0c0;overflow:hidden;margin:.5rem 0 0;max-width:420px}
+.front .fc-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--brand-red))}
+.grp{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-400);margin:1.2rem 0 .6rem}
+.grp:first-child{margin-top:0}
+.clist{display:flex;flex-direction:column;gap:.7rem}
+.crow{display:grid;grid-template-columns:84px 1fr auto auto;gap:1rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:.7rem;transition:border-color var(--t),box-shadow var(--t)}
+.crow:hover{border-color:var(--leaf-100);box-shadow:var(--shadow)}
+.cthumb{width:84px;height:64px;border-radius:10px;background:var(--leaf-100) center/cover no-repeat}
+.cmain{min-width:0}
+.cmain b{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmain span{display:block;font-size:.8rem;color:var(--ink-400);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbar{height:6px;border-radius:99px;background:#f2e0c0;overflow:hidden;margin-top:.4rem;max-width:360px}
+.cbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--brand-red))}
+.cact{display:flex;gap:.4rem;align-items:center}
+.pill.front{background:#fbe9ea;color:var(--brand-red)}
+.pill.end{background:#eef1f3;color:var(--ink-500)}
+.det-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.back{font-weight:700;font-size:.88rem;color:var(--leaf-700)}
+.back:hover{text-decoration:underline}
+.actions{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.pv{display:grid;grid-template-columns:1fr auto;gap:1.4rem;align-items:center;background:linear-gradient(135deg,var(--cream),#fff);border-color:#f4e1bd;margin-bottom:1.1rem}
+.pv-label{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-400);margin-bottom:.4rem}
+.pv h2{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--ink-900);line-height:1.2;margin:0 0 .8rem}
+.pv-top{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.pv-top b{font-family:var(--display);font-size:clamp(1.9rem,4vw,2.6rem);color:var(--brand-red);font-weight:600;line-height:1.05}
+.pv-top span{font-size:.86rem;color:var(--ink-500);font-weight:600}
+.pv-bar{position:relative;height:16px;border-radius:99px;background:#f2e0c0;overflow:hidden;margin:.8rem 0 .55rem}
+.pv-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--brand-red));transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.pv-bar s{position:absolute;top:0;bottom:0;width:2px;background:rgba(255,255,255,.75)}
+.pv-foot{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;font-size:.82rem;font-weight:700;color:var(--ink-500)}
+.pv-foot .days{color:var(--brand-red)}
+.pv-house{--hw:130px;--hh:124px;position:relative;width:var(--hw);height:var(--hh)}
+.pv-house svg{position:absolute;left:0;bottom:0;width:var(--hw);height:var(--hh);display:block}
+.pv-fill{position:absolute;left:0;right:0;bottom:0;height:0;overflow:hidden;transition:height 1.4s cubic-bezier(.2,.7,.3,1)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:start}
+.grid2.single{grid-template-columns:minmax(0,760px)}
+.form h3{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--leaf-700);margin:0 0 .7rem}
+.big{display:flex;flex-direction:column;gap:.1rem;padding:1rem 1.1rem;border-radius:16px;background:var(--leaf-50);margin-bottom:1.2rem}
+.big span{font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-400)}
+.big b{font-family:var(--display);font-weight:600;font-size:2.3rem;color:var(--leaf-800);line-height:1.1}
+.big em{font-style:normal;font-size:.86rem;font-weight:600;color:var(--ink-500)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.8rem}
+.chips button{padding:.45rem .85rem;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:.84rem;color:var(--ink-700);transition:background var(--t),border-color var(--t),color var(--t)}
+.chips button:hover{border-color:var(--leaf-500);background:var(--leaf-50);color:var(--leaf-800)}
+.form{display:flex;flex-direction:column;gap:.9rem}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.form .btn{align-self:flex-start}
+.rule{border:0;border-top:1px solid var(--line);margin:1.4rem 0}
+.end-row{display:flex;gap:.5rem;align-items:center}
+.end-row .in{flex:1}
+.more{border:1px solid var(--line);border-radius:14px;padding:.7rem .9rem;background:var(--bg)}
+.more summary{cursor:pointer;font-weight:700;font-size:.9rem;color:var(--ink-700)}
+.more summary small{font-weight:500;color:var(--ink-400)}
+.more[open] summary{margin-bottom:.7rem}
+.more .f{margin-top:.7rem}
+.newopts{display:flex;flex-direction:column;gap:.8rem;padding:.9rem 1rem;border-radius:14px;background:var(--leaf-50)}
+.check{display:flex;align-items:flex-start;gap:.6rem;font-size:.9rem;font-weight:700;color:var(--ink-700);cursor:pointer}
+.check input{margin-top:.2rem;width:18px;height:18px;accent-color:var(--leaf-700)}
+.check small{display:block;font-weight:500;color:var(--ink-400)}
+.log{display:flex;flex-direction:column}
+.log li{display:grid;grid-template-columns:auto 1fr auto;gap:.2rem .9rem;align-items:start;padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.log li:last-child{border-bottom:0}
+.log .ic{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--leaf-600);font-size:.85rem;grid-row:span 2}
+.log .ic.set{background:var(--sun-d)}.log .ic.goal{background:var(--navy-800)}.log .ic.bad{background:var(--brand-red)}
+.log b{font-weight:700;color:var(--ink-900)}
+.log em{font-style:normal;font-weight:700;color:var(--leaf-800)}
+.log .when{font-size:.78rem;color:var(--ink-400);font-weight:600;white-space:nowrap}
+.log small{grid-column:2 / -1;color:var(--ink-500);font-size:.8rem;font-weight:500}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}.pv{grid-template-columns:1fr}.pv-house{display:none}}
+@media(max-width:700px){.crow{grid-template-columns:64px 1fr}.cthumb{width:64px;height:52px}.crow .pill{grid-column:2;justify-self:start}.cact{grid-column:1 / -1;justify-content:flex-end}}
+@media(max-width:560px){.form .row{grid-template-columns:1fr}.log li{grid-template-columns:auto 1fr}.log .ic{grid-row:span 3}.log .when{grid-column:2;white-space:normal}}
 </style>
 </head>
 <body>
 
-<!-- ═══ SETUP NEEDED (shown until supabase-config.js has your project details) ═══ -->
 <section class="auth" id="setup" hidden>
   <div class="auth-card setup">
     <div class="auth-logo"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"><span>Admin</span></div>
     <h1>Connect your database</h1>
-    <p class="sub">The admin website needs your Supabase project before anyone can log in.</p>
+    <p class="sub">The admin dashboard needs your Supabase project before anyone can log in.</p>
     <ol>
       <li>Create a free project at <b>supabase.com</b> (choose the Singapore region).</li>
       <li>Open <b>SQL Editor</b>, paste everything from <code>supabase-setup.sql</code> and press <b>Run</b>.</li>
-      <li>Go to <b>Project Settings → API</b> and copy the <b>Project URL</b> and the <b>anon public</b> key.</li>
+      <li>Go to <b>Project Settings → API Keys</b> and copy the <b>Publishable key</b> (starts with <code>sb_publishable_</code>). Copy the <b>Project URL</b> from <b>Project Settings → Data API</b>.</li>
       <li>Paste them into <code>supabase-config.js</code> and upload it next to this page.</li>
     </ol>
+    <p class="msg err" id="setupWarn" hidden style="display:block;margin:0 0 1rem">You pasted a <b>secret</b> key (<code>sb_secret_…</code>). Never put that in a website file: replace it with the <b>publishable</b> key, and in Supabase rotate the secret key (⋮ → Roll / Delete) to be safe.</p>
     <p class="hint">Full step-by-step instructions are in <b>ADMIN-SETUP.md</b>.</p>
     <div class="auth-links"><a href="index.html"><i class="fa fa-arrow-left"></i> Back to website</a></div>
   </div>
@@ -263,7 +341,7 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
 
     <div data-auth="login">
       <h1>Staff login</h1>
-      <p class="sub">Log in to see visitor statistics and write blog posts.</p>
+      <p class="sub">Log in to see visitor statistics and manage your campaigns.</p>
       <form id="loginForm" novalidate>
         <label class="f">Email<input class="in" type="email" id="loginEmail" autocomplete="username" required></label>
         <label class="f">Password<span class="pw"><input class="in" type="password" id="loginPass" autocomplete="current-password" required><button type="button" class="pw-eye" aria-label="Show password"><i class="fa fa-eye"></i></button></span></label>
@@ -296,15 +374,34 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
   </div>
 </section>
 
-<!-- ═══ ADMIN APP ═══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="camp-house" viewBox="0 0 200 190">
+    <rect x="140" y="34" width="17" height="40" rx="2" fill="#a5472f"/><rect x="137" y="30" width="23" height="8" rx="2" fill="#8a3a26"/>
+    <rect x="36" y="90" width="128" height="88" rx="4" fill="#fff6e6" stroke="#2e7d6b" stroke-width="3"/>
+    <path d="M14 94L100 24L186 94Z" fill="#ab1a1f" stroke="#7f1216" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M100 76c-8-5-13-10-13-15a6.5 6.5 0 0 1 13-2a6.5 6.5 0 0 1 13 2c0 5-5 10-13 15Z" fill="#fff"/>
+    <rect x="88" y="122" width="26" height="56" rx="13" fill="#2e7d6b"/><circle cx="108" cy="152" r="2" fill="#ffd58a"/>
+    <rect x="48" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#2e7d6b" stroke-width="3"/><path d="M62 108v28M48 122h28" stroke="#2e7d6b" stroke-width="2.5"/>
+    <rect x="126" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#2e7d6b" stroke-width="3"/><path d="M140 108v28M126 122h28" stroke="#2e7d6b" stroke-width="2.5"/>
+    <path d="M8 178H192" stroke="#6bb5a1" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="camp-house-out" viewBox="0 0 200 190">
+    <g fill="#fbf7ee" stroke="#b9c7c2" stroke-width="3" stroke-dasharray="7 6" stroke-linejoin="round">
+      <rect x="140" y="34" width="17" height="40" rx="2"/><rect x="36" y="90" width="128" height="88" rx="4"/><path d="M14 94L100 24L186 94Z"/>
+      <rect x="88" y="122" width="26" height="56" rx="13"/><rect x="48" y="108" width="28" height="28" rx="3"/><rect x="126" y="108" width="28" height="28" rx="3"/>
+    </g>
+    <path d="M8 178H192" stroke="#d3dedb" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+</defs></svg>
+<!-- ═══ ADMIN DASHBOARD ═══ -->
 <div id="app" hidden>
   <aside class="side" id="side">
     <a class="side-logo" href="index.html" target="_blank" rel="noopener" title="Open the website"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
     <div class="side-title">Admin</div>
     <nav>
       <a href="#dashboard" data-nav="dashboard"><i class="fa fa-chart-line"></i> Dashboard</a>
+      <a href="#campaigns" data-nav="campaigns"><i class="fa fa-bullhorn"></i> Campaigns</a>
       <a href="#posts" data-nav="posts"><i class="fa fa-newspaper"></i> Blog posts</a>
-      <a href="#new" data-nav="new"><i class="fa fa-pen-to-square"></i> Write a post</a>
       <a href="#account" data-nav="account"><i class="fa fa-user-gear"></i> My account</a>
     </nav>
     <div class="side-foot">
@@ -319,11 +416,13 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
     <header class="top">
       <button class="top-burger" id="burger" aria-label="Menu"><i class="fa fa-bars"></i></button>
       <h1 id="pageTitle">Dashboard</h1>
-      <a class="btn btn-sun" href="#new" id="topNew"><i class="fa fa-plus"></i> Write a post</a>
+      <a class="btn btn-sun" href="#campaign/new" id="topNew"><i class="fa fa-plus"></i> New campaign</a>
+      <a class="btn btn-primary" href="#post/new" id="topPost"><i class="fa fa-pen-to-square"></i> Write a post</a>
     </header>
 
-    <!-- DASHBOARD -->
+    <!-- DASHBOARD (visitor statistics) -->
     <section class="view" data-view="dashboard" hidden>
+      <div class="card front" id="frontCamp"></div>
       <div class="dash-head">
         <p id="dashRange">Visitors to the Children Home website.</p>
         <div class="seg" id="rangeSeg"><button data-range="7">7 days</button><button data-range="30" class="on">30 days</button><button data-range="90">90 days</button></div>
@@ -353,7 +452,106 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
       </div>
     </section>
 
-    <!-- POSTS -->
+
+    <!-- CAMPAIGNS: the list -->
+    <section class="view" data-view="campaigns" hidden>
+      <p class="lead">Add a new campaign, update how much has been raised, or remove one you don’t need. The campaign marked <b>Shown at the front</b> appears on the Home and Blog pages. Ended campaigns move into the Campaign Archive on the Moments page.</p>
+      <div id="campList"><p class="empty"><i class="fa fa-circle-notch fa-spin"></i> Loading campaigns…</p></div>
+      <section class="card" style="margin-top:1.4rem">
+        <h2><i class="fa fa-clock-rotate-left"></i> Recent activity</h2>
+        <ul class="log" id="recentLog"><li class="empty">Loading…</li></ul>
+      </section>
+    </section>
+
+    <!-- CAMPAIGN: one campaign (or a new one) -->
+    <section class="view" data-view="campaign" hidden>
+      <div class="det-head">
+        <a class="back" href="#campaigns"><i class="fa fa-arrow-left"></i> All campaigns</a>
+        <div class="actions" id="detActions">
+          <span class="pill" id="detPill"></span>
+          <button class="btn btn-ghost btn-sm" id="actFront" type="button"><i class="fa fa-bullhorn"></i> Show at the front</button>
+          <button class="btn btn-ghost btn-sm" id="actEnd" type="button"><i class="fa fa-flag-checkered"></i> End campaign</button>
+          <button class="btn btn-ghost btn-sm" id="actReopen" type="button"><i class="fa fa-rotate-left"></i> Reopen</button>
+          <button class="btn btn-danger btn-sm" id="actDelete" type="button"><i class="fa fa-trash"></i> Delete</button>
+        </div>
+      </div>
+
+      <section class="card pv" id="pvCard">
+        <div>
+          <div class="pv-label">What visitors see</div>
+          <h2 id="pvName">…</h2>
+          <div class="pv-top"><b id="pvRaised">RM0</b><span id="pvOf"></span></div>
+          <div class="pv-bar"><i id="pvFill"></i><s style="left:25%"></s><s style="left:50%"></s><s style="left:75%"></s></div>
+          <div class="pv-foot"><span id="pvPct"></span><span class="days" id="pvDays"></span></div>
+        </div>
+        <div class="pv-house" aria-hidden="true"><svg viewBox="0 0 200 190"><use href="#camp-house-out"/></svg><div class="pv-fill" id="pvHouse"><svg viewBox="0 0 200 190"><use href="#camp-house"/></svg></div></div>
+      </section>
+
+      <div class="grid2" id="detGrid">
+        <section class="card" id="progCard">
+          <h2><i class="fa fa-sack-dollar"></i> Update progress</h2>
+          <div class="big"><span>Raised so far</span><b id="bigRaised">RM0</b><em id="bigLeft"></em></div>
+          <form class="form" id="addForm" novalidate>
+            <h3>A donation came in</h3>
+            <div class="chips" id="chips"><button type="button" data-amt="50">+ RM50</button><button type="button" data-amt="100">+ RM100</button><button type="button" data-amt="300">+ RM300</button><button type="button" data-amt="500">+ RM500</button><button type="button" data-amt="1000">+ RM1,000</button></div>
+            <div class="row">
+              <label class="f">Amount (RM)<input class="in" id="addAmt" type="number" inputmode="decimal" min="0" step="0.01" placeholder="e.g. 300"></label>
+              <label class="f">Note <small>(optional, saved in the log)</small><input class="in" id="addNote" maxlength="120" placeholder="e.g. Mr Lim, receipt 0123"></label>
+            </div>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-plus ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Add to total</button>
+          </form>
+          <hr class="rule">
+          <form class="form" id="setForm" novalidate>
+            <h3>Or set the total directly</h3>
+            <div class="row">
+              <label class="f">New total raised (RM)<input class="in" id="setAmt" type="number" inputmode="decimal" min="0" step="0.01"></label>
+              <label class="f">Note <small>(optional)</small><input class="in" id="setNote" maxlength="120" placeholder="e.g. Corrected after checking bank"></label>
+            </div>
+            <button class="btn btn-ghost" type="submit"><i class="fa fa-pen ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Set total</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2><i class="fa fa-bullseye"></i> <span id="detTitle">Campaign details</span></h2>
+          <form class="form" id="detForm" novalidate>
+            <div>
+              <div class="cover-drop" id="coverDrop" tabindex="0" role="button" aria-label="Choose a campaign photo"><i class="fa fa-image"></i>Add a campaign photo<small>Click or drag a photo here · landscape photos work best · it’s resized automatically</small></div>
+              <input type="file" id="coverFile" accept="image/*" hidden>
+            </div>
+            <label class="f">Name (English)<input class="in" id="fNameEn" maxlength="120" placeholder="e.g. School shoes for 22 children"></label>
+            <label class="f">Summary (English)<textarea class="in" id="fSumEn" maxlength="500" style="min-height:96px" placeholder="One or two sentences about what the money is for."></textarea></label>
+            <label class="f">名称 Name (中文)<input class="in" id="fNameZh" maxlength="120"></label>
+            <label class="f">简介 Summary (中文)<textarea class="in" id="fSumZh" maxlength="500" style="min-height:96px"></textarea></label>
+            <div class="row">
+              <label class="f">Goal (RM)<input class="in" id="fGoal" type="number" inputmode="decimal" min="1" step="1" placeholder="e.g. 3000"></label>
+              <label class="f">Last day <small>(optional)</small>
+                <span class="end-row"><input class="in" id="fEnd" type="date"><button class="btn btn-ghost btn-sm" type="button" id="clearEnd" title="No end date"><i class="fa fa-xmark"></i></button></span>
+              </label>
+            </div>
+            <details class="more">
+              <summary><i class="fa fa-trophy"></i> Thank-you / result for the archive <small>(optional)</small></summary>
+              <p class="hint">Shown on the Moments page once the campaign has ended, for example “Thank you! We bought 22 pairs of shoes.”</p>
+              <label class="f">Result (English)<textarea class="in" id="fResEn" maxlength="500" style="min-height:80px"></textarea></label>
+              <label class="f">结果 Result (中文)<textarea class="in" id="fResZh" maxlength="500" style="min-height:80px"></textarea></label>
+            </details>
+            <div class="newopts" id="newOpts">
+              <label class="check"><input type="checkbox" id="fFront" checked> Show it at the front of the website <small>(replaces the campaign shown there now, which stays active)</small></label>
+              <label class="f">Already raised (RM) <small>(optional)</small><input class="in" id="fStart" type="number" inputmode="decimal" min="0" step="0.01" placeholder="0"></label>
+            </div>
+            <p class="hint">Leave a Chinese field empty to show the English words to Chinese readers.</p>
+            <button class="btn btn-primary" type="submit" id="saveBtn"><i class="fa fa-floppy-disk ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> <span>Save details</span></button>
+          </form>
+        </section>
+      </div>
+
+      <section class="card" id="logCard" style="margin-top:1.1rem">
+        <h2><i class="fa fa-clock-rotate-left"></i> Activity log</h2>
+        <ul class="log" id="logList"><li class="empty">Loading…</li></ul>
+        <p class="hint" style="margin-top:.8rem">Every change to the amount, goal or status is recorded automatically by the database, with who made it and when. It can’t be edited.</p>
+      </section>
+    </section>
+
+    <!-- BLOG POSTS: the list and the editor -->
     <section class="view" data-view="posts" hidden>
       <div class="toolbar">
         <div class="search"><i class="fa fa-magnifying-glass"></i><input class="in" id="postSearch" type="search" placeholder="Search posts…"></div>
@@ -363,15 +561,15 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
     </section>
 
     <!-- EDITOR -->
-    <section class="view" data-view="editor" hidden>
+    <section class="view" data-view="post" hidden>
       <div class="ed">
         <form class="ed-form" id="edForm" novalidate>
           <div class="ed-status" id="edStatus"></div>
           <div>
-            <div class="cover-drop" id="coverDrop" tabindex="0" role="button" aria-label="Choose a cover photo">
+            <div class="cover-drop" id="bCoverDrop" tabindex="0" role="button" aria-label="Choose a cover photo">
               <i class="fa fa-image"></i>Add a cover photo<small>Click or drag a photo here · it’s resized automatically</small>
             </div>
-            <input type="file" id="coverFile" accept="image/*" hidden>
+            <input type="file" id="bCoverFile" accept="image/*" hidden>
           </div>
           <div class="row2">
             <label class="f">Category
@@ -405,7 +603,7 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
         </form>
         <aside class="preview">
           <div class="card">
-            <div class="prev-label">Preview on the Moments page</div>
+            <div class="prev-label">Preview on the Blog page</div>
             <div class="pv-card">
               <div class="pv-img" id="pvImg"><i class="fa fa-image"></i></div>
               <div class="pv-body">
@@ -450,18 +648,27 @@ on conflict do nothing;<button type="button" class="btn btn-ghost btn-sm" id="co
 <div class="toast" id="toast" role="status"><i class="fa fa-circle-check"></i><span></span></div>
 
 <script>
-/* ═══════════════════════════════════════════════════════════════════════
-   Amitabha Foundation Children Home: admin website
-   Logs in with Supabase Auth, reads the dashboard numbers from the
-   analytics_summary() function, and manages blog posts + cover photos.
-   ═══════════════════════════════════════════════════════════════════════ */
 const cfg = window.CH_SUPABASE || {};
-const READY = !!(cfg.url && cfg.anonKey && !/YOUR-PROJECT/.test(cfg.url) && !/YOUR-ANON/.test(cfg.anonKey) && window.supabase);
+const KEY = cfg.publishableKey || cfg.anonKey || '';
+const SECRET_KEY_USED = /^sb_secret_/.test(KEY);
+/* Project URL must be just https://xxxx.supabase.co : tidy anything copied after it (like /rest/v1/) */
+function projectUrl(u){
+  u = String(u || '').trim();
+  const dash = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i);
+  if (dash) return 'https://' + dash[1] + '.supabase.co';
+  try { return new URL(u).origin; } catch (e){ return u.replace(/\/+$/, ''); }
+}
+const PROJECT_URL = projectUrl(cfg.url);
+const READY = !!(cfg.url && KEY && !SECRET_KEY_USED && !/YOUR-|PASTE-/.test(cfg.url + KEY) && window.supabase);
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const rm = n => 'RM' + (Number(n) || 0).toLocaleString('en-MY', { maximumFractionDigits: 2 });
+const num = v => { const n = Number(String(v).replace(/,/g, '').trim()); return v === '' || !isFinite(n) ? NaN : n; };
+
+
 const nf = n => Number(n || 0).toLocaleString('en-MY');
-const PAGE_NAMES = { index:'Home', 'our-care':'Our Care', 'success-stories':'Success Stories', moments:'Moments', 'get-involved':'Get Involved', faq:'FAQ' };
+const PAGE_NAMES = { index:'Home', 'our-care':'Our Care', 'success-stories':'Success Stories', moments:'Moments', blog:'Blog', 'get-involved':'Get Involved', faq:'FAQ' };
 const WA_LABELS = { help:'Seek Help / general', volunteer:'Volunteer', sponsor:'Sponsor a child', visit:'Schedule a visit', csr:'Company partnership (CSR)' };
 const CLICK_STYLE = {
   donate:         { name:'Donate button', icon:'fa-hand-holding-heart', c:'#ab1a1f' },
@@ -469,15 +676,10 @@ const CLICK_STYLE = {
   phone:          { name:'Phone call',    icon:'fa-phone',             c:'#2c3e50' },
   directions:     { name:'Get directions',icon:'fa-route',             c:'#2e7d6b' },
   volunteer_form: { name:'Volunteer form',icon:'fa-hands-holding-child',c:'#d98e1f' },
-  give_hope:      { name:'Give Hope page',icon:'fa-seedling',          c:'#3b9480' },
-  post_open:      { name:'Blog post read', icon:'fa-newspaper',        c:'#6bb5a1' }
+  give_hope:      { name:'Give Hope page',icon:'fa-seedling',          c:'#3b9480' }
 };
+let sb = null, me = null, recovering = false, range = 30;
 
-let sb = null, me = null, recovering = false;
-let range = 30, posts = [], statusFilter = 'all';
-let editing = null, coverBlob = null, coverPreview = null, dirty = false, edLang = 'en', lastHash = '';
-
-/* ── helpers ── */
 function screen(id){ ['setup', 'login', 'app'].forEach(x => $('#' + x).hidden = x !== id); }
 function authMode(m){ $$('[data-auth]').forEach(el => el.hidden = el.dataset.auth !== m); }
 function authMsg(text, kind){ const m = $('#authMsg'); m.textContent = text || ''; m.className = 'msg' + (text ? ' ' + kind : ''); }
@@ -487,50 +689,37 @@ function toast(text, err){
   const t = $('#toast'); t.querySelector('span').textContent = text;
   t.querySelector('i').className = 'fa ' + (err ? 'fa-circle-exclamation' : 'fa-circle-check');
   t.classList.toggle('err', !!err); t.classList.add('on');
-  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 3200);
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 3400);
 }
 function friendly(error){
   const m = (error && (error.message || error.error_description)) || 'Something went wrong. Please try again.';
   if (/invalid login/i.test(m)) return 'Wrong email or password.';
   if (/email not confirmed/i.test(m)) return 'This email hasn’t been confirmed yet. Check the inbox for the confirmation email.';
+  if (/invalid path/i.test(m)) return 'The Project URL in supabase-config.js looks wrong. It should be just https://xxxx.supabase.co with nothing after it.';
+  if (/invalid api key|no api key/i.test(m)) return 'The key in supabase-config.js isn’t right. Copy the full Publishable key again (it starts with sb_publishable_).';
+  if (/campaigns_check/i.test(m)) return 'Only an active campaign can be shown at the front. Reopen it first.';
+  if (/campaigns_(raised|goal)_check/i.test(m)) return 'The amount or goal isn’t allowed. Please check the numbers.';
+  if (/only admins|row-level security|permission denied/i.test(m)) return 'This account isn’t allowed to change the campaign. Ask an admin to add you.';
   if (/fetch|network/i.test(m)) return 'Can’t reach the database. Check your internet connection.';
   if (/rate limit/i.test(m)) return 'Too many attempts. Please wait a minute and try again.';
   return m;
 }
-function fmtDate(d){ return d ? new Date(d).toLocaleDateString('en-MY', { day:'numeric', month:'short', year:'numeric' }) : ''; }
-function slugify(s){ return String(s || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70); }
+const when = d => new Date(d).toLocaleString('en-MY', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' });
 
-/* story text → safe formatted HTML (paragraphs, "- " bullets, "## " headings) */
-function renderStory(text, target){
-  target.textContent = '';
-  String(text || '').replace(/\r/g, '').split(/\n{2,}/).map(b => b.trim()).filter(Boolean).forEach(block => {
-    const lines = block.split('\n');
-    if (lines.every(l => /^\s*[-•]\s+/.test(l))){
-      const ul = document.createElement('ul');
-      lines.forEach(l => { const li = document.createElement('li'); li.textContent = l.replace(/^\s*[-•]\s+/, ''); ul.appendChild(li); });
-      target.appendChild(ul);
-    } else if (/^##\s+/.test(block)){
-      const h = document.createElement('h4'); h.textContent = block.replace(/^##\s+/, ''); target.appendChild(h);
-    } else {
-      const p = document.createElement('p');
-      lines.forEach((l, i) => { if (i) p.appendChild(document.createElement('br')); p.appendChild(document.createTextNode(l)); });
-      target.appendChild(p);
-    }
-  });
-}
-
-/* password show/hide */
 $$('.pw-eye').forEach(b => b.addEventListener('click', () => {
   const inp = b.previousElementSibling, show = inp.type === 'password';
   inp.type = show ? 'text' : 'password'; b.firstElementChild.className = 'fa ' + (show ? 'fa-eye-slash' : 'fa-eye');
 }));
 
 /* ═══ START ═══ */
-if (!READY){ screen('setup'); } else { start(); }
+if (!READY){
+  screen('setup');
+  if (SECRET_KEY_USED) $('#setupWarn').hidden = false;
+} else { start(); }
 
 async function start(){
-  sb = window.supabase.createClient(cfg.url, cfg.anonKey);
-  sb.auth.onAuthStateChange((event) => {
+  sb = window.supabase.createClient(PROJECT_URL, KEY);
+  sb.auth.onAuthStateChange(event => {
     if (event === 'PASSWORD_RECOVERY'){ recovering = true; screen('login'); authMode('reset'); authMsg(''); }
     if (event === 'SIGNED_OUT'){ me = null; screen('login'); authMode('login'); }
   });
@@ -538,7 +727,6 @@ async function start(){
   if (recovering || /type=recovery/.test(location.hash)){ recovering = true; screen('login'); authMode('reset'); return; }
   if (session) await enter(session); else { screen('login'); authMode('login'); }
 }
-
 async function enter(session){
   const { data, error } = await sb.from('admins').select('user_id').eq('user_id', session.user.id).maybeSingle();
   if (error || !data){
@@ -547,10 +735,10 @@ async function enter(session){
     authMsg(error ? friendly(error) : 'This account doesn’t have admin access yet. Ask an existing admin to add you.', 'err');
     return;
   }
-  me = session.user;
-  $('#meEmail').textContent = me.email;
+  me = session.user; $('#meEmail').textContent = me.email;
+  if (/access_token|type=/.test(location.hash)) history.replaceState(null, '', location.pathname + '#dashboard');
+  try { localStorage.setItem('ch_staff', '1'); } catch (e){}   // visits from this browser are no longer counted in the statistics
   screen('app');
-  if (!location.hash || /access_token|type=/.test(location.hash)) history.replaceState(null, '', '#dashboard');
   route();
 }
 
@@ -560,7 +748,7 @@ $('#loginForm').addEventListener('submit', async e => {
   e.preventDefault();
   const email = $('#loginEmail').value.trim(), password = $('#loginPass').value;
   if (!email || !password) return authMsg('Please enter your email and password.', 'err');
-  const btn = e.submitter || $('#loginForm button[type=submit]'); busy(btn, true); authMsg('');
+  const btn = $('#loginForm button[type=submit]'); busy(btn, true); authMsg('');
   const { data, error } = await sb.auth.signInWithPassword({ email, password });
   busy(btn, false);
   if (error) return authMsg(friendly(error), 'err');
@@ -590,41 +778,14 @@ $('#resetForm').addEventListener('submit', async e => {
   toast('Password saved. Welcome back!');
   if (session) await enter(session);
 });
-$('#logoutBtn').addEventListener('click', async () => {
-  if (dirty && !confirm('You have unsaved changes. Log out without saving?')) return;
-  dirty = false; await sb.auth.signOut();
-});
+$('#logoutBtn').addEventListener('click', () => sb.auth.signOut());
+
 
 /* ── mobile menu ── */
 const side = $('#side'), scrim = $('#scrim');
 $('#burger').addEventListener('click', () => { side.classList.add('open'); scrim.classList.add('on'); });
 scrim.addEventListener('click', () => { side.classList.remove('open'); scrim.classList.remove('on'); });
 $$('.side nav a').forEach(a => a.addEventListener('click', () => { side.classList.remove('open'); scrim.classList.remove('on'); }));
-
-/* ═══ ROUTER ═══ */
-window.addEventListener('hashchange', () => {
-  if (!me || /access_token|type=/.test(location.hash)) return;
-  if (dirty && !confirm('You have unsaved changes. Leave without saving?')){ history.replaceState(null, '', lastHash); return; }
-  dirty = false; route();
-});
-window.addEventListener('beforeunload', e => { if (dirty){ e.preventDefault(); e.returnValue = ''; } });
-
-function route(){
-  const h = location.hash.replace('#', '') || 'dashboard';
-  lastHash = '#' + h;
-  const [name, id] = h.split('/');
-  const view = name === 'new' || name === 'edit' ? 'editor' : (['dashboard', 'posts', 'account'].includes(name) ? name : 'dashboard');
-  $$('.view').forEach(v => v.hidden = v.dataset.view !== view);
-  $$('.side nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === (name === 'edit' ? 'posts' : name)));
-  $('#topNew').hidden = view === 'editor';
-  const titles = { dashboard:'Dashboard', posts:'Blog posts', account:'My account', editor: name === 'edit' ? 'Edit post' : 'Write a post' };
-  $('#pageTitle').textContent = titles[view];
-  const v = $(`.view[data-view="${view}"]`); v.style.animation = 'none'; v.offsetHeight; v.style.animation = '';
-  if (view === 'dashboard') loadStats();
-  if (view === 'posts') loadPosts();
-  if (view === 'editor') openEditor(name === 'edit' ? id : null);
-  window.scrollTo(0, 0);
-}
 
 /* ═══ DASHBOARD ═══ */
 $$('#rangeSeg button').forEach(b => b.addEventListener('click', () => {
@@ -721,101 +882,158 @@ function lineChart(el, rows){
 let rsT = 0;
 window.addEventListener('resize', () => { clearTimeout(rsT); rsT = setTimeout(() => { if (lastStats && !$('[data-view=dashboard]').hidden) drawStats(lastStats); }, 200); });
 
-/* ═══ POSTS LIST ═══ */
-$('#postSearch').addEventListener('input', renderPosts);
-$$('#statusSeg button').forEach(b => b.addEventListener('click', () => {
-  statusFilter = b.dataset.status; $$('#statusSeg button').forEach(x => x.classList.toggle('on', x === b)); renderPosts();
-}));
-async function loadPosts(){
-  $('#postList').innerHTML = '<p class="empty"><i class="fa fa-circle-notch fa-spin"></i> Loading posts…</p>';
-  const { data, error } = await sb.from('posts').select('*').order('updated_at', { ascending: false });
-  if (error){ $('#postList').innerHTML = `<p class="empty">${esc(friendly(error))}</p>`; return; }
-  posts = data || []; renderPosts();
-}
-function renderPosts(){
-  const q = $('#postSearch').value.trim().toLowerCase();
-  const rows = posts.filter(p => (statusFilter === 'all' || p.status === statusFilter) &&
-    (!q || [p.title_en, p.title_zh, p.tag, p.excerpt_en].join(' ').toLowerCase().includes(q)));
-  const list = $('#postList');
-  if (!posts.length){ list.innerHTML = `<div class="card" style="text-align:center;padding:2.4rem"><p style="font-family:var(--display);font-size:1.3rem;color:var(--ink-900);margin-bottom:.4rem">No posts yet</p><p class="empty" style="margin-bottom:1rem">Write your first post. Once published, it appears on the Moments page.</p><a class="btn btn-sun" href="#new"><i class="fa fa-plus"></i> Write a post</a></div>`; return; }
-  if (!rows.length){ list.innerHTML = '<p class="empty">No posts match.</p>'; return; }
-  list.innerHTML = rows.map(p => `
-    <div class="prow">
-      <div class="pthumb" ${p.cover_url ? `style="background-image:url('${esc(p.cover_url)}')"` : ''}>${p.cover_url ? '' : '<i class="fa fa-image"></i>'}</div>
-      <div class="pmain"><b>${esc(p.title_en)}</b><span>${p.title_zh ? esc(p.title_zh) + ' · ' : ''}${esc(p.tag)} · ${p.status === 'published' ? 'Published ' + fmtDate(p.published_at) : 'Edited ' + fmtDate(p.updated_at)}</span></div>
-      <span class="pill ${p.status === 'published' ? 'pub' : 'draft'}"><i class="fa ${p.status === 'published' ? 'fa-circle-check' : 'fa-pen'}"></i>${p.status === 'published' ? 'Published' : 'Draft'}</span>
-      <div class="pact">
-        <a class="icon-btn" href="#edit/${p.id}" title="Edit"><i class="fa fa-pen"></i></a>
-        ${p.status === 'published' ? `<a class="icon-btn" href="moments.html?post=${encodeURIComponent(p.slug)}" target="_blank" rel="noopener" title="View on website"><i class="fa fa-arrow-up-right-from-square"></i></a>` : ''}
-        <button class="icon-btn del" data-del="${p.id}" title="Delete"><i class="fa fa-trash"></i></button>
-      </div>
-    </div>`).join('');
-  $$('[data-del]', list).forEach(b => b.addEventListener('click', () => deletePost(posts.find(p => p.id === b.dataset.del))));
-}
-async function deletePost(p){
-  if (!p || !confirm(`Delete “${p.title_en}”? This can’t be undone.`)) return;
-  const { error } = await sb.from('posts').delete().eq('id', p.id);
-  if (error) return toast(friendly(error), true);
-  removeCover(p.cover_url);
-  toast('Post deleted');
-  if (location.hash.startsWith('#edit')){ dirty = false; location.hash = '#posts'; } else loadPosts();
-}
-function removeCover(url){
-  const m = String(url || '').match(/\/object\/public\/blog-images\/(.+)$/);
-  if (m) sb.storage.from('blog-images').remove([decodeURIComponent(m[1])]);
-}
 
-/* ═══ EDITOR ═══ */
-const F = { tag:'#fTag', slug:'#fSlug', title_en:'#fTitleEn', excerpt_en:'#fExEn', body_en:'#fBodyEn', title_zh:'#fTitleZh', excerpt_zh:'#fExZh', body_zh:'#fBodyZh' };
-async function openEditor(id){
-  editing = null; coverBlob = null; dirty = false; edLang = 'en'; setLang('en');
-  if (coverPreview){ URL.revokeObjectURL(coverPreview); coverPreview = null; }
-  Object.values(F).forEach(s => $(s).value = ''); $('#fTag').value = 'News';
-  if (id){
-    let p = posts.find(x => x.id === id);
-    if (!p){ const { data, error } = await sb.from('posts').select('*').eq('id', id).maybeSingle(); if (error || !data){ toast('That post could not be found.', true); location.hash = '#posts'; return; } p = data; }
-    editing = p;
-    Object.entries(F).forEach(([k, s]) => $(s).value = p[k] || '');
-  }
-  showCover(editing?.cover_url || null);
-  refreshEditor(); updatePreview();
-}
-function refreshEditor(){
-  const pub = editing?.status === 'published';
-  $('#edStatus').innerHTML = (editing
-    ? `<span class="pill ${pub ? 'pub' : 'draft'}">${pub ? 'Published' : 'Draft'}</span> ${pub ? 'Live on the Moments page since ' + fmtDate(editing.published_at) : 'Not visible on the website yet'}`
-    : '<span class="pill draft">New</span> Not saved yet') + (dirty ? ' · <span class="ed-dirty">Unsaved changes</span>' : '');
-  $('#publishBtn span').textContent = pub ? 'Update' : 'Publish';
-  $('#saveDraft').innerHTML = `<i class="fa ${pub ? 'fa-eye-slash' : 'fa-floppy-disk'} ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> ${pub ? 'Unpublish (move to drafts)' : 'Save draft'}`;
-  $('#deleteBtn').hidden = !editing;
-  $('#viewLive').hidden = !pub;
-  if (pub) $('#viewLive').href = 'moments.html?post=' + encodeURIComponent(editing.slug);
-  $$('[data-count-for]').forEach(c => c.textContent = $('#' + c.dataset.countFor).value.length + ' / 400');
-}
-function setLang(l){
-  edLang = l;
-  $$('#langTabs button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
-  $$('[data-lang-fields]').forEach(f => f.hidden = f.dataset.langFields !== l);
-  updatePreview();
-}
-$$('#langTabs button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-$('#edForm').addEventListener('input', e => {
-  if (e.target === $('#fTitleEn') && !$('#fSlug').dataset.touched && !editing) $('#fSlug').value = slugify($('#fTitleEn').value);
-  if (e.target === $('#fSlug')) $('#fSlug').dataset.touched = '1';
-  dirty = true; refreshEditor(); updatePreview();
+/* ═══ ROUTER ═══ */
+let lastHash = '', bDirty = false;                       // bDirty: a blog post has unsaved changes
+window.addEventListener('hashchange', () => {
+  if (!me || /access_token|type=/.test(location.hash)) return;
+  if (bDirty && !confirm('You have unsaved changes. Leave without saving?')){ history.replaceState(null, '', lastHash || '#dashboard'); return; }
+  bDirty = false; route();
 });
-function updatePreview(){
-  const zh = edLang === 'zh';
-  const pick = (k) => (zh && $(F[k + '_zh']).value.trim()) || $(F[k + '_en']).value.trim();
-  $('#pvTag').textContent = $('#fTag').value;
-  $('#pvDate').textContent = fmtDate(editing?.published_at || new Date());
-  $('#pvTitle').textContent = pick('title') || 'Your title will appear here';
-  $('#pvEx').textContent = pick('excerpt') || 'The short summary appears under the title.';
-  renderStory(pick('body'), $('#pvStory'));
-  $('#pvStory').hidden = !pick('body');
+window.addEventListener('beforeunload', e => { if (bDirty){ e.preventDefault(); e.returnValue = ''; } });
+function route(){
+  if (!me) return;
+  const h = location.hash.replace('#', '') || 'dashboard';
+  lastHash = '#' + h;
+  const [name, id] = h.split('/');
+  const view = { campaigns: 'campaigns', campaign: 'campaign', posts: 'posts', post: 'post', account: 'account' }[name] || 'dashboard';
+  $$('.view').forEach(v => v.hidden = v.dataset.view !== view);
+  $$('.side nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === ({ campaign: 'campaigns', post: 'posts' }[view] || view)));
+  $('#topNew').hidden = !['dashboard', 'campaigns'].includes(view);
+  $('#topPost').hidden = !['dashboard', 'posts'].includes(view);
+  $('#pageTitle').textContent = { dashboard: 'Dashboard', campaigns: 'Campaigns', campaign: 'Campaign', posts: 'Blog posts', post: 'Blog post', account: 'My account' }[view];
+  window.scrollTo(0, 0);
+  if (view === 'dashboard'){ loadStats(); ensureCampaigns().then(drawFront); }
+  if (view === 'campaigns'){ ensureCampaigns(true).then(renderList); loadLog(null); }
+  if (view === 'campaign') openCampaign(id || 'new');
+  if (view === 'posts') loadPosts(true);
+  if (view === 'post') openPost(id || 'new');
 }
 
-/* cover photo: choose / drag, resized to max 1600px before upload */
+/* ═══ CAMPAIGNS ═══ */
+const DEFAULT_IMG = 'assets/img/home-building-front.jpg';
+let campaigns = null, cur = null, coverBlob = null, coverPreview = null, removeCoverFlag = false;
+const slugify = s => String(s || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50);
+const pctOf = c => +c.goal ? Math.min(100, Math.round(+c.raised / +c.goal * 100)) : 0;
+const imgOf = c => c.image_url || DEFAULT_IMG;
+const dateOnly = d => d ? new Date(String(d).slice(0, 10) + 'T00:00:00').toLocaleDateString('en-MY', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+const daysLeft = end => { if (!end) return ''; const d = Math.ceil((new Date(end + 'T23:59:59') - new Date()) / 864e5); return d <= 0 ? 'Campaign ended' : d + (d === 1 ? ' day left' : ' days left'); };
+
+async function ensureCampaigns(force){
+  if (campaigns && !force) return true;
+  const { data, error } = await sb.from('campaigns').select('*').order('created_at', { ascending: false });
+  if (error){ toast(friendly(error), true); if (!campaigns) campaigns = []; return false; }
+  campaigns = data || []; return true;
+}
+function removeImage(url){
+  const m = String(url || '').match(/\/object\/public\/campaign-images\/(.+)$/);
+  if (m) sb.storage.from('campaign-images').remove([decodeURIComponent(m[1])]);
+}
+
+/* ── dashboard: the campaign shown at the front ── */
+function drawFront(){
+  const box = $('#frontCamp'), c = (campaigns || []).find(x => x.featured && x.status === 'active');
+  if (!c){
+    box.innerHTML = '<div class="fc-main"><div class="fc-label">Campaign shown at the front of the website</div><b class="fc-name">None right now</b><span class="fc-nums">Visitors don’t see a campaign box. Start a new one, or choose one to show.</span></div><a class="btn btn-sun btn-sm" href="#campaigns"><i class="fa fa-bullhorn"></i> Manage campaigns</a>';
+    return;
+  }
+  box.innerHTML = '<div class="fc-main"><div class="fc-label">Campaign shown at the front of the website</div><b class="fc-name">' + esc(c.name_en) + '</b><span class="fc-nums">' + rm(c.raised) + ' of ' + rm(c.goal) + ' · ' + pctOf(c) + '%' + (c.end_date ? ' · ' + daysLeft(c.end_date) : '') + '</span><div class="fc-bar"><i style="width:' + pctOf(c) + '%"></i></div></div><a class="btn btn-primary btn-sm" href="#campaign/' + c.id + '"><i class="fa fa-sliders"></i> Update progress</a>';
+}
+
+/* ── the list ── */
+function renderList(){
+  const box = $('#campList');
+  if (!campaigns.length){
+    box.innerHTML = '<div class="card" style="text-align:center;padding:2.2rem"><p style="font-family:var(--display);font-size:1.3rem;color:var(--ink-900);margin-bottom:.4rem">No campaigns yet</p><p class="empty" style="margin-bottom:1rem">Start your first campaign. It can be shown at the front of the website.</p><a class="btn btn-sun" href="#campaign/new"><i class="fa fa-plus"></i> New campaign</a></div>';
+    return;
+  }
+  const groups = [['Shown at the front', c => c.status === 'active' && c.featured], ['Active', c => c.status === 'active' && !c.featured], ['Ended · shown in the Moments archive', c => c.status === 'ended']];
+  box.innerHTML = groups.map(([title, f]) => {
+    const rows = campaigns.filter(f); if (!rows.length) return '';
+    return '<h3 class="grp">' + title + '</h3><div class="clist">' + rows.map(c => {
+      const pct = pctOf(c), st = c.status === 'ended' ? ['end', 'Ended'] : (c.featured ? ['front', 'Shown at the front'] : ['pub', 'Active']);
+      return '<div class="crow"><div class="cthumb" data-bg="' + esc(imgOf(c)) + '"></div><div class="cmain"><b>' + esc(c.name_en) + '</b><span>' + rm(c.raised) + ' of ' + rm(c.goal) + ' · ' + pct + '%' + (c.status === 'active' && c.end_date ? ' · ' + daysLeft(c.end_date) : '') + '</span><div class="cbar"><i style="width:' + pct + '%"></i></div></div><span class="pill ' + st[0] + '">' + st[1] + '</span><div class="cact"><a class="btn btn-ghost btn-sm" href="#campaign/' + c.id + '"><i class="fa fa-sliders"></i> Manage</a><button class="icon-btn del" type="button" data-del="' + c.id + '" title="Delete"><i class="fa fa-trash"></i></button></div></div>';
+    }).join('') + '</div>';
+  }).join('');
+  $$('.cthumb', box).forEach(t => t.style.backgroundImage = 'url("' + t.dataset.bg.replace(/"/g, '%22') + '")');
+  $$('[data-del]', box).forEach(b => b.addEventListener('click', () => deleteCampaign(campaigns.find(c => c.id === b.dataset.del))));
+}
+
+async function deleteCampaign(c){
+  if (!c) return;
+  const warn = 'Delete “' + c.name_en + '”?\n\n' + (+c.raised ? 'It has ' + rm(c.raised) + ' recorded. ' : '') + 'It will disappear from the website' + (c.status === 'ended' ? ' and from the Moments archive' : '') + '. This can’t be undone.\n\n(To keep it as a record instead, use “End campaign”.)';
+  if (!confirm(warn)) return;
+  if (+c.raised > 0 && !confirm('Are you really sure? ' + rm(c.raised) + ' of donations is recorded on this campaign.')) return;
+  const { data, error } = await sb.from('campaigns').delete().eq('id', c.id).select();
+  if (error) return toast(friendly(error), true);
+  if (!data || !data.length) return toast('That campaign could not be deleted. Please refresh and try again.', true);
+  removeImage(c.image_url);
+  campaigns = campaigns.filter(x => x.id !== c.id);
+  toast('“' + c.name_en + '” was deleted.');
+  if (location.hash.startsWith('#campaign/')) location.hash = '#campaigns'; else { renderList(); loadLog(null); }
+}
+
+/* ── one campaign (or a new one) ── */
+async function openCampaign(id){
+  await ensureCampaigns();
+  coverBlob = null; removeCoverFlag = false;
+  if (coverPreview){ URL.revokeObjectURL(coverPreview); coverPreview = null; }
+  if (id === 'new') cur = null;
+  else {
+    cur = campaigns.find(c => c.id === id);
+    if (!cur){ await ensureCampaigns(true); cur = campaigns.find(c => c.id === id); }
+    if (!cur){ toast('That campaign could not be found.', true); location.hash = '#campaigns'; return; }
+  }
+  fillForm(cur); drawDetail();
+  if (cur) loadLog(cur.id);
+}
+function fillForm(c){
+  $('#fNameEn').value = c ? c.name_en || '' : ''; $('#fSumEn').value = c ? c.summary_en || '' : '';
+  $('#fNameZh').value = c ? c.name_zh || '' : ''; $('#fSumZh').value = c ? c.summary_zh || '' : '';
+  $('#fGoal').value = c ? c.goal : ''; $('#fEnd').value = c ? c.end_date || '' : '';
+  $('#fResEn').value = c ? c.result_en || '' : ''; $('#fResZh').value = c ? c.result_zh || '' : '';
+  $('details.more').open = !!(c && (c.result_en || c.result_zh));
+  $('#fFront').checked = true; $('#fStart').value = '';
+  $('#setAmt').value = c ? c.raised : ''; $('#setNote').value = ''; $('#addAmt').value = ''; $('#addNote').value = '';
+  showCover(c ? c.image_url : null);
+}
+function drawDetail(){
+  const isNew = !cur;
+  $('#detActions').hidden = isNew; $('#progCard').hidden = isNew; $('#logCard').hidden = isNew; $('#newOpts').hidden = !isNew;
+  $('#detGrid').classList.toggle('single', isNew);
+  $('#detTitle').textContent = isNew ? 'New campaign' : 'Campaign details';
+  $('#saveBtn span').textContent = isNew ? 'Create campaign' : 'Save details';
+  $('#pageTitle').textContent = isNew ? 'New campaign' : cur.name_en;
+  if (!isNew){
+    const st = cur.status === 'ended' ? ['end', 'Ended'] : (cur.featured ? ['front', 'Shown at the front'] : ['pub', 'Active']);
+    $('#detPill').className = 'pill ' + st[0]; $('#detPill').textContent = st[1];
+    $('#actFront').hidden = !(cur.status === 'active' && !cur.featured);
+    $('#actEnd').hidden = cur.status !== 'active';
+    $('#actReopen').hidden = cur.status !== 'ended';
+  }
+  drawPv(); drawProgress();
+}
+/* the preview follows what is being typed; the amount raised is always the saved one */
+function drawPv(){
+  const raised = cur ? +cur.raised : Math.max(0, num($('#fStart').value) || 0);
+  const goal = num($('#fGoal').value) > 0 ? num($('#fGoal').value) : (cur ? +cur.goal : 0);
+  const pct = goal ? Math.min(100, Math.round(raised / goal * 100)) : 0;
+  $('#pvName').textContent = $('#fNameEn').value.trim() || 'Your campaign name';
+  $('#pvRaised').textContent = rm(raised); $('#pvOf').textContent = goal ? 'raised of ' + rm(goal) + ' goal' : 'raised';
+  $('#pvFill').style.width = pct + '%'; $('#pvHouse').style.height = pct + '%';
+  $('#pvPct').textContent = pct + '% of goal'; $('#pvDays').textContent = daysLeft($('#fEnd').value);
+}
+function drawProgress(){
+  if (!cur) return;
+  const goal = +cur.goal, raised = +cur.raised;
+  $('#bigRaised').textContent = rm(raised);
+  $('#bigLeft').textContent = raised >= goal ? 'Goal reached. Thank you!' : rm(goal - raised) + ' still to go (' + pctOf(cur) + '%)';
+}
+$('#detForm').addEventListener('input', drawPv);
+$('#clearEnd').addEventListener('click', () => { $('#fEnd').value = ''; drawPv(); });
+$('#chips').addEventListener('click', e => { const b = e.target.closest('button[data-amt]'); if (!b) return; $('#addAmt').value = b.dataset.amt; $('#addAmt').focus(); });
+
+/* photo: choose or drag, resized to 1600px wide before upload */
 const drop = $('#coverDrop'), fileIn = $('#coverFile');
 drop.addEventListener('click', e => { if (!e.target.closest('.cover-tools')) fileIn.click(); });
 drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); fileIn.click(); } });
@@ -826,10 +1044,9 @@ fileIn.addEventListener('change', () => { if (fileIn.files[0]) useCover(fileIn.f
 async function useCover(file){
   if (!file.type.startsWith('image/')) return toast('Please choose a photo (JPG, PNG or WebP).', true);
   try {
-    coverBlob = await shrink(file);
+    coverBlob = await shrink(file); removeCoverFlag = false;
     if (coverPreview) URL.revokeObjectURL(coverPreview);
-    coverPreview = URL.createObjectURL(coverBlob);
-    showCover(coverPreview); dirty = true; refreshEditor();
+    coverPreview = URL.createObjectURL(coverBlob); showCover(coverPreview);
   } catch (e){ toast('That photo couldn’t be opened. Try another one.', true); }
 }
 async function shrink(file, max = 1600, quality = .82){
@@ -841,56 +1058,316 @@ async function shrink(file, max = 1600, quality = .82){
 }
 function showCover(url){
   $$('img, .cover-tools', drop).forEach(x => x.remove());
-  $('#pvImg').style.backgroundImage = url ? `url('${url}')` : '';
-  $('#pvImg').innerHTML = url ? '' : '<i class="fa fa-image"></i>';
   if (!url) return;
   const img = document.createElement('img'); img.src = url; img.alt = ''; drop.appendChild(img);
   const tools = document.createElement('div'); tools.className = 'cover-tools';
   tools.innerHTML = '<button type="button" class="btn btn-ghost btn-sm" data-c="change"><i class="fa fa-arrows-rotate"></i> Change</button><button type="button" class="btn btn-danger btn-sm" data-c="remove"><i class="fa fa-xmark"></i> Remove</button>';
   tools.querySelector('[data-c=change]').addEventListener('click', () => fileIn.click());
-  tools.querySelector('[data-c=remove]').addEventListener('click', () => { coverBlob = null; if (editing) editing._removeCover = true; showCover(null); dirty = true; refreshEditor(); });
+  tools.querySelector('[data-c=remove]').addEventListener('click', () => { coverBlob = null; removeCoverFlag = true; showCover(null); });
   drop.appendChild(tools);
 }
 
+/* save details / create */
+async function patch(id, fields){
+  const { data, error } = await sb.from('campaigns').update({ last_note: null, ...fields }).eq('id', id).select().single();
+  if (error) throw error;
+  return data;
+}
+$('#detForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const name = $('#fNameEn').value.trim();
+  if (!name){ $('#fNameEn').focus(); return toast('Please add the campaign name in English.', true); }
+  const goal = num($('#fGoal').value);
+  if (!(goal > 0)){ $('#fGoal').focus(); return toast('Please enter the goal in RM (more than 0).', true); }
+  const btn = $('#saveBtn'); busy(btn, true);
+  try {
+    let image_url = cur && !removeCoverFlag ? cur.image_url : null;
+    if (coverBlob){
+      const path = 'covers/' + new Date().toISOString().slice(0, 10) + '-' + (slugify(name) || 'campaign') + '-' + Math.random().toString(36).slice(2, 7) + '.jpg';
+      const up = await sb.storage.from('campaign-images').upload(path, coverBlob, { contentType: 'image/jpeg', cacheControl: '31536000' });
+      if (up.error) throw up.error;
+      if (cur && cur.image_url) removeImage(cur.image_url);
+      image_url = sb.storage.from('campaign-images').getPublicUrl(path).data.publicUrl; coverBlob = null;
+    } else if (removeCoverFlag && cur && cur.image_url){ removeImage(cur.image_url); }
+    const fields = {
+      name_en: name, name_zh: $('#fNameZh').value.trim() || null,
+      summary_en: $('#fSumEn').value.trim() || null, summary_zh: $('#fSumZh').value.trim() || null,
+      result_en: $('#fResEn').value.trim() || null, result_zh: $('#fResZh').value.trim() || null,
+      goal, end_date: $('#fEnd').value || null, image_url
+    };
+    if (!cur){
+      Object.assign(fields, { raised: Math.max(0, num($('#fStart').value) || 0), status: 'active', featured: $('#fFront').checked, last_note: null });
+      const { data, error } = await sb.from('campaigns').insert(fields).select().single();
+      if (error) throw error;
+      await ensureCampaigns(true);
+      toast('Campaign created.' + (data.featured ? ' It is now shown at the front of the website.' : ''));
+      location.hash = '#campaign/' + data.id;
+    } else {
+      cur = await patch(cur.id, fields); removeCoverFlag = false;
+      await ensureCampaigns(true); cur = campaigns.find(c => c.id === cur.id) || cur;
+      fillForm(cur); drawDetail(); loadLog(cur.id);
+      toast('Details saved. The website is updated.');
+    }
+  } catch (err){ toast(friendly(err), true); }
+  busy(btn, false);
+});
+
+/* ── progress ── */
+async function afterProgress(row, message){
+  cur = row; const i = campaigns.findIndex(c => c.id === row.id); if (i > -1) campaigns[i] = row;
+  $('#setAmt').value = row.raised; drawDetail(); loadLog(row.id); toast(message);
+}
+$('#addForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const amount = num($('#addAmt').value), note = $('#addNote').value.trim();
+  if (!(amount > 0)) return toast('Please enter the amount that came in (more than 0).', true);
+  if (amount >= 10000 && !confirm('Add ' + rm(amount) + ' to the total? Please check the amount is right.')) return;
+  const btn = $('#addForm button[type=submit]'); busy(btn, true);
+  const { data, error } = await sb.rpc('campaign_add', { p_id: cur.id, p_amount: amount, p_note: note || null });
+  busy(btn, false);
+  if (error) return toast(friendly(error), true);
+  const row = Array.isArray(data) ? data[0] : data;
+  $('#addAmt').value = ''; $('#addNote').value = '';
+  afterProgress(row, rm(amount) + ' added. The website now shows ' + rm(row.raised) + '.');
+});
+$('#setForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const total = num($('#setAmt').value), note = $('#setNote').value.trim();
+  if (!(total >= 0)) return toast('Please enter the new total (0 or more).', true);
+  if (total === +cur.raised) return toast('That is already the total.', true);
+  if (total < +cur.raised && !confirm('This LOWERS the total from ' + rm(cur.raised) + ' to ' + rm(total) + '. Continue?')) return;
+  const btn = $('#setForm button[type=submit]'); busy(btn, true);
+  try { const row = await patch(cur.id, { raised: total, last_note: note || null }); $('#setNote').value = ''; afterProgress(row, 'Total set to ' + rm(total) + '.'); }
+  catch (err){ toast(friendly(err), true); }
+  busy(btn, false);
+});
+
+/* ── show at the front / end / reopen / delete ── */
+async function statusChange(fields, message){
+  try {
+    cur = await patch(cur.id, fields);
+    await ensureCampaigns(true); cur = campaigns.find(c => c.id === cur.id) || cur;
+    drawDetail(); loadLog(cur.id); toast(message);
+  } catch (err){ toast(friendly(err), true); }
+}
+$('#actFront').addEventListener('click', () => statusChange({ featured: true }, 'Now shown at the front of the website.'));
+$('#actEnd').addEventListener('click', () => {
+  if (!confirm('End “' + cur.name_en + '”?\n\nIt leaves the front of the website and moves into the Campaign Archive on the Moments page, showing ' + rm(cur.raised) + ' raised.' + (cur.result_en ? '' : '\n\nTip: add a thank-you under “Thank-you / result for the archive” first.') + '\n\nYou can reopen it later.')) return;
+  statusChange({ status: 'ended' }, 'Campaign ended. It now appears in the Campaign Archive on the Moments page.');
+});
+$('#actReopen').addEventListener('click', () => statusChange({ status: 'active' }, 'Campaign reopened. Use “Show at the front” to put it on the website.'));
+$('#actDelete').addEventListener('click', () => deleteCampaign(cur));
+
+/* ── activity log ── */
+async function loadLog(campaignId){
+  const ul = campaignId ? $('#logList') : $('#recentLog');
+  let q = sb.from('campaigns_log').select('*').order('created_at', { ascending: false }).limit(campaignId ? 30 : 15);
+  if (campaignId) q = q.eq('campaign_id', campaignId);
+  const { data, error } = await q;
+  if (error){ ul.innerHTML = '<li class="empty">' + esc(friendly(error)) + '</li>'; return; }
+  ul.innerHTML = data.length ? data.map(r => logRow(r, !campaignId)).join('') : '<li class="empty">No changes yet. Updates you make will be listed here.</li>';
+}
+function logRow(r, showName){
+  const nm = showName ? '<em>' + esc(r.campaign_name || 'Campaign') + '</em> · ' : '';
+  const d = (+r.new_raised) - (+r.old_raised);
+  let ic = 'fa-pen', kind = 'set', text;
+  switch (r.action){
+    case 'created':  ic = 'fa-flag'; kind = 'goal'; text = nm + 'Campaign created' + (+r.new_raised ? ' with <b>' + rm(r.new_raised) + '</b> raised' : ''); break;
+    case 'progress': ic = d > 0 ? 'fa-plus' : 'fa-minus'; kind = d > 0 ? '' : 'set'; text = nm + '<b>' + (d > 0 ? '+' : '−') + rm(Math.abs(d)) + '</b> · total now ' + rm(r.new_raised); break;
+    case 'goal':     ic = 'fa-bullseye'; kind = 'goal'; text = nm + 'Goal changed to <b>' + rm(r.new_goal) + '</b> (was ' + rm(r.old_goal) + ')'; break;
+    case 'ended':    ic = 'fa-flag-checkered'; kind = 'goal'; text = nm + 'Campaign ended at <b>' + rm(r.new_raised) + '</b> of ' + rm(r.new_goal); break;
+    case 'reopened': ic = 'fa-rotate-left'; text = nm + 'Campaign reopened'; break;
+    case 'featured': ic = 'fa-bullhorn'; kind = ''; text = nm + 'Now shown at the front of the website'; break;
+    case 'deleted':  ic = 'fa-trash'; kind = 'bad'; text = nm + 'Campaign deleted' + (+r.old_raised ? ' (it had <b>' + rm(r.old_raised) + '</b> recorded)' : ''); break;
+    default: text = nm + esc(r.action);
+  }
+  return '<li><span class="ic ' + kind + '"><i class="fa ' + ic + '"></i></span><span>' + text + '</span><span class="when">' + esc(when(r.created_at)) + '</span><small>' + esc(r.email || 'Set up automatically') + (r.note ? ' · “' + esc(r.note) + '”' : '') + '</small></li>';
+}
+
+/* ═══ BLOG POSTS ═══ */
+let blogs = null, bpost = null, bBlob = null, bPreview = null, bRemove = false, bLang = 'en', bFilter = 'all';
+const fmtDate = d => d ? new Date(d).toLocaleDateString('en-MY', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+/* story text → safe formatted HTML (paragraphs, "- " bullets, "## " headings) */
+function renderStory(text, target){
+  target.textContent = '';
+  String(text || '').replace(/\r/g, '').split(/\n{2,}/).map(b => b.trim()).filter(Boolean).forEach(block => {
+    const lines = block.split('\n');
+    if (lines.every(l => /^\s*[-•]\s+/.test(l))){
+      const ul = document.createElement('ul');
+      lines.forEach(l => { const li = document.createElement('li'); li.textContent = l.replace(/^\s*[-•]\s+/, ''); ul.appendChild(li); });
+      target.appendChild(ul);
+    } else if (/^##\s+/.test(block)){
+      const h = document.createElement('h4'); h.textContent = block.replace(/^##\s+/, ''); target.appendChild(h);
+    } else {
+      const p = document.createElement('p');
+      lines.forEach((l, i) => { if (i) p.appendChild(document.createElement('br')); p.appendChild(document.createTextNode(l)); });
+      target.appendChild(p);
+    }
+  });
+}
+function removeBlogImage(url){
+  const m = String(url || '').match(/\/object\/public\/blog-images\/(.+)$/);
+  if (m) sb.storage.from('blog-images').remove([decodeURIComponent(m[1])]);
+}
+
+/* ── the list ── */
+$('#postSearch').addEventListener('input', renderPosts);
+$$('#statusSeg button').forEach(b => b.addEventListener('click', () => {
+  bFilter = b.dataset.status; $$('#statusSeg button').forEach(x => x.classList.toggle('on', x === b)); renderPosts();
+}));
+async function loadPosts(render){
+  const list = $('#postList');
+  if (render) list.innerHTML = '<p class="empty"><i class="fa fa-circle-notch fa-spin"></i> Loading posts…</p>';
+  const { data, error } = await sb.from('posts').select('*').order('updated_at', { ascending: false });
+  if (error){ if (render) list.innerHTML = '<p class="empty">' + esc(friendly(error)) + '</p>'; blogs = blogs || []; return false; }
+  blogs = data || []; if (render) renderPosts(); return true;
+}
+function renderPosts(){
+  const list = $('#postList'); if (!blogs) return;
+  const q = $('#postSearch').value.trim().toLowerCase();
+  const rows = blogs.filter(p => (bFilter === 'all' || p.status === bFilter) && (!q || [p.title_en, p.title_zh, p.tag, p.excerpt_en].join(' ').toLowerCase().includes(q)));
+  if (!blogs.length){ list.innerHTML = '<div class="card" style="text-align:center;padding:2.4rem"><p style="font-family:var(--display);font-size:1.3rem;color:var(--ink-900);margin-bottom:.4rem">No posts yet</p><p class="empty" style="margin-bottom:1rem">Write your first post. Once published, it appears on the Blog page.</p><a class="btn btn-sun" href="#post/new"><i class="fa fa-plus"></i> Write a post</a></div>'; return; }
+  if (!rows.length){ list.innerHTML = '<p class="empty">No posts match.</p>'; return; }
+  list.innerHTML = rows.map(p => '<div class="prow"><div class="pthumb" data-bg="' + esc(p.cover_url || '') + '">' + (p.cover_url ? '' : '<i class="fa fa-image"></i>') + '</div>'
+    + '<div class="pmain"><b>' + esc(p.title_en) + '</b><span>' + (p.title_zh ? esc(p.title_zh) + ' · ' : '') + esc(p.tag) + ' · ' + (p.status === 'published' ? 'Published ' + fmtDate(p.published_at) : 'Edited ' + fmtDate(p.updated_at)) + '</span></div>'
+    + '<span class="pill ' + (p.status === 'published' ? 'pub' : 'draft') + '"><i class="fa ' + (p.status === 'published' ? 'fa-circle-check' : 'fa-pen') + '"></i>' + (p.status === 'published' ? 'Published' : 'Draft') + '</span>'
+    + '<div class="pact"><a class="icon-btn" href="#post/' + p.id + '" title="Edit"><i class="fa fa-pen"></i></a>'
+    + (p.status === 'published' ? '<a class="icon-btn" href="blog.html#post-' + encodeURIComponent(p.slug) + '" target="_blank" rel="noopener" title="View on website"><i class="fa fa-arrow-up-right-from-square"></i></a>' : '')
+    + '<button class="icon-btn del" type="button" data-pdel="' + p.id + '" title="Delete"><i class="fa fa-trash"></i></button></div></div>').join('');
+  $$('.pthumb', list).forEach(t => { if (t.dataset.bg) t.style.backgroundImage = 'url("' + t.dataset.bg.replace(/"/g, '%22') + '")'; });
+  $$('[data-pdel]', list).forEach(b => b.addEventListener('click', () => deleteBlogPost(blogs.find(p => p.id === b.dataset.pdel))));
+}
+async function deleteBlogPost(p){
+  if (!p || !confirm('Delete “' + p.title_en + '”?\n\nIt will disappear from the website. This can’t be undone.' + (p.status === 'published' ? '\n\n(To hide it but keep it, open it and choose “Unpublish”.)' : ''))) return;
+  const { data, error } = await sb.from('posts').delete().eq('id', p.id).select();
+  if (error) return toast(friendly(error), true);
+  if (!data || !data.length) return toast('That post could not be deleted. Please refresh and try again.', true);
+  removeBlogImage(p.cover_url);
+  blogs = blogs.filter(x => x.id !== p.id);
+  toast('Post deleted');
+  if (location.hash.startsWith('#post/')){ bDirty = false; location.hash = '#posts'; } else renderPosts();
+}
+
+/* ── the editor ── */
+const BF = { tag: '#fTag', slug: '#fSlug', title_en: '#fTitleEn', excerpt_en: '#fExEn', body_en: '#fBodyEn', title_zh: '#fTitleZh', excerpt_zh: '#fExZh', body_zh: '#fBodyZh' };
+async function openPost(id){
+  if (!blogs) await loadPosts(false);
+  bBlob = null; bRemove = false; bDirty = false; bpost = null;
+  if (bPreview){ URL.revokeObjectURL(bPreview); bPreview = null; }
+  Object.values(BF).forEach(s => $(s).value = ''); $('#fTag').value = 'News'; delete $('#fSlug').dataset.touched;
+  setBLang('en');
+  if (id !== 'new'){
+    let p = blogs.find(x => x.id === id);
+    if (!p){ const { data } = await sb.from('posts').select('*').eq('id', id).maybeSingle(); p = data; }
+    if (!p){ toast('That post could not be found.', true); location.hash = '#posts'; return; }
+    bpost = p; Object.entries(BF).forEach(([k, s]) => $(s).value = p[k] || '');
+  }
+  $('#pageTitle').textContent = bpost ? 'Edit post' : 'Write a post';
+  showBCover(bpost ? bpost.cover_url : null);
+  refreshEditor(); updatePreview();
+}
+function refreshEditor(){
+  const pub = bpost && bpost.status === 'published';
+  $('#edStatus').innerHTML = (bpost
+    ? '<span class="pill ' + (pub ? 'pub' : 'draft') + '">' + (pub ? 'Published' : 'Draft') + '</span> ' + (pub ? 'Live on the Blog page since ' + fmtDate(bpost.published_at) : 'Not visible on the website yet')
+    : '<span class="pill draft">New</span> Not saved yet') + (bDirty ? ' · <span class="ed-dirty">Unsaved changes</span>' : '');
+  $('#publishBtn span').textContent = pub ? 'Update' : 'Publish';
+  $('#saveDraft').innerHTML = '<i class="fa ' + (pub ? 'fa-eye-slash' : 'fa-floppy-disk') + ' ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> ' + (pub ? 'Unpublish (move to drafts)' : 'Save draft');
+  $('#deleteBtn').hidden = !bpost;
+  $('#viewLive').hidden = !pub;
+  if (pub) $('#viewLive').href = 'blog.html#post-' + encodeURIComponent(bpost.slug);
+  $$('[data-count-for]').forEach(c => c.textContent = $('#' + c.dataset.countFor).value.length + ' / 400');
+}
+function setBLang(l){
+  bLang = l;
+  $$('#langTabs button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  $$('[data-lang-fields]').forEach(f => f.hidden = f.dataset.langFields !== l);
+  updatePreview();
+}
+$$('#langTabs button').forEach(b => b.addEventListener('click', () => setBLang(b.dataset.lang)));
+$('#edForm').addEventListener('input', e => {
+  if (e.target === $('#fTitleEn') && !$('#fSlug').dataset.touched && !bpost) $('#fSlug').value = slugify($('#fTitleEn').value);
+  if (e.target === $('#fSlug')) $('#fSlug').dataset.touched = '1';
+  bDirty = true; refreshEditor(); updatePreview();
+});
+function updatePreview(){
+  const zh = bLang === 'zh';
+  const pick = k => (zh && $(BF[k + '_zh']).value.trim()) || $(BF[k + '_en']).value.trim();
+  $('#pvTag').textContent = $('#fTag').value;
+  $('#pvDate').textContent = fmtDate((bpost && bpost.published_at) || new Date());
+  $('#pvTitle').textContent = pick('title') || 'Your title will appear here';
+  $('#pvEx').textContent = pick('excerpt') || 'The short summary appears under the title.';
+  renderStory(pick('body'), $('#pvStory'));
+  $('#pvStory').hidden = !pick('body');
+}
+
+/* cover photo: choose or drag, resized to 1600px wide before upload */
+const bDrop = $('#bCoverDrop'), bFile = $('#bCoverFile');
+bDrop.addEventListener('click', e => { if (!e.target.closest('.cover-tools')) bFile.click(); });
+bDrop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); bFile.click(); } });
+['dragenter', 'dragover'].forEach(ev => bDrop.addEventListener(ev, e => { e.preventDefault(); bDrop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(ev => bDrop.addEventListener(ev, e => { e.preventDefault(); bDrop.classList.remove('over'); }));
+bDrop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) useBCover(f); });
+bFile.addEventListener('change', () => { if (bFile.files[0]) useBCover(bFile.files[0]); bFile.value = ''; });
+async function useBCover(file){
+  if (!file.type.startsWith('image/')) return toast('Please choose a photo (JPG, PNG or WebP).', true);
+  try {
+    bBlob = await shrink(file); bRemove = false;
+    if (bPreview) URL.revokeObjectURL(bPreview);
+    bPreview = URL.createObjectURL(bBlob); showBCover(bPreview); bDirty = true; refreshEditor();
+  } catch (e){ toast('That photo couldn’t be opened. Try another one.', true); }
+}
+function showBCover(url){
+  $$('img, .cover-tools', bDrop).forEach(x => x.remove());
+  $('#pvImg').style.backgroundImage = url ? 'url("' + url.replace(/"/g, '%22') + '")' : '';
+  $('#pvImg').innerHTML = url ? '' : '<i class="fa fa-image"></i>';
+  if (!url) return;
+  const img = document.createElement('img'); img.src = url; img.alt = ''; bDrop.appendChild(img);
+  const tools = document.createElement('div'); tools.className = 'cover-tools';
+  tools.innerHTML = '<button type="button" class="btn btn-ghost btn-sm" data-c="change"><i class="fa fa-arrows-rotate"></i> Change</button><button type="button" class="btn btn-danger btn-sm" data-c="remove"><i class="fa fa-xmark"></i> Remove</button>';
+  tools.querySelector('[data-c=change]').addEventListener('click', () => bFile.click());
+  tools.querySelector('[data-c=remove]').addEventListener('click', () => { bBlob = null; bRemove = true; showBCover(null); bDirty = true; refreshEditor(); });
+  bDrop.appendChild(tools);
+}
+
 /* save: draft / publish / update / unpublish */
-$('#saveDraft').addEventListener('click', e => save(editing?.status === 'published' ? 'draft' : 'draft', e.currentTarget));
-$('#publishBtn').addEventListener('click', e => save('published', e.currentTarget));
-$('#deleteBtn').addEventListener('click', () => deletePost(editing));
-async function save(status, btn){
+$('#saveDraft').addEventListener('click', e => savePost('draft', e.currentTarget));
+$('#publishBtn').addEventListener('click', e => savePost('published', e.currentTarget));
+$('#deleteBtn').addEventListener('click', () => deleteBlogPost(bpost));
+async function savePost(status, btn){
   const title = $('#fTitleEn').value.trim();
-  if (!title){ setLang('en'); $('#fTitleEn').focus(); return toast('Please add an English title first.', true); }
-  let slug = slugify($('#fSlug').value) || slugify(title) || 'post-' + Date.now().toString(36);
+  if (!title){ setBLang('en'); $('#fTitleEn').focus(); return toast('Please add an English title first.', true); }
+  const slug = slugify($('#fSlug').value) || slugify(title) || 'post-' + Date.now().toString(36);
   busy(btn, true);
   try {
-    let cover_url = editing && !editing._removeCover ? editing.cover_url : null;
-    if (coverBlob){
-      const path = `covers/${new Date().toISOString().slice(0, 10)}-${slug}-${Math.random().toString(36).slice(2, 7)}.jpg`;
-      const up = await sb.storage.from('blog-images').upload(path, coverBlob, { contentType: 'image/jpeg', cacheControl: '31536000' });
+    let cover_url = bpost && !bRemove ? bpost.cover_url : null;
+    if (bBlob){
+      const path = 'covers/' + new Date().toISOString().slice(0, 10) + '-' + slug + '-' + Math.random().toString(36).slice(2, 7) + '.jpg';
+      const up = await sb.storage.from('blog-images').upload(path, bBlob, { contentType: 'image/jpeg', cacheControl: '31536000' });
       if (up.error) throw up.error;
-      if (editing?.cover_url) removeCover(editing.cover_url);
-      cover_url = sb.storage.from('blog-images').getPublicUrl(path).data.publicUrl;
-      coverBlob = null;
-    } else if (editing?._removeCover && editing.cover_url){ removeCover(editing.cover_url); }
+      if (bpost && bpost.cover_url) removeBlogImage(bpost.cover_url);
+      cover_url = sb.storage.from('blog-images').getPublicUrl(path).data.publicUrl; bBlob = null;
+    } else if (bRemove && bpost && bpost.cover_url){ removeBlogImage(bpost.cover_url); }
     const row = {
       tag: $('#fTag').value, slug, status, cover_url,
       title_en: title, title_zh: $('#fTitleZh').value.trim() || null,
       excerpt_en: $('#fExEn').value.trim() || null, excerpt_zh: $('#fExZh').value.trim() || null,
       body_en: $('#fBodyEn').value.trim() || null, body_zh: $('#fBodyZh').value.trim() || null
     };
-    let res = await write(row);
-    if (res.error && res.error.code === '23505'){ row.slug = slug + '-' + Math.floor(Math.random() * 90 + 10); res = await write(row); }
+    let res = await writePost(row);
+    if (res.error && res.error.code === '23505'){ row.slug = slug + '-' + Math.floor(Math.random() * 90 + 10); res = await writePost(row); }   // that link name is taken
     if (res.error) throw res.error;
-    editing = res.data; $('#fSlug').value = editing.slug; dirty = false;
-    const i = posts.findIndex(p => p.id === editing.id); if (i > -1) posts[i] = editing; else posts.unshift(editing);
-    history.replaceState(null, '', '#edit/' + editing.id); lastHash = '#edit/' + editing.id; $('#pageTitle').textContent = 'Edit post';
-    showCover(editing.cover_url); refreshEditor(); updatePreview();
-    toast(status === 'published' ? 'Published! It’s now on the Moments page.' : 'Saved as a draft. Not visible on the website.');
+    bpost = res.data; bRemove = false; $('#fSlug').value = bpost.slug; bDirty = false;
+    const i = blogs.findIndex(p => p.id === bpost.id); if (i > -1) blogs[i] = bpost; else blogs.unshift(bpost);
+    history.replaceState(null, '', '#post/' + bpost.id); lastHash = '#post/' + bpost.id; $('#pageTitle').textContent = 'Edit post';
+    showBCover(bpost.cover_url); refreshEditor(); updatePreview();
+    toast(status === 'published' ? 'Published! It’s now on the Blog page.' : 'Saved as a draft. Not visible on the website.');
   } catch (err){ toast(friendly(err), true); }
   busy(btn, false); refreshEditor();
 }
-function write(row){
-  return editing ? sb.from('posts').update(row).eq('id', editing.id).select().single()
-                 : sb.from('posts').insert(row).select().single();
+function writePost(row){
+  return bpost ? sb.from('posts').update(row).eq('id', bpost.id).select().single()
+               : sb.from('posts').insert(row).select().single();
 }
 
 /* ═══ ACCOUNT ═══ */
