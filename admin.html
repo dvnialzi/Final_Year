@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin | Amitabha Foundation Children Home</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="assets/af-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- Your Supabase connection (edit supabase-config.js, not this file) -->
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy-900:#1a242f;--navy-800:#2c3e50;--brand-red:#ab1a1f;--pink:#d9467a;
+  --ink-900:#0c1a1c;--ink-700:#1f3034;--ink-500:#4d6065;--ink-400:#6e8087;--ink-300:#9aa9ae;--line:#e3ecee;
+  --leaf-800:#22604f;--leaf-700:#2e7d6b;--leaf-600:#3b9480;--leaf-500:#6bb5a1;--leaf-400:#a5d4c4;--leaf-100:#dcefe7;--leaf-50:#eef7f3;
+  --sun:#f2a93b;--sun-d:#d98e1f;--sun-l:#ffd58a;--bg:#f5f6f2;--cream:#fff6e6;
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif;--display:"Fraunces",Georgia,serif;
+  --r:14px;--r-lg:20px;--shadow:0 4px 16px rgba(10,40,45,.06),0 18px 48px rgba(10,40,45,.06);--t:.25s ease;
+}
+html,body{min-height:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink-700);line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* buttons & form controls */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.9rem;padding:.72rem 1.2rem;border-radius:999px;transition:background var(--t),color var(--t),box-shadow var(--t),transform var(--t),opacity var(--t);white-space:nowrap}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(46,125,107,.28)}
+.btn-primary:hover:not(:disabled){background:var(--leaf-800)}
+.btn-sun{background:var(--sun);color:#3b2400;box-shadow:0 6px 18px rgba(242,169,59,.32)}
+.btn-sun:hover:not(:disabled){background:var(--sun-d);color:#fff}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--navy-800)}
+.btn-ghost:hover:not(:disabled){border-color:var(--leaf-500);color:var(--leaf-700)}
+.btn-danger{background:#fff;border:1px solid #f1d0d2;color:var(--brand-red)}
+.btn-danger:hover:not(:disabled){background:var(--brand-red);color:#fff;border-color:var(--brand-red)}
+.btn-sm{padding:.45rem .8rem;font-size:.8rem}
+.btn .spin{display:none}.btn.busy .spin{display:inline-block}.btn.busy .ic{display:none}
+label.f{display:flex;flex-direction:column;gap:.35rem;font-size:.82rem;font-weight:700;color:var(--ink-700)}
+label.f small{font-weight:500;color:var(--ink-400)}
+.in{width:100%;padding:.75rem .9rem;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:.95rem;font-weight:500;transition:border-color var(--t),box-shadow var(--t)}
+.in:focus{outline:none;border-color:var(--leaf-500);box-shadow:0 0 0 4px rgba(107,181,161,.18)}
+textarea.in{resize:vertical;min-height:110px;line-height:1.6}
+.hint{font-size:.78rem;color:var(--ink-400);font-weight:500}
+.count{font-size:.72rem;color:var(--ink-400);align-self:flex-end;font-weight:600}
+
+/* ── LOGIN & SETUP ── */
+.auth{min-height:100vh;display:grid;place-items:center;padding:2rem 1rem;background:radial-gradient(700px 500px at 85% 10%,rgba(242,169,59,.22),transparent 60%),radial-gradient(600px 500px at 10% 90%,rgba(107,181,161,.25),transparent 60%),linear-gradient(135deg,#1f3a3a,#22604f)}
+.auth-card{position:relative;width:min(430px,100%);background:#fff;border-radius:26px;padding:2.4rem 2.2rem 2rem;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.auth-logo{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
+.auth-logo img{height:52px;width:auto}
+.auth-logo span{font-family:var(--display);font-weight:600;color:var(--leaf-800);font-size:1.1rem;line-height:1.1;padding-left:.8rem;border-left:2px solid var(--sun)}
+.auth h1{font-family:var(--display);font-weight:600;font-size:1.8rem;color:var(--ink-900);line-height:1.15;margin-bottom:.35rem}
+.auth p.sub{color:var(--ink-500);font-size:.92rem;margin-bottom:1.5rem}
+.auth form{display:flex;flex-direction:column;gap:1rem}
+.auth .btn{width:100%;padding:.9rem}
+.auth-links{display:flex;justify-content:space-between;align-items:center;margin-top:1.1rem;font-size:.84rem;font-weight:600}
+.auth-links a,.auth-links button{color:var(--leaf-700)}
+.auth-links a:hover,.auth-links button:hover{text-decoration:underline}
+.pw{position:relative}
+.pw .in{padding-right:2.8rem}
+.pw button{position:absolute;right:.6rem;top:50%;translate:0 -50%;width:34px;height:34px;border-radius:10px;color:var(--ink-400)}
+.pw button:hover{color:var(--leaf-700);background:var(--leaf-50)}
+.msg{font-size:.86rem;font-weight:600;border-radius:12px;padding:.7rem .9rem;margin-top:1rem;display:none}
+.msg.err{display:block;background:#fbe9ea;color:var(--brand-red)}
+.msg.ok{display:block;background:var(--leaf-50);color:var(--leaf-800)}
+.setup ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.55rem;font-size:.9rem;color:var(--ink-500);margin:1rem 0 1.4rem}
+.setup code{background:var(--leaf-50);color:var(--leaf-800);padding:.1rem .4rem;border-radius:6px;font-size:.85em}
+
+/* ── APP LAYOUT ── */
+#app{display:grid;grid-template-columns:262px 1fr;min-height:100vh}
+.side{position:sticky;top:0;height:100vh;background:var(--navy-900);color:#fff;display:flex;flex-direction:column;padding:1.2rem .9rem;z-index:40}
+.side-logo{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;padding:.55rem .7rem}
+.side-logo img{height:46px;width:auto}
+.side-title{display:flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--sun-l);margin:1rem .7rem 1rem}
+.side-title::before{content:"";width:18px;height:2px;background:var(--sun);border-radius:2px}
+.side nav{display:flex;flex-direction:column;gap:.25rem}
+.side nav a,.side-foot a,.side-foot button{position:relative;display:flex;align-items:center;gap:.8rem;width:100%;padding:.78rem .9rem;border-radius:12px;color:rgba(255,255,255,.72);font-weight:600;font-size:.93rem;transition:background var(--t),color var(--t)}
+.side nav a i,.side-foot i{width:20px;text-align:center;color:var(--leaf-400)}
+.side nav a:hover,.side-foot a:hover,.side-foot button:hover{background:rgba(255,255,255,.07);color:#fff}
+.side nav a.on{background:rgba(255,255,255,.11);color:#fff}
+.side nav a.on::before{content:"";position:absolute;left:-.9rem;top:22%;bottom:22%;width:4px;border-radius:0 4px 4px 0;background:var(--sun)}
+.side nav a.on i{color:var(--sun-l)}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:.2rem;border-top:1px solid rgba(255,255,255,.08);padding-top:.8rem}
+.side-me{font-size:.75rem;color:rgba(255,255,255,.45);padding:.2rem .9rem .5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.main{min-width:0;padding:0 clamp(1rem,3vw,2.4rem) 3rem}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1rem;padding:1.2rem 0 1rem;background:rgba(245,246,242,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.top h1{font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,3vw,1.85rem);color:var(--ink-900);line-height:1.15;flex:1}
+.top-burger{display:none;width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);color:var(--navy-800)}
+.view{animation:fadeUp .35s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:1.4rem 1.5rem}
+.card h2{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--ink-900);margin-bottom:1rem;display:flex;align-items:center;gap:.55rem}
+.card h2 i{color:var(--leaf-600);font-size:.95rem}
+.empty{color:var(--ink-400);font-size:.88rem;padding:.6rem 0}
+
+/* ── DASHBOARD ── */
+.dash-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.dash-head p{color:var(--ink-500);font-size:.92rem}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+.seg button{padding:.45rem .95rem;border-radius:999px;font-size:.84rem;font-weight:700;color:var(--ink-500);transition:background var(--t),color var(--t)}
+.seg button.on{background:var(--leaf-700);color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem}
+.kpi{position:relative;overflow:hidden;display:flex;align-items:center;gap:1rem}
+.kpi-ic{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;color:#fff;background:var(--c,var(--leaf-700));flex-shrink:0;box-shadow:0 8px 18px rgba(10,40,45,.15)}
+.kpi b{display:block;font-family:var(--display);font-weight:600;font-size:1.9rem;color:var(--navy-800);line-height:1.05}
+.kpi span{font-size:.78rem;font-weight:700;color:var(--ink-400);text-transform:uppercase;letter-spacing:.05em}
+.dash-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1rem;margin-bottom:1rem}
+.dash-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.chart{position:relative;width:100%;height:250px}
+.chart svg{display:block;width:100%;height:100%;overflow:visible}
+.legend{display:flex;gap:1rem;font-size:.78rem;font-weight:700;color:var(--ink-500);margin:-.4rem 0 .6rem}
+.legend span{display:inline-flex;align-items:center;gap:.4rem}
+.legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.tip{position:absolute;pointer-events:none;background:var(--navy-900);color:#fff;font-size:.78rem;padding:.5rem .7rem;border-radius:10px;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.2);opacity:0;transition:opacity .15s;transform:translate(-50%,-110%)}
+.tip b{display:block;color:var(--sun-l);font-weight:700;margin-bottom:.1rem}
+.bars{display:flex;flex-direction:column;gap:.7rem}
+.bar-row{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;font-size:.86rem;font-weight:600}
+.bar-row .track{grid-column:1 / -1;height:8px;border-radius:99px;background:var(--leaf-50);overflow:hidden}
+.bar-row .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--leaf-500),var(--leaf-700));width:0;transition:width .8s cubic-bezier(.2,.7,.3,1)}
+.bar-row .num{color:var(--ink-500)}
+.donut-wrap{display:flex;align-items:center;gap:1.2rem}
+.donut{width:130px;height:130px;flex-shrink:0}
+.donut-legend{display:flex;flex-direction:column;gap:.5rem;font-size:.86rem;font-weight:600}
+.donut-legend span{display:flex;align-items:center;gap:.5rem}
+.donut-legend i{width:11px;height:11px;border-radius:3px}
+.clicks{display:flex;flex-direction:column;gap:.55rem}
+.click-row{display:flex;align-items:center;gap:.8rem;font-size:.88rem;font-weight:600;padding:.55rem .7rem;border-radius:12px;background:var(--bg)}
+.click-row .ci{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;flex-shrink:0}
+.click-row em{font-style:normal;margin-left:auto;font-family:var(--display);font-size:1.1rem;color:var(--navy-800)}
+.click-row small{display:block;font-size:.74rem;color:var(--ink-400);font-weight:600}
+
+/* ── POSTS LIST ── */
+.toolbar{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:1rem}
+.search{position:relative;flex:1;min-width:200px}
+.search i{position:absolute;left:.9rem;top:50%;translate:0 -50%;color:var(--ink-300)}
+.search .in{padding-left:2.4rem;border-radius:999px}
+.plist{display:flex;flex-direction:column;gap:.7rem}
+.prow{display:grid;grid-template-columns:88px 1fr auto auto;gap:1rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:.7rem;transition:border-color var(--t),box-shadow var(--t)}
+.prow:hover{border-color:var(--leaf-100);box-shadow:var(--shadow)}
+.pthumb{width:88px;height:64px;border-radius:10px;background:var(--leaf-100) center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:var(--leaf-500);font-size:1.2rem}
+.pmain{min-width:0}
+.pmain b{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pmain span{display:block;font-size:.8rem;color:var(--ink-400);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px}
+.pill.pub{background:var(--leaf-50);color:var(--leaf-700)}
+.pill.draft{background:var(--cream);color:var(--sun-d)}
+.pact{display:flex;gap:.4rem}
+.icon-btn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--ink-500);display:inline-flex;align-items:center;justify-content:center;transition:all var(--t)}
+.icon-btn:hover{border-color:var(--leaf-500);color:var(--leaf-700);background:var(--leaf-50)}
+.icon-btn.del:hover{border-color:var(--brand-red);color:#fff;background:var(--brand-red)}
+
+/* ── EDITOR ── */
+.ed{display:grid;grid-template-columns:1.25fr 1fr;gap:1.2rem;align-items:start}
+.ed-form{display:flex;flex-direction:column;gap:1.1rem}
+.ed-status{display:flex;align-items:center;gap:.6rem;font-size:.84rem;color:var(--ink-500);font-weight:600}
+.ed-dirty{color:var(--sun-d)}
+.cover-drop{position:relative;border:2px dashed var(--leaf-400);border-radius:16px;background:var(--leaf-50);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center;color:var(--leaf-700);font-weight:700;font-size:.9rem;cursor:pointer;overflow:hidden;transition:border-color var(--t),background var(--t)}
+.cover-drop:hover,.cover-drop.over{border-color:var(--leaf-700);background:var(--leaf-100)}
+.cover-drop i{font-size:1.8rem}
+.cover-drop small{font-weight:500;color:var(--ink-400)}
+.cover-drop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover-tools{position:absolute;right:.6rem;bottom:.6rem;display:flex;gap:.4rem;z-index:2}
+.tabs{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;align-self:flex-start}
+.tabs button{padding:.45rem 1.1rem;border-radius:999px;font-weight:700;font-size:.86rem;color:var(--ink-500)}
+.tabs button.on{background:var(--navy-800);color:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.ed-actions{position:sticky;bottom:0;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;background:rgba(245,246,242,.95);backdrop-filter:blur(6px);padding:.9rem 0;border-top:1px solid var(--line)}
+.ed-actions .grow{flex:1}
+.preview{position:sticky;top:88px}
+.preview .card{padding:1.1rem}
+.prev-label{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-400);margin-bottom:.7rem}
+.pv-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.pv-img{aspect-ratio:16/9;background:linear-gradient(135deg,var(--leaf-100),var(--cream)) center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:var(--leaf-500);font-size:2rem}
+.pv-body{padding:1.1rem 1.2rem 1.2rem}
+.pv-meta{display:flex;gap:.6rem;align-items:center;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf-700);margin-bottom:.5rem}
+.pv-meta .tag{background:var(--leaf-50);padding:.28rem .6rem;border-radius:99px}
+.pv-meta .date{color:var(--ink-400)}
+.pv-body h3{font-family:var(--display);font-weight:600;font-size:1.15rem;line-height:1.3;color:var(--ink-900);margin-bottom:.4rem}
+.pv-body p{font-size:.88rem;color:var(--ink-500)}
+.pv-story{margin-top:1rem;max-height:380px;overflow:auto;border-top:1px solid var(--line);padding-top:1rem}
+.story p,.story li{font-size:.92rem;color:var(--ink-500);line-height:1.75}
+.story p+p,.story p+ul,.story ul+p,.story h4+p{margin-top:.75rem}
+.story h4{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink-900);margin-top:1rem}
+.story ul{padding-left:1.2rem;margin-top:.5rem}
+
+/* ── ACCOUNT ── */
+.acc{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+.acc form{display:flex;flex-direction:column;gap:1rem}
+.code{position:relative;background:var(--navy-900);color:#d9f2ea;border-radius:12px;padding:1rem 1.1rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.code button{position:absolute;right:.6rem;top:.6rem}
+.acc ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.9rem;color:var(--ink-500);margin-bottom:1rem}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:1.4rem;transform:translate(-50%,20px);background:var(--navy-900);color:#fff;font-weight:600;font-size:.9rem;padding:.8rem 1.2rem;border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:100;display:flex;align-items:center;gap:.6rem;max-width:calc(100% - 2rem)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast.err{background:var(--brand-red)}
+.toast i{color:var(--sun-l)}
+.scrim{display:none}
+
+@media(max-width:1180px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .dash-grid,.dash-grid3{grid-template-columns:1fr}
+  .ed{grid-template-columns:1fr}
+  .preview{position:static}
+}
+@media(max-width:900px){
+  #app{grid-template-columns:1fr}
+  .side{position:fixed;left:0;top:0;bottom:0;width:272px;height:auto;transform:translateX(-100%);transition:transform .3s ease}
+  .side.open{transform:none;box-shadow:20px 0 60px rgba(0,0,0,.3)}
+  .scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:30;opacity:0;pointer-events:none;transition:opacity .3s}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .top-burger{display:inline-flex;align-items:center;justify-content:center}
+  .acc{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .kpis{grid-template-columns:1fr 1fr;gap:.7rem}
+  .kpi{flex-direction:column;align-items:flex-start;gap:.6rem;padding:1rem}
+  .kpi-ic{width:40px;height:40px;border-radius:12px;font-size:.95rem}
+  .kpi b{font-size:1.5rem}
+  .row2{grid-template-columns:1fr}
+  .prow{grid-template-columns:64px 1fr;}
+  .pthumb{width:64px;height:52px}
+  .prow .pill{grid-column:2}
+  .pact{grid-column:1 / -1;justify-content:flex-end}
+  .auth-card{padding:2rem 1.4rem 1.6rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ═══ SETUP NEEDED (shown until supabase-config.js has your project details) ═══ -->
+<section class="auth" id="setup" hidden>
+  <div class="auth-card setup">
+    <div class="auth-logo"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"><span>Admin</span></div>
+    <h1>Connect your database</h1>
+    <p class="sub">The admin website needs your Supabase project before anyone can log in.</p>
+    <ol>
+      <li>Create a free project at <b>supabase.com</b> (choose the Singapore region).</li>
+      <li>Open <b>SQL Editor</b>, paste everything from <code>supabase-setup.sql</code> and press <b>Run</b>.</li>
+      <li>Go to <b>Project Settings → API</b> and copy the <b>Project URL</b> and the <b>anon public</b> key.</li>
+      <li>Paste them into <code>supabase-config.js</code> and upload it next to this page.</li>
+    </ol>
+    <p class="hint">Full step-by-step instructions are in <b>ADMIN-SETUP.md</b>.</p>
+    <div class="auth-links"><a href="index.html"><i class="fa fa-arrow-left"></i> Back to website</a></div>
+  </div>
+</section>
+
+<!-- ═══ LOGIN ═══ -->
+<section class="auth" id="login" hidden>
+  <div class="auth-card">
+    <div class="auth-logo"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"><span>Children<br>Home</span></div>
+
+    <div data-auth="login">
+      <h1>Staff login</h1>
+      <p class="sub">Log in to see visitor statistics and write blog posts.</p>
+      <form id="loginForm" novalidate>
+        <label class="f">Email<input class="in" type="email" id="loginEmail" autocomplete="username" required></label>
+        <label class="f">Password<span class="pw"><input class="in" type="password" id="loginPass" autocomplete="current-password" required><button type="button" class="pw-eye" aria-label="Show password"><i class="fa fa-eye"></i></button></span></label>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-right-to-bracket ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Log in</button>
+      </form>
+      <div class="auth-links"><a href="index.html"><i class="fa fa-arrow-left"></i> Back to website</a><button type="button" data-goto="forgot">Forgot password?</button></div>
+    </div>
+
+    <div data-auth="forgot" hidden>
+      <h1>Reset your password</h1>
+      <p class="sub">Enter your email and we’ll send you a link to choose a new password.</p>
+      <form id="forgotForm" novalidate>
+        <label class="f">Email<input class="in" type="email" id="forgotEmail" autocomplete="username" required></label>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Send reset link</button>
+      </form>
+      <div class="auth-links"><button type="button" data-goto="login"><i class="fa fa-arrow-left"></i> Back to login</button></div>
+    </div>
+
+    <div data-auth="reset" hidden>
+      <h1>Choose a new password</h1>
+      <p class="sub">Use at least 8 characters. You’ll be logged in straight after.</p>
+      <form id="resetForm" novalidate>
+        <label class="f">New password<span class="pw"><input class="in" type="password" id="resetPass" autocomplete="new-password" minlength="8" required><button type="button" class="pw-eye" aria-label="Show password"><i class="fa fa-eye"></i></button></span></label>
+        <label class="f">Type it again<input class="in" type="password" id="resetPass2" autocomplete="new-password" required></label>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-check ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Save new password</button>
+      </form>
+    </div>
+
+    <p class="msg" id="authMsg" role="alert"></p>
+  </div>
+</section>
+
+<!-- ═══ ADMIN APP ═══ -->
+<div id="app" hidden>
+  <aside class="side" id="side">
+    <a class="side-logo" href="index.html" target="_blank" rel="noopener" title="Open the website"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
+    <div class="side-title">Admin</div>
+    <nav>
+      <a href="#dashboard" data-nav="dashboard"><i class="fa fa-chart-line"></i> Dashboard</a>
+      <a href="#posts" data-nav="posts"><i class="fa fa-newspaper"></i> Blog posts</a>
+      <a href="#new" data-nav="new"><i class="fa fa-pen-to-square"></i> Write a post</a>
+      <a href="#account" data-nav="account"><i class="fa fa-user-gear"></i> My account</a>
+    </nav>
+    <div class="side-foot">
+      <div class="side-me" id="meEmail"></div>
+      <a href="index.html" target="_blank" rel="noopener"><i class="fa fa-arrow-up-right-from-square"></i> View website</a>
+      <button type="button" id="logoutBtn"><i class="fa fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <header class="top">
+      <button class="top-burger" id="burger" aria-label="Menu"><i class="fa fa-bars"></i></button>
+      <h1 id="pageTitle">Dashboard</h1>
+      <a class="btn btn-sun" href="#new" id="topNew"><i class="fa fa-plus"></i> Write a post</a>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section class="view" data-view="dashboard" hidden>
+      <div class="dash-head">
+        <p id="dashRange">Visitors to the Children Home website.</p>
+        <div class="seg" id="rangeSeg"><button data-range="7">7 days</button><button data-range="30" class="on">30 days</button><button data-range="90">90 days</button></div>
+      </div>
+      <div class="kpis">
+        <div class="card kpi" style="--c:#2e7d6b"><div class="kpi-ic"><i class="fa fa-eye"></i></div><div><b id="kViews">–</b><span>Page views</span></div></div>
+        <div class="card kpi" style="--c:#d98e1f"><div class="kpi-ic"><i class="fa fa-users"></i></div><div><b id="kVisitors">–</b><span>Visitors</span></div></div>
+        <div class="card kpi" style="--c:#ab1a1f"><div class="kpi-ic"><i class="fa fa-hand-holding-heart"></i></div><div><b id="kDonate">–</b><span>Donate clicks</span></div></div>
+        <div class="card kpi" style="--c:#1ebe5a"><div class="kpi-ic"><i class="fab fa-whatsapp"></i></div><div><b id="kWa">–</b><span>WhatsApp chats</span></div></div>
+      </div>
+      <div class="dash-grid">
+        <div class="card">
+          <h2><i class="fa fa-chart-area"></i> Visits over time</h2>
+          <div class="legend"><span><i style="background:var(--leaf-600)"></i>Page views</span><span><i style="background:var(--sun)"></i>Visitors</span></div>
+          <div class="chart" id="lineChart"></div>
+        </div>
+        <div class="card">
+          <h2><i class="fa fa-file-lines"></i> Most viewed pages</h2>
+          <div class="bars" id="pagesList"></div>
+        </div>
+      </div>
+      <div class="dash-grid3">
+        <div class="card"><h2><i class="fa fa-mobile-screen"></i> Devices</h2><div id="devices"></div></div>
+        <div class="card"><h2><i class="fa fa-arrow-pointer"></i> Button clicks</h2><div class="clicks" id="clicksList"></div></div>
+        <div class="card"><h2><i class="fa fa-globe"></i> Where visitors come from</h2><div class="bars" id="refList"></div>
+          <h2 style="margin-top:1.4rem"><i class="fa fa-language"></i> Language</h2><div class="bars" id="langList"></div></div>
+      </div>
+    </section>
+
+    <!-- POSTS -->
+    <section class="view" data-view="posts" hidden>
+      <div class="toolbar">
+        <div class="search"><i class="fa fa-magnifying-glass"></i><input class="in" id="postSearch" type="search" placeholder="Search posts…"></div>
+        <div class="seg" id="statusSeg"><button data-status="all" class="on">All</button><button data-status="published">Published</button><button data-status="draft">Drafts</button></div>
+      </div>
+      <div class="plist" id="postList"></div>
+    </section>
+
+    <!-- EDITOR -->
+    <section class="view" data-view="editor" hidden>
+      <div class="ed">
+        <form class="ed-form" id="edForm" novalidate>
+          <div class="ed-status" id="edStatus"></div>
+          <div>
+            <div class="cover-drop" id="coverDrop" tabindex="0" role="button" aria-label="Choose a cover photo">
+              <i class="fa fa-image"></i>Add a cover photo<small>Click or drag a photo here · it’s resized automatically</small>
+            </div>
+            <input type="file" id="coverFile" accept="image/*" hidden>
+          </div>
+          <div class="row2">
+            <label class="f">Category
+              <select class="in" id="fTag">
+                <option value="News">News</option><option value="Activities">Activities</option><option value="Community">Community</option>
+                <option value="Appeal">Appeal</option><option value="Story">Story</option><option value="Event">Event</option>
+              </select>
+            </label>
+            <label class="f">Link name <small>(for sharing; filled in for you)</small><input class="in" id="fSlug" placeholder="e.g. back-to-school-2026"></label>
+          </div>
+          <div class="tabs" id="langTabs"><button type="button" data-lang="en" class="on">English</button><button type="button" data-lang="zh">中文</button></div>
+          <div data-lang-fields="en">
+            <label class="f">Title <small>(required)</small><input class="in" id="fTitleEn" maxlength="160" placeholder="e.g. Thank you for our new bunk beds!"></label>
+            <label class="f" style="margin-top:1rem">Short summary <small>(shown on the card)</small><textarea class="in" id="fExEn" maxlength="400" style="min-height:80px"></textarea><span class="count" data-count-for="fExEn"></span></label>
+            <label class="f" style="margin-top:.4rem">Full story<textarea class="in" id="fBodyEn" style="min-height:230px"></textarea></label>
+          </div>
+          <div data-lang-fields="zh" hidden>
+            <label class="f">标题 Title (中文)<input class="in" id="fTitleZh" maxlength="160"></label>
+            <label class="f" style="margin-top:1rem">简介 Short summary (中文)<textarea class="in" id="fExZh" maxlength="400" style="min-height:80px"></textarea><span class="count" data-count-for="fExZh"></span></label>
+            <label class="f" style="margin-top:.4rem">正文 Full story (中文)<textarea class="in" id="fBodyZh" style="min-height:230px"></textarea></label>
+            <p class="hint" style="margin-top:.5rem">If you leave the Chinese version empty, Chinese readers will see the English text.</p>
+          </div>
+          <p class="hint"><i class="fa fa-circle-info"></i> Leave an empty line between paragraphs. Start a line with <b>- </b> for a bullet point, or <b>## </b> for a small heading.</p>
+          <div class="ed-actions">
+            <button type="button" class="btn btn-ghost" id="saveDraft"><i class="fa fa-floppy-disk ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Save draft</button>
+            <button type="button" class="btn btn-primary" id="publishBtn"><i class="fa fa-paper-plane ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> <span>Publish</span></button>
+            <span class="grow"></span>
+            <a class="btn btn-ghost btn-sm" id="viewLive" target="_blank" rel="noopener" hidden><i class="fa fa-arrow-up-right-from-square"></i> View on website</a>
+            <button type="button" class="btn btn-danger btn-sm" id="deleteBtn" hidden><i class="fa fa-trash"></i> Delete</button>
+          </div>
+        </form>
+        <aside class="preview">
+          <div class="card">
+            <div class="prev-label">Preview on the Moments page</div>
+            <div class="pv-card">
+              <div class="pv-img" id="pvImg"><i class="fa fa-image"></i></div>
+              <div class="pv-body">
+                <div class="pv-meta"><span class="tag" id="pvTag">News</span><span class="date" id="pvDate"></span></div>
+                <h3 id="pvTitle">Your title will appear here</h3>
+                <p id="pvEx">The short summary appears under the title.</p>
+                <div class="pv-story story" id="pvStory"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section class="view" data-view="account" hidden>
+      <div class="acc">
+        <div class="card">
+          <h2><i class="fa fa-key"></i> Change my password</h2>
+          <form id="pwForm" novalidate>
+            <label class="f">New password<span class="pw"><input class="in" type="password" id="newPass" autocomplete="new-password" minlength="8"><button type="button" class="pw-eye" aria-label="Show password"><i class="fa fa-eye"></i></button></span></label>
+            <label class="f">Type it again<input class="in" type="password" id="newPass2" autocomplete="new-password"></label>
+            <button class="btn btn-primary" type="submit" style="align-self:flex-start"><i class="fa fa-check ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Save new password</button>
+          </form>
+        </div>
+        <div class="card">
+          <h2><i class="fa fa-user-plus"></i> Add another admin</h2>
+          <ol>
+            <li>In Supabase, open <b>Authentication → Users → Add user</b> and create their login (email + password).</li>
+            <li>Open <b>SQL Editor</b>, paste the line below with <b>their</b> email, and press <b>Run</b>.</li>
+          </ol>
+          <div class="code" id="adminSql">insert into public.admins (user_id, email)
+select id, email from auth.users
+where email = 'their-email@example.com'
+on conflict do nothing;<button type="button" class="btn btn-ghost btn-sm" id="copySql"><i class="fa fa-copy"></i> Copy</button></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"><i class="fa fa-circle-check"></i><span></span></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   Amitabha Foundation Children Home: admin website
+   Logs in with Supabase Auth, reads the dashboard numbers from the
+   analytics_summary() function, and manages blog posts + cover photos.
+   ═══════════════════════════════════════════════════════════════════════ */
+const cfg = window.CH_SUPABASE || {};
+const READY = !!(cfg.url && cfg.anonKey && !/YOUR-PROJECT/.test(cfg.url) && !/YOUR-ANON/.test(cfg.anonKey) && window.supabase);
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const nf = n => Number(n || 0).toLocaleString('en-MY');
+const PAGE_NAMES = { index:'Home', 'our-care':'Our Care', 'success-stories':'Success Stories', moments:'Moments', 'get-involved':'Get Involved', faq:'FAQ' };
+const WA_LABELS = { help:'Seek Help / general', volunteer:'Volunteer', sponsor:'Sponsor a child', visit:'Schedule a visit', csr:'Company partnership (CSR)' };
+const CLICK_STYLE = {
+  donate:         { name:'Donate button', icon:'fa-hand-holding-heart', c:'#ab1a1f' },
+  whatsapp:       { name:'WhatsApp',      icon:'fab fa-whatsapp',      c:'#1ebe5a' },
+  phone:          { name:'Phone call',    icon:'fa-phone',             c:'#2c3e50' },
+  directions:     { name:'Get directions',icon:'fa-route',             c:'#2e7d6b' },
+  volunteer_form: { name:'Volunteer form',icon:'fa-hands-holding-child',c:'#d98e1f' },
+  give_hope:      { name:'Give Hope page',icon:'fa-seedling',          c:'#3b9480' },
+  post_open:      { name:'Blog post read', icon:'fa-newspaper',        c:'#6bb5a1' }
+};
+
+let sb = null, me = null, recovering = false;
+let range = 30, posts = [], statusFilter = 'all';
+let editing = null, coverBlob = null, coverPreview = null, dirty = false, edLang = 'en', lastHash = '';
+
+/* ── helpers ── */
+function screen(id){ ['setup', 'login', 'app'].forEach(x => $('#' + x).hidden = x !== id); }
+function authMode(m){ $$('[data-auth]').forEach(el => el.hidden = el.dataset.auth !== m); }
+function authMsg(text, kind){ const m = $('#authMsg'); m.textContent = text || ''; m.className = 'msg' + (text ? ' ' + kind : ''); }
+function busy(btn, on){ btn.disabled = on; btn.classList.toggle('busy', on); }
+let toastT = 0;
+function toast(text, err){
+  const t = $('#toast'); t.querySelector('span').textContent = text;
+  t.querySelector('i').className = 'fa ' + (err ? 'fa-circle-exclamation' : 'fa-circle-check');
+  t.classList.toggle('err', !!err); t.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 3200);
+}
+function friendly(error){
+  const m = (error && (error.message || error.error_description)) || 'Something went wrong. Please try again.';
+  if (/invalid login/i.test(m)) return 'Wrong email or password.';
+  if (/email not confirmed/i.test(m)) return 'This email hasn’t been confirmed yet. Check the inbox for the confirmation email.';
+  if (/fetch|network/i.test(m)) return 'Can’t reach the database. Check your internet connection.';
+  if (/rate limit/i.test(m)) return 'Too many attempts. Please wait a minute and try again.';
+  return m;
+}
+function fmtDate(d){ return d ? new Date(d).toLocaleDateString('en-MY', { day:'numeric', month:'short', year:'numeric' }) : ''; }
+function slugify(s){ return String(s || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70); }
+
+/* story text → safe formatted HTML (paragraphs, "- " bullets, "## " headings) */
+function renderStory(text, target){
+  target.textContent = '';
+  String(text || '').replace(/\r/g, '').split(/\n{2,}/).map(b => b.trim()).filter(Boolean).forEach(block => {
+    const lines = block.split('\n');
+    if (lines.every(l => /^\s*[-•]\s+/.test(l))){
+      const ul = document.createElement('ul');
+      lines.forEach(l => { const li = document.createElement('li'); li.textContent = l.replace(/^\s*[-•]\s+/, ''); ul.appendChild(li); });
+      target.appendChild(ul);
+    } else if (/^##\s+/.test(block)){
+      const h = document.createElement('h4'); h.textContent = block.replace(/^##\s+/, ''); target.appendChild(h);
+    } else {
+      const p = document.createElement('p');
+      lines.forEach((l, i) => { if (i) p.appendChild(document.createElement('br')); p.appendChild(document.createTextNode(l)); });
+      target.appendChild(p);
+    }
+  });
+}
+
+/* password show/hide */
+$$('.pw-eye').forEach(b => b.addEventListener('click', () => {
+  const inp = b.previousElementSibling, show = inp.type === 'password';
+  inp.type = show ? 'text' : 'password'; b.firstElementChild.className = 'fa ' + (show ? 'fa-eye-slash' : 'fa-eye');
+}));
+
+/* ═══ START ═══ */
+if (!READY){ screen('setup'); } else { start(); }
+
+async function start(){
+  sb = window.supabase.createClient(cfg.url, cfg.anonKey);
+  sb.auth.onAuthStateChange((event) => {
+    if (event === 'PASSWORD_RECOVERY'){ recovering = true; screen('login'); authMode('reset'); authMsg(''); }
+    if (event === 'SIGNED_OUT'){ me = null; screen('login'); authMode('login'); }
+  });
+  const { data: { session } } = await sb.auth.getSession();
+  if (recovering || /type=recovery/.test(location.hash)){ recovering = true; screen('login'); authMode('reset'); return; }
+  if (session) await enter(session); else { screen('login'); authMode('login'); }
+}
+
+async function enter(session){
+  const { data, error } = await sb.from('admins').select('user_id').eq('user_id', session.user.id).maybeSingle();
+  if (error || !data){
+    await sb.auth.signOut();
+    screen('login'); authMode('login');
+    authMsg(error ? friendly(error) : 'This account doesn’t have admin access yet. Ask an existing admin to add you.', 'err');
+    return;
+  }
+  me = session.user;
+  $('#meEmail').textContent = me.email;
+  screen('app');
+  if (!location.hash || /access_token|type=/.test(location.hash)) history.replaceState(null, '', '#dashboard');
+  route();
+}
+
+/* ── login / forgot / reset ── */
+$$('[data-goto]').forEach(b => b.addEventListener('click', () => { authMode(b.dataset.goto); authMsg(''); }));
+$('#loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const email = $('#loginEmail').value.trim(), password = $('#loginPass').value;
+  if (!email || !password) return authMsg('Please enter your email and password.', 'err');
+  const btn = e.submitter || $('#loginForm button[type=submit]'); busy(btn, true); authMsg('');
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
+  busy(btn, false);
+  if (error) return authMsg(friendly(error), 'err');
+  await enter(data.session);
+});
+$('#forgotForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const email = $('#forgotEmail').value.trim();
+  if (!email) return authMsg('Please enter your email.', 'err');
+  const btn = $('#forgotForm button[type=submit]'); busy(btn, true);
+  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
+  busy(btn, false);
+  if (error) return authMsg(friendly(error), 'err');
+  authMsg('If this email has an admin account, a reset link is on its way. Check your inbox.', 'ok');
+});
+$('#resetForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const p1 = $('#resetPass').value, p2 = $('#resetPass2').value;
+  if (p1.length < 8) return authMsg('Please use at least 8 characters.', 'err');
+  if (p1 !== p2) return authMsg('The two passwords don’t match.', 'err');
+  const btn = $('#resetForm button[type=submit]'); busy(btn, true);
+  const { error } = await sb.auth.updateUser({ password: p1 });
+  busy(btn, false);
+  if (error) return authMsg(friendly(error), 'err');
+  recovering = false;
+  const { data: { session } } = await sb.auth.getSession();
+  toast('Password saved. Welcome back!');
+  if (session) await enter(session);
+});
+$('#logoutBtn').addEventListener('click', async () => {
+  if (dirty && !confirm('You have unsaved changes. Log out without saving?')) return;
+  dirty = false; await sb.auth.signOut();
+});
+
+/* ── mobile menu ── */
+const side = $('#side'), scrim = $('#scrim');
+$('#burger').addEventListener('click', () => { side.classList.add('open'); scrim.classList.add('on'); });
+scrim.addEventListener('click', () => { side.classList.remove('open'); scrim.classList.remove('on'); });
+$$('.side nav a').forEach(a => a.addEventListener('click', () => { side.classList.remove('open'); scrim.classList.remove('on'); }));
+
+/* ═══ ROUTER ═══ */
+window.addEventListener('hashchange', () => {
+  if (!me || /access_token|type=/.test(location.hash)) return;
+  if (dirty && !confirm('You have unsaved changes. Leave without saving?')){ history.replaceState(null, '', lastHash); return; }
+  dirty = false; route();
+});
+window.addEventListener('beforeunload', e => { if (dirty){ e.preventDefault(); e.returnValue = ''; } });
+
+function route(){
+  const h = location.hash.replace('#', '') || 'dashboard';
+  lastHash = '#' + h;
+  const [name, id] = h.split('/');
+  const view = name === 'new' || name === 'edit' ? 'editor' : (['dashboard', 'posts', 'account'].includes(name) ? name : 'dashboard');
+  $$('.view').forEach(v => v.hidden = v.dataset.view !== view);
+  $$('.side nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === (name === 'edit' ? 'posts' : name)));
+  $('#topNew').hidden = view === 'editor';
+  const titles = { dashboard:'Dashboard', posts:'Blog posts', account:'My account', editor: name === 'edit' ? 'Edit post' : 'Write a post' };
+  $('#pageTitle').textContent = titles[view];
+  const v = $(`.view[data-view="${view}"]`); v.style.animation = 'none'; v.offsetHeight; v.style.animation = '';
+  if (view === 'dashboard') loadStats();
+  if (view === 'posts') loadPosts();
+  if (view === 'editor') openEditor(name === 'edit' ? id : null);
+  window.scrollTo(0, 0);
+}
+
+/* ═══ DASHBOARD ═══ */
+$$('#rangeSeg button').forEach(b => b.addEventListener('click', () => {
+  range = +b.dataset.range; $$('#rangeSeg button').forEach(x => x.classList.toggle('on', x === b)); loadStats();
+}));
+let lastStats = null;
+async function loadStats(){
+  $('#dashRange').textContent = `Visitors to the Children Home website over the last ${range} days.`;
+  const { data, error } = await sb.rpc('analytics_summary', { range_days: range });
+  if (error){ toast(friendly(error), true); return; }
+  lastStats = data; drawStats(data);
+}
+function drawStats(s){
+  const clicks = s.clicks || [];
+  const sum = name => clicks.filter(c => c.name === name).reduce((a, c) => a + c.count, 0);
+  $('#kViews').textContent = nf(s.views); $('#kVisitors').textContent = nf(s.visitors);
+  $('#kDonate').textContent = nf(sum('donate')); $('#kWa').textContent = nf(sum('whatsapp'));
+
+  // daily series with empty days filled in
+  const byDay = Object.fromEntries((s.daily || []).map(d => [String(d.day).slice(0, 10), d]));
+  const days = [];
+  for (let i = range - 1; i >= 0; i--){
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const key = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    days.push({ day: key, date: d, views: byDay[key]?.views || 0, visitors: byDay[key]?.visitors || 0 });
+  }
+  lineChart($('#lineChart'), days);
+
+  barList($('#pagesList'), (s.pages || []).map(p => ({ name: PAGE_NAMES[p.page] || p.page, n: p.views })), 'No visits recorded yet. Numbers appear here as people visit the website.');
+  barList($('#refList'), (s.referrers || []).map(r => ({ name: r.site, n: r.views })), 'Most visitors came directly or from a bookmark.');
+  barList($('#langList'), (s.langs || []).map(l => ({ name: l.lang === 'zh' ? '中文 Chinese' : 'English', n: l.views })), 'No data yet.');
+  donut($('#devices'), s.devices || []);
+
+  const list = $('#clicksList');
+  if (!clicks.length){ list.innerHTML = '<p class="empty">No button clicks recorded yet.</p>'; return; }
+  list.innerHTML = clicks.slice(0, 8).map(c => {
+    const st = CLICK_STYLE[c.name] || { name: c.name, icon: 'fa-arrow-pointer', c: '#6e8087' };
+    const sub = c.name === 'whatsapp' ? (WA_LABELS[c.label] || c.label) : (c.name === 'phone' || c.name === 'post_open' ? c.label : '');
+    const ic = st.icon.startsWith('fab') ? st.icon : 'fa ' + st.icon;
+    return `<div class="click-row"><span class="ci" style="background:${st.c}"><i class="${ic}"></i></span><span>${esc(st.name)}${sub ? `<small>${esc(sub)}</small>` : ''}</span><em>${nf(c.count)}</em></div>`;
+  }).join('');
+}
+function barList(el, rows, emptyText){
+  if (!rows.length){ el.innerHTML = `<p class="empty">${esc(emptyText)}</p>`; return; }
+  const max = Math.max(...rows.map(r => r.n));
+  el.innerHTML = rows.map(r => `<div class="bar-row"><span>${esc(r.name)}</span><span class="num">${nf(r.n)}</span><div class="track"><div class="fill" data-w="${(r.n / max * 100).toFixed(1)}"></div></div></div>`).join('');
+  requestAnimationFrame(() => $$('.fill', el).forEach(f => f.style.width = f.dataset.w + '%'));
+}
+function donut(el, rows){
+  if (!rows.length){ el.innerHTML = '<p class="empty">No data yet.</p>'; return; }
+  const colors = { desktop:'#2e7d6b', mobile:'#f2a93b', tablet:'#d9467a', unknown:'#9aa9ae' };
+  const names = { desktop:'Computer', mobile:'Phone', tablet:'Tablet', unknown:'Unknown' };
+  const total = rows.reduce((a, r) => a + r.views, 0), R = 52, C = 2 * Math.PI * R;
+  let off = 0;
+  const arcs = rows.map(r => { const len = r.views / total * C; const a = `<circle r="${R}" cx="65" cy="65" fill="none" stroke="${colors[r.device] || '#9aa9ae'}" stroke-width="20" stroke-dasharray="${len} ${C - len}" stroke-dashoffset="${-off}" transform="rotate(-90 65 65)"/>`; off += len; return a; }).join('');
+  el.innerHTML = `<div class="donut-wrap"><svg class="donut" viewBox="0 0 130 130"><circle r="${R}" cx="65" cy="65" fill="none" stroke="#eef2f0" stroke-width="20"/>${arcs}<text x="65" y="62" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="20" font-weight="600" fill="#2c3e50">${nf(total)}</text><text x="65" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#6e8087">VIEWS</text></svg>
+    <div class="donut-legend">${rows.map(r => `<span><i style="background:${colors[r.device] || '#9aa9ae'}"></i>${names[r.device] || r.device} · ${Math.round(r.views / total * 100)}%</span>`).join('')}</div></div>`;
+}
+function niceMax(v){ if (v <= 4) return 4; const p = Math.pow(10, Math.floor(Math.log10(v))); const n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
+function lineChart(el, rows){
+  const W = Math.max(320, el.clientWidth), H = el.clientHeight || 250, P = { l: 38, r: 10, t: 12, b: 26 };
+  const maxY = niceMax(Math.max(...rows.map(r => r.views), 1));
+  const X = i => P.l + (rows.length === 1 ? 0 : i * (W - P.l - P.r) / (rows.length - 1));
+  const Y = v => H - P.b - v / maxY * (H - P.t - P.b);
+  const line = key => rows.map((r, i) => (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(r[key]).toFixed(1)).join(' ');
+  const grid = [0, .25, .5, .75, 1].map(f => { const y = Y(maxY * f); return `<line x1="${P.l}" x2="${W - P.r}" y1="${y}" y2="${y}" stroke="#e8eeec"/><text x="${P.l - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="#9aa9ae">${nf(Math.round(maxY * f))}</text>`; }).join('');
+  const every = Math.ceil(rows.length / 7);
+  const xl = rows.map((r, i) => i % every && i !== rows.length - 1 ? '' : `<text x="${X(i)}" y="${H - 6}" text-anchor="middle" font-size="11" fill="#9aa9ae">${r.date.toLocaleDateString('en-MY', { day:'numeric', month:'short' })}</text>`).join('');
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <defs><linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b9480" stop-opacity=".28"/><stop offset="1" stop-color="#3b9480" stop-opacity="0"/></linearGradient></defs>
+    ${grid}${xl}
+    <path d="${line('views')} L${X(rows.length - 1)} ${Y(0)} L${X(0)} ${Y(0)} Z" fill="url(#gv)"/>
+    <path d="${line('views')}" fill="none" stroke="#3b9480" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="${line('visitors')}" fill="none" stroke="#f2a93b" stroke-width="2.5" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
+    <line id="guide" x1="0" x2="0" y1="${P.t}" y2="${H - P.b}" stroke="#2c3e50" stroke-opacity=".25" stroke-dasharray="3 3" visibility="hidden"/>
+    <circle id="dotV" r="5" fill="#fff" stroke="#3b9480" stroke-width="2.5" visibility="hidden"/>
+    <circle id="dotU" r="5" fill="#fff" stroke="#f2a93b" stroke-width="2.5" visibility="hidden"/>
+    <rect x="${P.l}" y="0" width="${W - P.l - P.r}" height="${H}" fill="transparent" id="hit"/>
+  </svg><div class="tip" id="tip"></div>`;
+  const svg = el.querySelector('svg'), tip = el.querySelector('#tip');
+  const show = (i, on) => ['guide', 'dotV', 'dotU'].forEach(id => svg.getElementById(id).setAttribute('visibility', on ? 'visible' : 'hidden'));
+  el.querySelector('#hit').addEventListener('mousemove', e => {
+    const box = svg.getBoundingClientRect(), x = (e.clientX - box.left) / box.width * W;
+    const i = Math.max(0, Math.min(rows.length - 1, Math.round((x - P.l) / ((W - P.l - P.r) / Math.max(1, rows.length - 1)))));
+    const r = rows[i]; show(i, true);
+    svg.getElementById('guide').setAttribute('x1', X(i)); svg.getElementById('guide').setAttribute('x2', X(i));
+    svg.getElementById('dotV').setAttribute('cx', X(i)); svg.getElementById('dotV').setAttribute('cy', Y(r.views));
+    svg.getElementById('dotU').setAttribute('cx', X(i)); svg.getElementById('dotU').setAttribute('cy', Y(r.visitors));
+    tip.innerHTML = `<b>${r.date.toLocaleDateString('en-MY', { weekday:'short', day:'numeric', month:'short' })}</b>${nf(r.views)} views · ${nf(r.visitors)} visitors`;
+    tip.style.left = (X(i) / W * 100) + '%'; tip.style.top = (Y(r.views) / H * 100) + '%'; tip.style.opacity = 1;
+  });
+  el.querySelector('#hit').addEventListener('mouseleave', () => { show(0, false); tip.style.opacity = 0; });
+}
+let rsT = 0;
+window.addEventListener('resize', () => { clearTimeout(rsT); rsT = setTimeout(() => { if (lastStats && !$('[data-view=dashboard]').hidden) drawStats(lastStats); }, 200); });
+
+/* ═══ POSTS LIST ═══ */
+$('#postSearch').addEventListener('input', renderPosts);
+$$('#statusSeg button').forEach(b => b.addEventListener('click', () => {
+  statusFilter = b.dataset.status; $$('#statusSeg button').forEach(x => x.classList.toggle('on', x === b)); renderPosts();
+}));
+async function loadPosts(){
+  $('#postList').innerHTML = '<p class="empty"><i class="fa fa-circle-notch fa-spin"></i> Loading posts…</p>';
+  const { data, error } = await sb.from('posts').select('*').order('updated_at', { ascending: false });
+  if (error){ $('#postList').innerHTML = `<p class="empty">${esc(friendly(error))}</p>`; return; }
+  posts = data || []; renderPosts();
+}
+function renderPosts(){
+  const q = $('#postSearch').value.trim().toLowerCase();
+  const rows = posts.filter(p => (statusFilter === 'all' || p.status === statusFilter) &&
+    (!q || [p.title_en, p.title_zh, p.tag, p.excerpt_en].join(' ').toLowerCase().includes(q)));
+  const list = $('#postList');
+  if (!posts.length){ list.innerHTML = `<div class="card" style="text-align:center;padding:2.4rem"><p style="font-family:var(--display);font-size:1.3rem;color:var(--ink-900);margin-bottom:.4rem">No posts yet</p><p class="empty" style="margin-bottom:1rem">Write your first post. Once published, it appears on the Moments page.</p><a class="btn btn-sun" href="#new"><i class="fa fa-plus"></i> Write a post</a></div>`; return; }
+  if (!rows.length){ list.innerHTML = '<p class="empty">No posts match.</p>'; return; }
+  list.innerHTML = rows.map(p => `
+    <div class="prow">
+      <div class="pthumb" ${p.cover_url ? `style="background-image:url('${esc(p.cover_url)}')"` : ''}>${p.cover_url ? '' : '<i class="fa fa-image"></i>'}</div>
+      <div class="pmain"><b>${esc(p.title_en)}</b><span>${p.title_zh ? esc(p.title_zh) + ' · ' : ''}${esc(p.tag)} · ${p.status === 'published' ? 'Published ' + fmtDate(p.published_at) : 'Edited ' + fmtDate(p.updated_at)}</span></div>
+      <span class="pill ${p.status === 'published' ? 'pub' : 'draft'}"><i class="fa ${p.status === 'published' ? 'fa-circle-check' : 'fa-pen'}"></i>${p.status === 'published' ? 'Published' : 'Draft'}</span>
+      <div class="pact">
+        <a class="icon-btn" href="#edit/${p.id}" title="Edit"><i class="fa fa-pen"></i></a>
+        ${p.status === 'published' ? `<a class="icon-btn" href="moments.html?post=${encodeURIComponent(p.slug)}" target="_blank" rel="noopener" title="View on website"><i class="fa fa-arrow-up-right-from-square"></i></a>` : ''}
+        <button class="icon-btn del" data-del="${p.id}" title="Delete"><i class="fa fa-trash"></i></button>
+      </div>
+    </div>`).join('');
+  $$('[data-del]', list).forEach(b => b.addEventListener('click', () => deletePost(posts.find(p => p.id === b.dataset.del))));
+}
+async function deletePost(p){
+  if (!p || !confirm(`Delete “${p.title_en}”? This can’t be undone.`)) return;
+  const { error } = await sb.from('posts').delete().eq('id', p.id);
+  if (error) return toast(friendly(error), true);
+  removeCover(p.cover_url);
+  toast('Post deleted');
+  if (location.hash.startsWith('#edit')){ dirty = false; location.hash = '#posts'; } else loadPosts();
+}
+function removeCover(url){
+  const m = String(url || '').match(/\/object\/public\/blog-images\/(.+)$/);
+  if (m) sb.storage.from('blog-images').remove([decodeURIComponent(m[1])]);
+}
+
+/* ═══ EDITOR ═══ */
+const F = { tag:'#fTag', slug:'#fSlug', title_en:'#fTitleEn', excerpt_en:'#fExEn', body_en:'#fBodyEn', title_zh:'#fTitleZh', excerpt_zh:'#fExZh', body_zh:'#fBodyZh' };
+async function openEditor(id){
+  editing = null; coverBlob = null; dirty = false; edLang = 'en'; setLang('en');
+  if (coverPreview){ URL.revokeObjectURL(coverPreview); coverPreview = null; }
+  Object.values(F).forEach(s => $(s).value = ''); $('#fTag').value = 'News';
+  if (id){
+    let p = posts.find(x => x.id === id);
+    if (!p){ const { data, error } = await sb.from('posts').select('*').eq('id', id).maybeSingle(); if (error || !data){ toast('That post could not be found.', true); location.hash = '#posts'; return; } p = data; }
+    editing = p;
+    Object.entries(F).forEach(([k, s]) => $(s).value = p[k] || '');
+  }
+  showCover(editing?.cover_url || null);
+  refreshEditor(); updatePreview();
+}
+function refreshEditor(){
+  const pub = editing?.status === 'published';
+  $('#edStatus').innerHTML = (editing
+    ? `<span class="pill ${pub ? 'pub' : 'draft'}">${pub ? 'Published' : 'Draft'}</span> ${pub ? 'Live on the Moments page since ' + fmtDate(editing.published_at) : 'Not visible on the website yet'}`
+    : '<span class="pill draft">New</span> Not saved yet') + (dirty ? ' · <span class="ed-dirty">Unsaved changes</span>' : '');
+  $('#publishBtn span').textContent = pub ? 'Update' : 'Publish';
+  $('#saveDraft').innerHTML = `<i class="fa ${pub ? 'fa-eye-slash' : 'fa-floppy-disk'} ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> ${pub ? 'Unpublish (move to drafts)' : 'Save draft'}`;
+  $('#deleteBtn').hidden = !editing;
+  $('#viewLive').hidden = !pub;
+  if (pub) $('#viewLive').href = 'moments.html?post=' + encodeURIComponent(editing.slug);
+  $$('[data-count-for]').forEach(c => c.textContent = $('#' + c.dataset.countFor).value.length + ' / 400');
+}
+function setLang(l){
+  edLang = l;
+  $$('#langTabs button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  $$('[data-lang-fields]').forEach(f => f.hidden = f.dataset.langFields !== l);
+  updatePreview();
+}
+$$('#langTabs button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+$('#edForm').addEventListener('input', e => {
+  if (e.target === $('#fTitleEn') && !$('#fSlug').dataset.touched && !editing) $('#fSlug').value = slugify($('#fTitleEn').value);
+  if (e.target === $('#fSlug')) $('#fSlug').dataset.touched = '1';
+  dirty = true; refreshEditor(); updatePreview();
+});
+function updatePreview(){
+  const zh = edLang === 'zh';
+  const pick = (k) => (zh && $(F[k + '_zh']).value.trim()) || $(F[k + '_en']).value.trim();
+  $('#pvTag').textContent = $('#fTag').value;
+  $('#pvDate').textContent = fmtDate(editing?.published_at || new Date());
+  $('#pvTitle').textContent = pick('title') || 'Your title will appear here';
+  $('#pvEx').textContent = pick('excerpt') || 'The short summary appears under the title.';
+  renderStory(pick('body'), $('#pvStory'));
+  $('#pvStory').hidden = !pick('body');
+}
+
+/* cover photo: choose / drag, resized to max 1600px before upload */
+const drop = $('#coverDrop'), fileIn = $('#coverFile');
+drop.addEventListener('click', e => { if (!e.target.closest('.cover-tools')) fileIn.click(); });
+drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); fileIn.click(); } });
+['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) useCover(f); });
+fileIn.addEventListener('change', () => { if (fileIn.files[0]) useCover(fileIn.files[0]); fileIn.value = ''; });
+async function useCover(file){
+  if (!file.type.startsWith('image/')) return toast('Please choose a photo (JPG, PNG or WebP).', true);
+  try {
+    coverBlob = await shrink(file);
+    if (coverPreview) URL.revokeObjectURL(coverPreview);
+    coverPreview = URL.createObjectURL(coverBlob);
+    showCover(coverPreview); dirty = true; refreshEditor();
+  } catch (e){ toast('That photo couldn’t be opened. Try another one.', true); }
+}
+async function shrink(file, max = 1600, quality = .82){
+  const bmp = await createImageBitmap(file);
+  const k = Math.min(1, max / Math.max(bmp.width, bmp.height));
+  const c = document.createElement('canvas'); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+  return await new Promise((res, rej) => c.toBlob(b => b ? res(b) : rej(), 'image/jpeg', quality));
+}
+function showCover(url){
+  $$('img, .cover-tools', drop).forEach(x => x.remove());
+  $('#pvImg').style.backgroundImage = url ? `url('${url}')` : '';
+  $('#pvImg').innerHTML = url ? '' : '<i class="fa fa-image"></i>';
+  if (!url) return;
+  const img = document.createElement('img'); img.src = url; img.alt = ''; drop.appendChild(img);
+  const tools = document.createElement('div'); tools.className = 'cover-tools';
+  tools.innerHTML = '<button type="button" class="btn btn-ghost btn-sm" data-c="change"><i class="fa fa-arrows-rotate"></i> Change</button><button type="button" class="btn btn-danger btn-sm" data-c="remove"><i class="fa fa-xmark"></i> Remove</button>';
+  tools.querySelector('[data-c=change]').addEventListener('click', () => fileIn.click());
+  tools.querySelector('[data-c=remove]').addEventListener('click', () => { coverBlob = null; if (editing) editing._removeCover = true; showCover(null); dirty = true; refreshEditor(); });
+  drop.appendChild(tools);
+}
+
+/* save: draft / publish / update / unpublish */
+$('#saveDraft').addEventListener('click', e => save(editing?.status === 'published' ? 'draft' : 'draft', e.currentTarget));
+$('#publishBtn').addEventListener('click', e => save('published', e.currentTarget));
+$('#deleteBtn').addEventListener('click', () => deletePost(editing));
+async function save(status, btn){
+  const title = $('#fTitleEn').value.trim();
+  if (!title){ setLang('en'); $('#fTitleEn').focus(); return toast('Please add an English title first.', true); }
+  let slug = slugify($('#fSlug').value) || slugify(title) || 'post-' + Date.now().toString(36);
+  busy(btn, true);
+  try {
+    let cover_url = editing && !editing._removeCover ? editing.cover_url : null;
+    if (coverBlob){
+      const path = `covers/${new Date().toISOString().slice(0, 10)}-${slug}-${Math.random().toString(36).slice(2, 7)}.jpg`;
+      const up = await sb.storage.from('blog-images').upload(path, coverBlob, { contentType: 'image/jpeg', cacheControl: '31536000' });
+      if (up.error) throw up.error;
+      if (editing?.cover_url) removeCover(editing.cover_url);
+      cover_url = sb.storage.from('blog-images').getPublicUrl(path).data.publicUrl;
+      coverBlob = null;
+    } else if (editing?._removeCover && editing.cover_url){ removeCover(editing.cover_url); }
+    const row = {
+      tag: $('#fTag').value, slug, status, cover_url,
+      title_en: title, title_zh: $('#fTitleZh').value.trim() || null,
+      excerpt_en: $('#fExEn').value.trim() || null, excerpt_zh: $('#fExZh').value.trim() || null,
+      body_en: $('#fBodyEn').value.trim() || null, body_zh: $('#fBodyZh').value.trim() || null
+    };
+    let res = await write(row);
+    if (res.error && res.error.code === '23505'){ row.slug = slug + '-' + Math.floor(Math.random() * 90 + 10); res = await write(row); }
+    if (res.error) throw res.error;
+    editing = res.data; $('#fSlug').value = editing.slug; dirty = false;
+    const i = posts.findIndex(p => p.id === editing.id); if (i > -1) posts[i] = editing; else posts.unshift(editing);
+    history.replaceState(null, '', '#edit/' + editing.id); lastHash = '#edit/' + editing.id; $('#pageTitle').textContent = 'Edit post';
+    showCover(editing.cover_url); refreshEditor(); updatePreview();
+    toast(status === 'published' ? 'Published! It’s now on the Moments page.' : 'Saved as a draft. Not visible on the website.');
+  } catch (err){ toast(friendly(err), true); }
+  busy(btn, false); refreshEditor();
+}
+function write(row){
+  return editing ? sb.from('posts').update(row).eq('id', editing.id).select().single()
+                 : sb.from('posts').insert(row).select().single();
+}
+
+/* ═══ ACCOUNT ═══ */
+$('#pwForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const p1 = $('#newPass').value, p2 = $('#newPass2').value;
+  if (p1.length < 8) return toast('Please use at least 8 characters.', true);
+  if (p1 !== p2) return toast('The two passwords don’t match.', true);
+  const btn = $('#pwForm button[type=submit]'); busy(btn, true);
+  const { error } = await sb.auth.updateUser({ password: p1 });
+  busy(btn, false);
+  if (error) return toast(friendly(error), true);
+  $('#newPass').value = $('#newPass2').value = ''; toast('Your new password is saved.');
+});
+$('#copySql').addEventListener('click', async () => {
+  const text = $('#adminSql').firstChild.textContent.trim();
+  try { await navigator.clipboard.writeText(text); toast('Copied. Paste it into the Supabase SQL Editor.'); } catch(e){ toast('Select the text and copy it manually.', true); }
+});
+</script>
+</body>
+</html>

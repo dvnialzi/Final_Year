@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Moments | Amitabha Foundation Children Home</title>
+<meta name="description" content="News, everyday joys and milestones from life at Amitabha Foundation Children Home.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amitabha Foundation Children Home">
+<meta property="og:title" content="Moments | Amitabha Foundation Children Home">
+<meta property="og:description" content="News, everyday joys and milestones from life at Amitabha Foundation Children Home.">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/af-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Body font matches Elder Home (Plus Jakarta Sans); display font is Children Home's own (Fraunces) -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* ── Amitabha Foundation master-brand tokens (shared with Elder Home) ── */
+  --navy-900:#1a242f;
+  --navy-800:#2c3e50;
+  --brand-red:#ab1a1f;
+  --brand-red-nav:#ab1b25;
+  --ink-900:#0c1a1c;
+  --ink-700:#1f3034;
+  --ink-500:#4d6065;
+  --ink-400:#6e8087;
+  --ink-300:#9aa9ae;
+  --line:#e3ecee;
+  --surface:#ffffff;
+  --r-sm:10px;--r:14px;--r-lg:22px;--r-xl:28px;
+  --shadow-sm:0 1px 2px rgba(10,40,45,.04),0 2px 8px rgba(10,40,45,.04);
+  --shadow:0 4px 16px rgba(10,40,45,.06),0 18px 48px rgba(10,40,45,.06);
+  --shadow-lg:0 24px 64px rgba(10,40,45,.14);
+  --t:.32s cubic-bezier(.4,.0,.2,1);
+  --max:1240px;
+  --header-h:88px;
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+
+  /* ── Children Home programme tokens ── */
+  --display:"Fraunces",Georgia,serif;
+  --leaf-800:#22604f;
+  --leaf-700:#2e7d6b;
+  --leaf-600:#3b9480;
+  --leaf-500:#6bb5a1;
+  --leaf-400:#a5d4c4;
+  --leaf-100:#dcefe7;
+  --leaf-50:#eef7f3;
+  --sun:#f2a93b;
+  --sun-d:#d98e1f;
+  --sun-l:#ffd58a;
+  --bg:#fbf9f3;
+  --cream:#fff6e6;
+  --stone:#f1efe8;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;max-width:100%}
+body{font-family:var(--sans);color:var(--ink-700);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+section{position:relative}
+section[id],#donate{scroll-margin-top:var(--header-h)}
+
+/* Header — always pinned */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow var(--t),background var(--t)}
+header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,40,45,.06)}
+.hdr{max-width:var(--max);margin:auto;padding:0 1.5rem;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{height:66px;width:auto;max-width:none;display:block;object-fit:contain}
+/* "Children Home" name beside the logo, so the header always says which home this is */
+.brand,.nav,.hdr-r{flex-shrink:0}
+.brand-tag{font-family:var(--display);font-weight:600;font-size:1.35rem;line-height:1.05;letter-spacing:-.01em;color:var(--leaf-800);padding:.15rem 0 .15rem .8rem;border-left:2px solid var(--sun);white-space:nowrap}
+#hdr.bt-compact .brand-tag{font-size:1.05rem;white-space:normal;max-width:5.4em}
+#hdr.bt-hide .brand-tag{display:none}
+.brand-logo{display:block;border-radius:8px;transition:opacity var(--t)}
+.brand-logo:hover{opacity:.82}
+.brand-tag:hover{color:var(--leaf-600)}
+.nav{display:flex;gap:.1rem;align-items:center}
+.nav a{font-size:1rem;font-weight:500;color:var(--ink-700);padding:.55rem .8rem;border-radius:8px;white-space:nowrap;transition:color .3s ease,background .3s ease}
+.nav a:hover{background:rgba(247,230,233,.5);color:var(--brand-red-nav)}
+.nav a.on{color:var(--brand-red-nav)}
+.nav a.on::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--brand-red-nav);margin:2px auto -6px}
+.hdr-r{display:flex;align-items:center;gap:.55rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;font-family:inherit;font-weight:600;font-size:.86rem;padding:.62rem 1.15rem;border-radius:999px;transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease;white-space:nowrap}
+.btn-ghost{color:var(--navy-800);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(46,125,107,.1);border-color:var(--leaf-700);color:var(--leaf-700)}
+.btn-donate{background:var(--brand-red);color:#fff;animation:donateGlow 2.5s ease-in-out infinite}
+.btn-donate:hover{background:#8f1419}
+.btn-wa{background:#25d366;color:#fff;animation:waGlow 2.5s ease-in-out infinite}
+.btn-wa:hover{background:#1ebe5a}
+.btn-outline-white{color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:.85rem 1.6rem;font-size:.92rem}
+.btn:active{background:var(--brand-red);color:#fff;border-color:var(--brand-red);box-shadow:0 6px 18px rgba(171,26,31,.35)}
+.donate-img{height:1.1em;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,.6))}
+@keyframes donateGlow{0%,100%{box-shadow:0 4px 18px rgba(171,26,31,.5),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 6px 28px rgba(171,26,31,.85),0 0 24px rgba(171,26,31,.5),0 0 0 8px rgba(171,26,31,.13)}}
+@keyframes waGlow{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0)}50%{box-shadow:0 6px 28px rgba(37,211,102,.8),0 0 24px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.13)}}
+.burger{display:none;flex-direction:column;gap:5px;padding:.7rem;min-width:44px;min-height:44px;justify-content:center;align-items:center}
+.burger span{width:22px;height:2px;background:var(--navy-800);border-radius:2px;transition:all var(--t)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--line);padding:.6rem 1.5rem 1.2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.7rem .3rem;font-size:.95rem;color:var(--ink-700);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
+
+/* Hero — full-page slideshow (same dimensions/behaviour as Elder Home) */
+.hero{position:relative;min-height:clamp(380px,60vh,760px);display:flex;align-items:center;overflow:hidden;isolation:isolate;background:#0d1a1c;color:#fff}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-arcs{position:absolute;right:-140px;bottom:-220px;width:620px;height:620px;z-index:-3;pointer-events:none;opacity:.5}
+/* Hero headline = the name of the home: "Children Home" is the largest text on the page,
+   the other-language name sits beside it, and "A safe place to grow…" becomes the tagline */
+.hero-name-alt{font-family:var(--sans);font-size:clamp(1.3rem,3.4vw,2.3rem);font-weight:700;line-height:1.2;letter-spacing:.06em;color:var(--sun-l);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* Section helpers */
+.sec{padding:clamp(3rem,7vw,6rem) 0;position:relative}
+.wrap{max-width:var(--max);margin:auto;padding:0 clamp(.9rem,3.5vw,1.5rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf-700);margin-bottom:.9rem}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--sun);border-radius:2px}
+h2.section-h{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,4.2vw,2.8rem);line-height:1.15;letter-spacing:-.015em;color:var(--ink-900);margin-bottom:.9rem;text-wrap:balance}
+h2.section-h em{font-style:italic;color:var(--leaf-700);font-weight:500}
+.section-p{font-size:clamp(.92rem,2vw,1rem);color:var(--ink-500);line-height:1.7;max-width:620px}
+.sh{margin-bottom:3.2rem}
+.sh.c{text-align:center}.sh.c .eyebrow{justify-content:center}.sh.c .section-p{margin:auto}
+
+/* Credentials */
+.milestones{display:flex;flex-direction:column;gap:.8rem;margin:1.8rem 0 1.6rem}
+
+/* News & moments */
+.news-band{background:var(--stone)}
+.news-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.news-head .sh{margin:0;max-width:640px}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;align-items:start}
+.news-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
+.news-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--leaf-100)}
+.news-img{height:210px;overflow:hidden;background:var(--leaf-100)}
+.news-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.news-card:hover .news-img img{transform:scale(1.05)}
+.news-body{padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.news-meta{display:flex;gap:.7rem;align-items:center;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf-700)}
+.news-meta .tag{background:var(--leaf-50);padding:.3rem .65rem;border-radius:99px}
+.news-meta .tag.appeal{background:#fbe9ea;color:var(--brand-red)}
+.news-meta .date{color:var(--ink-400);letter-spacing:.08em}
+.news-card h3{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.3;color:var(--ink-900)}
+.news-card p{font-size:.92rem;color:var(--ink-500);line-height:1.6}
+.news-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.4,0,.2,1)}
+.news-card.open .news-more{grid-template-rows:1fr}
+.news-more-in{overflow:hidden;min-height:0}
+.news-more-in p{font-size:.88rem;line-height:1.7;margin-top:.7rem}
+.news-quote{font-family:var(--display);font-style:italic;color:var(--leaf-800);border-left:3px solid var(--sun);padding-left:.8rem;margin-top:.8rem;line-height:1.55}
+.news-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:.9rem}
+.news-strip button{aspect-ratio:1;border-radius:10px;overflow:hidden;padding:0;cursor:zoom-in}
+.news-strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.news-strip button:hover img{transform:scale(1.08)}
+.news-cta{margin-top:1rem;align-self:flex-start}
+.news-foot{margin-top:.4rem;padding-top:1rem;border-top:1px solid var(--line)}
+.news-toggle{color:var(--leaf-700);font-weight:600;font-size:.86rem;display:inline-flex;align-items:center;gap:.45rem;padding:0;transition:gap var(--t)}
+.news-toggle:hover{gap:.7rem}
+.news-toggle i{transition:transform .4s ease}
+.news-card.open .news-toggle i{transform:rotate(180deg)}
+.news-toggle .t-close,.news-card.open .news-toggle .t-open{display:none}
+.news-card.open .news-toggle .t-close{display:inline}
+
+/* Mini FAQ (accordion) */
+.mfaq-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
+.mfaq-card:hover{border-color:var(--leaf-400);box-shadow:var(--shadow-sm)}
+.mfaq-card.open{border-color:var(--leaf-500);box-shadow:0 2px 16px rgba(46,125,107,.1)}
+.mfaq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+
+/* CTA band */
+.cta-band{background:radial-gradient(700px 500px at 80% 30%,rgba(242,169,59,.28),transparent 60%),linear-gradient(135deg,var(--navy-800),var(--leaf-800));color:#fff;padding:clamp(3rem,6vw,5rem) 0;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.cta-band .hero-arcs{left:50%;right:auto;transform:translateX(-50%);bottom:-420px;width:820px;height:820px;opacity:.35}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.15;margin-bottom:.8rem;text-wrap:balance}
+.cta-band h2 em{color:var(--sun-l);font-style:italic}
+.cta-band p{color:rgba(255,255,255,.82);font-size:1rem;max-width:600px;margin:0 auto 2rem}
+.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+/* Footer — same colour & structure as Elder Home */
+footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
+.foot-top{max-width:var(--max);margin:auto;padding:clamp(2rem,5vw,3.5rem) clamp(.9rem,3.5vw,1.5rem) 2.5rem;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:2.5rem}
+.foot-brand img{height:54px;width:auto;margin-bottom:1rem;background:#fff;border-radius:10px;padding:6px 10px}
+.foot-brand p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.45);max-width:270px;margin-bottom:1.1rem}
+.foot-soc{display:flex;gap:.4rem}
+.foot-soc a{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;transition:all var(--t)}
+.foot-soc a:hover{background:var(--leaf-700);color:#fff;border-color:var(--leaf-700);transform:translateY(-2px)}
+.foot-col h4{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:1rem}
+.foot-col a,.foot-col .fci{display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:rgba(255,255,255,.45);margin-bottom:.55rem;transition:color var(--t);line-height:1.5}
+.foot-col a:hover{color:rgba(255,255,255,.85)}
+.foot-col i{color:var(--leaf-400);font-size:.75rem;margin-top:.25rem;flex-shrink:0}
+.foot-col a.here{color:rgba(255,255,255,.85);font-weight:600}
+.foot-col h4 a{display:inline;font-size:inherit;color:inherit;margin:0}
+.fci small{display:block;font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.04em}
+.foot-bot{max-width:var(--max);margin:auto;padding:1.1rem clamp(.9rem,3.5vw,1.5rem);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+.foot-bot p{font-size:.74rem;color:rgba(255,255,255,.28)}
+.foot-bot .disclaimer{font-style:italic;max-width:520px}
+
+/* Floating CTA — same style & position as Elder Home */
+.float-bar{position:fixed;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:999;display:flex;gap:.65rem;align-items:center;filter:drop-shadow(0 8px 20px rgba(0,0,0,.16))}
+.float-wa,.float-donate{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.55rem;border-radius:999px;font-weight:700;font-size:.92rem;white-space:nowrap;transition:all var(--t);color:#fff}
+.float-wa{background:#25d366;box-shadow:0 6px 24px rgba(37,211,102,.42)}
+.float-wa:hover{background:#1ebe5a;transform:translateY(-3px)}
+.float-donate{position:relative;background:linear-gradient(135deg,#c52525,var(--brand-red));box-shadow:0 6px 28px rgba(171,26,31,.6);animation:donatePulse 2.8s ease-in-out infinite}
+.float-donate:hover{background:#8f1419;transform:translateY(-3px);animation-play-state:paused}
+@keyframes donatePulse{0%,100%{box-shadow:0 6px 28px rgba(171,26,31,.6),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 8px 36px rgba(171,26,31,.8),0 0 0 10px rgba(171,26,31,.12)}}
+.donate-tip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(8,8,12,.84);backdrop-filter:blur(14px);color:rgba(255,255,255,.92);font-size:.7rem;font-weight:400;font-style:italic;padding:.44rem .95rem;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .24s ease,transform .24s ease}
+.float-donate:hover .donate-tip{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:clamp(1rem,4vw,3rem);background:rgba(8,12,16,0);pointer-events:none;transition:background .35s ease}
+.lb.on{background:rgba(8,12,16,.88);pointer-events:auto}
+.lb figure{margin:0;max-width:min(1100px,100%);display:flex;flex-direction:column;align-items:center;opacity:0;transform:scale(.94);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1.1)}
+.lb.on figure{opacity:1;transform:none}
+.lb img{max-width:100%;max-height:calc(100vh - 9rem);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);object-fit:contain}
+.lb figcaption{color:rgba(255,255,255,.88);font-size:.92rem;margin-top:.9rem;text-align:center;max-width:640px}
+.lb-x{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background var(--t)}
+.lb-x:hover{background:var(--brand-red)}
+
+/* animated scene: a day at the Children Home.
+   Each piece of scenery keeps its own size (never stretched or cropped); a small script hides
+   the least important pieces on narrower screens and shrinks the rest only on phones.
+   The caregiver and children walk across the full width of the screen, left to right. */
+#support{padding-bottom:0}
+
+/* Page banner (inner pages) */
+.page-hero{position:relative;min-height:clamp(240px,34vh,360px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:#0d1a1c;color:#fff}
+.page-hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;animation:heroZoom 9s ease-out both}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(12,26,28,.8) 0%,rgba(12,26,28,.45) 60%,rgba(12,26,28,.2) 100%)}
+.page-hero-in{width:100%;padding-top:clamp(2.5rem,6vw,4rem);padding-bottom:clamp(2rem,5vw,3.2rem)}
+.crumbs{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.75);margin-bottom:1rem}
+.crumbs a:hover{color:#fff;text-decoration:underline}
+.crumbs i{font-size:.6rem;opacity:.7}
+.page-hero-kicker{display:flex;align-items:center;gap:.55rem;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sun-l);margin-bottom:.5rem;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.page-hero-kicker::before{content:"";width:22px;height:2px;background:var(--sun);border-radius:2px}
+.page-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:.6rem;text-shadow:0 2px 20px rgba(0,0,0,.3);animation:rise .8s .1s backwards}
+.page-hero p{font-size:clamp(.92rem,2vw,1.05rem);color:rgba(255,255,255,.88);max-width:580px;line-height:1.65;text-shadow:0 1px 4px rgba(0,0,0,.35);animation:rise .8s .25s backwards}
+.mob-menu a.on{color:var(--brand-red-nav);font-weight:700}
+
+/* ═══ Children Home drawings that move behind the content ═══
+   Soap bubbles, balloons, a wau kite, paper planes, crayon doodles, a lotus pond,
+   a chain of paper children holding hands, and confetti for success stories. */
+.deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.deco~.wrap{position:relative;z-index:1}
+.deco>svg{position:absolute;left:var(--x,0);top:var(--y,auto);bottom:var(--b,auto);width:var(--s,32px);height:var(--s,32px);overflow:visible}
+.a-wobble{animation:dWobble var(--d,6s) ease-in-out var(--delay,0s) infinite alternate}
+@keyframes dWobble{from{transform:translateY(-7px) rotate(-12deg)}to{transform:translateY(7px) rotate(12deg)}}
+.a-rise{opacity:0;animation:dRise var(--d,18s) linear var(--delay,0s) infinite}
+@keyframes dRise{0%{transform:translate(0,0) rotate(-8deg);opacity:0}10%{opacity:var(--o,.65)}50%{transform:translate(26px,calc(var(--h,720px) * -.5)) rotate(12deg)}85%{opacity:var(--o,.65)}100%{transform:translate(-16px,calc(var(--h,720px) * -1)) rotate(-10deg);opacity:0}}
+/* paper children holding hands along the top of the footer, doing a little wave */
+.dolls{position:relative;display:flex;justify-content:center;overflow:hidden;overflow-x:clip;overflow-y:visible;height:64px;padding-top:14px;opacity:.85;border-bottom:1px solid rgba(255,255,255,.06)}
+.doll{flex:none;width:40px;height:46px;animation:dollWave 3s ease-in-out calc(var(--i,0) * .09s - 9s) infinite}
+/* on computers with a mouse: the children keep waving, AND hop up as the mouse passes over them
+   (the one under the mouse hops highest, its neighbours a little less) */
+@media (hover:hover) and (pointer:fine){
+  .doll{transform-origin:50% 100%;transform:translateY(calc(var(--lift,0) * -16px)) scale(calc(1 + var(--lift,0) * .15));filter:brightness(calc(1 + var(--lift,0) * .35));transition:transform .4s cubic-bezier(.2,.9,.3,1.5),filter .3s ease}
+}
+.doll-heart{position:absolute;top:2px;width:14px;height:14px;margin-left:-7px;pointer-events:none}
+@keyframes dollWave{0%,30%,100%{translate:0 0}12%{translate:0 -7px}}
+/* golden pixel stars, sparkles and dots: some drift slowly down from the top, others twinkle in place, all gently pulse */
+.a-pxfall{opacity:0;animation:pxFall var(--d,16s) linear var(--delay,0s) infinite}
+@keyframes pxFall{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(-16px,calc(var(--h,700px) * .5))}88%{opacity:1}100%{transform:translate(10px,var(--h,700px));opacity:0}}
+.a-pxtwinkle{animation:pxTwinkle var(--d,3s) ease-in-out var(--delay,0s) infinite}
+@keyframes pxTwinkle{0%,100%{opacity:.35}50%{opacity:1}}
+.a-pxfall use,.a-pxtwinkle use{transform-box:fill-box;transform-origin:center;animation:pxPulse var(--p,1.6s) ease-in-out infinite alternate}
+@keyframes pxPulse{from{transform:scale(.7)}to{transform:scale(1.08)}}
+.px-glow{filter:drop-shadow(0 0 5px rgba(255,196,60,.6))}
+.deco-paused,.deco-paused *{animation-play-state:paused!important}
+@media(max-width:900px){.hide-md{display:none!important}}
+@media(max-width:640px){.hide-sm{display:none!important}}
+
+/* ═══ Get Involved page ═══ */
+#sponsor{background:var(--cream)}
+#volunteer{background:var(--bg)}
+#partner{background:var(--stone)}
+/* "More ways to get involved" link in the donate banner */
+.cta-more{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;color:var(--sun-l);font-weight:600;font-size:.9rem;transition:gap var(--t)}
+.cta-more:hover{gap:.75rem;text-decoration:underline}
+/* the menu has one more item now: tighten it, and switch to the ☰ menu a little earlier */
+@media(max-width:1440px){.nav a{padding:.55rem .65rem}}
+@media(max-width:1180px){.nav{display:none}.burger{display:flex}.hdr-r .btn-ghost{display:none}}
+
+/* two children holding hands: they sway together, blink, and little hearts float up from their hands */
+.kids{display:block;width:170px;height:118px;margin:clamp(2.5rem,5vw,3.5rem) auto 0;overflow:visible}
+
+/* Bigger header: wider bar on large screens, bigger buttons; slightly shorter on phones */
+.hdr{max-width:1560px;gap:1.4rem}
+.hdr-r{gap:.65rem}
+.hdr-r .btn{font-size:.97rem;padding:.75rem 1.35rem}
+.nav{gap:.2rem}
+@media(max-width:640px){:root{--header-h:72px}.hdr{padding:0 1rem;gap:.8rem}.hdr-r .btn{font-size:.86rem;padding:.6rem 1rem}}
+/* when the menu still doesn't fit, the header switches itself to the ☰ menu (set by the header-fitting script) */
+#hdr.nav-burger .nav{display:none}
+#hdr.nav-burger .burger{display:flex}
+#hdr.nav-burger .hdr-r .btn-ghost{display:none}
+
+/* Header that reacts to scrolling:
+   at the top of the page it is big; scroll down and it glides into a slimmer bar with a soft shadow,
+   and a gold-to-green line along its bottom edge shows how far down the page you are. */
+#hdr{position:fixed;left:0;right:0;top:0}
+body{padding-top:var(--header-h)}
+.hdr{height:var(--hdr-now,var(--header-h));transition:height .45s cubic-bezier(.4,0,.2,1)}
+.brand img{transition:height .45s cubic-bezier(.4,0,.2,1),opacity var(--t)}
+.brand-tag,.nav a{transition:color .3s ease,background .3s ease,font-size .45s cubic-bezier(.4,0,.2,1)}
+#hdr .hdr-r .btn{transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease,padding .45s cubic-bezier(.4,0,.2,1),font-size .45s cubic-bezier(.4,0,.2,1)}
+@media(min-width:1500px){
+  :root{--header-h:108px}
+  .hdr{max-width:1680px}
+  .brand img{height:80px}
+  .brand-tag{font-size:1.55rem}
+  .nav a{font-size:1.08rem;padding:.6rem .85rem}
+  .hdr-r .btn{font-size:1.04rem;padding:.85rem 1.55rem}
+}
+#hdr.scrolled{--hdr-now:72px;background:rgba(255,255,255,.9);box-shadow:0 6px 24px rgba(10,40,45,.1)}
+#hdr.scrolled .brand img{height:52px}
+#hdr.scrolled .brand-tag{font-size:1.12rem}
+#hdr.scrolled .nav a{font-size:.95rem}
+#hdr.scrolled .hdr-r .btn{font-size:.9rem;padding:.6rem 1.15rem}
+.hdr-progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none}
+.hdr-progress span{display:block;height:100%;background:linear-gradient(90deg,var(--sun),var(--leaf-500),var(--leaf-700));transform-origin:0 50%;transform:scaleX(0)}
+.mob-menu{max-height:calc(100vh - var(--hdr-now,var(--header-h)));overflow-y:auto}
+@media(max-width:640px){#hdr.scrolled{--hdr-now:60px}#hdr.scrolled .brand img{height:40px}}
+
+/* Seek Help button: pink, with a gently pulsing glow like the Donate button (the two pulse in turn) */
+.btn.btn-seek{background:#d9467a;border-color:#d9467a;color:#fff;animation:seekGlow 2.5s ease-in-out -1.25s infinite}
+.btn.btn-seek:hover{background:#bd3565;border-color:#bd3565;color:#fff;transform:translateY(-2px)}
+.btn.btn-seek:active{background:#a32b55;border-color:#a32b55;color:#fff;box-shadow:0 6px 18px rgba(217,70,122,.4)}
+.btn.btn-seek i{filter:drop-shadow(0 0 4px rgba(255,255,255,.6))}
+.btn.btn-seek:hover i{animation:seekHop .8s ease-in-out}
+@keyframes seekGlow{0%,100%{box-shadow:0 4px 18px rgba(217,70,122,.45),0 0 0 0 rgba(217,70,122,0)}50%{box-shadow:0 6px 28px rgba(217,70,122,.8),0 0 24px rgba(217,70,122,.45),0 0 0 8px rgba(217,70,122,.13)}}
+@keyframes seekHop{0%,100%{transform:scale(1)}25%{transform:scale(1.22) translateY(-1px)}45%{transform:scale(.96)}65%{transform:scale(1.14) translateY(-1px)}}
+.hdr-r .btn-donate:hover{transform:translateY(-2px)}
+.mob-menu a.mob-seek{color:#d9467a;font-weight:700}
+
+/* Staff login link (footer) */
+.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.32);transition:color var(--t)}
+.staff-link:hover{color:rgba(255,255,255,.85)}
+.staff-link i{font-size:.65rem}
+/* Blog posts written in the admin website (Moments page) */
+.blog-card{animation:blogIn .6s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--i,0) * .08s)}
+@keyframes blogIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.blog-noimg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--leaf-500);background:linear-gradient(135deg,var(--leaf-100),var(--cream))}
+.blog-open{color:var(--leaf-700);font-weight:600;font-size:.86rem;display:inline-flex;align-items:center;gap:.45rem;padding:0;transition:gap var(--t)}
+.blog-open:hover{gap:.7rem}
+.post-reader{position:fixed;inset:0;z-index:10001;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:clamp(1rem,5vh,3rem) 1rem;background:rgba(8,12,16,0);pointer-events:none;transition:background .35s ease}
+.post-reader.on{background:rgba(8,12,16,.72);pointer-events:auto}
+.pr-card{position:relative;width:min(760px,100%);background:#fff;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.4);opacity:0;transform:translateY(24px) scale(.97);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1.1)}
+.post-reader.on .pr-card{opacity:1;transform:none}
+.pr-x{position:absolute;top:.9rem;right:.9rem;z-index:2;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy-800);font-size:1.05rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.15);transition:background var(--t),color var(--t)}
+.pr-x:hover{background:var(--brand-red);color:#fff}
+.pr-cover{aspect-ratio:16/8;background:var(--leaf-100) center/cover no-repeat}
+.pr-cover.none{display:none}
+.pr-body{padding:clamp(1.4rem,4vw,2.4rem)}
+.pr-body h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.2;color:var(--ink-900);margin:.6rem 0 1rem}
+.pr-text p,.pr-text li{font-size:1rem;color:var(--ink-500);line-height:1.8}
+.pr-text p+p,.pr-text p+ul,.pr-text ul+p,.pr-text h4+p{margin-top:.9rem}
+.pr-text h4{font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--ink-900);margin-top:1.4rem}
+.pr-text ul{list-style:disc;padding-left:1.3rem;margin-top:.6rem}
+.pr-share{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+
+/* Scroll reveal (content stays visible if JavaScript is off) */
+.js .aos{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .aos-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .aos-r{opacity:0;transform:translateX(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .aos.in,.js .aos-l.in,.js .aos-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* Responsive — same breakpoints as Elder Home */
+@media(max-width:1024px){
+  .nav{display:none}
+  .burger{display:flex}
+  .hdr-r .btn-ghost{display:none}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .news-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .brand img{height:46px}
+  .brand{gap:.55rem}
+  .brand-tag{padding-left:.6rem}
+  .news-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bot{flex-direction:column;text-align:center}
+  .news-head{flex-direction:column;align-items:flex-start}
+  .float-bar{left:auto;right:1.2rem;transform:none;bottom:1rem;flex-direction:column;gap:.5rem}
+  .float-wa,.float-donate{width:50px;height:50px;padding:0;border-radius:50%;justify-content:center;font-size:1.3rem}
+  .fl-label,.donate-tip{display:none}
+}
+@media(max-width:480px){
+  .cta-btns>*{width:100%;justify-content:center}
+}
+@media(max-width:360px){
+  .hdr .btn-donate span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .aos,.js .aos-l,.js .aos-r{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Drawings library for the moving decorations (original illustrations) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-d-star" viewBox="0 0 100 100"><path d="M50 8L61 38L93 39L68 58L77 90L50 71L23 90L32 58L7 39L39 38Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-d-heart" viewBox="0 0 100 100"><path d="M50 84C24 66 10 50 12 32C14 18 30 12 42 20C46 23 49 27 50 31C52 26 56 22 60 20C72 13 88 20 88 34C88 52 74 66 50 84Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-d-spiral" viewBox="0 0 100 100"><path d="M52 50c4-2 8 2 6 6c-3 6-12 5-14-1c-3-9 5-17 14-16c12 1 18 14 13 24c-6 13-24 16-34 7c-13-11-11-32 3-41c15-10 37-5 45 11" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></symbol>
+  <symbol id="i-d-sun" viewBox="0 0 100 100"><circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="6"/><path d="M50 10v12M50 78v12M10 50h12M78 50h12M22 22l8 8M70 70l8 8M78 22l-8 8M30 70l-8 8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"><rect x="10" y="30" width="80" height="54" rx="10"/><circle cx="50" cy="57" r="15"/><path d="M34 30l6-10h20l6 10"/></g><circle cx="76" cy="42" r="3.5" fill="currentColor"/></symbol>
+  <symbol id="i-doll-a" viewBox="0 0 40 46"><g fill="currentColor"><circle cx="20" cy="8" r="6"/><circle cx="13.5" cy="6" r="2.6"/><circle cx="26.5" cy="6" r="2.6"/><rect x="0" y="16" width="40" height="5" rx="2.5"/><path d="M15 15h10l6 19H9Z"/><rect x="14.5" y="33" width="4" height="12" rx="2"/><rect x="21.5" y="33" width="4" height="12" rx="2"/></g></symbol>
+  <symbol id="i-doll-b" viewBox="0 0 40 46"><g fill="currentColor"><circle cx="20" cy="8" r="6"/><rect x="0" y="16" width="40" height="5" rx="2.5"/><rect x="13.5" y="15" width="13" height="15" rx="4"/><rect x="14.5" y="28" width="4.5" height="17" rx="2"/><rect x="21" y="28" width="4.5" height="17" rx="2"/></g></symbol>
+  <symbol id="i-pstar" viewBox="0 0 11 10" shape-rendering="crispEdges"><rect x="5" y="0" width="1" height="1" fill="#f29a12"/><rect x="4" y="1" width="1" height="1" fill="#f29a12"/><rect x="5" y="1" width="1" height="1" fill="#ffe680"/><rect x="6" y="1" width="1" height="1" fill="#f29a12"/><rect x="4" y="2" width="1" height="1" fill="#f29a12"/><rect x="5" y="2" width="1" height="1" fill="#ffe680"/><rect x="6" y="2" width="1" height="1" fill="#f29a12"/><rect x="0" y="3" width="4" height="1" fill="#f29a12"/><rect x="4" y="3" width="1" height="1" fill="#ffe680"/><rect x="5" y="3" width="1" height="1" fill="#fffbea"/><rect x="6" y="3" width="1" height="1" fill="#ffe680"/><rect x="7" y="3" width="4" height="1" fill="#f29a12"/><rect x="1" y="4" width="1" height="1" fill="#f29a12"/><rect x="2" y="4" width="2" height="1" fill="#ffe680"/><rect x="4" y="4" width="2" height="1" fill="#fffbea"/><rect x="6" y="4" width="3" height="1" fill="#ffe680"/><rect x="9" y="4" width="1" height="1" fill="#f29a12"/><rect x="2" y="5" width="1" height="1" fill="#e07d0e"/><rect x="3" y="5" width="5" height="1" fill="#ffd23a"/><rect x="8" y="5" width="1" height="1" fill="#e07d0e"/><rect x="2" y="6" width="1" height="1" fill="#e07d0e"/><rect x="3" y="6" width="2" height="1" fill="#ffd23a"/><rect x="5" y="6" width="1" height="1" fill="#e07d0e"/><rect x="6" y="6" width="2" height="1" fill="#ffd23a"/><rect x="8" y="6" width="1" height="1" fill="#e07d0e"/><rect x="1" y="7" width="1" height="1" fill="#e07d0e"/><rect x="2" y="7" width="2" height="1" fill="#ffbf1f"/><rect x="4" y="7" width="1" height="1" fill="#e07d0e"/><rect x="6" y="7" width="1" height="1" fill="#e07d0e"/><rect x="7" y="7" width="2" height="1" fill="#ffbf1f"/><rect x="9" y="7" width="1" height="1" fill="#e07d0e"/><rect x="1" y="8" width="3" height="1" fill="#e07d0e"/><rect x="7" y="8" width="3" height="1" fill="#e07d0e"/><rect x="0" y="9" width="2" height="1" fill="#e07d0e"/><rect x="9" y="9" width="2" height="1" fill="#e07d0e"/></symbol>
+  <symbol id="i-pspark" viewBox="0 0 7 7" shape-rendering="crispEdges"><rect x="3" y="0" width="1" height="1" fill="#f5a516"/><rect x="3" y="1" width="1" height="1" fill="#f5a516"/><rect x="2" y="2" width="3" height="1" fill="#ffd23a"/><rect x="0" y="3" width="2" height="1" fill="#f5a516"/><rect x="2" y="3" width="1" height="1" fill="#ffd23a"/><rect x="3" y="3" width="1" height="1" fill="#fffbea"/><rect x="4" y="3" width="1" height="1" fill="#ffd23a"/><rect x="5" y="3" width="2" height="1" fill="#f5a516"/><rect x="2" y="4" width="3" height="1" fill="#ffd23a"/><rect x="3" y="5" width="1" height="1" fill="#f5a516"/><rect x="3" y="6" width="1" height="1" fill="#f5a516"/></symbol>
+  <symbol id="i-pdot" viewBox="0 0 4 4" shape-rendering="crispEdges"><rect x="1" y="0" width="2" height="1" fill="#ffc12a"/><rect x="0" y="1" width="1" height="1" fill="#ffc12a"/><rect x="1" y="1" width="1" height="1" fill="#fff3c4"/><rect x="2" y="1" width="2" height="1" fill="#ffc12a"/><rect x="0" y="2" width="4" height="1" fill="#ec9412"/><rect x="1" y="3" width="2" height="1" fill="#ec9412"/></symbol>
+  <symbol id="i-pstar-pale" viewBox="0 0 11 10" shape-rendering="crispEdges"><rect x="5" y="0" width="1" height="1" fill="#f6cf7e"/><rect x="4" y="1" width="1" height="1" fill="#f6cf7e"/><rect x="5" y="1" width="1" height="1" fill="#fff2c4"/><rect x="6" y="1" width="1" height="1" fill="#f6cf7e"/><rect x="4" y="2" width="1" height="1" fill="#f6cf7e"/><rect x="5" y="2" width="1" height="1" fill="#fff2c4"/><rect x="6" y="2" width="1" height="1" fill="#f6cf7e"/><rect x="0" y="3" width="4" height="1" fill="#f6cf7e"/><rect x="4" y="3" width="1" height="1" fill="#fff2c4"/><rect x="5" y="3" width="1" height="1" fill="#fffdf6"/><rect x="6" y="3" width="1" height="1" fill="#fff2c4"/><rect x="7" y="3" width="4" height="1" fill="#f6cf7e"/><rect x="1" y="4" width="1" height="1" fill="#f6cf7e"/><rect x="2" y="4" width="2" height="1" fill="#fff2c4"/><rect x="4" y="4" width="2" height="1" fill="#fffdf6"/><rect x="6" y="4" width="3" height="1" fill="#fff2c4"/><rect x="9" y="4" width="1" height="1" fill="#f6cf7e"/><rect x="2" y="5" width="1" height="1" fill="#f0c06a"/><rect x="3" y="5" width="5" height="1" fill="#ffe9a6"/><rect x="8" y="5" width="1" height="1" fill="#f0c06a"/><rect x="2" y="6" width="1" height="1" fill="#f0c06a"/><rect x="3" y="6" width="2" height="1" fill="#ffe9a6"/><rect x="5" y="6" width="1" height="1" fill="#f0c06a"/><rect x="6" y="6" width="2" height="1" fill="#ffe9a6"/><rect x="8" y="6" width="1" height="1" fill="#f0c06a"/><rect x="1" y="7" width="1" height="1" fill="#f0c06a"/><rect x="2" y="7" width="2" height="1" fill="#ffe08e"/><rect x="4" y="7" width="1" height="1" fill="#f0c06a"/><rect x="6" y="7" width="1" height="1" fill="#f0c06a"/><rect x="7" y="7" width="2" height="1" fill="#ffe08e"/><rect x="9" y="7" width="1" height="1" fill="#f0c06a"/><rect x="1" y="8" width="3" height="1" fill="#f0c06a"/><rect x="7" y="8" width="3" height="1" fill="#f0c06a"/><rect x="0" y="9" width="2" height="1" fill="#f0c06a"/><rect x="9" y="9" width="2" height="1" fill="#f0c06a"/></symbol>
+  <symbol id="i-pspark-pale" viewBox="0 0 7 7" shape-rendering="crispEdges"><rect x="3" y="0" width="1" height="1" fill="#f6d27e"/><rect x="3" y="1" width="1" height="1" fill="#f6d27e"/><rect x="2" y="2" width="3" height="1" fill="#ffe9a6"/><rect x="0" y="3" width="2" height="1" fill="#f6d27e"/><rect x="2" y="3" width="1" height="1" fill="#ffe9a6"/><rect x="3" y="3" width="1" height="1" fill="#fffdf6"/><rect x="4" y="3" width="1" height="1" fill="#ffe9a6"/><rect x="5" y="3" width="2" height="1" fill="#f6d27e"/><rect x="2" y="4" width="3" height="1" fill="#ffe9a6"/><rect x="3" y="5" width="1" height="1" fill="#f6d27e"/><rect x="3" y="6" width="1" height="1" fill="#f6d27e"/></symbol>
+  <symbol id="i-pdot-pale" viewBox="0 0 4 4" shape-rendering="crispEdges"><rect x="1" y="0" width="2" height="1" fill="#ffe7a2"/><rect x="0" y="1" width="1" height="1" fill="#ffe7a2"/><rect x="1" y="1" width="1" height="1" fill="#fffbea"/><rect x="2" y="1" width="2" height="1" fill="#ffe7a2"/><rect x="0" y="2" width="4" height="1" fill="#f2cd78"/><rect x="1" y="3" width="2" height="1" fill="#f2cd78"/></symbol>
+</defs></svg>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="hdr">
+    <div class="brand">
+      <!-- Logo goes to the main Amitabha Foundation website -->
+      <a href="https://amitabhafoundation.my/" class="brand-logo" aria-label="Amitabha Foundation website"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <!-- "Children Home" label goes back to the top of this page -->
+      <a href="index.html" class="brand-tag" data-i18n="brand.tag">Children Home</a>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="our-care.html" data-i18n="nav.care">Our Care</a>
+      <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
+      <a href="moments.html" class="on" aria-current="page" data-i18n="nav.moments">Moments</a>
+      <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="hdr-r">
+      <button class="lang-toggle btn btn-ghost">中文</button>
+      <a href="#" data-wa="help" class="btn btn-ghost btn-seek" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+      <a href="#" data-donate class="btn btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="nav.donate">Donate</span></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mob-menu" id="mob-menu">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="our-care.html" data-i18n="nav.care">Our Care</a>
+    <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
+    <a href="moments.html" class="on" aria-current="page" data-i18n="nav.moments">Moments</a>
+    <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="#" data-wa="help" target="_blank" rel="noopener" class="mob-seek"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+    <a href="#" data-donate target="_blank" rel="noopener" style="color:var(--brand-red);font-weight:700"><i class="fa fa-heart"></i> <span data-i18n="nav.donateNow">Donate Now</span></a>
+    <button class="lang-toggle btn btn-ghost" style="width:100%;margin-top:.6rem;justify-content:flex-start">中文</button>
+  </nav>
+  <div class="hdr-progress" aria-hidden="true"><span></span></div>
+</header>
+
+<!-- PAGE BANNER -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('assets/img/hero-festival.jpg');background-position:center"></div>
+  <div class="deco" aria-hidden="true">
+    <svg class="a-pxfall px-glow" style="--x:12.9%;--y:-30px;--s:27px;--d:20.1s;--delay:-1.8s;--h:400px;--p:1.8s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:21.8%;--y:-30px;--s:9px;--d:14.0s;--delay:-4.0s;--h:400px;--p:1.6s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:33.6%;--y:-30px;--s:13px;--d:13.2s;--delay:-1.8s;--h:400px;--p:1.9s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow" style="--x:49.2%;--y:-30px;--s:22px;--d:18.9s;--delay:-7.5s;--h:400px;--p:1.3s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:66.4%;--y:-30px;--s:9px;--d:18.3s;--delay:-13.0s;--h:400px;--p:2.2s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:76.1%;--y:-30px;--s:15px;--d:15.9s;--delay:-12.0s;--h:400px;--p:1.9s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:89.4%;--y:-30px;--s:7px;--d:16.8s;--delay:-15.1s;--h:400px;--p:1.8s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:69.9%;--y:58.7%;--s:9px;--d:2.6s;--delay:-1.3s;--p:2.0s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:57.6%;--y:15.4%;--s:15px;--d:2.3s;--delay:-1.1s;--p:1.8s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:88.2%;--y:33.1%;--s:7px;--d:2.8s;--delay:-1.2s;--p:2.0s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:74.9%;--y:27.2%;--s:9px;--d:3.8s;--delay:-2.8s;--p:2.0s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow" style="--x:59.7%;--y:50.7%;--s:23px;--d:3.4s;--delay:-3.8s;--p:1.4s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:95.8%;--y:10.6%;--s:7px;--d:2.2s;--delay:-3.2s;--p:1.9s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:95.7%;--y:72.0%;--s:13px;--d:3.3s;--delay:-4.0s;--p:1.9s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:65.0%;--y:85.9%;--s:17px;--d:2.6s;--delay:-0.3s;--p:1.7s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:57.6%;--y:82.6%;--s:9px;--d:2.6s;--delay:-0.4s;--p:1.7s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-wobble" style="--x:78%;--y:16%;--s:56px;--d:5s;--delay:0s;color:#ffd58a"><use href="#i-camera" width="100%" height="100%"/></svg>
+    <svg class="a-wobble hide-sm" style="--x:90%;--y:54%;--s:32px;--d:6s;--delay:-2s;color:#ffd0da"><use href="#i-d-heart" width="100%" height="100%"/></svg>
+    <svg class="a-wobble hide-md" style="--x:69%;--y:60%;--s:24px;--d:5.5s;--delay:-3s;color:#ffffff"><use href="#i-d-star" width="100%" height="100%"/></svg>
+  </div>
+  <div class="wrap page-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><span data-i18n="nav.moments">Moments</span></nav>
+    <div class="page-hero-kicker" data-i18n="brand.tag">Children Home</div>
+    <h1 data-i18n="ph.moments.h">Moments</h1>
+    <p data-i18n="ph.moments.p">Everyday joys, milestones and heartfelt connections from life at our home.</p>
+  </div>
+</section>
+
+<!-- NEWS & MOMENTS -->
+<section class="sec news-band" id="news">
+  <!-- Moving drawings: crayon doodles -->
+  <div class="deco" aria-hidden="true">
+    <svg class="a-wobble" style="--x:4%;--y:50px;--s:40px;--d:5s;color:#f2a93b"><use href="#i-d-star" width="100%" height="100%"/></svg>
+    <svg class="a-wobble hide-sm" style="--x:93%;--y:60px;--s:44px;--d:7s;--delay:-3s;color:#6bb5a1"><use href="#i-d-spiral" width="100%" height="100%"/></svg>
+    <svg class="a-wobble" style="--x:94%;--b:70px;--s:46px;--d:8s;--delay:-1s;color:#f2a93b"><use href="#i-d-sun" width="100%" height="100%"/></svg>
+    <svg class="a-wobble hide-sm" style="--x:3%;--b:80px;--s:34px;--d:6s;--delay:-2s;color:#ee9fb0"><use href="#i-d-heart" width="100%" height="100%"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="news-head">
+      <div class="sh">
+        <div class="eyebrow" data-i18n="news.eyebrow">News &amp; moments</div>
+        <h2 class="section-h" data-i18n-html="news.h2">Tiny steps, <em>big memories</em></h2>
+        <p class="section-p" data-i18n="news.p">Everyday joys, milestones and heartfelt connections from life at our home.</p>
+      </div>
+    </div>
+    <div class="news-grid">
+      <article class="news-card aos">
+        <div class="news-img"><img src="assets/img/moment-chess-1.jpg" alt="A boy studying chess strategy beside a wall chessboard" loading="lazy"></div>
+        <div class="news-body">
+          <div class="news-meta"><span class="tag" data-i18n="news.n1.tag">Activities</span><span class="date">2025</span></div>
+          <h3 data-i18n="news.n1.h">Thinking ahead: our young minds gear up for chess</h3>
+          <p data-i18n="news.n1.p">Don’t be fooled by their quiet scribbling: these kids are deep in chess strategy mode!</p>
+          <div class="news-more"><div class="news-more-in">
+            <p data-i18n="news.n1.full">Every square on the board is a battlefield of logic and tactics, and every thoughtful move reflects their journey of growth and learning. A huge thank you to our dedicated volunteer coach, who has patiently trained them from the ground up, teaching them how to think and how to make the right move.</p>
+            <div class="news-strip">
+              <button type="button" data-lightbox="assets/img/moment-chess-2.jpg"><img src="assets/img/thumbs/moment-chess-2.jpg" alt="Chess training in the classroom" data-i18n-alt="alt.chess2" loading="lazy"></button>
+              <button type="button" data-lightbox="assets/img/moment-chess-3.jpg"><img src="assets/img/thumbs/moment-chess-3.jpg" alt="A volunteer coach teaching chess at the whiteboard" data-i18n-alt="alt.chess3" loading="lazy"></button>
+            </div>
+          </div></div>
+          <div class="news-foot"><button class="news-toggle" type="button" aria-expanded="false"><span class="t-open" data-i18n="news.more">Read more</span><span class="t-close" data-i18n="news.less">Show less</span> <i class="fa fa-chevron-down"></i></button></div>
+        </div>
+      </article>
+      <article class="news-card aos d1">
+        <div class="news-img"><img src="assets/img/moment-bazaar.jpg" alt="Representatives of Pusat Tuisyen Simfoni Cerdikjaya presenting their donation" loading="lazy" style="object-position:center 30%"></div>
+        <div class="news-body">
+          <div class="news-meta"><span class="tag" data-i18n="news.n2.tag">Community</span><span class="date">2025</span></div>
+          <h3 data-i18n="news.n2.h">Caring through education</h3>
+          <p data-i18n="news.n2.p">2025 marks the 8th year of the Charity Bazaar by Pusat Tuisyen Simfoni Cerdikjaya, and once again the entire proceeds were donated to our Children Home.</p>
+          <div class="news-more"><div class="news-more-in">
+            <p data-i18n="news.n2.full">No fancy packaging, no big promotions: just heartfelt efforts that quietly raise funds, year after year. This year’s gift helps us care for 22 children, covering their daily needs, school fees and medical expenses. Thank you to the school, parents, students, alumni and public for walking alongside us all these years.</p>
+            <p class="news-quote" data-i18n="news.n2.q">“Give back to society, from whom we have received.”</p>
+          </div></div>
+          <div class="news-foot"><button class="news-toggle" type="button" aria-expanded="false"><span class="t-open" data-i18n="news.more">Read more</span><span class="t-close" data-i18n="news.less">Show less</span> <i class="fa fa-chevron-down"></i></button></div>
+        </div>
+      </article>
+      <article class="news-card aos d2">
+        <div class="news-img"><img src="assets/img/moment-beds-2.jpg" alt="New wooden bunk beds donated to the Children Home" loading="lazy"></div>
+        <div class="news-body">
+          <div class="news-meta"><span class="tag appeal" data-i18n="news.n3.tag">Appeal</span><span class="date">2025</span></div>
+          <h3 data-i18n="news.n3.h">A good night’s sleep, a grateful heart</h3>
+          <p data-i18n="news.n3.p">NAM MAH Furniture and Liviva Advisory Group gifted new beds, giving our children a safer, more comfortable place to rest and grow.</p>
+          <div class="news-more"><div class="news-more-in">
+            <p data-i18n="news.n3.full">Every bed is more than furniture: it is a place where children can rest, grow and feel secure. However, our Children Home still needs 9 more beds and 14 mattresses, as many of the old beds are broken, unstable and unsafe. Whether you donate items or contribute funds, your support brings comfort and peace of mind to the children.</p>
+            <div class="news-strip">
+              <button type="button" data-lightbox="assets/img/moment-beds-1.jpg"><img src="assets/img/thumbs/moment-beds-1.jpg" alt="Volunteers assembling the new bunk beds" data-i18n-alt="alt.beds1" loading="lazy"></button>
+              <button type="button" data-lightbox="assets/img/moment-beds-3.jpg"><img src="assets/img/thumbs/moment-beds-3.jpg" alt="Volunteers unpacking bed frames" data-i18n-alt="alt.beds3" loading="lazy"></button>
+              <button type="button" data-lightbox="assets/img/moment-beds-4.jpg"><img src="assets/img/thumbs/moment-beds-4.jpg" alt="A new bunk bed being put together" data-i18n-alt="alt.beds4" loading="lazy"></button>
+            </div>
+            <a href="#" data-donate class="btn btn-donate news-cta" target="_blank" rel="noopener"><i class="fa fa-bed"></i> <span data-i18n="news.n3.cta">Help with beds</span></a>
+          </div></div>
+          <div class="news-foot"><button class="news-toggle" type="button" aria-expanded="false"><span class="t-open" data-i18n="news.more">Read more</span><span class="t-close" data-i18n="news.less">Show less</span> <i class="fa fa-chevron-down"></i></button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION / VOLUNTEER CTA -->
+<div class="cta-band" id="donate">
+  <svg class="hero-arcs" viewBox="0 0 600 600" aria-hidden="true"><g fill="none" stroke="#ffd58a" stroke-width="1"><circle cx="300" cy="300" r="140" opacity=".8"/><circle cx="300" cy="300" r="200" opacity=".55"/><circle cx="300" cy="300" r="260" opacity=".3"/></g></svg>
+  <!-- Moving drawings: golden stars and sparkles twinkle and float up, with crayon hearts -->
+  <div class="deco" aria-hidden="true">
+    <svg class="a-pxfall px-glow" style="--x:3.7%;--y:-30px;--s:17px;--d:16.1s;--delay:-14.4s;--h:440px;--p:1.3s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:15.1%;--y:-30px;--s:8px;--d:19.1s;--delay:-3.1s;--h:440px;--p:1.9s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:29.9%;--y:-30px;--s:11px;--d:17.3s;--delay:-9.4s;--h:440px;--p:1.6s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow" style="--x:43.0%;--y:-30px;--s:17px;--d:13.2s;--delay:-19.7s;--h:440px;--p:1.6s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:47.7%;--y:-30px;--s:8px;--d:15.9s;--delay:-20.1s;--h:440px;--p:1.4s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:58.6%;--y:-30px;--s:14px;--d:17.4s;--delay:-20.0s;--h:440px;--p:2.0s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:70.3%;--y:-30px;--s:8px;--d:19.7s;--delay:-20.8s;--h:440px;--p:1.2s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow hide-sm" style="--x:83.8%;--y:-30px;--s:26px;--d:18.2s;--delay:-4.6s;--h:440px;--p:2.0s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow" style="--x:94.4%;--y:-30px;--s:18px;--d:18.1s;--delay:-4.6s;--h:440px;--p:1.2s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:34.6%;--y:33.4%;--s:11px;--d:3.5s;--delay:-3.3s;--p:2.2s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:94.8%;--y:87.5%;--s:22px;--d:2.8s;--delay:-0.7s;--p:1.8s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:54.3%;--y:61.3%;--s:6px;--d:2.6s;--delay:-3.7s;--p:1.8s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:68.4%;--y:13.8%;--s:11px;--d:4.0s;--delay:-2.6s;--p:2.2s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow" style="--x:21.5%;--y:43.3%;--s:22px;--d:3.1s;--delay:-3.2s;--p:1.8s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:14.1%;--y:14.1%;--s:9px;--d:2.4s;--delay:-0.8s;--p:1.5s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:70.1%;--y:76.0%;--s:11px;--d:3.2s;--delay:-3.2s;--p:1.5s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:38.0%;--y:56.2%;--s:20px;--d:2.3s;--delay:-0.4s;--p:1.3s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:71.2%;--y:62.8%;--s:9px;--d:3.7s;--delay:-1.0s;--p:2.0s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:95.6%;--y:34.6%;--s:9px;--d:3.0s;--delay:-1.1s;--p:1.4s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-rise" style="--x:13%;--b:-30px;--s:20px;--d:17s;--delay:-5s;--h:440px;--o:.6;color:#ffd0da"><use href="#i-d-heart" width="100%" height="100%"/></svg>
+    <svg class="a-rise" style="--x:74%;--b:-30px;--s:18px;--d:19s;--delay:-11s;--h:440px;--o:.6;color:#ffd58a"><use href="#i-d-heart" width="100%" height="100%"/></svg>
+  </div>
+  <div class="wrap">
+    <h2 data-i18n-html="cta.h2">In compassion, <em>we change the world</em>.</h2>
+    <p data-i18n="cta.p">RM50 gives a child school supplies. RM100 covers a month of food and healthcare. RM300 supports a child’s full care and education for a month.</p>
+    <div class="cta-btns">
+      <a href="#" data-donate class="btn btn-lg btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="cta.donate">Donate now</span></a>
+      <a href="#" data-wa="volunteer" class="btn btn-lg btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="cta.volunteer">Volunteer</span></a>
+      <a href="#" data-wa="sponsor" class="btn btn-lg btn-outline-white" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
+    </div>
+    <a class="cta-more" href="get-involved.html"><span data-i18n="cta.more">More ways to get involved</span> <i class="fa fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <!-- Paper children holding hands (decoration) -->
+  <div class="dolls" aria-hidden="true"><svg class="doll" style="--i:0;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:1;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:2;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:3;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:4;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:5;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:6;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:7;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:8;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:9;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:10;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:11;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:12;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:13;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:14;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:15;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:16;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:17;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:18;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:19;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:20;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:21;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:22;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:23;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:24;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:25;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:26;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:27;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:28;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:29;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:30;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:31;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:32;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:33;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:34;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:35;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:36;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:37;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:38;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:39;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:40;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:41;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:42;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:43;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:44;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:45;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:46;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:47;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:48;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:49;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:50;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:51;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:52;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:53;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:54;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:55;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg></div>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="https://amitabhafoundation.my/" target="_blank" rel="noopener"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <p data-i18n="foot.p">Amitabha Foundation Children Home. A 5-Star rated, ISO 9001:2015 certified Buddhist children home in Johor Bahru, caring for children since 2010.</p>
+      <div class="foot-soc">
+        <a href="https://www.facebook.com/share/17yLE4x4mP/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/amitabhamalaysia/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCfMzaH1XM3kerjHOsnTLPEQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@amitabhafoundation" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.c1">The Home</h4>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="our-care.html" data-i18n="nav.care">Our Care</a>
+      <a href="index.html#credentials" data-i18n="foot.cred">Credentials</a>
+      <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
+      <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <h4><a href="https://amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.c2">Amitabha Foundation</a></h4>
+      <a href="https://eldercare.amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.elder">Elder Home</a>
+      <a class="here" href="index.html" data-i18n="foot.children">Children Home</a>
+      <a href="https://amitabhafoundation.my/dialysis-centre/" target="_blank" rel="noopener" data-i18n="foot.dialysis">Dialysis Centre</a>
+      <a href="https://amitabhafoundation.my/amitabha-assistance/" target="_blank" rel="noopener" data-i18n="foot.assist">Amitabha Assistance</a>
+      <a href="#" data-wa="volunteer" target="_blank" rel="noopener" data-i18n="cta.volunteer">Volunteer</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.c3">Contact</h4>
+      <a class="fci" href="tel:+6075353356"><i class="fa fa-phone"></i><span>+607-535 3356</span></a>
+      <a class="fci" href="#" data-wa="help" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>016-9567861 <small>WhatsApp</small></span></a>
+      <a class="fci" href="tel:+6072132448"><i class="fa fa-headset"></i><span>+607-213 2448 <small data-i18n="foot.hotline">Amitabha Hotline</small></span></a>
+      <a class="fci" href="https://www.google.com/maps/place/115,+Jalan+Dato+Sulaiman,+Taman+Abad,+80250+Johor+Bahru,+Johor+Darul+Ta%27zim,+Malaysia/@1.4835556,103.7573321,16.6z/data=!4m6!3m5!1s0x31da6d372789beb3:0x56e9cb00896f4083!8m2!3d1.4840708!4d103.7570245!16s%2Fg%2F11rpl7wymg" target="_blank" rel="noopener"><i class="fa fa-location-dot"></i><span>115 &amp; 115A, Jalan Datuk Sulaiman, Taman Abad, 80250 Johor Bahru, Johor Darul Ta’zim</span></a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <a class="staff-link" href="admin.html"><i class="fa fa-lock"></i> <span data-i18n="foot.staff">Staff login</span></a>
+    <p data-i18n="foot.copy">© 2026 Amitabha Foundation (1179489T) · Children Home Programme · All rights reserved.</p>
+    <p class="disclaimer" data-i18n="foot.disclaimer">Some images featured on this site are stock photos used solely for illustrative and representational purposes.</p>
+  </div>
+</footer>
+
+<div class="float-bar">
+  <a class="float-donate" href="#" data-donate target="_blank" rel="noopener" aria-label="Donate"><i class="fa fa-hand-holding-heart"></i> <span class="fl-label" data-i18n="nav.donateNow">Donate Now</span><span class="donate-tip" data-i18n="float.tip">A child is waiting for a kindness only you can give.</span></a>
+  <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
+</div>
+
+<!-- Connection to the admin database (visitor statistics + blog posts): edit supabase-config.js -->
+<script src="supabase-config.js"></script>
+<script>
+/* ── Site links: edit here only ─────────────────────────────── */
+const CONFIG = {
+  whatsapp: '60169567861',  // Children Home WhatsApp: 016-9567861
+  donate:   'https://m.amitabhafoundation.my/en/donation'
+};
+const WA_TEXT = {
+  help:      'Hello, I would like to know more about Amitabha Foundation Children Home.',
+  volunteer: 'Hello, I would like to volunteer at Amitabha Foundation Children Home.',
+  sponsor:   'Hello, I would like to sponsor a child at Amitabha Foundation Children Home.',
+  visit:     'Hello, I would like to schedule a visit to Amitabha Foundation Children Home.',
+  csr:       'Hello, my company would like to partner with Amitabha Foundation Children Home (CSR).'
+};
+document.querySelectorAll('[data-donate]').forEach(a => a.href = CONFIG.donate);
+document.querySelectorAll('[data-wa]').forEach(a => {
+  a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(WA_TEXT[a.dataset.wa] || WA_TEXT.help);
+});
+
+/* Visitor statistics for the admin dashboard.
+   Anonymous: no names, emails or personal details; skipped when "Do Not Track" is switched on. */
+(function(){
+  const S = window.CH_SUPABASE;
+  window.chTrack = function(){};
+  if (!S || !S.url || /YOUR-PROJECT/.test(S.url) || /YOUR-ANON/.test(S.anonKey) || navigator.webdriver || navigator.doNotTrack === '1') return;
+  const headers = { apikey: S.anonKey, Authorization: 'Bearer ' + S.anonKey, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+  const send = (table, row) => fetch(S.url + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
+  let visitor = null, lang = 'en';
+  try {
+    visitor = localStorage.getItem('ch_vid');
+    if (!visitor){ visitor = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)).slice(0, 36); localStorage.setItem('ch_vid', visitor); }
+    lang = localStorage.getItem('site_lang') === 'zh' ? 'zh' : 'en';
+  } catch(e){}
+  const page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html?$/, '') || 'index';
+  const device = innerWidth < 640 ? 'mobile' : innerWidth < 1024 ? 'tablet' : 'desktop';
+  let referrer = null;
+  try { const r = new URL(document.referrer); if (r.hostname && r.hostname !== location.hostname) referrer = r.hostname.replace(/^www\./, '').slice(0, 120); } catch(e){}
+  send('page_views', { page, visitor, referrer, device, lang });
+  window.chTrack = (name, label) => send('events', { page, name, label: label ? String(label).slice(0, 60) : null, visitor });
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a'); if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-donate')) chTrack('donate');
+    else if (a.hasAttribute('data-wa')) chTrack('whatsapp', a.dataset.wa);
+    else if (href.startsWith('tel:')) chTrack('phone', href.slice(4));
+    else if (/google\.[a-z.]+\/maps/.test(href)) chTrack('directions');
+    else if (href.includes('volunteer-now')) chTrack('volunteer_form');
+    else if (href.includes('give-hope')) chTrack('give_hope');
+  }, true);
+})();
+
+/* Header scroll + burger */
+const hdr = document.getElementById('hdr');
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mob-menu');
+burger.addEventListener('click', () => { burger.classList.toggle('open'); mob.classList.toggle('open'); });
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); mob.classList.remove('open'); }));
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+/* "Children Home" label beside the logo: full label when it fits, two lines when space is tight,
+   hidden only on very narrow screens (the big hero title names the home there) */
+(function(){
+  const row = hdr.querySelector('.hdr');
+  const logo = hdr.querySelector('.brand img');
+  const over = () => row.scrollWidth > row.clientWidth + 1;
+  function fit(){
+    hdr.classList.remove('bt-compact', 'bt-hide', 'nav-burger');
+    if (over()) hdr.classList.add('bt-compact');
+    if (over()) hdr.classList.add('bt-hide');
+    if (over()) hdr.classList.add('nav-burger');
+  }
+  let raf = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); }, { passive: true });
+  if (logo && !logo.complete) logo.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.fitBrandTag = fit;
+  fit();
+})();
+
+/* Header: shrinks smoothly after you scroll down, with a reading-progress line along its bottom edge */
+(function(){
+  const bar = document.querySelector('.hdr-progress span');
+  let raf = 0, was = hdr.classList.contains('scrolled'), refit = 0;
+  function onScroll(){
+    raf = 0;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0).toFixed(4) + ')';
+    const now = scrollY > 30;
+    if (now !== was){                                   // header size changed: re-check that the menu fits once it settles
+      was = now; clearTimeout(refit);
+      refit = setTimeout(() => window.fitBrandTag && window.fitBrandTag(), 480);
+    }
+  }
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(onScroll); }, { passive: true });
+  hdr.classList.toggle('scrolled', scrollY > 30);
+  onScroll();
+})();
+
+/* Scroll reveal */
+const aosObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    el.classList.add('in');
+    aosObs.unobserve(el);
+    /* once revealed, hand the element back to its own hover/transition styles */
+    setTimeout(() => el.classList.remove('aos','aos-l','aos-r','in','d1','d2','d3','d4'), 1300);
+  });
+}, { threshold: .12 });
+document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el));
+
+/* News & moments: read more */
+document.querySelectorAll('.news-card').forEach(card => {
+  const btn = card.querySelector('.news-toggle');
+  btn.addEventListener('click', () => btn.setAttribute('aria-expanded', card.classList.toggle('open')));
+});
+
+/* Lightbox for certificates, milestones and moment photos */
+(function(){
+  const lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.innerHTML = '<button class="lb-x" type="button" aria-label="Close"><i class="fa fa-xmark"></i></button><figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(lb);
+  const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+  function close(){ lb.classList.remove('on'); }
+  document.querySelectorAll('[data-lightbox]').forEach(el => el.addEventListener('click', () => {
+    const thumb = el.querySelector('img');
+    img.src = el.dataset.lightbox;
+    img.alt = cap.textContent = thumb ? thumb.alt : '';
+    lb.classList.add('on');
+  }));
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+
+/* Blog posts written in the admin website appear on this page automatically (newest first) */
+(function(){
+  const S = window.CH_SUPABASE, grid = document.querySelector('#news .news-grid');
+  if (!grid || !S || !S.url || /YOUR-PROJECT/.test(S.url) || /YOUR-ANON/.test(S.anonKey)) return;
+  const TXT = { en: { read: 'Read story', share: 'Share on WhatsApp', copy: 'Copy link', copied: 'Link copied', close: 'Close' },
+                zh: { read: '阅读全文', share: '分享到 WhatsApp', copy: '复制链接', copied: '已复制链接', close: '关闭' } };
+  const TAG_ZH = { News: '新闻', Activities: '活动', Community: '社区', Appeal: '募集', Story: '故事', Event: '活动预告' };
+  const lang = () => document.documentElement.lang === 'zh' ? 'zh' : 'en';
+  const pick = (p, k) => (lang() === 'zh' && p[k + '_zh']) || p[k + '_en'] || '';
+  const tagOf = p => lang() === 'zh' ? (TAG_ZH[p.tag] || p.tag) : p.tag;
+  const when = d => new Date(d).toLocaleDateString(lang() === 'zh' ? 'zh-CN' : 'en-MY', { day: 'numeric', month: 'short', year: 'numeric' });
+  const link = p => location.origin + location.pathname + '?post=' + encodeURIComponent(p.slug);
+  let posts = [], reader = null, current = null;
+
+  // safe formatting: paragraphs, "- " bullet lists, "## " small headings
+  function story(text, target){
+    target.textContent = '';
+    String(text || '').replace(/\r/g, '').split(/\n{2,}/).map(b => b.trim()).filter(Boolean).forEach(block => {
+      const lines = block.split('\n');
+      if (lines.every(l => /^\s*[-•]\s+/.test(l))){
+        const ul = document.createElement('ul');
+        lines.forEach(l => { const li = document.createElement('li'); li.textContent = l.replace(/^\s*[-•]\s+/, ''); ul.appendChild(li); });
+        target.appendChild(ul);
+      } else if (/^##\s+/.test(block)){
+        const h = document.createElement('h4'); h.textContent = block.replace(/^##\s+/, ''); target.appendChild(h);
+      } else {
+        const para = document.createElement('p');
+        lines.forEach((l, i) => { if (i) para.appendChild(document.createElement('br')); para.appendChild(document.createTextNode(l)); });
+        target.appendChild(para);
+      }
+    });
+  }
+
+  function render(){
+    grid.querySelectorAll('.blog-card').forEach(c => c.remove());
+    const frag = document.createDocumentFragment();
+    posts.forEach((p, i) => {
+      const card = document.createElement('article');
+      card.className = 'news-card blog-card'; card.style.setProperty('--i', i);
+      card.innerHTML = '<div class="news-img"></div><div class="news-body"><div class="news-meta"><span class="tag"></span><span class="date"></span></div><h3></h3><p></p><div class="news-foot"><button class="blog-open" type="button"><span></span> <i class="fa fa-arrow-right"></i></button></div></div>';
+      const box = card.querySelector('.news-img');
+      if (p.cover_url){ const img = document.createElement('img'); img.src = p.cover_url; img.alt = ''; img.loading = 'lazy'; box.appendChild(img); }
+      else box.innerHTML = '<div class="blog-noimg"><i class="fa fa-newspaper"></i></div>';
+      card.querySelector('.tag').textContent = tagOf(p);
+      card.querySelector('.date').textContent = when(p.published_at);
+      card.querySelector('h3').textContent = pick(p, 'title');
+      card.querySelector('p').textContent = pick(p, 'excerpt');
+      card.querySelector('.blog-open span').textContent = TXT[lang()].read;
+      card.querySelector('.blog-open').addEventListener('click', () => open(p));
+      frag.appendChild(card);
+    });
+    grid.prepend(frag);
+  }
+
+  function build(){
+    reader = document.createElement('div');
+    reader.className = 'post-reader'; reader.setAttribute('role', 'dialog'); reader.setAttribute('aria-modal', 'true');
+    reader.innerHTML = '<article class="pr-card"><button class="pr-x" type="button"><i class="fa fa-xmark"></i></button><div class="pr-cover"></div><div class="pr-body"><div class="news-meta"><span class="tag"></span><span class="date"></span></div><h2></h2><div class="pr-text"></div><div class="pr-share"><a class="btn btn-wa pr-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span></span></a><button class="btn btn-ghost pr-copy" type="button"><i class="fa fa-link"></i> <span></span></button></div></div></article>';
+    document.body.appendChild(reader);
+    reader.addEventListener('click', e => { if (e.target === reader) close(); });
+    reader.querySelector('.pr-x').addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && current) close(); });
+    reader.querySelector('.pr-copy').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(link(current)); } catch(e){}
+      reader.querySelector('.pr-copy span').textContent = TXT[lang()].copied;
+    });
+  }
+  function fill(p){
+    const cover = reader.querySelector('.pr-cover');
+    cover.classList.toggle('none', !p.cover_url);
+    cover.style.backgroundImage = p.cover_url ? 'url("' + p.cover_url.replace(/"/g, '%22') + '")' : '';
+    reader.querySelector('.tag').textContent = tagOf(p);
+    reader.querySelector('.date').textContent = when(p.published_at);
+    reader.querySelector('h2').textContent = pick(p, 'title');
+    story(pick(p, 'body') || pick(p, 'excerpt'), reader.querySelector('.pr-text'));
+    reader.querySelector('.pr-wa').href = 'https://wa.me/?text=' + encodeURIComponent(pick(p, 'title') + ' ' + link(p));
+    reader.querySelector('.pr-wa span').textContent = TXT[lang()].share;
+    reader.querySelector('.pr-copy span').textContent = TXT[lang()].copy;
+    reader.querySelector('.pr-x').setAttribute('aria-label', TXT[lang()].close);
+  }
+  function open(p){
+    if (!reader) build();
+    current = p; fill(p);
+    reader.scrollTop = 0; reader.classList.add('on'); document.body.style.overflow = 'hidden';
+    history.replaceState(null, '', '?post=' + encodeURIComponent(p.slug));
+    reader.querySelector('.pr-x').focus();
+    if (window.chTrack) chTrack('post_open', p.slug);
+  }
+  function close(){
+    reader.classList.remove('on'); document.body.style.overflow = ''; current = null;
+    history.replaceState(null, '', location.pathname);
+  }
+
+  fetch(S.url + '/rest/v1/posts?select=slug,tag,title_en,title_zh,excerpt_en,excerpt_zh,body_en,body_zh,cover_url,published_at&status=eq.published&order=published_at.desc&limit=12',
+        { headers: { apikey: S.anonKey, Authorization: 'Bearer ' + S.anonKey } })
+    .then(r => r.ok ? r.json() : [])
+    .then(rows => {
+      posts = Array.isArray(rows) ? rows : []; render();
+      const want = new URLSearchParams(location.search).get('post');
+      const p = want && posts.find(x => x.slug === want);
+      if (p){ document.getElementById('news').scrollIntoView(); open(p); }
+    })
+    .catch(() => {});
+  // switch the posts' language together with the rest of the page (English / 中文)
+  new MutationObserver(() => { render(); if (current) fill(current); })
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+})();
+
+/* Moving drawings: pause while off screen (saves battery on phones) */
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('deco-paused', !e.isIntersecting)), { rootMargin: '100px' });
+  document.querySelectorAll('.deco, .dolls').forEach(el => io.observe(el));
+})();
+
+/* Footer paper children: on computers they hop up as the mouse passes over them,
+   and a little heart pops up from each child you reach (phones keep the gentle automatic wave) */
+(function(){
+  const row = document.querySelector('.dolls');
+  if (!row || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const dolls = [...row.querySelectorAll('.doll')];
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let centers = [], mx = null, raf = 0, last = -1, lastT = 0;
+  const measure = () => { centers = dolls.map(d => { const r = d.getBoundingClientRect(); return r.left + r.width / 2; }); };
+  function update(){
+    raf = 0;
+    let near = -1, best = 1e9;
+    dolls.forEach((d, i) => {
+      if (mx === null){ d.style.removeProperty('--lift'); return; }
+      const dist = Math.abs(centers[i] - mx) / 40;            // distance in "children"
+      if (dist < best){ best = dist; near = i; }
+      const lift = Math.max(0, 1 - dist / 3.2);               // reaches about 3 children either side
+      d.style.setProperty('--lift', (lift * lift).toFixed(3));
+    });
+    if (near > -1 && near !== last && best < .6 && !calm && performance.now() - lastT > 140){ pop(near); lastT = performance.now(); }
+    last = near;
+  }
+  function pop(i){
+    const h = document.createElement('span');
+    h.className = 'doll-heart';
+    h.style.left = (centers[i] - row.getBoundingClientRect().left) + 'px';
+    h.style.color = dolls[i].style.color;
+    h.innerHTML = '<svg viewBox="0 0 20 18" width="14" height="14"><path d="M10 17C4 13 1 10 1 6a4.5 4.5 0 0 1 9-1.5A4.5 4.5 0 0 1 19 6c0 4-3 7-9 11Z" fill="currentColor"/></svg>';
+    row.appendChild(h);
+    h.animate([{ transform: 'translateY(0) scale(.5)', opacity: 1 }, { transform: 'translateY(-34px) scale(1.15)', opacity: 0 }],
+              { duration: 900, easing: 'ease-out' }).onfinish = () => h.remove();
+  }
+  row.addEventListener('mouseenter', measure);
+  window.addEventListener('resize', () => { centers = []; }, { passive: true });
+  row.addEventListener('mousemove', e => { if (!centers.length) measure(); mx = e.clientX; if (!raf) raf = requestAnimationFrame(update); });
+  row.addEventListener('mouseleave', () => { mx = null; last = -1; if (!raf) raf = requestAnimationFrame(update); });
+})();
+
+/* ── English / 中文 switch (same mechanism as Elder Home lang.js) ── */
+(function(){
+  const ZH = {
+    'meta.title': '温馨时刻 | 阿弥陀佛援助总会儿童小屋',
+    'nav.home': '首页', 'nav.care': '我们的照护', 'nav.stories': '成功故事', 'nav.moments': '温馨时刻', 'nav.faq': '常见问题', 'nav.seekHelp': '寻求帮助', 'nav.donate': '捐款',
+    'nav.donateNow': '立即捐款',
+    'brand.tag': '儿童小屋',
+    'news.eyebrow': '新闻与温馨时刻', 'news.h2': '小小脚步，<em>满满回忆</em>', 'news.p': '记录孩子们日常的喜悦、成长的里程碑与真挚的情感连结。', 'news.more': '阅读更多', 'news.less': '收起',
+    'news.n1.tag': '活动', 'news.n1.h': '前瞻思维：孩子们为国际象棋比赛积极备战', 'news.n1.p': '别看他们埋头写写画画，其实是在研究西洋棋战术！',
+    'news.n1.full': '一格一格的棋盘，是逻辑与策略的战场；一步一步的思考，是孩子们成长的痕迹。感谢义工教练不厌其烦地指导他们、陪伴他们训练，让这群孩子从零开始，一步步学会如何思考、如何下出“对的一步”。', 'news.n2.tag': '社区',
+    'news.n2.h': '通过教育的关怀', 'news.n2.p': '今年（2025年）是由Pusat Tuisyen Simfoni Cerdikjaya主办的慈善义卖活动迈入第八年，他们再次将全部筹款捐赠给我们的儿童小屋。',
+    'news.n2.full': '没有华丽的包装，没有大型的宣传，只有一份份真诚的付出，年复一年默默为我们筹集善款。今年的善款帮助我们照顾22名孩子，涵盖他们的日常生活开销、学杂费与医疗费用。感谢校方、家长、学生、校友与大众一路以来的陪伴与支持。',
+    'news.n2.q': '“回馈社会，因为我们曾从中受益。”', 'news.n3.tag': '募集', 'news.n3.h': '安稳好眠，感恩满怀',
+    'news.n3.p': '南马木业（NAM MAH Furniture）与力威瓦集团（Liviva Advisory Group）捐赠全新床具，为孩子们提供更安全、更舒适的睡眠环境。',
+    'news.n3.full': '每一张床不仅仅是一件家具，更是孩子们得以休息、成长与感到安心的港湾。然而，我们的儿童小屋目前仍急需另外9张床架和14张床垫，许多旧床已损坏、不稳固，无法为孩子们提供安全的睡眠环境。无论是捐赠物资或资助款项，您的支持都将为孩子们带来温暖与安心。',
+    'news.n3.cta': '捐助床具',
+    'cta.h2': '慈悲为本，<em>以心转境</em>。', 'cta.p': 'RM50 为孩子提供学习用品，RM100 资助一个月的伙食与医疗，RM300 支持一位孩子一个月的生活与教育。', 'cta.donate': '立即捐款', 'cta.volunteer': '成为义工',
+    'cta.sponsor': '资助孩子',
+    'foot.p': '阿弥陀佛援助总会儿童小屋。位于新山、荣获五星评级及 ISO 9001:2015 认证的佛教儿童之家，自2010年起守护孩子成长。', 'foot.c1': '儿童小屋', 'foot.cred': '资质认证', 'foot.c2': '阿弥陀佛援助总会',
+    'foot.elder': '敬老院', 'foot.children': '儿童小屋', 'foot.dialysis': '洗肾中心', 'foot.assist': '阿弥陀佛援助', 'foot.c3': '联系我们', 'foot.hotline': '阿弥陀佛热线',
+    'foot.copy': '© 2026 阿弥陀佛援助总会 (1179489T) · 儿童小屋 · 版权所有。', 'foot.disclaimer': '本网站部分图片为图库照片，仅作说明与示意用途。',
+    'float.tip': '有个孩子，正等待着只有您能给予的善意。',
+    'alt.chess2': '课室里的国际象棋训练', 'alt.chess3': '义工教练在白板前讲解棋局', 'alt.beds1': '义工组装全新双层床', 'alt.beds3': '义工拆开床架包装', 'alt.beds4': '正在组装的新双层床',
+    'ph.moments.h': '温馨时刻', 'ph.moments.p': '记录孩子们日常的喜悦、成长的里程碑与真挚的情感连结。',
+    'nav.involved': '参与我们',
+    'cta.more': '更多参与方式',
+    'foot.staff': '职员登录'
+  };
+  const origTitle = document.title;
+  function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e) { return null; } }
+  function apply(lang){
+    document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18n || el.dataset.i18nHtml;
+      if (lang === 'zh' && ZH[key] !== undefined){
+        if (el.dataset.i18nOrig === undefined) el.dataset.i18nOrig = el.innerHTML;
+        if (el.dataset.i18nHtml) el.innerHTML = ZH[key]; else el.textContent = ZH[key];
+      } else if (el.dataset.i18nOrig !== undefined){
+        el.innerHTML = el.dataset.i18nOrig;
+      }
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.dataset.i18nAlt;
+      if (lang === 'zh' && ZH[key] !== undefined){
+        if (el.dataset.altOrig === undefined) el.dataset.altOrig = el.alt;
+        el.alt = ZH[key];
+      } else if (el.dataset.altOrig !== undefined){
+        el.alt = el.dataset.altOrig;
+      }
+    });
+    document.title = lang === 'zh' ? ZH['meta.title'] : origTitle;
+    document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
+    document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = lang === 'zh' ? 'EN' : '中文');
+    document.querySelectorAll('.mfaq-card.open .mfaq-a').forEach(a => a.style.maxHeight = a.scrollHeight + 'px');
+    /* the second name beside the big title is always the other language */
+    document.querySelectorAll('.hero-name-alt').forEach(el => el.lang = lang === 'zh' ? 'en' : 'zh');
+    if (window.fitBrandTag) window.fitBrandTag();
+    store('site_lang', lang);
+  }
+  if (store('site_lang') === 'zh') apply('zh');
+  document.querySelectorAll('.lang-toggle').forEach(b => b.addEventListener('click', () => apply(store('site_lang') === 'zh' ? 'en' : 'zh')));
+})();
+</script>
+</body>
+</html>
