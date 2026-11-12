@@ -45,13 +45,14 @@
 
   /* ── Children Home programme tokens ── */
   --display:"Fraunces",Georgia,serif;
-  --leaf-800:#22604f;
-  --leaf-700:#2e7d6b;
-  --leaf-600:#3b9480;
-  --leaf-500:#6bb5a1;
-  --leaf-400:#a5d4c4;
-  --leaf-100:#dcefe7;
-  --leaf-50:#eef7f3;
+  --leaf-800:#51318a;
+  --leaf-700:#6a42b0;
+  --leaf-600:#7b55c2;
+  --leaf-500:#9c7dd6;
+  --leaf-400:#c4afe6;
+  --leaf-100:#ebe2f7;
+  /* Theme colour: PURPLE. The --leaf-* names are left from the old green theme: --leaf-700 is the main purple, --leaf-50/100 are light tints, --leaf-800 is the dark shade. */
+  --leaf-50:#f5f0fb;
   --sun:#f2a93b;
   --sun-d:#d98e1f;
   --sun-l:#ffd58a;
@@ -84,14 +85,16 @@ header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,4
 .brand-tag:hover{color:var(--leaf-600)}
 .nav{display:flex;gap:.1rem;align-items:center}
 .nav a{font-size:1rem;font-weight:500;color:var(--ink-700);padding:.55rem .8rem;border-radius:8px;white-space:nowrap;transition:color .3s ease,background .3s ease}
-.nav a:hover{background:rgba(247,230,233,.5);color:var(--brand-red-nav)}
+.nav a:hover{color:var(--brand-red-nav)}
 .nav a.on{color:var(--brand-red-nav)}
-.nav a.on::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--brand-red-nav);margin:2px auto -6px}
+/* menu line: a full-width line under the word, drawn in from the left on hover and kept under the current page */
+.nav a::after{content:"";position:absolute;left:var(--nav-pad,.6rem);right:var(--nav-pad,.6rem);bottom:.12rem;height:2px;border-radius:2px;background:var(--brand-red-nav);transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
 .hdr-r{display:flex;align-items:center;gap:.55rem}
 .btn{display:inline-flex;align-items:center;gap:.45rem;font-family:inherit;font-weight:600;font-size:.86rem;padding:.62rem 1.15rem;border-radius:999px;transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease;white-space:nowrap}
 .btn-ghost{color:var(--navy-800);border:1px solid var(--line)}
-.btn-ghost:hover{background:rgba(46,125,107,.1);border-color:var(--leaf-700);color:var(--leaf-700)}
-.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(46,125,107,.3)}
+.btn-ghost:hover{background:rgba(106,66,176,.08);border-color:var(--leaf-700);color:var(--leaf-700)}
+.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(106,66,176,.3)}
 .btn-primary:hover{background:var(--leaf-800)}
 .btn-donate{background:var(--brand-red);color:#fff;animation:donateGlow 2.5s ease-in-out infinite}
 .btn-donate:hover{background:#8f1419}
@@ -100,6 +103,9 @@ header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,4
 .btn-outline-white{color:#fff;border:1.5px solid rgba(255,255,255,.55)}
 .btn-outline-white:hover{background:rgba(255,255,255,.1)}
 .btn-lg{padding:.85rem 1.6rem;font-size:.92rem}
+/* Volunteer button: gold (only WhatsApp buttons are green) */
+.btn-volunteer{background:var(--sun);color:var(--navy-900);box-shadow:0 6px 18px rgba(242,169,59,.35)}
+.btn-volunteer:hover{background:#e59a24;color:var(--navy-900)}
 .btn:active{background:var(--brand-red);color:#fff;border-color:var(--brand-red);box-shadow:0 6px 18px rgba(171,26,31,.35)}
 .donate-img{height:1.1em;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,.6))}
 @keyframes donateGlow{0%,100%{box-shadow:0 4px 18px rgba(171,26,31,.5),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 6px 28px rgba(171,26,31,.85),0 0 24px rgba(171,26,31,.5),0 0 0 8px rgba(171,26,31,.13)}}
@@ -136,12 +142,11 @@ h2.section-h em{font-style:italic;color:var(--leaf-700);font-weight:500}
 /* Mini FAQ (accordion) */
 .mfaq-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
 .mfaq-card:hover{border-color:var(--leaf-400);box-shadow:var(--shadow-sm)}
-.mfaq-card.open{border-color:var(--leaf-500);box-shadow:0 2px 16px rgba(46,125,107,.1)}
+.mfaq-card.open{border-color:var(--leaf-500);box-shadow:0 2px 16px rgba(106,66,176,.1)}
 .mfaq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 
 /* CTA band */
 .cta-band{background:radial-gradient(700px 500px at 80% 30%,rgba(242,169,59,.28),transparent 60%),linear-gradient(135deg,var(--navy-800),var(--leaf-800));color:#fff;padding:clamp(3rem,6vw,5rem) 0;text-align:center;position:relative;overflow:hidden;isolation:isolate}
-.cta-band .hero-arcs{left:50%;right:auto;transform:translateX(-50%);bottom:-420px;width:820px;height:820px;opacity:.35}
 .cta-band .wrap{position:relative;z-index:1}
 .cta-band h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.15;margin-bottom:.8rem;text-wrap:balance}
 .cta-band h2 em{color:var(--sun-l);font-style:italic}
@@ -156,6 +161,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
 .foot-soc{display:flex;gap:.4rem}
 .foot-soc a{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;transition:all var(--t)}
 .foot-soc a:hover{background:var(--leaf-700);color:#fff;border-color:var(--leaf-700);transform:translateY(-2px)}
+.foot-soc a.soc-text{width:auto;padding:0 .55rem;font-size:.72rem;font-weight:700}
 .foot-col h4{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:1rem}
 .foot-col a,.foot-col .fci{display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:rgba(255,255,255,.45);margin-bottom:.55rem;transition:color var(--t);line-height:1.5}
 .foot-col a:hover{color:rgba(255,255,255,.85)}
@@ -169,9 +175,11 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
 
 /* Floating CTA — same style & position as Elder Home */
 .float-bar{position:fixed;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:999;display:flex;gap:.65rem;align-items:center;filter:drop-shadow(0 8px 20px rgba(0,0,0,.16))}
-.float-wa,.float-donate{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.55rem;border-radius:999px;font-weight:700;font-size:.92rem;white-space:nowrap;transition:all var(--t);color:#fff}
+.float-wa,.float-donate,.float-vol{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.55rem;border-radius:999px;font-weight:700;font-size:.92rem;white-space:nowrap;transition:all var(--t);color:#fff}
 .float-wa{background:#25d366;box-shadow:0 6px 24px rgba(37,211,102,.42)}
 .float-wa:hover{background:#1ebe5a;transform:translateY(-3px)}
+.float-vol{background:var(--sun);color:var(--navy-900);box-shadow:0 6px 24px rgba(242,169,59,.45)}
+.float-vol:hover{background:#e59a24;transform:translateY(-3px)}
 .float-donate{position:relative;background:linear-gradient(135deg,#c52525,var(--brand-red));box-shadow:0 6px 28px rgba(171,26,31,.6);animation:donatePulse 2.8s ease-in-out infinite}
 .float-donate:hover{background:#8f1419;transform:translateY(-3px);animation-play-state:paused}
 @keyframes donatePulse{0%,100%{box-shadow:0 6px 28px rgba(171,26,31,.6),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 8px 36px rgba(171,26,31,.8),0 0 0 10px rgba(171,26,31,.12)}}
@@ -186,7 +194,9 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
 
 /* Page banner (inner pages) */
 .page-hero{position:relative;min-height:clamp(240px,34vh,360px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:#0d1a1c;color:#fff}
-.page-hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;animation:heroZoom 9s ease-out both}
+.page-hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center var(--fy,50%);animation:heroZoom 9s ease-out both}
+/* --fy: which height of the picture stays in view on wide screens; --fx: which part stays in view on phones and tablets */
+@media(max-width:900px){.page-hero-bg{background-position:var(--fx,50%) var(--fy,50%)}}
 .page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(12,26,28,.8) 0%,rgba(12,26,28,.45) 60%,rgba(12,26,28,.2) 100%)}
 .page-hero-in{width:100%;padding-top:clamp(2.5rem,6vw,4rem);padding-bottom:clamp(2rem,5vw,3.2rem)}
 .crumbs{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.75);margin-bottom:1rem}
@@ -200,7 +210,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
 
 /* ═══ Children Home drawings that move behind the content ═══
    Soap bubbles, balloons, a wau kite, paper planes, crayon doodles, a lotus pond,
-   a chain of paper children holding hands, and confetti for success stories. */
+   a chain of paper children holding hands, and confetti. */
 .deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .deco~.wrap{position:relative;z-index:1}
 .deco>svg{position:absolute;left:var(--x,0);top:var(--y,auto);bottom:var(--b,auto);width:var(--s,32px);height:var(--s,32px);overflow:visible}
@@ -330,6 +340,8 @@ body{padding-top:var(--header-h)}
 .btn.btn-seek:active{background:#a32b55;border-color:#a32b55;color:#fff;box-shadow:0 6px 18px rgba(217,70,122,.4)}
 .btn.btn-seek i{filter:drop-shadow(0 0 4px rgba(255,255,255,.6))}
 .btn.btn-seek:hover i{animation:seekHop .8s ease-in-out}
+.seek-ic{display:inline-flex;align-items:center;justify-content:center;width:1.35em;height:1.35em;flex-shrink:0}
+.seek-ic svg{display:block;width:100%;height:100%}
 @keyframes seekGlow{0%,100%{box-shadow:0 4px 18px rgba(217,70,122,.45),0 0 0 0 rgba(217,70,122,0)}50%{box-shadow:0 6px 28px rgba(217,70,122,.8),0 0 24px rgba(217,70,122,.45),0 0 0 8px rgba(217,70,122,.13)}}
 @keyframes seekHop{0%,100%{transform:scale(1)}25%{transform:scale(1.22) translateY(-1px)}45%{transform:scale(.96)}65%{transform:scale(1.14) translateY(-1px)}}
 .hdr-r .btn-donate:hover{transform:translateY(-2px)}
@@ -339,6 +351,21 @@ body{padding-top:var(--header-h)}
 .staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.4);transition:color var(--t)}
 .staff-link:hover{color:rgba(255,255,255,.9)}
 .staff-link i{font-size:.65rem}
+/* Header layout: logo on the left; menu, language icon and buttons grouped on the right */
+.nav{margin-left:auto;gap:.1rem}
+/* header spans the whole screen width (no centered box), like the reference: logo near the left edge, buttons near the right edge */
+.hdr{max-width:none}
+@media(min-width:1700px){.hdr{padding-left:clamp(1.5rem,2.2vw,3rem);padding-right:clamp(1.5rem,2.2vw,3rem)}}
+/* menu: compact, grouped on the right */
+.nav a{position:relative;--nav-pad:.6rem;padding:.55rem var(--nav-pad)}
+@media(min-width:1500px){.nav a{--nav-pad:.7rem;padding:.6rem var(--nav-pad)}}
+/* Language button: an icon (the phone menu keeps the icon together with the word) */
+.lang-toggle i{font-size:1.3em;line-height:1}
+.hdr-r .lang-toggle{width:3.15rem;height:3.15rem;padding:0;justify-content:center}   /* a round icon button, about as tall as the buttons beside it */
+#hdr.scrolled .hdr-r .lang-toggle{width:2.75rem;height:2.75rem}
+@media(min-width:1500px){.hdr-r .lang-toggle{width:3.5rem;height:3.5rem}}
+#hdr .hdr-r .lang-toggle{transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease,width .45s cubic-bezier(.4,0,.2,1),height .45s cubic-bezier(.4,0,.2,1)}
+.mob-menu .lang-toggle i{font-size:1.2em}
 
 /* Scroll reveal (content stays visible if JavaScript is off) */
 .js .aos{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
@@ -361,7 +388,7 @@ body{padding-top:var(--header-h)}
   .foot-top{grid-template-columns:1fr}
   .foot-bot{flex-direction:column;text-align:center}
   .float-bar{left:auto;right:1.2rem;transform:none;bottom:1rem;flex-direction:column;gap:.5rem}
-  .float-wa,.float-donate{width:50px;height:50px;padding:0;border-radius:50%;justify-content:center;font-size:1.3rem}
+  .float-wa,.float-donate,.float-vol{width:50px;height:50px;padding:0;border-radius:50%;justify-content:center;font-size:1.3rem}
   .fl-label,.donate-tip{display:none}
 }
 @media(max-width:480px){
@@ -381,7 +408,7 @@ body{padding-top:var(--header-h)}
 <!-- Drawings library for the moving decorations (original illustrations) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
   <symbol id="i-balloon" viewBox="0 0 50 110"><ellipse cx="25" cy="28" rx="22" ry="26" fill="currentColor"/><ellipse cx="16" cy="18" rx="5" ry="8" fill="#fff" opacity=".35"/><path d="M21 53l4 6l4-6Z" fill="currentColor"/><path d="M25 59c-6 10 6 18 0 28c-5 9 4 14 0 22" stroke="#9aa9ae" stroke-width="1.5" fill="none"/></symbol>
-  <symbol id="i-plane" viewBox="0 0 100 60"><path d="M2 30L98 4L62 56L48 38Z" fill="#fff" stroke="#2e7d6b" stroke-width="2" stroke-linejoin="round"/><path d="M48 38L98 4M48 38L44 50L56 44" fill="none" stroke="#2e7d6b" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 100 60"><path d="M2 30L98 4L62 56L48 38Z" fill="#fff" stroke="#6a42b0" stroke-width="2" stroke-linejoin="round"/><path d="M48 38L98 4M48 38L44 50L56 44" fill="none" stroke="#6a42b0" stroke-width="2" stroke-linejoin="round"/></symbol>
   <symbol id="i-d-star" viewBox="0 0 100 100"><path d="M50 8L61 38L93 39L68 58L77 90L50 71L23 90L32 58L7 39L39 38Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/></symbol>
   <symbol id="i-d-heart" viewBox="0 0 100 100"><path d="M50 84C24 66 10 50 12 32C14 18 30 12 42 20C46 23 49 27 50 31C52 26 56 22 60 20C72 13 88 20 88 34C88 52 74 66 50 84Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-d-sun" viewBox="0 0 100 100"><circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="6"/><path d="M50 10v12M50 78v12M10 50h12M78 50h12M22 22l8 8M70 70l8 8M78 22l-8 8M30 70l-8 8" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></symbol>
@@ -400,22 +427,22 @@ body{padding-top:var(--header-h)}
   <div class="hdr">
     <div class="brand">
       <!-- Logo goes to the main Amitabha Foundation website -->
-      <a href="https://amitabhafoundation.my/" class="brand-logo" aria-label="Amitabha Foundation website"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <a href="https://amitabhafoundation.my/" class="brand-logo" target="_blank" rel="noopener" aria-label="Amitabha Foundation website (opens in a new tab)"><img src="assets/af-logo.png" alt="Amitabha Foundation Children Home"></a>
       <!-- "Children Home" label goes back to the top of this page -->
       <a href="index.html" class="brand-tag" data-i18n="brand.tag">Children Home</a>
     </div>
     <nav class="nav">
       <a href="index.html" data-i18n="nav.home">Home</a>
       <a href="our-care.html" data-i18n="nav.care">Our Care</a>
-      <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
+      <a href="stories.html" data-i18n="nav.stories">Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
       <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" class="on" aria-current="page" data-i18n="nav.involved">Get Involved</a>
       <a href="faq.html" data-i18n="nav.faq">FAQ</a>
     </nav>
     <div class="hdr-r">
-      <button class="lang-toggle btn btn-ghost">中文</button>
-      <a href="#" data-wa="help" class="btn btn-ghost btn-seek" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+      <button class="lang-toggle btn btn-ghost" type="button" title="Switch to Chinese (中文)" aria-label="Switch to Chinese (中文)"><i class="fa fa-language" aria-hidden="true"></i></button>
+      <a href="#" data-form="help" class="btn btn-ghost btn-seek" target="_blank" rel="noopener"><i class="seek-ic" aria-hidden="true"><svg viewBox="0.7 6.9 45.7 45.7" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><g transform="translate(5.6 3.4) scale(.8)"><path d="M29 24.5C20.5 19 19.5 11.5 24.5 10C27 9.3 28.4 10.9 29 12.5C29.6 10.9 31 9.3 33.5 10C38.5 11.5 37.5 19 29 24.5Z"/></g><g transform="translate(0 -2.5) rotate(-22 24 37)"><path d="M4.5 31.5L11 29L17.5 41.5L11 44Z"/><path d="M11 29.5L17 28.2C20 27.6 22.5 28 25 29H32.5C35.2 29 35.6 32.3 33 32.8L26.5 33.8"/><path d="M17.5 41L23 42.4C27 43.4 31 42.5 34.2 40L42.8 32.8C44.4 31.4 42.4 28.8 40.4 29.9L34.5 33.2"/></g></svg></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
       <a href="#" data-donate class="btn btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="nav.donate">Donate</span></a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -423,21 +450,21 @@ body{padding-top:var(--header-h)}
   <nav class="mob-menu" id="mob-menu">
     <a href="index.html" data-i18n="nav.home">Home</a>
     <a href="our-care.html" data-i18n="nav.care">Our Care</a>
-    <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
+    <a href="stories.html" data-i18n="nav.stories">Stories</a>
     <a href="moments.html" data-i18n="nav.moments">Moments</a>
     <a href="blog.html" data-i18n="nav.blog">Blog</a>
     <a href="get-involved.html" class="on" aria-current="page" data-i18n="nav.involved">Get Involved</a>
     <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-    <a href="#" data-wa="help" target="_blank" rel="noopener" class="mob-seek"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+    <a href="#" data-form="help" target="_blank" rel="noopener" class="mob-seek"><i class="seek-ic" aria-hidden="true"><svg viewBox="0.7 6.9 45.7 45.7" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><g transform="translate(5.6 3.4) scale(.8)"><path d="M29 24.5C20.5 19 19.5 11.5 24.5 10C27 9.3 28.4 10.9 29 12.5C29.6 10.9 31 9.3 33.5 10C38.5 11.5 37.5 19 29 24.5Z"/></g><g transform="translate(0 -2.5) rotate(-22 24 37)"><path d="M4.5 31.5L11 29L17.5 41.5L11 44Z"/><path d="M11 29.5L17 28.2C20 27.6 22.5 28 25 29H32.5C35.2 29 35.6 32.3 33 32.8L26.5 33.8"/><path d="M17.5 41L23 42.4C27 43.4 31 42.5 34.2 40L42.8 32.8C44.4 31.4 42.4 28.8 40.4 29.9L34.5 33.2"/></g></svg></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
     <a href="#" data-donate target="_blank" rel="noopener" style="color:var(--brand-red);font-weight:700"><i class="fa fa-heart"></i> <span data-i18n="nav.donateNow">Donate Now</span></a>
-    <button class="lang-toggle btn btn-ghost" style="width:100%;margin-top:.6rem;justify-content:flex-start">中文</button>
+    <button class="lang-toggle btn btn-ghost" type="button" title="Switch to Chinese (中文)" aria-label="Switch to Chinese (中文)" style="width:100%;margin-top:.6rem;justify-content:flex-start"><i class="fa fa-language" aria-hidden="true"></i> <span class="lt">中文</span></button>
   </nav>
   <div class="hdr-progress" aria-hidden="true"><span></span></div>
 </header>
 
 <!-- PAGE BANNER -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('assets/img/life-activity.jpg');background-position:center"></div>
+  <div class="page-hero-bg" style="background-image:url('assets/img/banners/home-playtime.jpg');--fy:20%;--fx:70%"></div>
   <div class="deco" aria-hidden="true">
     <svg class="a-pxfall px-glow" style="--x:7.7%;--y:-30px;--s:27px;--d:19.7s;--delay:-4.5s;--h:400px;--p:2.1s"><use href="#i-pstar" width="100%" height="100%"/></svg>
     <svg class="a-pxfall hide-sm" style="--x:23.9%;--y:-30px;--s:7px;--d:20.6s;--delay:-5.4s;--h:400px;--p:1.5s"><use href="#i-pdot" width="100%" height="100%"/></svg>
@@ -455,7 +482,7 @@ body{padding-top:var(--header-h)}
     <svg class="a-pxtwinkle" style="--x:56.2%;--y:43.1%;--s:10px;--d:3.2s;--delay:-1.8s;--p:1.9s"><use href="#i-pspark" width="100%" height="100%"/></svg>
     <svg class="a-balloon" style="--x:76%;--y:10%;--s:84px;--d:6s;color:#ee9fb0"><use href="#i-balloon" width="100%" height="100%"/></svg>
     <svg class="a-balloon hide-sm" style="--x:84%;--y:24%;--s:70px;--d:7s;--delay:-2s;color:#f2a93b"><use href="#i-balloon" width="100%" height="100%"/></svg>
-    <svg class="a-balloon hide-md" style="--x:90%;--y:6%;--s:64px;--d:6.5s;--delay:-3s;color:#6bb5a1"><use href="#i-balloon" width="100%" height="100%"/></svg>
+    <svg class="a-balloon hide-md" style="--x:90%;--y:6%;--s:64px;--d:6.5s;--delay:-3s;color:#9c7dd6"><use href="#i-balloon" width="100%" height="100%"/></svg>
   </div>
   <div class="wrap page-hero-in">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><span data-i18n="nav.involved">Get Involved</span></nav>
@@ -480,7 +507,7 @@ body{padding-top:var(--header-h)}
     </div>
     <div class="gi-ways">
       <a class="gi-way aos" href="#sponsor" style="--i:0;--c:#ab1a1f"><span class="gi-way-ic"><i class="fa fa-hand-holding-heart"></i></span><b data-i18n="gi.w1.t">Sponsor a child</b><span class="gi-way-t" data-i18n="gi.w1.p">Food, shelter, school and healthcare</span><i class="fa fa-arrow-down gi-way-go"></i></a>
-      <a class="gi-way aos d1" href="#volunteer" style="--i:1;--c:#2e7d6b"><span class="gi-way-ic"><i class="fa fa-hands-holding-child"></i></span><b data-i18n="gi.w2.t">Volunteer</b><span class="gi-way-t" data-i18n="gi.w2.p">Teach, play and care with the children</span><i class="fa fa-arrow-down gi-way-go"></i></a>
+      <a class="gi-way aos d1" href="#volunteer" style="--i:1;--c:#6a42b0"><span class="gi-way-ic"><i class="fa fa-hands-holding-child"></i></span><b data-i18n="gi.w2.t">Volunteer</b><span class="gi-way-t" data-i18n="gi.w2.p">Teach, play and care with the children</span><i class="fa fa-arrow-down gi-way-go"></i></a>
       <a class="gi-way aos d2" href="#partner" style="--i:2;--c:#d98e1f"><span class="gi-way-ic"><i class="fa fa-handshake"></i></span><b data-i18n="gi.w3.t">Partner with us</b><span class="gi-way-t" data-i18n="gi.w3.p">Long-term support through CSR</span><i class="fa fa-arrow-down gi-way-go"></i></a>
     </div>
   </div>
@@ -505,7 +532,7 @@ body{padding-top:var(--header-h)}
         <p class="gi-note"><i class="fa fa-repeat"></i> <span data-i18n="gi.s.note">One-time and monthly sponsorship available.</span></p>
         <div class="gi-btns">
           <a href="#" data-donate class="btn btn-lg btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="cta.donate">Donate now</span></a>
-          <a href="#" data-wa="sponsor" class="btn btn-lg btn-ghost" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
+          <a href="#" data-form="sponsor" class="btn btn-lg btn-ghost" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
         </div>
       </div>
   </div>
@@ -528,8 +555,8 @@ body{padding-top:var(--header-h)}
           <li style="--i:2"><span class="gi-li-ic"><i class="fa fa-bowl-food"></i></span><span data-i18n="gi.v.l3">Helping with daily care and meal distribution</span></li>
         </ul>
         <div class="gi-btns">
-          <a href="https://amitabhafoundation.my/volunteer-now/" class="btn btn-lg btn-primary" target="_blank" rel="noopener"><i class="fa fa-hands-holding-child"></i> <span data-i18n="gi.v.btn">Volunteer now</span></a>
-          <a href="#" data-wa="volunteer" class="btn btn-lg btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="gi.v.wa">WhatsApp us</span></a>
+          <a href="#" data-form="volunteer" class="btn btn-lg btn-volunteer" target="_blank" rel="noopener"><i class="fa fa-hands-holding-child"></i> <span data-i18n="gi.v.btn">Volunteer now</span></a>
+          <a href="#" data-form="enquiry" class="btn btn-lg btn-ghost" target="_blank" rel="noopener"><i class="fa fa-circle-question"></i> <span data-i18n="gi.v.wa">Ask a question</span></a>
         </div>
       </div>
   </div>
@@ -552,8 +579,8 @@ body{padding-top:var(--header-h)}
           <li style="--i:2"><span class="gi-li-ic"><i class="fa fa-people-group"></i></span><span data-i18n="gi.p.l3">Employee volunteer initiatives</span></li>
         </ul>
         <div class="gi-btns">
-          <a href="https://amitabhafoundation.my/give-hope/" class="btn btn-lg btn-primary" target="_blank" rel="noopener"><i class="fa fa-seedling"></i> <span data-i18n="gi.p.btn">Give hope</span></a>
-          <a href="#" data-wa="csr" class="btn btn-lg btn-ghost" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="gi.p.wa">Talk to us about CSR</span></a>
+          <a href="#" data-form="giveHope" class="btn btn-lg btn-primary" target="_blank" rel="noopener"><i class="fa fa-seedling"></i> <span data-i18n="gi.p.btn">Give hope</span></a>
+          <a href="#" data-form="csr" class="btn btn-lg btn-ghost" target="_blank" rel="noopener"><i class="fa fa-handshake"></i> <span data-i18n="gi.p.wa">Talk to us about CSR</span></a>
         </div>
       </div>
   </div>
@@ -561,7 +588,6 @@ body{padding-top:var(--header-h)}
 
 <!-- DONATION / VOLUNTEER CTA -->
 <div class="cta-band" id="donate">
-  <svg class="hero-arcs" viewBox="0 0 600 600" aria-hidden="true"><g fill="none" stroke="#ffd58a" stroke-width="1"><circle cx="300" cy="300" r="140" opacity=".8"/><circle cx="300" cy="300" r="200" opacity=".55"/><circle cx="300" cy="300" r="260" opacity=".3"/></g></svg>
   <!-- Moving drawings: golden stars and sparkles twinkle and float up, with crayon hearts -->
   <div class="deco" aria-hidden="true">
     <svg class="a-pxfall px-glow" style="--x:3.7%;--y:-30px;--s:17px;--d:16.1s;--delay:-14.4s;--h:440px;--p:1.3s"><use href="#i-pstar" width="100%" height="100%"/></svg>
@@ -591,8 +617,8 @@ body{padding-top:var(--header-h)}
     <p data-i18n="cta.p">RM50 gives a child school supplies. RM100 covers a month of food and healthcare. RM300 supports a child’s full care and education for a month.</p>
     <div class="cta-btns">
       <a href="#" data-donate class="btn btn-lg btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="cta.donate">Donate now</span></a>
-      <a href="#" data-wa="volunteer" class="btn btn-lg btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="cta.volunteer">Volunteer</span></a>
-      <a href="#" data-wa="sponsor" class="btn btn-lg btn-outline-white" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
+      <a href="#" data-form="volunteer" class="btn btn-lg btn-volunteer" target="_blank" rel="noopener"><i class="fa fa-handshake-angle"></i> <span data-i18n="cta.volunteer">Volunteer</span></a>
+      <a href="#" data-form="sponsor" class="btn btn-lg btn-outline-white" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
     </div>
   </div>
 </div>
@@ -600,16 +626,18 @@ body{padding-top:var(--header-h)}
 <!-- FOOTER -->
 <footer>
   <!-- Paper children holding hands (decoration) -->
-  <div class="dolls" aria-hidden="true"><svg class="doll" style="--i:0;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:1;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:2;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:3;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:4;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:5;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:6;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:7;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:8;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:9;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:10;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:11;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:12;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:13;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:14;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:15;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:16;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:17;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:18;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:19;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:20;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:21;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:22;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:23;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:24;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:25;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:26;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:27;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:28;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:29;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:30;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:31;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:32;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:33;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:34;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:35;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:36;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:37;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:38;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:39;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:40;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:41;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:42;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:43;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:44;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:45;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:46;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:47;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:48;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:49;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:50;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:51;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:52;color:#6bb5a1"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:53;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:54;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:55;color:#a5d4c4"><use href="#i-doll-b" width="100%" height="100%"/></svg></div>
+  <div class="dolls" aria-hidden="true"><svg class="doll" style="--i:0;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:1;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:2;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:3;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:4;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:5;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:6;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:7;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:8;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:9;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:10;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:11;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:12;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:13;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:14;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:15;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:16;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:17;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:18;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:19;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:20;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:21;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:22;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:23;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:24;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:25;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:26;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:27;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:28;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:29;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:30;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:31;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:32;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:33;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:34;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:35;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:36;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:37;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:38;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:39;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:40;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:41;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:42;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:43;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:44;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:45;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:46;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:47;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:48;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:49;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:50;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:51;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:52;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:53;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:54;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:55;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg></div>
   <div class="foot-top">
     <div class="foot-brand">
-      <a href="https://amitabhafoundation.my/" target="_blank" rel="noopener"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <a href="https://amitabhafoundation.my/" target="_blank" rel="noopener"><img src="assets/af-logo.png" alt="Amitabha Foundation Children Home"></a>
       <p data-i18n="foot.p">Amitabha Foundation Children Home. A 5-Star rated, ISO 9001:2015 certified Buddhist children home in Johor Bahru, caring for children since 2010.</p>
       <div class="foot-soc">
         <a href="https://www.facebook.com/share/17yLE4x4mP/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/amitabhamalaysia/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/channel/UCfMzaH1XM3kerjHOsnTLPEQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         <a href="https://www.tiktok.com/@amitabhafoundation" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a class="soc-text" href="https://www.xiaohongshu.com/user/profile/64947ee5000000002a0375ca" target="_blank" rel="noopener" aria-label="XiaoHongShu" lang="zh">小红书</a>
+        <a href="https://t.me/amitabhafoundation" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
       </div>
     </div>
     <div class="foot-col">
@@ -617,7 +645,7 @@ body{padding-top:var(--header-h)}
       <a href="index.html" data-i18n="nav.home">Home</a>
       <a href="our-care.html" data-i18n="nav.care">Our Care</a>
       <a href="index.html#credentials" data-i18n="foot.cred">Credentials</a>
-      <a href="success-stories.html" data-i18n="nav.stories">Success Stories</a>
+      <a href="stories.html" data-i18n="nav.stories">Stories</a>
       <a href="moments.html" data-i18n="nav.moments">Moments</a>
       <a href="blog.html" data-i18n="nav.blog">Blog</a>
       <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
@@ -629,7 +657,8 @@ body{padding-top:var(--header-h)}
       <a class="here" href="index.html" data-i18n="foot.children">Children Home</a>
       <a href="https://amitabhafoundation.my/dialysis-centre/" target="_blank" rel="noopener" data-i18n="foot.dialysis">Dialysis Centre</a>
       <a href="https://amitabhafoundation.my/amitabha-assistance/" target="_blank" rel="noopener" data-i18n="foot.assist">Amitabha Assistance</a>
-      <a href="#" data-wa="volunteer" target="_blank" rel="noopener" data-i18n="cta.volunteer">Volunteer</a>
+      <a href="#" data-form="volunteer" target="_blank" rel="noopener" data-i18n="cta.volunteer">Volunteer</a>
+      <a href="#" data-form="giveHope" target="_blank" rel="noopener" data-i18n="foot.givehope">Give Hope</a>
     </div>
     <div class="foot-col">
       <h4 data-i18n="foot.c3">Contact</h4>
@@ -642,13 +671,14 @@ body{padding-top:var(--header-h)}
   <div class="foot-bot">
     <a class="staff-link" href="admin.html"><i class="fa fa-lock"></i> <span data-i18n="foot.staff">Staff login</span></a>
     <p data-i18n="foot.copy">© 2026 Amitabha Foundation (1179489T) · Children Home Programme · All rights reserved.</p>
-    <p class="disclaimer" data-i18n="foot.disclaimer">Some images featured on this site are stock photos used solely for illustrative and representational purposes.</p>
+    <p class="disclaimer" data-i18n="foot.disclaimer">Some images on this site are AI-generated or stock photos, used for illustration only.</p>
   </div>
 </footer>
 
 <div class="float-bar">
   <a class="float-donate" href="#" data-donate target="_blank" rel="noopener" aria-label="Donate"><i class="fa fa-hand-holding-heart"></i> <span class="fl-label" data-i18n="nav.donateNow">Donate Now</span><span class="donate-tip" data-i18n="float.tip">A child is waiting for a kindness only you can give.</span></a>
-  <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
+  <a class="float-vol" href="#" data-form="volunteer" target="_blank" rel="noopener" aria-label="Volunteer"><i class="fa fa-handshake-angle"></i> <span class="fl-label" data-i18n="cta.volunteer">Volunteer</span></a>
+  <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="Enquire now on WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label" data-i18n="float.enquire">Enquire now</span></a>
 </div>
 
 <!-- Connection to the admin database (campaigns + visitor statistics): edit supabase-config.js -->
@@ -657,7 +687,16 @@ body{padding-top:var(--header-h)}
 /* ── Site links: edit here only ─────────────────────────────── */
 const CONFIG = {
   whatsapp: '60169567861',  // Children Home WhatsApp: 016-9567861
-  donate:   'https://m.amitabhafoundation.my/en/donation'
+  donate:   'https://m.amitabhafoundation.my/en/donation',
+  /* Google Forms the buttons open. To change a form, change its address here. */
+  forms: {
+    help:      'https://docs.google.com/forms/d/e/1FAIpQLScDXj5uu-AdbmCuaDvnoU_M7ISewVS45nIzasafUk7YkILeMw/viewform',   // Seek Help
+    volunteer: 'https://docs.google.com/forms/d/e/1FAIpQLSctAVYEG2BOMK7oSyCQbQ2bbyRBjfaBDX3reOPWtcHqIE5EJw/viewform',   // Volunteer
+    sponsor:   'https://docs.google.com/forms/d/e/1FAIpQLSc1BMrJZUJfY3EZNJ4506x6wTc-wv4TzqJyyFp0hvwU27i22A/viewform',   // Sponsor a Child
+    csr:       'https://docs.google.com/forms/d/e/1FAIpQLScpI7q190mB5bTIVL3IraA1ZZPuDeZwXlyPTwYRHYmNOITPBg/viewform',   // Talk About CSR
+    giveHope:  'https://docs.google.com/forms/d/e/1FAIpQLSfH-8CaziU8puSkFCzehaN8JGpOmZfs3bUE3nH2vrrvTW0ERQ/viewform',   // Give Hope
+    enquiry:   'https://docs.google.com/forms/d/e/1FAIpQLSeN4yoLshTNTqdvFs_NEa_zMKUY1rPAXhKPdv9cdd6wngeRrg/viewform'    // Enquiry
+  }
 };
 const WA_TEXT = {
   help:      'Hello, I would like to know more about Amitabha Foundation Children Home.',
@@ -667,6 +706,7 @@ const WA_TEXT = {
   csr:       'Hello, my company would like to partner with Amitabha Foundation Children Home (CSR).'
 };
 document.querySelectorAll('[data-donate]').forEach(a => a.href = CONFIG.donate);
+document.querySelectorAll('[data-form]').forEach(a => { a.href = CONFIG.forms[a.dataset.form] || CONFIG.forms.enquiry; });
 document.querySelectorAll('[data-wa]').forEach(a => {
   a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(WA_TEXT[a.dataset.wa] || WA_TEXT.help);
 });
@@ -699,6 +739,7 @@ document.querySelectorAll('[data-wa]').forEach(a => {
     const a = e.target.closest && e.target.closest('a'); if (!a) return;
     const href = a.getAttribute('href') || '';
     if (a.hasAttribute('data-donate')) chTrack('donate');
+    else if (a.hasAttribute('data-form')) chTrack('form', a.dataset.form);
     else if (a.hasAttribute('data-wa')) chTrack('whatsapp', a.dataset.wa);
     else if (href.startsWith('tel:')) chTrack('phone', href.slice(4));
     else if (/google\.[a-z.]+\/maps/.test(href)) chTrack('directions');
@@ -706,7 +747,6 @@ document.querySelectorAll('[data-wa]').forEach(a => {
     else if (href.includes('give-hope')) chTrack('give_hope');
   }, true);
 })();
-
 /* Header scroll + burger */
 const hdr = document.getElementById('hdr');
 const burger = document.getElementById('burger');
@@ -729,6 +769,8 @@ window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.
   }
   let raf = 0;
   window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); }, { passive: true });
+  // also re-check when the header's width changes without a window resize (for example a scrollbar appearing after the page loads)
+  if (window.ResizeObserver){ let lw = row.clientWidth; new ResizeObserver(() => { if (row.clientWidth !== lw){ lw = row.clientWidth; cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); } }).observe(row); }
   if (logo && !logo.complete) logo.addEventListener('load', fit);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   window.fitBrandTag = fit;
@@ -845,14 +887,14 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
 (function(){
   const ZH = {
     'meta.title': '参与我们 | 阿弥陀佛援助总会儿童小屋',
-    'nav.home': '首页', 'nav.care': '我们的照护', 'nav.stories': '成功故事', 'nav.moments': '温馨时刻', 'nav.faq': '常见问题', 'nav.seekHelp': '寻求帮助', 'nav.donate': '捐款',
+    'nav.home': '首页', 'nav.care': '我们的照护', 'nav.stories': '故事', 'nav.moments': '温馨时刻', 'nav.faq': '常见问题', 'nav.seekHelp': '寻求帮助', 'nav.donate': '捐款', 'float.enquire': '立即咨询',
     'nav.donateNow': '立即捐款',
     'brand.tag': '儿童小屋',
     'cta.h2': '慈悲为本，<em>以心转境</em>。', 'cta.p': 'RM50 为孩子提供学习用品，RM100 资助一个月的伙食与医疗，RM300 支持一位孩子一个月的生活与教育。', 'cta.donate': '立即捐款', 'cta.volunteer': '成为义工',
     'cta.sponsor': '资助孩子',
     'foot.p': '阿弥陀佛援助总会儿童小屋。位于新山、荣获五星评级及 ISO 9001:2015 认证的佛教儿童之家，自2010年起守护孩子成长。', 'foot.c1': '儿童小屋', 'foot.cred': '资质认证', 'foot.c2': '阿弥陀佛援助总会',
     'foot.elder': '敬老院', 'foot.children': '儿童小屋', 'foot.dialysis': '洗肾中心', 'foot.assist': '阿弥陀佛援助', 'foot.c3': '联系我们', 'foot.hotline': '阿弥陀佛热线',
-    'foot.copy': '© 2026 阿弥陀佛援助总会 (1179489T) · 儿童小屋 · 版权所有。', 'foot.disclaimer': '本网站部分图片为图库照片，仅作说明与示意用途。',
+    'foot.copy': '© 2026 阿弥陀佛援助总会 (1179489T) · 儿童小屋 · 版权所有。', 'foot.disclaimer': '本网站部分图片为 AI 生成或图库照片，仅作说明与示意用途。',
     'float.tip': '有个孩子，正等待着只有您能给予的善意。',
     'nav.involved': '参与我们',
     'ph.involved.h': '参与我们', 'ph.involved.p': '资助孩子、奉献时间当义工，或与我们企业合作——每一份支持都能改变孩子的一生。',
@@ -861,9 +903,10 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
     'gi.s.h2': '给孩子<em>温饱、庇护、教育与关怀</em>', 'gi.s.p': '您的支持确保孩子们拥有营养的饮食、安全的家、教育与医疗照护。', 'gi.s.cap': '每个孩子，都被用心照顾', 'gi.t1': '为一位孩子提供学习用品',
     'gi.t2': '资助一位孩子一个月的伙食与医疗', 'gi.t3': '支持一位孩子一个月的生活与教育', 'gi.s.note': '可选择一次性捐款或每月定期资助。', 'gi.v.eyebrow': '义工', 'gi.v.h2': '用您的时间，<em>带来长远影响</em>',
     'gi.v.p': '担任导师、教学，或单纯陪伴孩子们。每周的几个小时，就能为孩子带来莫大的意义。', 'gi.v.cap': '一起学习', 'gi.v.l1': '教学与课业辅导', 'gi.v.l2': '策划有趣又富教育性的活动', 'gi.v.l3': '协助日常照顾与餐食分发',
-    'gi.v.btn': '立即报名当义工', 'gi.v.wa': 'WhatsApp 联系', 'gi.p.eyebrow': '企业合作', 'gi.p.h2': '携手创造<em>长远改变</em>',
+    'gi.v.btn': '立即报名当义工', 'gi.v.wa': '提出问题', 'gi.p.eyebrow': '企业合作', 'gi.p.h2': '携手创造<em>长远改变</em>',
     'gi.p.p': '通过企业社会责任（CSR）与我们携手，年复一年为孩子们创造更光明的未来。', 'gi.p.cap': '持续传递的善意', 'gi.p.l1': '企业配对捐款计划', 'gi.p.l2': '公司主导的教育赞助项目', 'gi.p.l3': '员工志愿者活动',
     'gi.p.btn': '传递希望', 'gi.p.wa': '洽谈企业合作',
+    'foot.givehope': '传递希望',
     'nav.blog': '博客',
     'foot.staff': '职员登录'
   };
@@ -890,7 +933,11 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
     });
     document.title = lang === 'zh' ? ZH['meta.title'] : origTitle;
     document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
-    document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = lang === 'zh' ? 'EN' : '中文');
+    document.querySelectorAll('.lang-toggle').forEach(b => {
+      const label = lang === 'zh' ? 'Switch to English' : 'Switch to Chinese (中文)';
+      const lt = b.querySelector('.lt'); if (lt) lt.textContent = lang === 'zh' ? 'EN' : '中文';
+      b.title = label; b.setAttribute('aria-label', label);
+    });
     document.querySelectorAll('.mfaq-card.open .mfaq-a').forEach(a => a.style.maxHeight = a.scrollHeight + 'px');
     /* the second name beside the big title is always the other language */
     document.querySelectorAll('.hero-name-alt').forEach(el => el.lang = lang === 'zh' ? 'en' : 'zh');

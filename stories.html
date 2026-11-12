@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Stories | Amitabha Foundation Children Home</title>
+<meta name="description" content="Stories of hope from Amitabha Foundation Children Home in Johor Bahru. Names and details are always changed to protect every child.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amitabha Foundation Children Home">
+<meta property="og:title" content="Stories | Amitabha Foundation Children Home">
+<meta property="og:description" content="Stories of hope from Amitabha Foundation Children Home in Johor Bahru. Names and details are always changed to protect every child.">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/af-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Body font matches Elder Home (Plus Jakarta Sans); display font is Children Home's own (Fraunces) -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* ── Amitabha Foundation master-brand tokens (shared with Elder Home) ── */
+  --navy-900:#1a242f;
+  --navy-800:#2c3e50;
+  --brand-red:#ab1a1f;
+  --brand-red-nav:#ab1b25;
+  --ink-900:#0c1a1c;
+  --ink-700:#1f3034;
+  --ink-500:#4d6065;
+  --ink-400:#6e8087;
+  --ink-300:#9aa9ae;
+  --line:#e3ecee;
+  --surface:#ffffff;
+  --r-sm:10px;--r:14px;--r-lg:22px;--r-xl:28px;
+  --shadow-sm:0 1px 2px rgba(10,40,45,.04),0 2px 8px rgba(10,40,45,.04);
+  --shadow:0 4px 16px rgba(10,40,45,.06),0 18px 48px rgba(10,40,45,.06);
+  --shadow-lg:0 24px 64px rgba(10,40,45,.14);
+  --t:.32s cubic-bezier(.4,.0,.2,1);
+  --max:1240px;
+  --header-h:88px;
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+
+  /* ── Children Home programme tokens ── */
+  --display:"Fraunces",Georgia,serif;
+  --leaf-800:#51318a;
+  --leaf-700:#6a42b0;
+  --leaf-600:#7b55c2;
+  --leaf-500:#9c7dd6;
+  --leaf-400:#c4afe6;
+  --leaf-100:#ebe2f7;
+  /* Theme colour: PURPLE. The --leaf-* names are left from the old green theme: --leaf-700 is the main purple, --leaf-50/100 are light tints, --leaf-800 is the dark shade. */
+  --leaf-50:#f5f0fb;
+  --sun:#f2a93b;
+  --sun-d:#d98e1f;
+  --sun-l:#ffd58a;
+  --bg:#fbf9f3;
+  --cream:#fff6e6;
+  --stone:#f1efe8;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;max-width:100%}
+body{font-family:var(--sans);color:var(--ink-700);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+section{position:relative}
+section[id],#donate{scroll-margin-top:var(--header-h)}
+
+/* Header — always pinned */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow var(--t),background var(--t)}
+header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,40,45,.06)}
+.hdr{max-width:var(--max);margin:auto;padding:0 1.5rem;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{height:66px;width:auto;max-width:none;display:block;object-fit:contain}
+/* "Children Home" name beside the logo, so the header always says which home this is */
+.brand,.nav,.hdr-r{flex-shrink:0}
+.brand-tag{font-family:var(--display);font-weight:600;font-size:1.35rem;line-height:1.05;letter-spacing:-.01em;color:var(--leaf-800);padding:.15rem 0 .15rem .8rem;border-left:2px solid var(--sun);white-space:nowrap}
+#hdr.bt-compact .brand-tag{font-size:1.05rem;white-space:normal;max-width:5.4em}
+#hdr.bt-hide .brand-tag{display:none}
+.brand-logo{display:block;border-radius:8px;transition:opacity var(--t)}
+.brand-logo:hover{opacity:.82}
+.brand-tag:hover{color:var(--leaf-600)}
+.nav{display:flex;gap:.1rem;align-items:center}
+.nav a{font-size:1rem;font-weight:500;color:var(--ink-700);padding:.55rem .8rem;border-radius:8px;white-space:nowrap;transition:color .3s ease,background .3s ease}
+.nav a:hover{color:var(--brand-red-nav)}
+.nav a.on{color:var(--brand-red-nav)}
+/* menu line: a full-width line under the word, drawn in from the left on hover and kept under the current page */
+.nav a::after{content:"";position:absolute;left:var(--nav-pad,.6rem);right:var(--nav-pad,.6rem);bottom:.12rem;height:2px;border-radius:2px;background:var(--brand-red-nav);transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
+.hdr-r{display:flex;align-items:center;gap:.55rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;font-family:inherit;font-weight:600;font-size:.86rem;padding:.62rem 1.15rem;border-radius:999px;transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease;white-space:nowrap}
+.btn-ghost{color:var(--navy-800);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(106,66,176,.08);border-color:var(--leaf-700);color:var(--leaf-700)}
+.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(106,66,176,.3)}
+.btn-primary:hover{background:var(--leaf-800)}
+.btn-donate{background:var(--brand-red);color:#fff;animation:donateGlow 2.5s ease-in-out infinite}
+.btn-donate:hover{background:#8f1419}
+.btn-wa{background:#25d366;color:#fff;animation:waGlow 2.5s ease-in-out infinite}
+.btn-wa:hover{background:#1ebe5a}
+.btn-outline-white{color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:.85rem 1.6rem;font-size:.92rem}
+/* Volunteer button: gold (only WhatsApp buttons are green) */
+.btn-volunteer{background:var(--sun);color:var(--navy-900);box-shadow:0 6px 18px rgba(242,169,59,.35)}
+.btn-volunteer:hover{background:#e59a24;color:var(--navy-900)}
+.btn:active{background:var(--brand-red);color:#fff;border-color:var(--brand-red);box-shadow:0 6px 18px rgba(171,26,31,.35)}
+.donate-img{height:1.1em;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,.6))}
+@keyframes donateGlow{0%,100%{box-shadow:0 4px 18px rgba(171,26,31,.5),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 6px 28px rgba(171,26,31,.85),0 0 24px rgba(171,26,31,.5),0 0 0 8px rgba(171,26,31,.13)}}
+@keyframes waGlow{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0)}50%{box-shadow:0 6px 28px rgba(37,211,102,.8),0 0 24px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.13)}}
+.burger{display:none;flex-direction:column;gap:5px;padding:.7rem;min-width:44px;min-height:44px;justify-content:center;align-items:center}
+.burger span{width:22px;height:2px;background:var(--navy-800);border-radius:2px;transition:all var(--t)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--line);padding:.6rem 1.5rem 1.2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.7rem .3rem;font-size:.95rem;color:var(--ink-700);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
+
+/* Hero — full-page slideshow (same dimensions/behaviour as Elder Home) */
+.hero{position:relative;min-height:clamp(380px,60vh,760px);display:flex;align-items:center;overflow:hidden;isolation:isolate;background:#0d1a1c;color:#fff}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-arcs{position:absolute;right:-140px;bottom:-220px;width:620px;height:620px;z-index:-3;pointer-events:none;opacity:.5}
+/* Hero headline = the name of the home: "Children Home" is the largest text on the page,
+   the other-language name sits beside it, and "A safe place to grow…" becomes the tagline */
+.hero-name-alt{font-family:var(--sans);font-size:clamp(1.3rem,3.4vw,2.3rem);font-weight:700;line-height:1.2;letter-spacing:.06em;color:var(--sun-l);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* Section helpers */
+.sec{padding:clamp(3rem,7vw,6rem) 0;position:relative}
+.wrap{max-width:var(--max);margin:auto;padding:0 clamp(.9rem,3.5vw,1.5rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf-700);margin-bottom:.9rem}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--sun);border-radius:2px}
+h2.section-h{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,4.2vw,2.8rem);line-height:1.15;letter-spacing:-.015em;color:var(--ink-900);margin-bottom:.9rem;text-wrap:balance}
+h2.section-h em{font-style:italic;color:var(--leaf-700);font-weight:500}
+.section-p{font-size:clamp(.92rem,2vw,1rem);color:var(--ink-500);line-height:1.7;max-width:620px}
+.sh{margin-bottom:3.2rem}
+.sh.c{text-align:center}.sh.c .eyebrow{justify-content:center}.sh.c .section-p{margin:auto}
+
+/* Credentials */
+
+/* About */
+
+
+/* Mini FAQ (accordion) */
+.mfaq-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
+.mfaq-card:hover{border-color:var(--leaf-400);box-shadow:var(--shadow-sm)}
+.mfaq-card.open{border-color:var(--leaf-500);box-shadow:0 2px 16px rgba(106,66,176,.1)}
+.mfaq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+
+/* CTA band */
+.cta-band{background:radial-gradient(700px 500px at 80% 30%,rgba(242,169,59,.28),transparent 60%),linear-gradient(135deg,var(--navy-800),var(--leaf-800));color:#fff;padding:clamp(3rem,6vw,5rem) 0;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.15;margin-bottom:.8rem;text-wrap:balance}
+.cta-band h2 em{color:var(--sun-l);font-style:italic}
+.cta-band p{color:rgba(255,255,255,.82);font-size:1rem;max-width:600px;margin:0 auto 2rem}
+.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+/* Footer — same colour & structure as Elder Home */
+footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
+.foot-top{max-width:var(--max);margin:auto;padding:clamp(2rem,5vw,3.5rem) clamp(.9rem,3.5vw,1.5rem) 2.5rem;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:2.5rem}
+.foot-brand img{height:54px;width:auto;margin-bottom:1rem;background:#fff;border-radius:10px;padding:6px 10px}
+.foot-brand p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.45);max-width:270px;margin-bottom:1.1rem}
+.foot-soc{display:flex;gap:.4rem}
+.foot-soc a{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;transition:all var(--t)}
+.foot-soc a:hover{background:var(--leaf-700);color:#fff;border-color:var(--leaf-700);transform:translateY(-2px)}
+.foot-soc a.soc-text{width:auto;padding:0 .55rem;font-size:.72rem;font-weight:700}
+.foot-col h4{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:1rem}
+.foot-col a,.foot-col .fci{display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:rgba(255,255,255,.45);margin-bottom:.55rem;transition:color var(--t);line-height:1.5}
+.foot-col a:hover{color:rgba(255,255,255,.85)}
+.foot-col i{color:var(--leaf-400);font-size:.75rem;margin-top:.25rem;flex-shrink:0}
+.foot-col a.here{color:rgba(255,255,255,.85);font-weight:600}
+.foot-col h4 a{display:inline;font-size:inherit;color:inherit;margin:0}
+.fci small{display:block;font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.04em}
+.foot-bot{max-width:var(--max);margin:auto;padding:1.1rem clamp(.9rem,3.5vw,1.5rem);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+.foot-bot p{font-size:.74rem;color:rgba(255,255,255,.28)}
+.foot-bot .disclaimer{font-style:italic;max-width:520px}
+
+/* Floating CTA — same style & position as Elder Home */
+.float-bar{position:fixed;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:999;display:flex;gap:.65rem;align-items:center;filter:drop-shadow(0 8px 20px rgba(0,0,0,.16))}
+.float-wa,.float-donate,.float-vol{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.55rem;border-radius:999px;font-weight:700;font-size:.92rem;white-space:nowrap;transition:all var(--t);color:#fff}
+.float-wa{background:#25d366;box-shadow:0 6px 24px rgba(37,211,102,.42)}
+.float-wa:hover{background:#1ebe5a;transform:translateY(-3px)}
+.float-vol{background:var(--sun);color:var(--navy-900);box-shadow:0 6px 24px rgba(242,169,59,.45)}
+.float-vol:hover{background:#e59a24;transform:translateY(-3px)}
+.float-donate{position:relative;background:linear-gradient(135deg,#c52525,var(--brand-red));box-shadow:0 6px 28px rgba(171,26,31,.6);animation:donatePulse 2.8s ease-in-out infinite}
+.float-donate:hover{background:#8f1419;transform:translateY(-3px);animation-play-state:paused}
+@keyframes donatePulse{0%,100%{box-shadow:0 6px 28px rgba(171,26,31,.6),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 8px 36px rgba(171,26,31,.8),0 0 0 10px rgba(171,26,31,.12)}}
+.donate-tip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(8,8,12,.84);backdrop-filter:blur(14px);color:rgba(255,255,255,.92);font-size:.7rem;font-weight:400;font-style:italic;padding:.44rem .95rem;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .24s ease,transform .24s ease}
+.float-donate:hover .donate-tip{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* animated scene: a day at the Children Home.
+   Each piece of scenery keeps its own size (never stretched or cropped); a small script hides
+   the least important pieces on narrower screens and shrinks the rest only on phones.
+   The caregiver and children walk across the full width of the screen, left to right. */
+#support{padding-bottom:0}
+
+/* Page banner (inner pages) */
+.page-hero{position:relative;min-height:clamp(240px,34vh,360px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:#0d1a1c;color:#fff}
+.page-hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center var(--fy,50%);animation:heroZoom 9s ease-out both}
+/* --fy: which height of the picture stays in view on wide screens; --fx: which part stays in view on phones and tablets */
+@media(max-width:900px){.page-hero-bg{background-position:var(--fx,50%) var(--fy,50%)}}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(12,26,28,.8) 0%,rgba(12,26,28,.45) 60%,rgba(12,26,28,.2) 100%)}
+.page-hero-in{width:100%;padding-top:clamp(2.5rem,6vw,4rem);padding-bottom:clamp(2rem,5vw,3.2rem)}
+.crumbs{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.75);margin-bottom:1rem}
+.crumbs a:hover{color:#fff;text-decoration:underline}
+.crumbs i{font-size:.6rem;opacity:.7}
+.page-hero-kicker{display:flex;align-items:center;gap:.55rem;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sun-l);margin-bottom:.5rem;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.page-hero-kicker::before{content:"";width:22px;height:2px;background:var(--sun);border-radius:2px}
+.page-hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.3rem,6vw,3.8rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:.6rem;text-shadow:0 2px 20px rgba(0,0,0,.3);animation:rise .8s .1s backwards}
+.page-hero p{font-size:clamp(.92rem,2vw,1.05rem);color:rgba(255,255,255,.88);max-width:580px;line-height:1.65;text-shadow:0 1px 4px rgba(0,0,0,.35);animation:rise .8s .25s backwards}
+.mob-menu a.on{color:var(--brand-red-nav);font-weight:700}
+
+.deco{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.deco~.wrap{position:relative;z-index:1}
+.deco>svg{position:absolute;left:var(--x,0);top:var(--y,auto);bottom:var(--b,auto);width:var(--s,32px);height:var(--s,32px);overflow:visible}
+.a-wobble{animation:dWobble var(--d,6s) ease-in-out var(--delay,0s) infinite alternate}
+@keyframes dWobble{from{transform:translateY(-7px) rotate(-12deg)}to{transform:translateY(7px) rotate(12deg)}}
+.a-rise{opacity:0;animation:dRise var(--d,18s) linear var(--delay,0s) infinite}
+@keyframes dRise{0%{transform:translate(0,0) rotate(-8deg);opacity:0}10%{opacity:var(--o,.65)}50%{transform:translate(26px,calc(var(--h,720px) * -.5)) rotate(12deg)}85%{opacity:var(--o,.65)}100%{transform:translate(-16px,calc(var(--h,720px) * -1)) rotate(-10deg);opacity:0}}
+/* paper children holding hands along the top of the footer, doing a little wave */
+.dolls{position:relative;display:flex;justify-content:center;overflow:hidden;overflow-x:clip;overflow-y:visible;height:64px;padding-top:14px;opacity:.85;border-bottom:1px solid rgba(255,255,255,.06)}
+.doll{flex:none;width:40px;height:46px;animation:dollWave 3s ease-in-out calc(var(--i,0) * .09s - 9s) infinite}
+/* on computers with a mouse: the children keep waving, AND hop up as the mouse passes over them
+   (the one under the mouse hops highest, its neighbours a little less) */
+@media (hover:hover) and (pointer:fine){
+  .doll{transform-origin:50% 100%;transform:translateY(calc(var(--lift,0) * -16px)) scale(calc(1 + var(--lift,0) * .15));filter:brightness(calc(1 + var(--lift,0) * .35));transition:transform .4s cubic-bezier(.2,.9,.3,1.5),filter .3s ease}
+}
+.doll-heart{position:absolute;top:2px;width:14px;height:14px;margin-left:-7px;pointer-events:none}
+@keyframes dollWave{0%,30%,100%{translate:0 0}12%{translate:0 -7px}}
+/* golden pixel stars, sparkles and dots: some drift slowly down from the top, others twinkle in place, all gently pulse */
+.a-pxfall{opacity:0;animation:pxFall var(--d,16s) linear var(--delay,0s) infinite}
+@keyframes pxFall{0%{transform:translate(0,0);opacity:0}10%{opacity:1}50%{transform:translate(-16px,calc(var(--h,700px) * .5))}88%{opacity:1}100%{transform:translate(10px,var(--h,700px));opacity:0}}
+.a-pxtwinkle{animation:pxTwinkle var(--d,3s) ease-in-out var(--delay,0s) infinite}
+@keyframes pxTwinkle{0%,100%{opacity:.35}50%{opacity:1}}
+.a-pxfall use,.a-pxtwinkle use{transform-box:fill-box;transform-origin:center;animation:pxPulse var(--p,1.6s) ease-in-out infinite alternate}
+@keyframes pxPulse{from{transform:scale(.7)}to{transform:scale(1.08)}}
+.px-glow{filter:drop-shadow(0 0 5px rgba(255,196,60,.6))}
+.deco-paused,.deco-paused *{animation-play-state:paused!important}
+@media(max-width:900px){.hide-md{display:none!important}}
+@media(max-width:640px){.hide-sm{display:none!important}}
+
+/* ═══ Get Involved page ═══ */
+#sponsor{background:var(--cream)}
+#volunteer{background:var(--bg)}
+#partner{background:var(--stone)}
+/* "More ways to get involved" link in the donate banner */
+.cta-more{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;color:var(--sun-l);font-weight:600;font-size:.9rem;transition:gap var(--t)}
+.cta-more:hover{gap:.75rem;text-decoration:underline}
+/* the menu has one more item now: tighten it, and switch to the ☰ menu a little earlier */
+@media(max-width:1440px){.nav a{padding:.55rem .65rem}}
+@media(max-width:1180px){.nav{display:none}.burger{display:flex}.hdr-r .btn-ghost{display:none}}
+
+/* Bigger header: wider bar on large screens, bigger buttons; slightly shorter on phones */
+.hdr{max-width:1560px;gap:1.4rem}
+.hdr-r{gap:.65rem}
+.hdr-r .btn{font-size:.97rem;padding:.75rem 1.35rem}
+.nav{gap:.2rem}
+@media(max-width:640px){:root{--header-h:72px}.hdr{padding:0 1rem;gap:.8rem}.hdr-r .btn{font-size:.86rem;padding:.6rem 1rem}}
+/* when the menu still doesn't fit, the header switches itself to the ☰ menu (set by the header-fitting script) */
+#hdr.nav-burger .nav{display:none}
+#hdr.nav-burger .burger{display:flex}
+#hdr.nav-burger .hdr-r .btn-ghost{display:none}
+
+/* Header that reacts to scrolling:
+   at the top of the page it is big; scroll down and it glides into a slimmer bar with a soft shadow,
+   and a gold-to-green line along its bottom edge shows how far down the page you are. */
+#hdr{position:fixed;left:0;right:0;top:0}
+body{padding-top:var(--header-h)}
+.hdr{height:var(--hdr-now,var(--header-h));transition:height .45s cubic-bezier(.4,0,.2,1)}
+.brand img{transition:height .45s cubic-bezier(.4,0,.2,1),opacity var(--t)}
+.brand-tag,.nav a{transition:color .3s ease,background .3s ease,font-size .45s cubic-bezier(.4,0,.2,1)}
+#hdr .hdr-r .btn{transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease,padding .45s cubic-bezier(.4,0,.2,1),font-size .45s cubic-bezier(.4,0,.2,1)}
+@media(min-width:1500px){
+  :root{--header-h:108px}
+  .hdr{max-width:1680px}
+  .brand img{height:80px}
+  .brand-tag{font-size:1.55rem}
+  .nav a{font-size:1.08rem;padding:.6rem .85rem}
+  .hdr-r .btn{font-size:1.04rem;padding:.85rem 1.55rem}
+}
+#hdr.scrolled{--hdr-now:72px;background:rgba(255,255,255,.9);box-shadow:0 6px 24px rgba(10,40,45,.1)}
+#hdr.scrolled .brand img{height:52px}
+#hdr.scrolled .brand-tag{font-size:1.12rem}
+#hdr.scrolled .nav a{font-size:.95rem}
+#hdr.scrolled .hdr-r .btn{font-size:.9rem;padding:.6rem 1.15rem}
+.hdr-progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;pointer-events:none}
+.hdr-progress span{display:block;height:100%;background:linear-gradient(90deg,var(--sun),var(--leaf-500),var(--leaf-700));transform-origin:0 50%;transform:scaleX(0)}
+.mob-menu{max-height:calc(100vh - var(--hdr-now,var(--header-h)));overflow-y:auto}
+@media(max-width:640px){#hdr.scrolled{--hdr-now:60px}#hdr.scrolled .brand img{height:40px}}
+
+/* Seek Help button: pink, with a gently pulsing glow like the Donate button (the two pulse in turn) */
+.btn.btn-seek{background:#d9467a;border-color:#d9467a;color:#fff;animation:seekGlow 2.5s ease-in-out -1.25s infinite}
+.btn.btn-seek:hover{background:#bd3565;border-color:#bd3565;color:#fff;transform:translateY(-2px)}
+.btn.btn-seek:active{background:#a32b55;border-color:#a32b55;color:#fff;box-shadow:0 6px 18px rgba(217,70,122,.4)}
+.btn.btn-seek i{filter:drop-shadow(0 0 4px rgba(255,255,255,.6))}
+.btn.btn-seek:hover i{animation:seekHop .8s ease-in-out}
+.seek-ic{display:inline-flex;align-items:center;justify-content:center;width:1.35em;height:1.35em;flex-shrink:0}
+.seek-ic svg{display:block;width:100%;height:100%}
+@keyframes seekGlow{0%,100%{box-shadow:0 4px 18px rgba(217,70,122,.45),0 0 0 0 rgba(217,70,122,0)}50%{box-shadow:0 6px 28px rgba(217,70,122,.8),0 0 24px rgba(217,70,122,.45),0 0 0 8px rgba(217,70,122,.13)}}
+@keyframes seekHop{0%,100%{transform:scale(1)}25%{transform:scale(1.22) translateY(-1px)}45%{transform:scale(.96)}65%{transform:scale(1.14) translateY(-1px)}}
+.hdr-r .btn-donate:hover{transform:translateY(-2px)}
+.mob-menu a.mob-seek{color:#d9467a;font-weight:700}
+
+/* Staff login link (footer) */
+.staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.4);transition:color var(--t)}
+.staff-link:hover{color:rgba(255,255,255,.9)}
+.staff-link i{font-size:.65rem}
+/* Header layout: logo on the left; menu, language icon and buttons grouped on the right */
+.nav{margin-left:auto;gap:.1rem}
+/* header spans the whole screen width (no centered box), like the reference: logo near the left edge, buttons near the right edge */
+.hdr{max-width:none}
+@media(min-width:1700px){.hdr{padding-left:clamp(1.5rem,2.2vw,3rem);padding-right:clamp(1.5rem,2.2vw,3rem)}}
+/* menu: compact, grouped on the right */
+.nav a{position:relative;--nav-pad:.6rem;padding:.55rem var(--nav-pad)}
+@media(min-width:1500px){.nav a{--nav-pad:.7rem;padding:.6rem var(--nav-pad)}}
+/* Language button: an icon (the phone menu keeps the icon together with the word) */
+.lang-toggle i{font-size:1.3em;line-height:1}
+.hdr-r .lang-toggle{width:3.15rem;height:3.15rem;padding:0;justify-content:center}   /* a round icon button, about as tall as the buttons beside it */
+#hdr.scrolled .hdr-r .lang-toggle{width:2.75rem;height:2.75rem}
+@media(min-width:1500px){.hdr-r .lang-toggle{width:3.5rem;height:3.5rem}}
+#hdr .hdr-r .lang-toggle{transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease,width .45s cubic-bezier(.4,0,.2,1),height .45s cubic-bezier(.4,0,.2,1)}
+.mob-menu .lang-toggle i{font-size:1.2em}
+
+/* Story illustrations: gentle movement */
+.st-art{display:block;width:100%;height:100%}
+.st-float{animation:stFloat 4.5s ease-in-out infinite alternate}
+@keyframes stFloat{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.st-twinkle{animation:stTwinkle 3s ease-in-out infinite}
+@keyframes stTwinkle{0%,100%{opacity:.35}50%{opacity:1}}
+.st-glow{animation:stGlow 5s ease-in-out infinite alternate}
+@keyframes stGlow{from{opacity:.75}to{opacity:1}}
+.st-sway{transform-box:fill-box;transform-origin:50% 0;animation:stSway 5s ease-in-out infinite alternate}
+@keyframes stSway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.st-bob{animation:stBob 3.2s ease-in-out infinite alternate}
+@keyframes stBob{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+/* ═══ Stories page ═══ */
+.st-band{background:linear-gradient(180deg,var(--cream) 0%,var(--bg) 420px);overflow:hidden}
+.st-note{display:flex;align-items:flex-start;gap:.9rem;max-width:860px;margin:0 auto 2rem;padding:1rem 1.3rem;border-radius:16px;background:#fff;border:1px solid #f4e1bd;box-shadow:var(--shadow-sm)}
+.st-note>i{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:var(--leaf-700);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.st-note b{display:block;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink-900);margin-bottom:.15rem}
+.st-note p{font-size:.9rem;color:var(--ink-500);line-height:1.6}
+.st-filter{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:2rem}
+.st-filter button{padding:.6rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:.9rem;color:var(--ink-500);transition:color var(--t),background var(--t),border-color var(--t),transform var(--t)}
+.st-filter button:hover{border-color:var(--leaf-700);color:var(--leaf-700);transform:translateY(-2px)}
+.st-filter button.on{background:var(--leaf-700);border-color:var(--leaf-700);color:#fff}
+.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+.story{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
+.story:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--leaf-100)}
+.story[hidden]{display:none}
+.st-cover{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--leaf-100)}
+.st-cover .st-art{position:absolute;inset:0;transition:transform 1.2s cubic-bezier(.2,.7,.3,1)}
+.st-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.3,1)}
+.story:hover .st-cover .st-art,.story:hover .st-cover .st-photo{transform:scale(1.05)}
+.st-badge{position:absolute;left:1rem;top:1rem;z-index:1;display:none;align-items:center;gap:.45rem;background:var(--brand-red);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.45rem .85rem;border-radius:999px;box-shadow:0 10px 24px rgba(171,26,31,.35)}
+.story.is-feat .st-badge{display:inline-flex}
+.st-cbody{display:flex;flex-direction:column;gap:.55rem;padding:1.3rem 1.4rem 1.4rem;flex:1}
+.st-meta{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.st-tag{padding:.32rem .7rem;border-radius:99px;background:var(--leaf-50);color:var(--leaf-700)}
+.story[data-cat="grow"] .st-tag,.st-meta .st-tag.grow{background:var(--cream);color:var(--sun-d)}
+.st-time{color:var(--ink-400);letter-spacing:.06em}
+.st-time i{margin-right:.2rem}
+.story h3{font-family:var(--display);font-weight:600;font-size:1.3rem;line-height:1.3;color:var(--ink-900)}
+.st-tease{font-size:.95rem;color:var(--ink-500);line-height:1.65;margin-top:.3rem}
+.story .st-body{display:none}
+.story .zh{display:none}
+html[lang="zh"] .story .en{display:none}
+html[lang="zh"] .story .zh{display:block}
+.st-read{margin-top:auto;padding-top:.8rem;align-self:flex-start;display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.9rem;color:var(--leaf-700);transition:gap var(--t)}
+.story:hover .st-read{gap:.85rem}
+.story.is-feat{grid-column:span 2;display:grid;grid-template-columns:1.1fr 1fr}
+.story.is-feat .st-cover{aspect-ratio:auto;min-height:340px}
+.story.is-feat .st-cbody{justify-content:center;padding:2rem 2.2rem}
+.story.is-feat h3{font-size:clamp(1.6rem,2.8vw,2.2rem)}
+.story.is-feat .st-tease{font-size:1.05rem}
+/* reading view */
+.st-reader{position:fixed;inset:0;z-index:10001;display:flex;align-items:center;justify-content:center;padding:clamp(.5rem,3vh,2rem);background:rgba(8,12,16,0);transition:background .35s ease}
+.st-reader[hidden]{display:none}
+.st-reader.on{background:rgba(8,12,16,.74)}
+.st-rcard{position:relative;width:min(800px,100%);max-height:100%;display:flex;flex-direction:column;background:#fff;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.4);opacity:0;transform:translateY(24px) scale(.97);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1.1)}
+.st-reader.on .st-rcard{opacity:1;transform:none}
+.st-progress{position:absolute;left:0;right:0;top:0;height:5px;z-index:3;background:rgba(255,255,255,.35)}
+.st-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sun),var(--brand-red))}
+.st-x{position:absolute;top:1rem;right:1rem;z-index:4;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.94);color:var(--navy-800);font-size:1.05rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:background var(--t),color var(--t)}
+.st-x:hover{background:var(--brand-red);color:#fff}
+.st-rscroll{overflow-y:auto;overscroll-behavior:contain;flex:1}
+.st-rart{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--leaf-100)}
+.st-rart .st-photo{transition:none}
+.st-rbody{padding:clamp(1.4rem,4.5vw,2.6rem)}
+.st-rbody h2{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;color:var(--ink-900);margin:.7rem 0 .4rem}
+.st-text h4{display:flex;align-items:center;gap:.7rem;margin:1.8rem 0 .55rem;font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf-700)}
+.st-text h4::before{content:"";width:22px;height:3px;border-radius:3px;background:var(--sun)}
+.st-text p{font-size:1.1rem;line-height:1.9;color:var(--ink-700)}
+.st-text h4:first-child+p{font-size:1.2rem;color:var(--ink-900)}
+.st-text .st-quote{margin-top:2rem;padding:1.2rem 1.4rem;border-radius:16px;background:linear-gradient(135deg,var(--leaf-50),#fff);border-left:4px solid var(--sun);font-family:var(--display);font-style:italic;font-size:1.25rem;line-height:1.6;color:var(--leaf-800)}
+.st-help{margin-top:2.2rem;padding:1.5rem;border-radius:20px;background:var(--cream);border:1px solid #f4e1bd}
+.st-help b{display:block;font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--ink-900)}
+.st-help p{font-size:.95rem;color:var(--ink-500);line-height:1.6;margin:.3rem 0 .9rem}
+.st-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.st-chips li{font-size:.82rem;font-weight:700;color:var(--ink-700);background:#fff;border:1px solid #f4e1bd;border-radius:999px;padding:.45rem .85rem}
+.st-help-btns,.st-share{display:flex;flex-wrap:wrap;gap:.6rem}
+.st-share{margin-top:1.2rem}
+.st-rnav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.st-rnav button{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:left;transition:border-color var(--t),background var(--t),transform var(--t)}
+.st-rnav button:hover{border-color:var(--leaf-400);background:var(--leaf-50);transform:translateY(-2px)}
+.st-rnav #stNext{justify-content:flex-end;text-align:right}
+.st-rnav i{color:var(--leaf-700)}
+.st-rnav .lbl{display:block;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-400)}
+.st-rnav b{display:block;font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.3;color:var(--ink-900)}
+.st-rnav[hidden]{display:none}
+@media(max-width:1024px){.st-grid{grid-template-columns:1fr 1fr}.story.is-feat{grid-column:span 2}}
+@media(max-width:760px){.st-grid{grid-template-columns:1fr}.story.is-feat{grid-column:auto;display:flex}.story.is-feat .st-cover{aspect-ratio:16/10;min-height:0}.story.is-feat .st-cbody{padding:1.3rem 1.4rem 1.4rem}.st-rart{aspect-ratio:16/9}.st-rnav{grid-template-columns:1fr}.st-reader{padding:0}.st-rcard{border-radius:0;max-height:100%;height:100%}}
+/* Scroll reveal (content stays visible if JavaScript is off) */
+.js .aos{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .aos-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .aos-r{opacity:0;transform:translateX(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .aos.in,.js .aos-l.in,.js .aos-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* Responsive — same breakpoints as Elder Home */
+@media(max-width:1024px){
+  .nav{display:none}
+  .burger{display:flex}
+  .hdr-r .btn-ghost{display:none}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+}
+@media(max-width:640px){
+  .brand img{height:46px}
+  .brand{gap:.55rem}
+  .brand-tag{padding-left:.6rem}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bot{flex-direction:column;text-align:center}
+  .float-bar{left:auto;right:1.2rem;transform:none;bottom:1rem;flex-direction:column;gap:.5rem}
+  .float-wa,.float-donate,.float-vol{width:50px;height:50px;padding:0;border-radius:50%;justify-content:center;font-size:1.3rem}
+  .fl-label,.donate-tip{display:none}
+}
+@media(max-width:480px){
+  .cta-btns>*,.ss-cta .btn{width:100%;justify-content:center}
+}
+@media(max-width:360px){
+  .hdr .btn-donate span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .aos,.js .aos-l,.js .aos-r{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Drawings library for the moving decorations (original illustrations) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-d-star" viewBox="0 0 100 100"><path d="M50 8L61 38L93 39L68 58L77 90L50 71L23 90L32 58L7 39L39 38Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-d-heart" viewBox="0 0 100 100"><path d="M50 84C24 66 10 50 12 32C14 18 30 12 42 20C46 23 49 27 50 31C52 26 56 22 60 20C72 13 88 20 88 34C88 52 74 66 50 84Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M50 20L94 38L50 56L6 38Z"/><path d="M26 47V64C26 74 74 74 74 64V47"/><path d="M94 38V62"/></g><path d="M94 60l-5 11h10Z" fill="currentColor"/></symbol>
+  <symbol id="i-doll-a" viewBox="0 0 40 46"><g fill="currentColor"><circle cx="20" cy="8" r="6"/><circle cx="13.5" cy="6" r="2.6"/><circle cx="26.5" cy="6" r="2.6"/><rect x="0" y="16" width="40" height="5" rx="2.5"/><path d="M15 15h10l6 19H9Z"/><rect x="14.5" y="33" width="4" height="12" rx="2"/><rect x="21.5" y="33" width="4" height="12" rx="2"/></g></symbol>
+  <symbol id="i-doll-b" viewBox="0 0 40 46"><g fill="currentColor"><circle cx="20" cy="8" r="6"/><rect x="0" y="16" width="40" height="5" rx="2.5"/><rect x="13.5" y="15" width="13" height="15" rx="4"/><rect x="14.5" y="28" width="4.5" height="17" rx="2"/><rect x="21" y="28" width="4.5" height="17" rx="2"/></g></symbol>
+  <symbol id="i-pstar" viewBox="0 0 11 10" shape-rendering="crispEdges"><rect x="5" y="0" width="1" height="1" fill="#f29a12"/><rect x="4" y="1" width="1" height="1" fill="#f29a12"/><rect x="5" y="1" width="1" height="1" fill="#ffe680"/><rect x="6" y="1" width="1" height="1" fill="#f29a12"/><rect x="4" y="2" width="1" height="1" fill="#f29a12"/><rect x="5" y="2" width="1" height="1" fill="#ffe680"/><rect x="6" y="2" width="1" height="1" fill="#f29a12"/><rect x="0" y="3" width="4" height="1" fill="#f29a12"/><rect x="4" y="3" width="1" height="1" fill="#ffe680"/><rect x="5" y="3" width="1" height="1" fill="#fffbea"/><rect x="6" y="3" width="1" height="1" fill="#ffe680"/><rect x="7" y="3" width="4" height="1" fill="#f29a12"/><rect x="1" y="4" width="1" height="1" fill="#f29a12"/><rect x="2" y="4" width="2" height="1" fill="#ffe680"/><rect x="4" y="4" width="2" height="1" fill="#fffbea"/><rect x="6" y="4" width="3" height="1" fill="#ffe680"/><rect x="9" y="4" width="1" height="1" fill="#f29a12"/><rect x="2" y="5" width="1" height="1" fill="#e07d0e"/><rect x="3" y="5" width="5" height="1" fill="#ffd23a"/><rect x="8" y="5" width="1" height="1" fill="#e07d0e"/><rect x="2" y="6" width="1" height="1" fill="#e07d0e"/><rect x="3" y="6" width="2" height="1" fill="#ffd23a"/><rect x="5" y="6" width="1" height="1" fill="#e07d0e"/><rect x="6" y="6" width="2" height="1" fill="#ffd23a"/><rect x="8" y="6" width="1" height="1" fill="#e07d0e"/><rect x="1" y="7" width="1" height="1" fill="#e07d0e"/><rect x="2" y="7" width="2" height="1" fill="#ffbf1f"/><rect x="4" y="7" width="1" height="1" fill="#e07d0e"/><rect x="6" y="7" width="1" height="1" fill="#e07d0e"/><rect x="7" y="7" width="2" height="1" fill="#ffbf1f"/><rect x="9" y="7" width="1" height="1" fill="#e07d0e"/><rect x="1" y="8" width="3" height="1" fill="#e07d0e"/><rect x="7" y="8" width="3" height="1" fill="#e07d0e"/><rect x="0" y="9" width="2" height="1" fill="#e07d0e"/><rect x="9" y="9" width="2" height="1" fill="#e07d0e"/></symbol>
+  <symbol id="i-pspark" viewBox="0 0 7 7" shape-rendering="crispEdges"><rect x="3" y="0" width="1" height="1" fill="#f5a516"/><rect x="3" y="1" width="1" height="1" fill="#f5a516"/><rect x="2" y="2" width="3" height="1" fill="#ffd23a"/><rect x="0" y="3" width="2" height="1" fill="#f5a516"/><rect x="2" y="3" width="1" height="1" fill="#ffd23a"/><rect x="3" y="3" width="1" height="1" fill="#fffbea"/><rect x="4" y="3" width="1" height="1" fill="#ffd23a"/><rect x="5" y="3" width="2" height="1" fill="#f5a516"/><rect x="2" y="4" width="3" height="1" fill="#ffd23a"/><rect x="3" y="5" width="1" height="1" fill="#f5a516"/><rect x="3" y="6" width="1" height="1" fill="#f5a516"/></symbol>
+  <symbol id="i-pdot" viewBox="0 0 4 4" shape-rendering="crispEdges"><rect x="1" y="0" width="2" height="1" fill="#ffc12a"/><rect x="0" y="1" width="1" height="1" fill="#ffc12a"/><rect x="1" y="1" width="1" height="1" fill="#fff3c4"/><rect x="2" y="1" width="2" height="1" fill="#ffc12a"/><rect x="0" y="2" width="4" height="1" fill="#ec9412"/><rect x="1" y="3" width="2" height="1" fill="#ec9412"/></symbol>
+  <symbol id="i-pstar-pale" viewBox="0 0 11 10" shape-rendering="crispEdges"><rect x="5" y="0" width="1" height="1" fill="#f6cf7e"/><rect x="4" y="1" width="1" height="1" fill="#f6cf7e"/><rect x="5" y="1" width="1" height="1" fill="#fff2c4"/><rect x="6" y="1" width="1" height="1" fill="#f6cf7e"/><rect x="4" y="2" width="1" height="1" fill="#f6cf7e"/><rect x="5" y="2" width="1" height="1" fill="#fff2c4"/><rect x="6" y="2" width="1" height="1" fill="#f6cf7e"/><rect x="0" y="3" width="4" height="1" fill="#f6cf7e"/><rect x="4" y="3" width="1" height="1" fill="#fff2c4"/><rect x="5" y="3" width="1" height="1" fill="#fffdf6"/><rect x="6" y="3" width="1" height="1" fill="#fff2c4"/><rect x="7" y="3" width="4" height="1" fill="#f6cf7e"/><rect x="1" y="4" width="1" height="1" fill="#f6cf7e"/><rect x="2" y="4" width="2" height="1" fill="#fff2c4"/><rect x="4" y="4" width="2" height="1" fill="#fffdf6"/><rect x="6" y="4" width="3" height="1" fill="#fff2c4"/><rect x="9" y="4" width="1" height="1" fill="#f6cf7e"/><rect x="2" y="5" width="1" height="1" fill="#f0c06a"/><rect x="3" y="5" width="5" height="1" fill="#ffe9a6"/><rect x="8" y="5" width="1" height="1" fill="#f0c06a"/><rect x="2" y="6" width="1" height="1" fill="#f0c06a"/><rect x="3" y="6" width="2" height="1" fill="#ffe9a6"/><rect x="5" y="6" width="1" height="1" fill="#f0c06a"/><rect x="6" y="6" width="2" height="1" fill="#ffe9a6"/><rect x="8" y="6" width="1" height="1" fill="#f0c06a"/><rect x="1" y="7" width="1" height="1" fill="#f0c06a"/><rect x="2" y="7" width="2" height="1" fill="#ffe08e"/><rect x="4" y="7" width="1" height="1" fill="#f0c06a"/><rect x="6" y="7" width="1" height="1" fill="#f0c06a"/><rect x="7" y="7" width="2" height="1" fill="#ffe08e"/><rect x="9" y="7" width="1" height="1" fill="#f0c06a"/><rect x="1" y="8" width="3" height="1" fill="#f0c06a"/><rect x="7" y="8" width="3" height="1" fill="#f0c06a"/><rect x="0" y="9" width="2" height="1" fill="#f0c06a"/><rect x="9" y="9" width="2" height="1" fill="#f0c06a"/></symbol>
+  <symbol id="i-pspark-pale" viewBox="0 0 7 7" shape-rendering="crispEdges"><rect x="3" y="0" width="1" height="1" fill="#f6d27e"/><rect x="3" y="1" width="1" height="1" fill="#f6d27e"/><rect x="2" y="2" width="3" height="1" fill="#ffe9a6"/><rect x="0" y="3" width="2" height="1" fill="#f6d27e"/><rect x="2" y="3" width="1" height="1" fill="#ffe9a6"/><rect x="3" y="3" width="1" height="1" fill="#fffdf6"/><rect x="4" y="3" width="1" height="1" fill="#ffe9a6"/><rect x="5" y="3" width="2" height="1" fill="#f6d27e"/><rect x="2" y="4" width="3" height="1" fill="#ffe9a6"/><rect x="3" y="5" width="1" height="1" fill="#f6d27e"/><rect x="3" y="6" width="1" height="1" fill="#f6d27e"/></symbol>
+  <symbol id="i-pdot-pale" viewBox="0 0 4 4" shape-rendering="crispEdges"><rect x="1" y="0" width="2" height="1" fill="#ffe7a2"/><rect x="0" y="1" width="1" height="1" fill="#ffe7a2"/><rect x="1" y="1" width="1" height="1" fill="#fffbea"/><rect x="2" y="1" width="2" height="1" fill="#ffe7a2"/><rect x="0" y="2" width="4" height="1" fill="#f2cd78"/><rect x="1" y="3" width="2" height="1" fill="#f2cd78"/></symbol>
+</defs></svg>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="hdr">
+    <div class="brand">
+      <!-- Logo goes to the main Amitabha Foundation website -->
+      <a href="https://amitabhafoundation.my/" class="brand-logo" target="_blank" rel="noopener" aria-label="Amitabha Foundation website (opens in a new tab)"><img src="assets/af-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <!-- "Children Home" label goes back to the top of this page -->
+      <a href="index.html" class="brand-tag" data-i18n="brand.tag">Children Home</a>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="our-care.html" data-i18n="nav.care">Our Care</a>
+      <a href="stories.html" class="on" aria-current="page" data-i18n="nav.stories">Stories</a>
+      <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
+      <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="hdr-r">
+      <button class="lang-toggle btn btn-ghost" type="button" title="Switch to Chinese (中文)" aria-label="Switch to Chinese (中文)"><i class="fa fa-language" aria-hidden="true"></i></button>
+      <a href="#" data-form="help" class="btn btn-ghost btn-seek" target="_blank" rel="noopener"><i class="seek-ic" aria-hidden="true"><svg viewBox="0.7 6.9 45.7 45.7" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><g transform="translate(5.6 3.4) scale(.8)"><path d="M29 24.5C20.5 19 19.5 11.5 24.5 10C27 9.3 28.4 10.9 29 12.5C29.6 10.9 31 9.3 33.5 10C38.5 11.5 37.5 19 29 24.5Z"/></g><g transform="translate(0 -2.5) rotate(-22 24 37)"><path d="M4.5 31.5L11 29L17.5 41.5L11 44Z"/><path d="M11 29.5L17 28.2C20 27.6 22.5 28 25 29H32.5C35.2 29 35.6 32.3 33 32.8L26.5 33.8"/><path d="M17.5 41L23 42.4C27 43.4 31 42.5 34.2 40L42.8 32.8C44.4 31.4 42.4 28.8 40.4 29.9L34.5 33.2"/></g></svg></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+      <a href="#" data-donate class="btn btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="nav.donate">Donate</span></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mob-menu" id="mob-menu">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="our-care.html" data-i18n="nav.care">Our Care</a>
+    <a href="stories.html" class="on" aria-current="page" data-i18n="nav.stories">Stories</a>
+    <a href="moments.html" data-i18n="nav.moments">Moments</a>
+    <a href="blog.html" data-i18n="nav.blog">Blog</a>
+    <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="#" data-form="help" target="_blank" rel="noopener" class="mob-seek"><i class="seek-ic" aria-hidden="true"><svg viewBox="0.7 6.9 45.7 45.7" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><g transform="translate(5.6 3.4) scale(.8)"><path d="M29 24.5C20.5 19 19.5 11.5 24.5 10C27 9.3 28.4 10.9 29 12.5C29.6 10.9 31 9.3 33.5 10C38.5 11.5 37.5 19 29 24.5Z"/></g><g transform="translate(0 -2.5) rotate(-22 24 37)"><path d="M4.5 31.5L11 29L17.5 41.5L11 44Z"/><path d="M11 29.5L17 28.2C20 27.6 22.5 28 25 29H32.5C35.2 29 35.6 32.3 33 32.8L26.5 33.8"/><path d="M17.5 41L23 42.4C27 43.4 31 42.5 34.2 40L42.8 32.8C44.4 31.4 42.4 28.8 40.4 29.9L34.5 33.2"/></g></svg></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+    <a href="#" data-donate target="_blank" rel="noopener" style="color:var(--brand-red);font-weight:700"><i class="fa fa-heart"></i> <span data-i18n="nav.donateNow">Donate Now</span></a>
+    <button class="lang-toggle btn btn-ghost" type="button" title="Switch to Chinese (中文)" aria-label="Switch to Chinese (中文)" style="width:100%;margin-top:.6rem;justify-content:flex-start"><i class="fa fa-language" aria-hidden="true"></i> <span class="lt">中文</span></button>
+  </nav>
+  <div class="hdr-progress" aria-hidden="true"><span></span></div>
+</header>
+
+<!-- PAGE BANNER -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background:linear-gradient(120deg,#3f2770 0%,#6a42b0 55%,#8664c8 100%)"></div>
+  <div class="deco" aria-hidden="true">
+    <svg class="a-pxfall px-glow" style="--x:13.3%;--y:-30px;--s:18px;--d:13.2s;--delay:-21.0s;--h:400px;--p:1.4s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:18.9%;--y:-30px;--s:10px;--d:15.8s;--delay:-18.7s;--h:400px;--p:1.4s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:40.7%;--y:-30px;--s:12px;--d:17.8s;--delay:-19.6s;--h:400px;--p:1.9s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow" style="--x:54.1%;--y:-30px;--s:24px;--d:13.4s;--delay:-18.5s;--h:400px;--p:1.8s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:61.9%;--y:-30px;--s:8px;--d:19.8s;--delay:-12.2s;--h:400px;--p:2.1s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:80.1%;--y:-30px;--s:16px;--d:17.5s;--delay:-14.7s;--h:400px;--p:1.8s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:88.8%;--y:-30px;--s:11px;--d:15.5s;--delay:-16.4s;--h:400px;--p:2.2s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:79.9%;--y:17.7%;--s:13px;--d:3.5s;--delay:-0.7s;--p:1.2s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:74.1%;--y:8.6%;--s:23px;--d:3.2s;--delay:-2.1s;--p:1.6s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:80.4%;--y:81.2%;--s:7px;--d:2.9s;--delay:-2.3s;--p:1.5s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:77.2%;--y:50.5%;--s:11px;--d:3.5s;--delay:-2.1s;--p:1.3s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow" style="--x:96.8%;--y:35.2%;--s:18px;--d:3.0s;--delay:-3.7s;--p:2.2s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:73.1%;--y:38.9%;--s:6px;--d:4.0s;--delay:-0.7s;--p:1.7s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:65.1%;--y:32.9%;--s:10px;--d:2.6s;--delay:-0.1s;--p:1.7s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:87.0%;--y:59.1%;--s:16px;--d:3.6s;--delay:-0.2s;--p:1.6s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:88.6%;--y:81.5%;--s:8px;--d:3.9s;--delay:-2.0s;--p:1.7s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-wobble" style="--x:78%;--y:16%;--s:60px;--d:5s;--delay:0s;color:#ffd58a"><use href="#i-cap" width="100%" height="100%"/></svg>
+    <svg class="a-wobble hide-sm" style="--x:90%;--y:54%;--s:34px;--d:6s;--delay:-2s;color:#ffffff"><use href="#i-d-star" width="100%" height="100%"/></svg>
+    <svg class="a-wobble hide-md" style="--x:69%;--y:60%;--s:26px;--d:5.5s;--delay:-3s;color:#ffd0da"><use href="#i-d-star" width="100%" height="100%"/></svg>
+  </div>
+  <div class="wrap page-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="nav.home">Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><span data-i18n="nav.stories">Stories</span></nav>
+    <div class="page-hero-kicker" data-i18n="brand.tag">Children Home</div>
+    <h1 data-i18n="ph.stories.h">Stories</h1>
+    <p data-i18n="ph.stories.p">Real situations from our home, told with care. Names and details are always changed to protect every child.</p>
+  </div>
+</section>
+
+<!-- STORIES: ten general stories (no names, no photos of children); the cards and the reading view are made by the script below -->
+<section class="sec st-band" id="stories">
+  <div class="wrap">
+    <div class="sh c">
+      <div class="eyebrow aos" data-i18n="st.eyebrow">Our stories</div>
+      <h2 class="section-h aos d1" data-i18n-html="st.h2">Behind every child is <em>a story of hope</em></h2>
+      <p class="section-p aos d2" data-i18n="st.p">Pick one and read it in a minute. Each story is based on the real situations of children who have come through our doors.</p>
+    </div>
+    <div class="st-note aos"><i class="fa fa-shield-heart" aria-hidden="true"></i><div><b data-i18n="st.note.t">Protecting every child</b><p data-i18n="st.note.p">We never share real names, photos or details that could identify a child. Our stories are drawn from real situations, with details changed and, sometimes, several children’s experiences woven into one. The pictures are AI-generated or illustrated, and none shows a real child.</p></div></div>
+    <div class="st-filter" id="stFilter" role="group" aria-label="Filter stories"></div>
+    <!-- HOW TO ADD A STORY
+         1. Copy one whole story block below (from its opening article tag to its closing article tag) and paste it where you want it to appear.
+            The first story in the list is shown big at the top.
+         2. Change the id (letters and dashes only), data-cat ("grow" = Success Stories, "home" = Children's Stories),
+            and the English and Chinese words. Keep the three headed parts and the closing line.
+         3. The picture is a drawing inside the block. Reuse any existing one.
+         4. Never use a real name, a photo, or any detail that could identify a child (age, school, place, family situation).
+         Upload stories.html and the story appears, with its card, reading time and share link made automatically. -->
+    <div class="st-grid" id="stGrid">
+      <article class="story aos" id="story-first-day" data-cat="grow">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A girl with a school bag on her way to school" focusable="false"><defs><linearGradient id="st0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1d6"/><stop offset="1" stop-color="#fde0c2"/></linearGradient></defs><rect width="400" height="250" fill="url(#st0)"/><g class="st-glow"><circle cx="330" cy="58" r="38" fill="#ffd58a" opacity=".35"/><circle cx="330" cy="58" r="24" fill="#ffd58a"/><circle cx="330" cy="58" r="17" fill="#f2a93b" opacity=".85"/></g><g transform="translate(70 52) scale(1)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><g transform="translate(190 34) scale(0.8)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><path d="M0 190C70 150 150 150 230 178C300 200 360 170 400 160V250H0Z" fill="#a5d4c4"/><path d="M0 215C90 190 190 205 280 212C340 216 380 205 400 200V250H0Z" fill="#2e7d6b"/><g transform="translate(318 188) scale(0.9)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#fff"/><path d="M-42 -44L0 -82L42 -44Z" fill="#ab1a1f"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#2e7d6b"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/></g><path d="M318 160v-26" stroke="#8a5a3c" stroke-width="2"/><path d="M318 134h22l-6 6 6 6h-22z" fill="#ee9fb0"/><path d="M120 250C150 225 215 215 300 190" stroke="#fff3d9" stroke-width="16" fill="none" opacity=".7"/><g transform="translate(150 226) scale(1.15)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="-21" y="-52" width="14" height="26" rx="5" fill="#f2a93b"/><path d="M-14 -50h28l5 26h-38z" fill="#d9467a"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#d9467a"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#d9467a"/><circle cx="0" cy="-64" r="12" fill="#f4c9a0"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-13" cy="-64" r="5" fill="#2c3e50"/><circle cx="13" cy="-64" r="5" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g transform="translate(60 232) scale(0.9)" opacity="1"><rect x="-22" y="-8" width="44" height="9" rx="2" fill="#ab1a1f"/><rect x="-18" y="-17" width="38" height="9" rx="2" fill="#2e7d6b"/><rect x="-24" y="-26" width="40" height="9" rx="2" fill="#f2a93b"/></g><g class="st-float" style="animation-delay:0s"><g transform="translate(250 150) scale(1)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g><g class="st-twinkle" style="animation-delay:0s"><path transform="translate(40 120) scale(0.9)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#ffd58a"/></g><g class="st-twinkle" style="animation-delay:0.8s"><path transform="translate(240 90) scale(0.6)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#ffd58a"/></g></svg><img class="st-photo" src="assets/img/stories/first-day.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>Her First Day of School</h3>
+          <p class="st-tease">She arrived as a young girl who had never sat in a classroom. Years later, she stood at the front of one.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>She came to us as a young girl, an orphan who had never been to school. The first weeks were hard: unfamiliar letters, strange numbers and a classroom full of noisy children.</p>
+            <h4>What changed</h4><p>Her caregivers enrolled her in school right away and sat beside her over homework every evening. Slowly, her fear turned into curiosity, and she finished secondary school with strong results.</p>
+            <h4>Today</h4><p>She went on to earn a diploma in early childhood education. Today she is a preschool teacher overseas, helping little ones take their very first steps into learning.</p>
+            <p class="st-quote">With the right support, every child can rise above where they began.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>她的第一天上学</h3>
+          <p class="st-tease">来到小屋时她还是个小女孩，从没踏进过教室。多年以后，她站在了讲台上。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>她来到我们这里时还是个小女孩，是个从未上过学的孤儿。最初几周很不容易：陌生的字母、陌生的数字，还有满是吵闹孩子的教室。</p>
+            <h4>改变发生了</h4><p>看护们立刻帮她办理入学，每天晚上陪在她身边写功课。慢慢地，她的害怕变成了好奇，中学毕业时成绩优异。</p>
+            <h4>如今</h4><p>后来，她取得了幼儿教育文凭。如今她在海外担任幼儿园老师，陪伴小朋友迈出学习的第一步。</p>
+            <p class="st-quote">只要得到适当的支持，每个孩子都能超越自己的起点。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-no-one-to-take-her-in" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A small figure at the lit doorway of a house at dusk" focusable="false"><defs><linearGradient id="st1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b4f8f"/><stop offset="1" stop-color="#a07bb0"/></linearGradient></defs><rect width="400" height="250" fill="url(#st1)"/><g class="st-twinkle" style="animation-delay:0s"><path transform="translate(50 40) scale(0.8)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:0.6s"><path transform="translate(120 70) scale(0.6)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:1.2s"><path transform="translate(310 36) scale(0.9)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:0.3s"><path transform="translate(350 90) scale(0.6)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:1.8s"><path transform="translate(230 28) scale(0.7)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-glow"><circle cx="66" cy="78" r="25" fill="#fff" opacity=".15"/><circle cx="66" cy="78" r="15" fill="#fff3c9"/><circle cx="73" cy="75" r="13" fill="#43457a"/></g><path d="M0 200C100 175 200 185 300 192C350 195 380 190 400 186V250H0Z" fill="#35607a"/><path d="M0 228C120 212 260 222 400 214V250H0Z" fill="#2a4a62"/><g transform="translate(210 214) scale(1.5)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#fff1d6"/><path d="M-42 -44L0 -82L42 -44Z" fill="#7a2b3a"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#c9833c"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><path d="M0 -50C-8 -56 -8 -63 -4 -63C-2 -63 0 -61 0 -60C0 -61 2 -63 4 -63C8 -63 8 -56 0 -50Z" fill="#fff"/></g><path d="M196 214L180 250H240L224 214Z" fill="#ffd58a" opacity=".45"/><g transform="translate(212 238) scale(0.7)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><path d="M-14 -50h28l5 26h-38z" fill="#6bb5a1"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#6bb5a1"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#6bb5a1"/><circle cx="0" cy="-64" r="12" fill="#e9b48a"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-13" cy="-64" r="5" fill="#2c3e50"/><circle cx="13" cy="-64" r="5" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g class="st-float" style="animation-delay:0.4s"><g transform="translate(268 112) scale(1.2)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ffb3c4"/></g></g><g transform="translate(330 214) scale(0.9)"><rect x="-4" y="-34" width="8" height="34" rx="3" fill="#8a5a3c"/><circle cx="0" cy="-48" r="24" fill="#1f4a52"/><circle cx="-16" cy="-38" r="15" fill="#1f4a52"/><circle cx="16" cy="-38" r="15" fill="#1f4a52"/></g></svg><img class="st-photo" src="assets/img/stories/no-one-to-take-her-in.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>She Had No One to Take Her In</h3>
+          <p class="st-tease">After losing both parents, there was no relative who could give her a home. Then a door opened.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>She lost both of her parents to illness while she was still growing up. Her only sister was living with relatives, and no one in the family was able to offer her a stable home of her own.</p>
+            <h4>Coming home</h4><p>At our home she found what every child needs after a loss: a bed of her own, meals shared around a table, and caregivers who notice when she is quiet and sit down beside her.</p>
+            <h4>What comes next</h4><p>Grief does not simply disappear. But with safety, school and people who care, a girl who felt alone can start to feel that she belongs again.</p>
+            <p class="st-quote">Every child deserves a place to call home.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>没有人能收留她</h3>
+          <p class="st-tease">失去双亲后，亲人中没有谁能给她一个家。后来，一扇门为她打开了。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>她在成长的岁月里失去了双亲。唯一的姐姐寄住在亲戚家，家里也没有人能给她一个稳定的家。</p>
+            <h4>来到小屋</h4><p>在小屋里，她得到了每个孩子在失去亲人后最需要的东西：属于自己的床铺、围坐一桌的饭菜，以及会在她沉默时坐到她身边的看护。</p>
+            <h4>接下来</h4><p>悲伤不会凭空消失。但有了安全的环境、学业和关心她的人，一个曾经感到孤单的女孩，会慢慢重新找到归属感。</p>
+            <p class="st-quote">每个孩子都值得拥有一个可以称之为家的地方。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-where-he-belongs" data-cat="grow">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A boy on a swing under a big tree surrounded by hearts" focusable="false"><defs><linearGradient id="st2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9f0e6"/><stop offset="1" stop-color="#fff6e6"/></linearGradient></defs><rect width="400" height="250" fill="url(#st2)"/><g class="st-glow"><circle cx="70" cy="52" r="36" fill="#ffd58a" opacity=".35"/><circle cx="70" cy="52" r="22" fill="#ffd58a"/><circle cx="70" cy="52" r="16" fill="#f2a93b" opacity=".85"/></g><g transform="translate(300 46) scale(0.9)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><path d="M0 196C90 168 190 176 290 190C350 198 380 190 400 184V250H0Z" fill="#a5d4c4"/><path d="M0 220C120 200 250 214 400 206V250H0Z" fill="#2e7d6b"/><g transform="translate(240 214) scale(2.6)"><rect x="-4" y="-34" width="8" height="34" rx="3" fill="#8a5a3c"/><circle cx="0" cy="-48" r="24" fill="#2b7a60"/><circle cx="-16" cy="-38" r="15" fill="#2b7a60"/><circle cx="16" cy="-38" r="15" fill="#2b7a60"/></g><path d="M214 100V160M274 100V160" stroke="#8a5a3c" stroke-width="2.5"/><rect x="204" y="158" width="80" height="5" rx="2" fill="#8a5a3c"/><g class="st-sway"><g transform="translate(244 159) scale(0.55)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="-13" y="-52" width="26" height="30" rx="9" fill="#f2a93b"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#f2a93b"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#f2a93b"/><circle cx="0" cy="-64" r="12" fill="#d99a6c"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g></g><g class="st-float" style="animation-delay:0s"><g transform="translate(130 130) scale(1.1)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g><g class="st-float" style="animation-delay:1s"><g transform="translate(340 120) scale(0.8)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ee9fb0"/></g></g><g class="st-float" style="animation-delay:0.5s"><g transform="translate(100 90) scale(0.7)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ffb3c4"/></g></g><g transform="translate(60 232)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g transform="translate(350 236)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#f2a93b"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g transform="translate(160 240)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g></svg><img class="st-photo" src="assets/img/stories/where-he-belongs.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>Where He Belongs</h3>
+          <p class="st-tease">He lost his mother as a young boy and spent years searching for a place to belong.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>He was still a young boy when his mother passed away. His father was too unwell to care for him, so a relative took him in. He was fed and sheltered, but he was lonely, and the loneliness came out as anger.</p>
+            <h4>What changed</h4><p>When he joined our home, we saw the anger for what it was: a plea for love. Kind caregivers and new friends slowly earned his trust, and his schoolwork began to improve.</p>
+            <h4>Today</h4><p>He went on to study at a university overseas. Today he shows younger children that where you start does not decide where you finish.</p>
+            <p class="st-quote">Where you begin does not decide where you end.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>他的归属</h3>
+          <p class="st-tease">年幼丧母的他，花了好些年寻找一个归属之地。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>他还是个小男孩时，母亲就去世了。父亲身体不好，无法照顾他，只好由亲戚收留。他有饭吃、有地方住，却很孤单，孤单化成了愤怒。</p>
+            <h4>改变发生了</h4><p>来到小屋后，我们明白那份愤怒其实是对爱的呼唤。温暖的看护和新朋友渐渐赢得了他的信任，他的成绩也开始进步。</p>
+            <h4>如今</h4><p>后来，他考上了海外的大学。如今，他用自己的经历告诉年幼的孩子：起点并不能决定终点。</p>
+            <p class="st-quote">起点，并不能决定终点。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-grandma-did-her-best" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A grandmother and a child walking hand in hand towards home" focusable="false"><defs><linearGradient id="st3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe3c9"/><stop offset="1" stop-color="#ffc9b0"/></linearGradient></defs><rect width="400" height="250" fill="url(#st3)"/><g class="st-glow"><circle cx="300" cy="120" r="48" fill="#ffd58a" opacity=".35"/><circle cx="300" cy="120" r="34" fill="#ffd58a"/><circle cx="300" cy="120" r="24" fill="#f2a93b" opacity=".85"/></g><g transform="translate(80 50) scale(1)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><g transform="translate(180 80) scale(0.6)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><path d="M0 186C100 160 220 170 300 182C350 190 380 184 400 180V250H0Z" fill="#d9a56e"/><path d="M0 216C110 198 260 210 400 204V250H0Z" fill="#8a9a5b"/><g transform="translate(335 190) scale(1)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#fff6e6"/><path d="M-42 -44L0 -82L42 -44Z" fill="#a5472f"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#2e7d6b"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><path d="M0 -50C-8 -56 -8 -63 -4 -63C-2 -63 0 -61 0 -60C0 -61 2 -63 4 -63C8 -63 8 -56 0 -50Z" fill="#fff"/></g><path d="M60 250C130 226 230 214 300 196" stroke="#fff0dc" stroke-width="18" fill="none" opacity=".7"/><g transform="translate(150 232) scale(1.1)"><rect x="-10" y="-30" width="8" height="30" rx="3" fill="#6b5b73"/><rect x="2" y="-30" width="8" height="30" rx="3" fill="#6b5b73"/><path d="M-17 -56h34l6 30h-46z" fill="#c25b78"/><rect x="-22" y="-54" width="8" height="26" rx="4" fill="#c25b78"/><rect x="14" y="-54" width="8" height="26" rx="4" fill="#c25b78"/><circle cx="0" cy="-70" r="13" fill="#e9b48a"/><path d="M-13.5 -72a13.5 13.5 0 0 1 27 0c-7 -6 -20 -6 -27 0z" fill="#e8e1d8"/><circle cx="0" cy="-86" r="7" fill="#e8e1d8"/><circle cx="-4.5" cy="-69" r="1.5" fill="#2c3e50"/><circle cx="4.5" cy="-69" r="1.5" fill="#2c3e50"/><path d="M-4.5 -64q4.5 4 9 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g transform="translate(206 232) scale(0.85)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><path d="M-14 -50h28l5 26h-38z" fill="#d9467a"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#d9467a"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#d9467a"/><circle cx="0" cy="-64" r="12" fill="#f4c9a0"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-13" cy="-64" r="5" fill="#2c3e50"/><circle cx="13" cy="-64" r="5" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><path d="M168 190C182 200 190 200 196 190" stroke="#e9b48a" stroke-width="6" fill="none" stroke-linecap="round"/><g class="st-float" style="animation-delay:0.2s"><g transform="translate(178 120) scale(0.9)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g><g transform="translate(60 238)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g transform="translate(270 240)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ffd58a"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g></svg><img class="st-photo" src="assets/img/stories/grandma-did-her-best.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>Grandma Did Her Best</h3>
+          <p class="st-tease">She grew up on her grandmother’s love, until her grandmother could no longer carry the load.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>Her grandmother raised her from the very beginning and was her whole world: bedtime stories, home-cooked meals, a hand to hold. Then her grandmother’s health began to fail, and caring for a growing child became too much.</p>
+            <h4>Coming home</h4><p>After a short stay with another relative, she came to us. The first nights were tearful. Our caregivers kept the routines gentle, the lights low, and a seat ready for her at the table.</p>
+            <h4>What comes next</h4><p>She is learning that love can come from more than one place, and that she can keep growing with confidence. Her grandmother’s love is still a part of her.</p>
+            <p class="st-quote">Love can come from more than one place.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>外婆已经尽力了</h3>
+          <p class="st-tease">她在外婆的疼爱中长大，直到外婆再也扛不起这份重担。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>外婆从一开始就把她带大，是她的全部世界：睡前故事、热腾腾的家常饭、一双牵着她的手。后来，外婆的身体渐渐衰弱，照顾一个成长中的孩子变得力不从心。</p>
+            <h4>来到小屋</h4><p>在亲戚家短暂住过之后，她来到了小屋。最初的几个夜晚，她常常哭泣。看护们让作息温柔平稳，把灯光调暗，并在餐桌旁为她留好一个位子。</p>
+            <h4>接下来</h4><p>她正在学会：爱可以来自不止一个地方，她也能充满自信地继续成长。外婆给她的爱，依然是她的一部分。</p>
+            <p class="st-quote">爱，可以来自不止一个地方。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-two-siblings-one-promise" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two children holding hands and flying a kite" focusable="false"><defs><linearGradient id="st4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7e8f5"/><stop offset="1" stop-color="#eaf7f1"/></linearGradient></defs><rect width="400" height="250" fill="url(#st4)"/><g class="st-glow"><circle cx="60" cy="54" r="34" fill="#ffd58a" opacity=".35"/><circle cx="60" cy="54" r="20" fill="#ffd58a"/><circle cx="60" cy="54" r="14" fill="#f2a93b" opacity=".85"/></g><g transform="translate(300 56) scale(0.9)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><g transform="translate(150 40) scale(0.7)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><path d="M0 196C100 172 210 182 300 192C350 197 380 192 400 188V250H0Z" fill="#bfe3c6"/><path d="M0 222C120 204 260 216 400 208V250H0Z" fill="#6bb5a1"/><g class="st-sway"><g transform="translate(250 74) scale(1)"><path d="M0 -34L22 0L0 34L-22 0Z" fill="#f2a93b"/><path d="M0 -34L0 34M-22 0L22 0" stroke="#ab1a1f" stroke-width="2" opacity=".6"/><path d="M0 34C-8 52 8 62 0 80C-6 94 6 100 0 112" stroke="#2c3e50" stroke-width="1.6" fill="none" opacity=".6"/></g></g><g transform="translate(168 236) scale(1.1)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="-13" y="-52" width="26" height="30" rx="9" fill="#ab1a1f"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#ab1a1f"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#ab1a1f"/><circle cx="0" cy="-64" r="12" fill="#f4c9a0"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g transform="translate(222 238) scale(0.85)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><path d="M-14 -50h28l5 26h-38z" fill="#f2a93b"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#f2a93b"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#f2a93b"/><circle cx="0" cy="-64" r="12" fill="#e9b48a"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-13" cy="-64" r="5" fill="#2c3e50"/><circle cx="13" cy="-64" r="5" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><path d="M184 196C196 204 202 204 208 198" stroke="#f4c9a0" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M236 192L252 126" stroke="#2c3e50" stroke-width="1.6" opacity=".55"/><g class="st-float" style="animation-delay:0.3s"><g transform="translate(130 130) scale(0.9)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g><g transform="translate(70 240)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g transform="translate(340 236)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#f2a93b"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g class="st-twinkle" style="animation-delay:1s"><path transform="translate(330 110) scale(0.6)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff"/></g></svg><img class="st-photo" src="assets/img/stories/two-siblings-one-promise.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>Two Siblings, One Promise</h3>
+          <p class="st-tease">They had already lost so much. The one thing they refused to lose was each other.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>Two siblings lost both of their parents far too young. Suddenly the people who should have comforted them were gone, and all they had left was each other.</p>
+            <h4>Coming home</h4><p>We made them a promise: they would stay together. They share a roof, walk to school side by side, and the elder keeps a quiet eye on the younger at every meal.</p>
+            <h4>What comes next</h4><p>With steady care, counselling and a gentle routine, they are healing together. Knowing they are not alone is half of the journey.</p>
+            <p class="st-quote">Nobody should have to heal alone.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>两个手足，一个承诺</h3>
+          <p class="st-tease">他们已经失去太多，唯一不愿失去的，是彼此。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>两个手足过早地失去了双亲。本该安慰他们的人突然不在了，他们只剩下彼此。</p>
+            <h4>来到小屋</h4><p>我们许下一个承诺：让他们待在一起。他们住在同一个屋檐下，并肩走路上学，每顿饭，年长的那个都会默默照看着年幼的。</p>
+            <h4>接下来</h4><p>在稳定的照顾、辅导与温和的作息中，他们一起慢慢疗愈。知道自己并不孤单，已经是旅程的一半。</p>
+            <p class="st-quote">没有人应该独自疗伤。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-the-boy-who-rewrote-his-story" data-cat="grow">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A boy proudly holding up a golden trophy surrounded by stars" focusable="false"><defs><linearGradient id="st5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c9"/><stop offset="1" stop-color="#ffd9b0"/></linearGradient></defs><rect width="400" height="250" fill="url(#st5)"/><g class="st-twinkle" style="animation-delay:0s"><path transform="translate(60 50) scale(1)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#f2a93b"/></g><g class="st-twinkle" style="animation-delay:0.6s"><path transform="translate(340 60) scale(0.9)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#f2a93b"/></g><g class="st-twinkle" style="animation-delay:1.1s"><path transform="translate(110 110) scale(0.6)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#f2a93b"/></g><g class="st-twinkle" style="animation-delay:0.3s"><path transform="translate(300 130) scale(0.7)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#f2a93b"/></g><g class="st-twinkle" style="animation-delay:1.5s"><path transform="translate(200 36) scale(0.7)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#f2a93b"/></g><g transform="translate(90 70) scale(0.6)" fill="#fff" opacity="0.7"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><path d="M0 208C110 190 250 200 400 190V250H0Z" fill="#f2b27a"/><path d="M0 232C140 218 270 228 400 222V250H0Z" fill="#d98e1f"/><g transform="translate(190 232) scale(1.35)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="-13" y="-52" width="26" height="30" rx="9" fill="#2e7d6b"/><path d="M-12 -48L-24 -66" stroke="#2e7d6b" stroke-width="7" stroke-linecap="round"/><path d="M12 -48L24 -66" stroke="#2e7d6b" stroke-width="7" stroke-linecap="round"/><circle cx="-24" cy="-68" r="4" fill="#d99a6c"/><circle cx="24" cy="-68" r="4" fill="#d99a6c"/><circle cx="0" cy="-64" r="12" fill="#d99a6c"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g class="st-bob"><g transform="translate(236 118)"><path d="M-16 0h32v18c0 10-7 16-16 17c-9-1-16-7-16-17z" fill="#f2a93b"/><path d="M-16 6C-30 6-30 24-16 26M16 6C30 6 30 24 16 26" stroke="#d98e1f" stroke-width="3" fill="none"/><rect x="-5" y="34" width="10" height="9" fill="#d98e1f"/><rect x="-14" y="42" width="28" height="7" rx="2" fill="#8a5a3c"/><path d="M0 8l3 6 6 1-4.5 4 1.2 6-5.7-3-5.7 3 1.2-6-4.5-4 6-1z" fill="#fff6e6"/></g></g><g transform="translate(90 236) scale(1.1)" opacity="1"><rect x="-22" y="-8" width="44" height="9" rx="2" fill="#ab1a1f"/><rect x="-18" y="-17" width="38" height="9" rx="2" fill="#2e7d6b"/><rect x="-24" y="-26" width="40" height="9" rx="2" fill="#f2a93b"/></g><path d="M300 232l22-8 22 8-22 8z" fill="#2c3e50"/><path d="M312 236v10c6 6 18 6 24 0v-10" fill="#2c3e50"/><path d="M344 232v14" stroke="#f2a93b" stroke-width="2"/></svg><img class="st-photo" src="assets/img/stories/the-boy-who-rewrote-his-story.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>The Boy Who Rewrote His Story</h3>
+          <p class="st-tease">As a young boy he had never had a full meal or a day of school. Now he comes home with awards.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>As a young boy he had never had a full meal and had never been to school. His days were long, tiring and frightening, and he had no idea that a different life was possible.</p>
+            <h4>What changed</h4><p>After long efforts together with the Welfare Department, he was brought to safety and into our home. He started school far behind his classmates, but he never stopped trying.</p>
+            <h4>Today</h4><p>Today he has won a class excellence award, a writing prize and a medal in a spelling competition. His story proves that no child’s future is decided by where he started.</p>
+            <p class="st-quote">Given the chance, every child can shine.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>改写自己故事的男孩</h3>
+          <p class="st-tease">年幼的他，没吃过一顿饱饭，也没上过一天学。如今，他捧着奖状回家。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>年幼的他，从未吃过一顿饱饭，也从未上过学。日子漫长、疲惫又惊恐，他甚至不知道，原来还有另一种生活。</p>
+            <h4>改变发生了</h4><p>在与福利部门长久的共同努力下，他终于被带到安全的地方，来到了小屋。他上学时远远落后于同学，但从未放弃。</p>
+            <h4>如今</h4><p>如今，他赢得了班级优秀奖、写作奖，还在拼字比赛中获得奖牌。他的故事证明：孩子的未来，不由起点决定。</p>
+            <p class="st-quote">只要有机会，每个孩子都能发光。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-the-family-that-lost-its-provider" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A home under a rising sun, with a small child in front" focusable="false"><defs><linearGradient id="st6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9b8"/><stop offset="1" stop-color="#ffc9a8"/></linearGradient></defs><rect width="400" height="250" fill="url(#st6)"/><g class="st-glow"><circle cx="200" cy="150" r="58" fill="#ffd58a" opacity=".35"/><circle cx="200" cy="150" r="44" fill="#ffd58a"/><circle cx="200" cy="150" r="32" fill="#f2a93b" opacity=".85"/></g><path d="M200 150L-7 76" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M200 150L38 1" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M200 150L108 -50" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M200 150L200 -70" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M200 150L292 -50" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M200 150L362 2" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M200 150L407 77" stroke="#fff3c9" stroke-width="10" opacity=".25" stroke-linecap="round"/><path d="M0 196C80 170 170 184 240 196C310 208 370 196 400 190V250H0Z" fill="#8db87a"/><path d="M0 224C120 206 260 220 400 210V250H0Z" fill="#2e7d6b"/><g transform="translate(120 222) scale(1.25)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#fff6e6"/><path d="M-42 -44L0 -82L42 -44Z" fill="#a5472f"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#2e7d6b"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><path d="M0 -50C-8 -56 -8 -63 -4 -63C-2 -63 0 -61 0 -60C0 -61 2 -63 4 -63C8 -63 8 -56 0 -50Z" fill="#fff"/></g><g transform="translate(300 224) scale(1.2)"><rect x="-4" y="-34" width="8" height="34" rx="3" fill="#8a5a3c"/><circle cx="0" cy="-48" r="24" fill="#2b7a60"/><circle cx="-16" cy="-38" r="15" fill="#2b7a60"/><circle cx="16" cy="-38" r="15" fill="#2b7a60"/></g><g transform="translate(344 228) scale(0.8)"><rect x="-4" y="-34" width="8" height="34" rx="3" fill="#8a5a3c"/><circle cx="0" cy="-48" r="24" fill="#3b9480"/><circle cx="-16" cy="-38" r="15" fill="#3b9480"/><circle cx="16" cy="-38" r="15" fill="#3b9480"/></g><g transform="translate(190 242) scale(0.75)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><path d="M-14 -50h28l5 26h-38z" fill="#6bb5a1"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#6bb5a1"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#6bb5a1"/><circle cx="0" cy="-64" r="12" fill="#e9b48a"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-13" cy="-64" r="5" fill="#2c3e50"/><circle cx="13" cy="-64" r="5" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g class="st-float" style="animation-delay:0.2s"><g transform="translate(236 108) scale(1)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g><g transform="translate(60 240)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g transform="translate(250 244)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#f2a93b"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g></svg><img class="st-photo" src="assets/img/stories/the-family-that-lost-its-provider.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>The Family That Lost Its Provider</h3>
+          <p class="st-tease">When the only person earning for the family was gone, the question was not only grief. It was: how will we live?</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>Her father worked long, hard days to keep the family going. After years of exhaustion, his health gave way and he passed away, taking with him the family’s only income and the person they loved most.</p>
+            <h4>Coming home</h4><p>Behind the grief was a heavy worry about the next meal and the next school fee. Our home gave the children a safe place to be children again.</p>
+            <h4>What comes next</h4><p>With steady support for her schooling, she is building the skills to stand on her own, one step at a time.</p>
+            <p class="st-quote">Education is the key to breaking the cycle of poverty.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>失去顶梁柱的家</h3>
+          <p class="st-tease">当家里唯一的收入来源离开，面对的不只是悲伤，还有：我们该怎么生活？</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>父亲日复一日辛苦工作，撑起整个家。多年的劳累之后，他的身体垮了，离开了人世，也带走了家里唯一的收入，和他们最爱的人。</p>
+            <h4>来到小屋</h4><p>悲伤背后，是对下一餐饭、下一笔学费的沉重担忧。小屋给了孩子们一个安全的地方，让他们重新做回孩子。</p>
+            <h4>接下来</h4><p>在学业上得到持续的支持，她正一步一步培养自立的能力。</p>
+            <p class="st-quote">教育是打破贫困循环的关键。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-too-many-doors-no-home" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A row of houses leading to one warm home with a heart on it" focusable="false"><defs><linearGradient id="st7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3ecf7"/><stop offset="1" stop-color="#f4f8f2"/></linearGradient></defs><rect width="400" height="250" fill="url(#st7)"/><g transform="translate(80 44) scale(0.9)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><g transform="translate(300 56) scale(0.8)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><g class="st-glow"><circle cx="350" cy="40" r="30" fill="#ffd58a" opacity=".35"/><circle cx="350" cy="40" r="16" fill="#ffd58a"/><circle cx="350" cy="40" r="12" fill="#f2a93b" opacity=".85"/></g><path d="M0 204C100 190 200 198 300 200C350 201 380 198 400 196V250H0Z" fill="#bdd9c9"/><path d="M0 230C130 218 270 228 400 220V250H0Z" fill="#8db8a0"/><g transform="translate(48 206) scale(0.65)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#e8eef5"/><path d="M-42 -44L0 -82L42 -44Z" fill="#8a96b0"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#9aa9ae"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#cfe6df"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#cfe6df"/></g><g transform="translate(118 208) scale(0.7)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#eef0f4"/><path d="M-42 -44L0 -82L42 -44Z" fill="#a0a7b8"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#9aa9ae"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#cfe6df"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#cfe6df"/></g><path d="M150 232C200 232 210 236 244 232" stroke="#fff" stroke-width="10" fill="none" opacity=".8" stroke-linecap="round"/><g class="st-glow"><circle cx="318" cy="170" r="70" fill="#ffd58a" opacity=".25"/></g><g transform="translate(318 214) scale(1.45)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#fff6e6"/><path d="M-42 -44L0 -82L42 -44Z" fill="#ab1a1f"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#2e7d6b"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><path d="M0 -50C-8 -56 -8 -63 -4 -63C-2 -63 0 -61 0 -60C0 -61 2 -63 4 -63C8 -63 8 -56 0 -50Z" fill="#fff"/></g><g transform="translate(250 236) scale(0.6)"><rect x="-18" y="-42" width="36" height="42" rx="10" fill="#d9467a"/><rect x="-12" y="-26" width="24" height="16" rx="5" fill="#fff" opacity=".25"/><path d="M-9 -42a9 9 0 0 1 18 0" stroke="#2c3e50" stroke-width="3" fill="none"/><circle cx="0" cy="-16" r="2.5" fill="#ffd58a"/></g><g transform="translate(270 244) scale(0.55)"><rect x="-9" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><rect x="2" y="-26" width="7" height="26" rx="3" fill="#2c3e50"/><path d="M-14 -50h28l5 26h-38z" fill="#2e7d6b"/><rect x="-19" y="-50" width="7" height="24" rx="3.5" fill="#2e7d6b"/><rect x="12" y="-50" width="7" height="24" rx="3.5" fill="#2e7d6b"/><circle cx="0" cy="-64" r="12" fill="#f4c9a0"/><path d="M-12.5 -66a12.5 12.5 0 0 1 25 0c-6 -5 -19 -5 -25 0z" fill="#2c3e50"/><circle cx="-13" cy="-64" r="5" fill="#2c3e50"/><circle cx="13" cy="-64" r="5" fill="#2c3e50"/><circle cx="-4" cy="-63" r="1.5" fill="#2c3e50"/><circle cx="4" cy="-63" r="1.5" fill="#2c3e50"/><path d="M-4 -58q4 4 8 0" stroke="#2c3e50" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><g class="st-float" style="animation-delay:0.3s"><g transform="translate(210 150) scale(0.9)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g></svg><img class="st-photo" src="assets/img/stories/too-many-doors-no-home.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>Too Many Doors, No Home</h3>
+          <p class="st-tease">Kind relatives took her in, one after another. But kindness alone could not pay the bills.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>After her family fell apart, she stayed with one relative, then another, then a third. Each of them helped for as long as they could. Each of them was struggling too.</p>
+            <h4>Coming home</h4><p>Moving from house to house meant new rooms, new rules and never quite unpacking her bag. When no steady arrangement was left, she came to us, hoping for something that would last.</p>
+            <h4>What comes next</h4><p>At our home, her bag is finally unpacked. A steady bed, a daily routine and a school uniform ready for the morning: small things that add up to a big sense of security.</p>
+            <p class="st-quote">Stability is a gift a child can feel.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>门太多，却没有一个家</h3>
+          <p class="st-tease">亲戚们一个接一个收留她。但光有善意，付不起生活的开销。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>家庭破裂之后，她先住在一位亲戚家，接着是另一位，再来是第三位。每一位都尽力帮忙，但每一位自己也很吃力。</p>
+            <h4>来到小屋</h4><p>不断搬家，意味着新的房间、新的规矩，和永远没有真正打开过的行李。当再也找不到稳定的安排时，她来到了小屋，盼望有一个能长久的家。</p>
+            <h4>接下来</h4><p>在小屋里，她的行李终于打开了。一张固定的床、规律的日常、明早就能穿上的校服：这些小事，汇成了一份踏实的安全感。</p>
+            <p class="st-quote">稳定，是孩子能感受到的礼物。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-a-safe-place-to-sleep" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A cosy bunk bed with a moon and stars outside the window" focusable="false"><defs><linearGradient id="st8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f3a73"/><stop offset="1" stop-color="#5a6aa8"/></linearGradient></defs><rect width="400" height="250" fill="url(#st8)"/><g class="st-twinkle" style="animation-delay:0s"><path transform="translate(80 40) scale(0.7)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:0.7s"><path transform="translate(150 80) scale(0.5)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:1.3s"><path transform="translate(320 44) scale(0.8)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:0.2s"><path transform="translate(356 100) scale(0.5)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><rect x="0" y="196" width="400" height="54" fill="#8a5a3c"/><rect x="0" y="196" width="400" height="6" fill="#6f4730"/><rect x="276" y="52" width="86" height="82" rx="6" fill="#2a2f60"/><g class="st-glow"><circle cx="305" cy="82" r="23" fill="#fff" opacity=".15"/><circle cx="305" cy="82" r="13" fill="#fff3c9"/><circle cx="311" cy="79" r="11" fill="#43457a"/></g><g class="st-twinkle" style="animation-delay:0.4s"><path transform="translate(340 70) scale(0.6)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><g class="st-twinkle" style="animation-delay:1.1s"><path transform="translate(334 112) scale(0.5)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#fff3c9"/></g><rect x="276" y="52" width="86" height="82" rx="6" fill="none" stroke="#e8c9a0" stroke-width="5"/><path d="M319 52V134M276 93H362" stroke="#e8c9a0" stroke-width="3"/><g transform="translate(60 0)"><rect x="40" y="90" width="9" height="118" rx="3" fill="#e8c9a0"/><rect x="176" y="90" width="9" height="118" rx="3" fill="#e8c9a0"/><rect x="40" y="96" width="145" height="12" rx="4" fill="#e8c9a0"/><rect x="48" y="62" width="130" height="34" rx="14" fill="#6bb5a1"/><rect x="48" y="62" width="130" height="14" rx="7" fill="#a5d4c4"/><circle cx="73" cy="78" r="9" fill="#fff6e6"/><rect x="40" y="160" width="145" height="12" rx="4" fill="#e8c9a0"/><rect x="48" y="130" width="130" height="32" rx="14" fill="#d9467a"/><rect x="48" y="130" width="130" height="13" rx="7" fill="#ee9fb0"/><circle cx="73" cy="146" r="9" fill="#fff6e6"/></g><g class="st-glow"><circle cx="330" cy="205" r="34" fill="#ffd58a" opacity=".3"/></g><rect x="322" y="190" width="16" height="22" rx="3" fill="#ffd58a"/><path d="M318 190h24l-5-12h-14z" fill="#c9833c"/><g class="st-float" style="animation-delay:0.5s"><g transform="translate(240 160) scale(0.8)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ffb3c4"/></g></g></svg><img class="st-photo" src="assets/img/stories/a-safe-place-to-sleep.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>A Safe Place to Sleep</h3>
+          <p class="st-tease">Sometimes the bravest thing a family can do is admit that a child needs somewhere safer.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>When a child’s home can no longer keep them safe, the Welfare Department can step in. Some children arrive quietly, holding a small bag, not sure what to expect.</p>
+            <h4>Coming home</h4><p>We begin with the basics: a warm bed, a hot meal and a gentle hello. Trust takes time, so we never rush it. Every child sets their own pace.</p>
+            <h4>What comes next</h4><p>Safe nights lead to calmer days, and calmer days lead to learning, laughing and trusting again. That is what a safe place can do.</p>
+            <p class="st-quote">Every child deserves to feel safe.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>一个安心入睡的地方</h3>
+          <p class="st-tease">有时候，家人最勇敢的决定，是承认孩子需要一个更安全的地方。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>当孩子的家再也无法保护他们时，福利部门可以介入。有些孩子悄悄地来，手里提着一个小包，不知道将会遇见什么。</p>
+            <h4>来到小屋</h4><p>我们从最基本的做起：一张温暖的床、一顿热饭，和一声轻轻的问候。信任需要时间，所以我们从不催促，每个孩子按自己的步伐来。</p>
+            <h4>接下来</h4><p>安稳的夜晚带来平静的白天，平静的白天带来学习、欢笑，和重新学会信任。这就是一个安全的地方能做到的事。</p>
+            <p class="st-quote">每个孩子都应该感到安全。</p>
+          </div>
+        </div>
+      </article>
+      <article class="story aos" id="story-somewhere-to-call-home" data-cat="home">
+        <div class="st-cover"><svg class="st-art" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A golden key with a heart next to a small home" focusable="false"><defs><linearGradient id="st9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2ea"/><stop offset="1" stop-color="#fff6e6"/></linearGradient></defs><rect width="400" height="250" fill="url(#st9)"/><g class="st-glow"><circle cx="340" cy="52" r="34" fill="#ffd58a" opacity=".35"/><circle cx="340" cy="52" r="20" fill="#ffd58a"/><circle cx="340" cy="52" r="14" fill="#f2a93b" opacity=".85"/></g><g transform="translate(80 56) scale(1)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><g transform="translate(250 40) scale(0.7)" fill="#fff" opacity="0.9"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-14" cy="-8" rx="14" ry="11"/><ellipse cx="8" cy="-12" rx="17" ry="14"/></g><path d="M0 200C100 178 210 188 300 198C350 203 380 198 400 194V250H0Z" fill="#a5d4c4"/><path d="M0 226C120 210 260 222 400 214V250H0Z" fill="#2e7d6b"/><g transform="translate(92 210) scale(1.2)"><rect x="-34" y="-46" width="68" height="46" rx="3" fill="#fff"/><path d="M-42 -44L0 -82L42 -44Z" fill="#ab1a1f"/><rect x="18" y="-80" width="9" height="20" fill="#a5472f"/><rect x="-8" y="-28" width="16" height="28" rx="8" fill="#f2a93b"/><rect x="-28" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><rect x="13" y="-34" width="15" height="14" rx="2" fill="#ffd58a"/><path d="M0 -50C-8 -56 -8 -63 -4 -63C-2 -63 0 -61 0 -60C0 -61 2 -63 4 -63C8 -63 8 -56 0 -50Z" fill="#fff"/></g><g class="st-bob"><g transform="translate(250 110) rotate(-18)"><circle cx="0" cy="0" r="30" fill="none" stroke="#d98e1f" stroke-width="12"/><rect x="26" y="-6" width="96" height="12" rx="6" fill="#d98e1f"/><rect x="92" y="6" width="9" height="18" rx="2" fill="#d98e1f"/><rect x="108" y="6" width="9" height="12" rx="2" fill="#d98e1f"/><path d="M0 -6C-9 -14 -9 -23 -3 -23C-1 -23 0 -21 0 -20C0 -21 1 -23 3 -23C9 -23 9 -14 0 -6Z" fill="#fff" transform="translate(0 18) scale(1.1)"/></g></g><g class="st-float" style="animation-delay:0.2s"><g transform="translate(196 168) scale(0.9)"><path d="M0 9C-14 -1 -14 -14 -6 -14C-2 -14 0 -11 0 -9C0 -11 2 -14 6 -14C14 -14 14 -1 0 9Z" fill="#ab1a1f"/></g></g><g class="st-twinkle" style="animation-delay:0.5s"><path transform="translate(330 130) scale(0.8)" d="M0 -9L2.6 -2.8L9 -2.4L4.1 1.8L5.7 8.2L0 4.7L-5.7 8.2L-4.1 1.8L-9 -2.4L-2.6 -2.8Z" fill="#ffd58a"/></g><g transform="translate(300 238)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g><g transform="translate(170 242)"><path d="M0 0V-14" stroke="#2e7d6b" stroke-width="2"/><circle cx="0" cy="-17" r="4.5" fill="#ee9fb0"/><circle cx="0" cy="-17" r="1.8" fill="#ffd58a"/></g></svg><img class="st-photo" src="assets/img/stories/somewhere-to-call-home.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="en">
+          <h3>Somewhere to Call Home</h3>
+          <p class="st-tease">For a very young child, home should be simple: a warm bed, a familiar face, someone who stays.</p>
+          <div class="st-body">
+            <h4>Where it began</h4><p>Some of our youngest children spent their first years without a permanent place to stay, moving from place to place with a parent who was doing their best in impossible circumstances.</p>
+            <h4>Coming home</h4><p>Here, the little ones get what every small child needs: regular meals, naps in the same bed and caregivers who greet them by name each morning.</p>
+            <h4>What comes next</h4><p>Soon they will start school, make friends and learn what it feels like to be a child with a place to belong.</p>
+            <p class="st-quote">A child’s first need is a place to belong.</p>
+          </div>
+        </div>
+        <div class="zh">
+          <h3>一个可以称之为家的地方</h3>
+          <p class="st-tease">对年幼的孩子来说，家应该很简单：一张温暖的床、一张熟悉的脸，和一个不会离开的人。</p>
+          <div class="st-body">
+            <h4>故事的起点</h4><p>我们最年幼的一些孩子，最初的几年没有固定的栖身之所，跟着尽了最大努力却处境艰难的家长，辗转于不同的地方。</p>
+            <h4>来到小屋</h4><p>在这里，小朋友得到每个幼儿都需要的东西：规律的三餐、在同一张床上午睡，以及每天早上叫得出他们名字的看护。</p>
+            <h4>接下来</h4><p>很快，他们将开始上学、结交朋友，并学会做一个有归属的孩子是什么感觉。</p>
+            <p class="st-quote">孩子最先需要的，是一个归属之地。</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION / VOLUNTEER CTA -->
+<div class="cta-band" id="donate">
+  <!-- Moving drawings: golden stars and sparkles twinkle and float up, with crayon hearts -->
+  <div class="deco" aria-hidden="true">
+    <svg class="a-pxfall px-glow" style="--x:3.7%;--y:-30px;--s:17px;--d:16.1s;--delay:-14.4s;--h:440px;--p:1.3s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:15.1%;--y:-30px;--s:8px;--d:19.1s;--delay:-3.1s;--h:440px;--p:1.9s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:29.9%;--y:-30px;--s:11px;--d:17.3s;--delay:-9.4s;--h:440px;--p:1.6s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow" style="--x:43.0%;--y:-30px;--s:17px;--d:13.2s;--delay:-19.7s;--h:440px;--p:1.6s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall hide-sm" style="--x:47.7%;--y:-30px;--s:8px;--d:15.9s;--delay:-20.1s;--h:440px;--p:1.4s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:58.6%;--y:-30px;--s:14px;--d:17.4s;--delay:-20.0s;--h:440px;--p:2.0s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall" style="--x:70.3%;--y:-30px;--s:8px;--d:19.7s;--delay:-20.8s;--h:440px;--p:1.2s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow hide-sm" style="--x:83.8%;--y:-30px;--s:26px;--d:18.2s;--delay:-4.6s;--h:440px;--p:2.0s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxfall px-glow" style="--x:94.4%;--y:-30px;--s:18px;--d:18.1s;--delay:-4.6s;--h:440px;--p:1.2s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:34.6%;--y:33.4%;--s:11px;--d:3.5s;--delay:-3.3s;--p:2.2s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:94.8%;--y:87.5%;--s:22px;--d:2.8s;--delay:-0.7s;--p:1.8s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:54.3%;--y:61.3%;--s:6px;--d:2.6s;--delay:-3.7s;--p:1.8s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:68.4%;--y:13.8%;--s:11px;--d:4.0s;--delay:-2.6s;--p:2.2s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow" style="--x:21.5%;--y:43.3%;--s:22px;--d:3.1s;--delay:-3.2s;--p:1.8s"><use href="#i-pstar-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:14.1%;--y:14.1%;--s:9px;--d:2.4s;--delay:-0.8s;--p:1.5s"><use href="#i-pdot-pale" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:70.1%;--y:76.0%;--s:11px;--d:3.2s;--delay:-3.2s;--p:1.5s"><use href="#i-pspark" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle px-glow hide-sm" style="--x:38.0%;--y:56.2%;--s:20px;--d:2.3s;--delay:-0.4s;--p:1.3s"><use href="#i-pstar" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle" style="--x:71.2%;--y:62.8%;--s:9px;--d:3.7s;--delay:-1.0s;--p:2.0s"><use href="#i-pdot" width="100%" height="100%"/></svg>
+    <svg class="a-pxtwinkle hide-sm" style="--x:95.6%;--y:34.6%;--s:9px;--d:3.0s;--delay:-1.1s;--p:1.4s"><use href="#i-pspark-pale" width="100%" height="100%"/></svg>
+    <svg class="a-rise" style="--x:13%;--b:-30px;--s:20px;--d:17s;--delay:-5s;--h:440px;--o:.6;color:#ffd0da"><use href="#i-d-heart" width="100%" height="100%"/></svg>
+    <svg class="a-rise" style="--x:74%;--b:-30px;--s:18px;--d:19s;--delay:-11s;--h:440px;--o:.6;color:#ffd58a"><use href="#i-d-heart" width="100%" height="100%"/></svg>
+  </div>
+  <div class="wrap">
+    <h2 data-i18n-html="cta.h2">In compassion, <em>we change the world</em>.</h2>
+    <p data-i18n="cta.p">RM50 gives a child school supplies. RM100 covers a month of food and healthcare. RM300 supports a child’s full care and education for a month.</p>
+    <div class="cta-btns">
+      <a href="#" data-donate class="btn btn-lg btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="cta.donate">Donate now</span></a>
+      <a href="#" data-form="volunteer" class="btn btn-lg btn-volunteer" target="_blank" rel="noopener"><i class="fa fa-handshake-angle"></i> <span data-i18n="cta.volunteer">Volunteer</span></a>
+      <a href="#" data-form="sponsor" class="btn btn-lg btn-outline-white" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
+    </div>
+    <a class="cta-more" href="get-involved.html"><span data-i18n="cta.more">More ways to get involved</span> <i class="fa fa-arrow-right"></i></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <!-- Paper children holding hands (decoration) -->
+  <div class="dolls" aria-hidden="true"><svg class="doll" style="--i:0;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:1;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:2;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:3;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:4;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:5;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:6;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:7;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:8;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:9;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:10;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:11;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:12;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:13;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:14;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:15;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:16;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:17;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:18;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:19;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:20;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:21;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:22;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:23;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:24;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:25;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:26;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:27;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:28;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:29;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:30;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:31;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:32;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:33;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:34;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:35;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:36;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:37;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:38;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:39;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:40;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:41;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:42;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:43;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:44;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:45;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:46;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:47;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:48;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:49;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:50;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:51;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:52;color:#9c7dd6"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:53;color:#f2a93b"><use href="#i-doll-b" width="100%" height="100%"/></svg><svg class="doll" style="--i:54;color:#ee9fb0"><use href="#i-doll-a" width="100%" height="100%"/></svg><svg class="doll" style="--i:55;color:#c4afe6"><use href="#i-doll-b" width="100%" height="100%"/></svg></div>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="https://amitabhafoundation.my/" target="_blank" rel="noopener"><img src="assets/af-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <p data-i18n="foot.p">Amitabha Foundation Children Home. A 5-Star rated, ISO 9001:2015 certified Buddhist children home in Johor Bahru, caring for children since 2010.</p>
+      <div class="foot-soc">
+        <a href="https://www.facebook.com/share/17yLE4x4mP/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/amitabhamalaysia/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCfMzaH1XM3kerjHOsnTLPEQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@amitabhafoundation" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a class="soc-text" href="https://www.xiaohongshu.com/user/profile/64947ee5000000002a0375ca" target="_blank" rel="noopener" aria-label="XiaoHongShu" lang="zh">小红书</a>
+        <a href="https://t.me/amitabhafoundation" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.c1">The Home</h4>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="our-care.html" data-i18n="nav.care">Our Care</a>
+      <a href="index.html#credentials" data-i18n="foot.cred">Credentials</a>
+      <a href="stories.html" data-i18n="nav.stories">Stories</a>
+      <a href="moments.html" data-i18n="nav.moments">Moments</a>
+      <a href="blog.html" data-i18n="nav.blog">Blog</a>
+      <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <h4><a href="https://amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.c2">Amitabha Foundation</a></h4>
+      <a href="https://eldercare.amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.elder">Elder Home</a>
+      <a class="here" href="index.html" data-i18n="foot.children">Children Home</a>
+      <a href="https://amitabhafoundation.my/dialysis-centre/" target="_blank" rel="noopener" data-i18n="foot.dialysis">Dialysis Centre</a>
+      <a href="https://amitabhafoundation.my/amitabha-assistance/" target="_blank" rel="noopener" data-i18n="foot.assist">Amitabha Assistance</a>
+      <a href="#" data-form="volunteer" target="_blank" rel="noopener" data-i18n="cta.volunteer">Volunteer</a>
+      <a href="#" data-form="giveHope" target="_blank" rel="noopener" data-i18n="foot.givehope">Give Hope</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.c3">Contact</h4>
+      <a class="fci" href="tel:+6075353356"><i class="fa fa-phone"></i><span>+607-535 3356</span></a>
+      <a class="fci" href="#" data-wa="help" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>016-9567861 <small>WhatsApp</small></span></a>
+      <a class="fci" href="tel:+6072132448"><i class="fa fa-headset"></i><span>+607-213 2448 <small data-i18n="foot.hotline">Amitabha Hotline</small></span></a>
+      <a class="fci" href="https://www.google.com/maps/place/115,+Jalan+Dato+Sulaiman,+Taman+Abad,+80250+Johor+Bahru,+Johor+Darul+Ta%27zim,+Malaysia/@1.4835556,103.7573321,16.6z/data=!4m6!3m5!1s0x31da6d372789beb3:0x56e9cb00896f4083!8m2!3d1.4840708!4d103.7570245!16s%2Fg%2F11rpl7wymg" target="_blank" rel="noopener"><i class="fa fa-location-dot"></i><span>115 &amp; 115A, Jalan Datuk Sulaiman, Taman Abad, 80250 Johor Bahru, Johor Darul Ta’zim</span></a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <a class="staff-link" href="admin.html"><i class="fa fa-lock"></i> <span data-i18n="foot.staff">Staff login</span></a>
+    <p data-i18n="foot.copy">© 2026 Amitabha Foundation (1179489T) · Children Home Programme · All rights reserved.</p>
+    <p class="disclaimer" data-i18n="foot.disclaimer">Some images on this site are AI-generated or stock photos, used for illustration only.</p>
+  </div>
+</footer>
+
+<!-- STORY READING VIEW -->
+<div class="st-reader" id="stReader" role="dialog" aria-modal="true" aria-labelledby="stRTitle" hidden>
+  <div class="st-rcard">
+    <div class="st-progress" aria-hidden="true"><span id="stProg"></span></div>
+    <button class="st-x" type="button" id="stClose" aria-label="Close"><i class="fa fa-xmark"></i></button>
+    <div class="st-rscroll" id="stScroll">
+      <div class="st-rart" id="stRArt"></div>
+      <div class="st-rbody">
+        <div class="st-meta" id="stRMeta"></div>
+        <h2 id="stRTitle"></h2>
+        <div class="st-text" id="stRText"></div>
+        <div class="st-help">
+          <b data-i18n="st.help.t">Be part of the next chapter</b>
+          <p data-i18n="st.help.p">Every child’s story keeps going. Your support helps write the next page.</p>
+          <ul class="st-chips"><li data-i18n="st.help.c1">RM50 · school supplies</li><li data-i18n="st.help.c2">RM100 · a month of food &amp; healthcare</li><li data-i18n="st.help.c3">RM300 · a month of full care &amp; education</li></ul>
+          <div class="st-help-btns">
+            <a href="#" data-donate class="btn btn-donate" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.donate">Donate now</span></a>
+            <a href="#" data-form="sponsor" class="btn btn-primary" target="_blank" rel="noopener"><i class="fa fa-hands-holding-child"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
+          </div>
+        </div>
+        <div class="st-share">
+          <a class="btn btn-ghost btn-sm" id="stShare" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span></span></a>
+          <button class="btn btn-ghost btn-sm" id="stCopy" type="button"><i class="fa fa-link"></i> <span></span></button>
+        </div>
+        <nav class="st-rnav" id="stNav">
+          <button type="button" id="stPrev"><i class="fa fa-arrow-left"></i><span><span class="lbl"></span><b></b></span></button>
+          <button type="button" id="stNext"><span><span class="lbl"></span><b></b></span><i class="fa fa-arrow-right"></i></button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="float-bar">
+  <a class="float-donate" href="#" data-donate target="_blank" rel="noopener" aria-label="Donate"><i class="fa fa-hand-holding-heart"></i> <span class="fl-label" data-i18n="nav.donateNow">Donate Now</span><span class="donate-tip" data-i18n="float.tip">A child is waiting for a kindness only you can give.</span></a>
+  <a class="float-vol" href="#" data-form="volunteer" target="_blank" rel="noopener" aria-label="Volunteer"><i class="fa fa-handshake-angle"></i> <span class="fl-label" data-i18n="cta.volunteer">Volunteer</span></a>
+  <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="Enquire now on WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label" data-i18n="float.enquire">Enquire now</span></a>
+</div>
+
+<!-- Connection to the admin database (campaigns + visitor statistics): edit supabase-config.js -->
+<script src="supabase-config.js"></script>
+<script>
+/* ── Site links: edit here only ─────────────────────────────── */
+const CONFIG = {
+  whatsapp: '60169567861',  // Children Home WhatsApp: 016-9567861
+  donate:   'https://m.amitabhafoundation.my/en/donation',
+  /* Google Forms the buttons open. To change a form, change its address here. */
+  forms: {
+    help:      'https://docs.google.com/forms/d/e/1FAIpQLScDXj5uu-AdbmCuaDvnoU_M7ISewVS45nIzasafUk7YkILeMw/viewform',   // Seek Help
+    volunteer: 'https://docs.google.com/forms/d/e/1FAIpQLSctAVYEG2BOMK7oSyCQbQ2bbyRBjfaBDX3reOPWtcHqIE5EJw/viewform',   // Volunteer
+    sponsor:   'https://docs.google.com/forms/d/e/1FAIpQLSc1BMrJZUJfY3EZNJ4506x6wTc-wv4TzqJyyFp0hvwU27i22A/viewform',   // Sponsor a Child
+    csr:       'https://docs.google.com/forms/d/e/1FAIpQLScpI7q190mB5bTIVL3IraA1ZZPuDeZwXlyPTwYRHYmNOITPBg/viewform',   // Talk About CSR
+    giveHope:  'https://docs.google.com/forms/d/e/1FAIpQLSfH-8CaziU8puSkFCzehaN8JGpOmZfs3bUE3nH2vrrvTW0ERQ/viewform',   // Give Hope
+    enquiry:   'https://docs.google.com/forms/d/e/1FAIpQLSeN4yoLshTNTqdvFs_NEa_zMKUY1rPAXhKPdv9cdd6wngeRrg/viewform'    // Enquiry
+  }
+};
+const WA_TEXT = {
+  help:      'Hello, I would like to know more about Amitabha Foundation Children Home.',
+  volunteer: 'Hello, I would like to volunteer at Amitabha Foundation Children Home.',
+  sponsor:   'Hello, I would like to sponsor a child at Amitabha Foundation Children Home.',
+  visit:     'Hello, I would like to schedule a visit to Amitabha Foundation Children Home.',
+  csr:       'Hello, my company would like to partner with Amitabha Foundation Children Home (CSR).'
+};
+document.querySelectorAll('[data-donate]').forEach(a => a.href = CONFIG.donate);
+document.querySelectorAll('[data-form]').forEach(a => { a.href = CONFIG.forms[a.dataset.form] || CONFIG.forms.enquiry; });
+document.querySelectorAll('[data-wa]').forEach(a => {
+  a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(WA_TEXT[a.dataset.wa] || WA_TEXT.help);
+});
+
+/* Visitor statistics for the admin dashboard.
+   Anonymous: no names, emails or personal details. Not counted when "Do Not Track" is on,
+   or in a browser where staff have logged in to the admin dashboard. */
+(function(){
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
+  window.chTrack = function(){};
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  let staff = false; try { staff = !!localStorage.getItem('ch_staff'); } catch(e){}
+  if (!S.url || !KEY || /^sb_secret_/.test(KEY) || /YOUR-|PASTE-/.test(S.url + KEY) || staff || navigator.webdriver || navigator.doNotTrack === '1') return;
+  const headers = { apikey: KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+  if (!/^sb_/.test(KEY)) headers.Authorization = 'Bearer ' + KEY;          // older "anon" keys also go here
+  const send = (table, row) => fetch(BASE + '/rest/v1/' + table, { method: 'POST', headers, body: JSON.stringify(row), keepalive: true }).catch(() => {});
+  let visitor = null, lang = 'en';
+  try {
+    visitor = localStorage.getItem('ch_vid');
+    if (!visitor){ visitor = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2)).slice(0, 36); localStorage.setItem('ch_vid', visitor); }
+    lang = localStorage.getItem('site_lang') === 'zh' ? 'zh' : 'en';
+  } catch(e){}
+  const page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html?$/, '') || 'index';
+  const device = innerWidth < 640 ? 'mobile' : innerWidth < 1024 ? 'tablet' : 'desktop';
+  let referrer = null;
+  try { const r = new URL(document.referrer); if (r.hostname && r.hostname !== location.hostname) referrer = r.hostname.replace(/^www\./, '').slice(0, 120); } catch(e){}
+  send('page_views', { page, visitor, referrer, device, lang });
+  window.chTrack = (name, label) => send('events', { page, name, label: label ? String(label).slice(0, 60) : null, visitor });
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a'); if (!a) return;
+    const href = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-donate')) chTrack('donate');
+    else if (a.hasAttribute('data-form')) chTrack('form', a.dataset.form);
+    else if (a.hasAttribute('data-wa')) chTrack('whatsapp', a.dataset.wa);
+    else if (href.startsWith('tel:')) chTrack('phone', href.slice(4));
+    else if (/google\.[a-z.]+\/maps/.test(href)) chTrack('directions');
+    else if (href.includes('volunteer-now')) chTrack('volunteer_form');
+    else if (href.includes('give-hope')) chTrack('give_hope');
+  }, true);
+})();
+/* Header scroll + burger */
+const hdr = document.getElementById('hdr');
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mob-menu');
+burger.addEventListener('click', () => { burger.classList.toggle('open'); mob.classList.toggle('open'); });
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); mob.classList.remove('open'); }));
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+/* "Children Home" label beside the logo: full label when it fits, two lines when space is tight,
+   hidden only on very narrow screens (the big hero title names the home there) */
+(function(){
+  const row = hdr.querySelector('.hdr');
+  const logo = hdr.querySelector('.brand img');
+  const over = () => row.scrollWidth > row.clientWidth + 1;
+  function fit(){
+    hdr.classList.remove('bt-compact', 'bt-hide', 'nav-burger');
+    if (over()) hdr.classList.add('bt-compact');
+    if (over()) hdr.classList.add('bt-hide');
+    if (over()) hdr.classList.add('nav-burger');
+  }
+  let raf = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); }, { passive: true });
+  // also re-check when the header's width changes without a window resize (for example a scrollbar appearing after the page loads)
+  if (window.ResizeObserver){ let lw = row.clientWidth; new ResizeObserver(() => { if (row.clientWidth !== lw){ lw = row.clientWidth; cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); } }).observe(row); }
+  if (logo && !logo.complete) logo.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.fitBrandTag = fit;
+  fit();
+})();
+
+/* Header: shrinks smoothly after you scroll down, with a reading-progress line along its bottom edge */
+(function(){
+  const bar = document.querySelector('.hdr-progress span');
+  let raf = 0, was = hdr.classList.contains('scrolled'), refit = 0;
+  function onScroll(){
+    raf = 0;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0).toFixed(4) + ')';
+    const now = scrollY > 30;
+    if (now !== was){                                   // header size changed: re-check that the menu fits once it settles
+      was = now; clearTimeout(refit);
+      refit = setTimeout(() => window.fitBrandTag && window.fitBrandTag(), 480);
+    }
+  }
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(onScroll); }, { passive: true });
+  hdr.classList.toggle('scrolled', scrollY > 30);
+  onScroll();
+})();
+
+/* Scroll reveal */
+const aosObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    el.classList.add('in');
+    aosObs.unobserve(el);
+    /* once revealed, hand the element back to its own hover/transition styles */
+    setTimeout(() => el.classList.remove('aos','aos-l','aos-r','in','d1','d2','d3','d4'), 1300);
+  });
+}, { threshold: .12 });
+document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el));
+
+/* Stories: story cards, the filter, and the reading view (with next / previous, share and a gentle support box) */
+(function(){
+  const grid = document.getElementById('stGrid'); if (!grid) return;
+  const stories = [...grid.querySelectorAll('article.story')];
+  const filterBox = document.getElementById('stFilter'), R = document.getElementById('stReader');
+  const $ = id => document.getElementById(id);
+  const T = {
+    en: { all: 'All stories', home: 'Children’s Stories', grow: 'Success Stories', min: n => n + ' min read', read: 'Read story', start: 'Start here', prev: 'Previous story', next: 'Next story', share: 'Share on WhatsApp', copy: 'Copy link', copied: 'Link copied', close: 'Close' },
+    zh: { all: '全部故事', home: '孩子们的故事', grow: '成功故事', min: n => n + ' 分钟阅读', read: '阅读故事', start: '从这里开始', prev: '上一个故事', next: '下一个故事', share: '分享到 WhatsApp', copy: '复制链接', copied: '已复制链接', close: '关闭' }
+  };
+  const lang = () => document.documentElement.lang === 'zh' ? 'zh' : 'en';
+  const t = () => T[lang()];
+  const block = s => s.querySelector(lang() === 'zh' ? '.zh' : '.en');
+  const title = s => block(s).querySelector('h3').textContent;
+  const minutes = s => { const txt = block(s).querySelector('.st-body').textContent; return Math.max(1, Math.ceil(lang() === 'zh' ? txt.replace(/\s/g, '').length / 380 : txt.trim().split(/\s+/).length / 200)); };
+  let active = 'all', current = null, opener = null, closing = 0;
+  const make = (tag, cls) => { const x = document.createElement(tag); if (cls) x.className = cls; return x; };
+
+  // turn each story into a card: picture, tag and reading time, title, one-line teaser, and a button
+  stories.forEach((s, i) => {
+    const wrap = make('div', 'st-cbody');
+    const meta = make('div', 'st-meta'); meta.innerHTML = '<span class="st-tag"></span><span class="st-time"><i class="fa fa-clock" aria-hidden="true"></i><span></span></span>';
+    const btn = make('button', 'st-read'); btn.type = 'button'; btn.innerHTML = '<span></span> <i class="fa fa-arrow-right" aria-hidden="true"></i>';
+    wrap.append(meta, ...s.querySelectorAll(':scope > .en, :scope > .zh'), btn);
+    s.appendChild(wrap);
+    const badge = make('span', 'st-badge'); badge.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i><span></span>'; s.querySelector('.st-cover').appendChild(badge);
+    s.addEventListener('click', () => open(s));
+  });
+
+  function draw(){
+    stories.forEach((s, i) => {
+      const tag = s.querySelector('.st-tag'); tag.textContent = t()[s.dataset.cat];
+      s.querySelector('.st-time span').textContent = t().min(minutes(s));
+      s.querySelector('.st-read span').textContent = t().read;
+      s.querySelector('.st-badge span').textContent = t().start;
+      s.classList.toggle('is-feat', active === 'all' && i === 0);
+    });
+    filterBox.innerHTML = '';
+    [['all', t().all], ['grow', t().grow], ['home', t().home]].forEach(([k, label]) => {
+      const b = make('button'); b.type = 'button'; b.textContent = label; b.classList.toggle('on', k === active);
+      b.addEventListener('click', () => { active = k; stories.forEach(s => s.hidden = k !== 'all' && s.dataset.cat !== k); draw(); });
+      filterBox.appendChild(b);
+    });
+  }
+
+  // the reading view
+  const visible = () => stories.filter(s => !s.hidden);
+  function setNav(btn, s){ btn.querySelector('.lbl').textContent = btn === $('stPrev') ? t().prev : t().next; btn.querySelector('b').textContent = title(s); btn.dataset.target = s.id; }
+  function fill(s){
+    const list = visible(), i = list.indexOf(s);
+    // the picture again; gradient ids get a suffix so the copy never depends on the hidden original
+    const photo = s.querySelector('.st-photo');
+    $('stRArt').innerHTML = s.querySelector('.st-cover svg').outerHTML.replace(/id="([^"]+)"/g, 'id="$1-r"').replace(/url\(#([^)]+)\)/g, 'url(#$1-r)')
+      + (photo && photo.complete && photo.naturalWidth ? '<img class="st-photo" alt="" src="' + photo.getAttribute('src') + '">' : '');
+    const meta = $('stRMeta'); meta.innerHTML = '<span class="st-tag ' + s.dataset.cat + '"></span><span class="st-time"><i class="fa fa-clock" aria-hidden="true"></i><span></span></span>';
+    meta.querySelector('.st-tag').textContent = t()[s.dataset.cat]; meta.querySelector('.st-time span').textContent = t().min(minutes(s));
+    $('stRTitle').textContent = title(s);
+    const text = $('stRText'); text.textContent = '';
+    [...block(s).querySelector('.st-body').cloneNode(true).childNodes].forEach(n => text.appendChild(n));
+    $('stNav').hidden = list.length < 2;
+    if (list.length > 1){ setNav($('stPrev'), list[(i - 1 + list.length) % list.length]); setNav($('stNext'), list[(i + 1) % list.length]); }
+    const url = location.href.split('#')[0] + '#' + s.id;
+    $('stShare').href = 'https://wa.me/?text=' + encodeURIComponent(title(s) + ' ' + url);
+    $('stShare').querySelector('span').textContent = t().share; $('stCopy').querySelector('span').textContent = t().copy;
+    $('stClose').setAttribute('aria-label', t().close);
+  }
+  function open(s){
+    clearTimeout(closing);
+    if (!current) opener = document.activeElement;
+    current = s; fill(s);
+    R.hidden = false; $('stScroll').scrollTop = 0; $('stProg').style.width = '0';
+    requestAnimationFrame(() => R.classList.add('on'));
+    document.body.style.overflow = 'hidden';
+    history.replaceState(null, '', '#' + s.id);
+    $('stClose').focus({ preventScroll: true });
+  }
+  function close(){
+    R.classList.remove('on'); document.body.style.overflow = ''; current = null;
+    history.replaceState(null, '', location.pathname + location.search);
+    closing = setTimeout(() => { if (!R.classList.contains('on')) R.hidden = true; }, 380);
+    if (opener && opener.focus) opener.focus({ preventScroll: true });
+  }
+  function go(d){ const list = visible(), i = list.indexOf(current); if (list.length > 1) open(list[(i + d + list.length) % list.length]); }
+  $('stClose').addEventListener('click', close);
+  R.addEventListener('click', e => { if (e.target === R) close(); });
+  $('stPrev').addEventListener('click', () => go(-1)); $('stNext').addEventListener('click', () => go(1));
+  $('stCopy').addEventListener('click', async () => { try { await navigator.clipboard.writeText(location.href); } catch(e){} $('stCopy').querySelector('span').textContent = t().copied; });
+  $('stScroll').addEventListener('scroll', () => { const el = $('stScroll'), m = el.scrollHeight - el.clientHeight; $('stProg').style.width = (m > 0 ? Math.min(100, el.scrollTop / m * 100) : 100) + '%'; }, { passive: true });
+  document.addEventListener('keydown', e => {
+    if (!current) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') go(1);
+    else if (e.key === 'ArrowLeft') go(-1);
+    else if (e.key === 'Tab'){                                   // keep keyboard focus inside the reading view
+      const f = [...R.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')].filter(x => x.offsetParent !== null);
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]){ e.preventDefault(); f[0].focus(); }
+    }
+  });
+  new MutationObserver(() => { draw(); if (current) fill(current); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  draw();
+  const want = decodeURIComponent(location.hash.slice(1)), target = want && stories.find(s => s.id === want);   // a shared link opens that story
+  if (target) setTimeout(() => open(target), 300);
+})();
+
+/* Moving drawings: pause while off screen (saves battery on phones) */
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('deco-paused', !e.isIntersecting)), { rootMargin: '100px' });
+  document.querySelectorAll('.deco, .dolls').forEach(el => io.observe(el));
+})();
+
+/* Footer paper children: on computers they hop up as the mouse passes over them,
+   and a little heart pops up from each child you reach (phones keep the gentle automatic wave) */
+(function(){
+  const row = document.querySelector('.dolls');
+  if (!row || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const dolls = [...row.querySelectorAll('.doll')];
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let centers = [], mx = null, raf = 0, last = -1, lastT = 0;
+  const measure = () => { centers = dolls.map(d => { const r = d.getBoundingClientRect(); return r.left + r.width / 2; }); };
+  function update(){
+    raf = 0;
+    let near = -1, best = 1e9;
+    dolls.forEach((d, i) => {
+      if (mx === null){ d.style.removeProperty('--lift'); return; }
+      const dist = Math.abs(centers[i] - mx) / 40;            // distance in "children"
+      if (dist < best){ best = dist; near = i; }
+      const lift = Math.max(0, 1 - dist / 3.2);               // reaches about 3 children either side
+      d.style.setProperty('--lift', (lift * lift).toFixed(3));
+    });
+    if (near > -1 && near !== last && best < .6 && !calm && performance.now() - lastT > 140){ pop(near); lastT = performance.now(); }
+    last = near;
+  }
+  function pop(i){
+    const h = document.createElement('span');
+    h.className = 'doll-heart';
+    h.style.left = (centers[i] - row.getBoundingClientRect().left) + 'px';
+    h.style.color = dolls[i].style.color;
+    h.innerHTML = '<svg viewBox="0 0 20 18" width="14" height="14"><path d="M10 17C4 13 1 10 1 6a4.5 4.5 0 0 1 9-1.5A4.5 4.5 0 0 1 19 6c0 4-3 7-9 11Z" fill="currentColor"/></svg>';
+    row.appendChild(h);
+    h.animate([{ transform: 'translateY(0) scale(.5)', opacity: 1 }, { transform: 'translateY(-34px) scale(1.15)', opacity: 0 }],
+              { duration: 900, easing: 'ease-out' }).onfinish = () => h.remove();
+  }
+  row.addEventListener('mouseenter', measure);
+  window.addEventListener('resize', () => { centers = []; }, { passive: true });
+  row.addEventListener('mousemove', e => { if (!centers.length) measure(); mx = e.clientX; if (!raf) raf = requestAnimationFrame(update); });
+  row.addEventListener('mouseleave', () => { mx = null; last = -1; if (!raf) raf = requestAnimationFrame(update); });
+})();
+
+/* ── English / 中文 switch (same mechanism as Elder Home lang.js) ── */
+(function(){
+  const ZH = {
+    'meta.title': '故事 | 阿弥陀佛援助总会儿童小屋',
+    'nav.home': '首页', 'nav.care': '我们的照护', 'nav.stories': '故事', 'nav.moments': '温馨时刻', 'nav.faq': '常见问题', 'nav.seekHelp': '寻求帮助', 'nav.donate': '捐款', 'float.enquire': '立即咨询',
+    'nav.donateNow': '立即捐款',
+    'brand.tag': '儿童小屋',
+    'cta.h2': '慈悲为本，<em>以心转境</em>。', 'cta.p': 'RM50 为孩子提供学习用品，RM100 资助一个月的伙食与医疗，RM300 支持一位孩子一个月的生活与教育。', 'cta.donate': '立即捐款', 'cta.volunteer': '成为义工',
+    'cta.sponsor': '资助孩子',
+    'foot.p': '阿弥陀佛援助总会儿童小屋。位于新山、荣获五星评级及 ISO 9001:2015 认证的佛教儿童之家，自2010年起守护孩子成长。', 'foot.c1': '儿童小屋', 'foot.cred': '资质认证', 'foot.c2': '阿弥陀佛援助总会',
+    'foot.elder': '敬老院', 'foot.children': '儿童小屋', 'foot.dialysis': '洗肾中心', 'foot.assist': '阿弥陀佛援助', 'foot.c3': '联系我们', 'foot.hotline': '阿弥陀佛热线',
+    'foot.copy': '© 2026 阿弥陀佛援助总会 (1179489T) · 儿童小屋 · 版权所有。', 'foot.disclaimer': '本网站部分图片为 AI 生成或图库照片，仅作说明与示意用途。',
+    'float.tip': '有个孩子，正等待着只有您能给予的善意。',
+    'ph.stories.h': '故事', 'ph.stories.p': '来自小屋的真实处境，用心讲述。为保护每个孩子，姓名与细节一律更改。',
+    'st.eyebrow': '我们的故事',
+    'st.h2': '每个孩子背后，都有<em>一个希望的故事</em>',
+    'st.p': '挑一个，一分钟就能读完。每个故事都源自走进小屋的孩子们的真实处境。',
+    'st.note.t': '保护每一个孩子',
+    'st.note.p': '我们绝不公开能识别孩子的真实姓名、照片或细节。故事取材于真实处境，细节已作更改，有时会把几个孩子的经历融合成一个。图片为 AI 生成或插画，画面中没有任何真实的孩子。',
+    'st.help.t': '成为下一章的一份子',
+    'st.help.p': '每个孩子的故事都在继续。您的支持，能帮他们写下下一页。',
+    'st.help.c1': 'RM50 · 学习用品',
+    'st.help.c2': 'RM100 · 一个月的伙食与医疗',
+    'st.help.c3': 'RM300 · 一个月的生活与教育',
+    'nav.involved': '参与我们',
+    'cta.more': '更多参与方式',
+    'foot.givehope': '传递希望',
+    'nav.blog': '博客',
+    'foot.staff': '职员登录'
+  };
+  const origTitle = document.title;
+  function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e) { return null; } }
+  function apply(lang){
+    document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18n || el.dataset.i18nHtml;
+      if (lang === 'zh' && ZH[key] !== undefined){
+        if (el.dataset.i18nOrig === undefined) el.dataset.i18nOrig = el.innerHTML;
+        if (el.dataset.i18nHtml) el.innerHTML = ZH[key]; else el.textContent = ZH[key];
+      } else if (el.dataset.i18nOrig !== undefined){
+        el.innerHTML = el.dataset.i18nOrig;
+      }
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      const key = el.dataset.i18nAlt;
+      if (lang === 'zh' && ZH[key] !== undefined){
+        if (el.dataset.altOrig === undefined) el.dataset.altOrig = el.alt;
+        el.alt = ZH[key];
+      } else if (el.dataset.altOrig !== undefined){
+        el.alt = el.dataset.altOrig;
+      }
+    });
+    document.title = lang === 'zh' ? ZH['meta.title'] : origTitle;
+    document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
+    document.querySelectorAll('.lang-toggle').forEach(b => {
+      const label = lang === 'zh' ? 'Switch to English' : 'Switch to Chinese (中文)';
+      const lt = b.querySelector('.lt'); if (lt) lt.textContent = lang === 'zh' ? 'EN' : '中文';
+      b.title = label; b.setAttribute('aria-label', label);
+    });
+    document.querySelectorAll('.mfaq-card.open .mfaq-a').forEach(a => a.style.maxHeight = a.scrollHeight + 'px');
+    /* the second name beside the big title is always the other language */
+    document.querySelectorAll('.hero-name-alt').forEach(el => el.lang = lang === 'zh' ? 'en' : 'zh');
+    if (window.fitBrandTag) window.fitBrandTag();
+    store('site_lang', lang);
+  }
+  if (store('site_lang') === 'zh') apply('zh');
+  document.querySelectorAll('.lang-toggle').forEach(b => b.addEventListener('click', () => apply(store('site_lang') === 'zh' ? 'en' : 'zh')));
+})();
+</script>
+</body>
+</html>

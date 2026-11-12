@@ -9,7 +9,8 @@ About 10 minutes, done once. After this you manage everything from one login pag
 | `admin.html` | The admin dashboard (statistics, campaigns, blog posts) |
 | `supabase-config.js` | Your two Supabase details. **If you already filled yours in, keep your copy; don't overwrite it with the blank one.** |
 | `campaign.js` | **Optional.** Backup numbers, only used if the database can't be reached. The website works without it. |
-| `index.html`, `our-care.html`, `success-stories.html`, `moments.html`, `blog.html`, `get-involved.html`, `faq.html` | Your website |
+| `index.html`, `our-care.html`, `stories.html`, `moments.html`, `blog.html`, `get-involved.html`, `faq.html` | Your website |
+| `success-stories.html` | Only sends old links to `stories.html` (the page was renamed). |
 
 `supabase-setup.sql` and this guide are only for setup: you do not need to upload them.
 

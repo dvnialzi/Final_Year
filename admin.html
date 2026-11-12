@@ -18,7 +18,7 @@
 :root{
   --navy-900:#1a242f;--navy-800:#2c3e50;--brand-red:#ab1a1f;--pink:#d9467a;
   --ink-900:#0c1a1c;--ink-700:#1f3034;--ink-500:#4d6065;--ink-400:#6e8087;--ink-300:#9aa9ae;--line:#e3ecee;
-  --leaf-800:#22604f;--leaf-700:#2e7d6b;--leaf-600:#3b9480;--leaf-500:#6bb5a1;--leaf-400:#a5d4c4;--leaf-100:#dcefe7;--leaf-50:#eef7f3;
+  --leaf-800:#51318a;--leaf-700:#6a42b0;--leaf-600:#7b55c2;--leaf-500:#9c7dd6;--leaf-400:#c4afe6;--leaf-100:#ebe2f7;--leaf-50:#f5f0fb;
   --sun:#f2a93b;--sun-d:#d98e1f;--sun-l:#ffd58a;--bg:#f5f6f2;--cream:#fff6e6;
   --sans:"Plus Jakarta Sans",system-ui,sans-serif;--display:"Fraunces",Georgia,serif;
   --r:14px;--r-lg:20px;--shadow:0 4px 16px rgba(10,40,45,.06),0 18px 48px rgba(10,40,45,.06);--t:.25s ease;
@@ -34,7 +34,7 @@ img{display:block;max-width:100%}
 /* buttons & form controls */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.9rem;padding:.72rem 1.2rem;border-radius:999px;transition:background var(--t),color var(--t),box-shadow var(--t),transform var(--t),opacity var(--t);white-space:nowrap}
 .btn:disabled{opacity:.55;cursor:not-allowed}
-.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(46,125,107,.28)}
+.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(106,66,176,.28)}
 .btn-primary:hover:not(:disabled){background:var(--leaf-800)}
 .btn-sun{background:var(--sun);color:#3b2400;box-shadow:0 6px 18px rgba(242,169,59,.32)}
 .btn-sun:hover:not(:disabled){background:var(--sun-d);color:#fff}
@@ -47,13 +47,13 @@ img{display:block;max-width:100%}
 label.f{display:flex;flex-direction:column;gap:.35rem;font-size:.82rem;font-weight:700;color:var(--ink-700)}
 label.f small{font-weight:500;color:var(--ink-400)}
 .in{width:100%;padding:.75rem .9rem;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:.95rem;font-weight:500;transition:border-color var(--t),box-shadow var(--t)}
-.in:focus{outline:none;border-color:var(--leaf-500);box-shadow:0 0 0 4px rgba(107,181,161,.18)}
+.in:focus{outline:none;border-color:var(--leaf-500);box-shadow:0 0 0 4px rgba(156,125,214,.18)}
 textarea.in{resize:vertical;min-height:110px;line-height:1.6}
 .hint{font-size:.78rem;color:var(--ink-400);font-weight:500}
 .count{font-size:.72rem;color:var(--ink-400);align-self:flex-end;font-weight:600}
 
 /* ── LOGIN & SETUP ── */
-.auth{min-height:100vh;display:grid;place-items:center;padding:2rem 1rem;background:radial-gradient(700px 500px at 85% 10%,rgba(242,169,59,.22),transparent 60%),radial-gradient(600px 500px at 10% 90%,rgba(107,181,161,.25),transparent 60%),linear-gradient(135deg,#1f3a3a,#22604f)}
+.auth{min-height:100vh;display:grid;place-items:center;padding:2rem 1rem;background:radial-gradient(700px 500px at 85% 10%,rgba(242,169,59,.22),transparent 60%),radial-gradient(600px 500px at 10% 90%,rgba(156,125,214,.25),transparent 60%),linear-gradient(135deg,#1f3a3a,#51318a)}
 .auth-card{position:relative;width:min(430px,100%);background:#fff;border-radius:26px;padding:2.4rem 2.2rem 2rem;box-shadow:0 30px 80px rgba(0,0,0,.28)}
 .auth-logo{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
 .auth-logo img{height:52px;width:auto}
@@ -377,13 +377,13 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
   <symbol id="camp-house" viewBox="0 0 200 190">
     <rect x="140" y="34" width="17" height="40" rx="2" fill="#a5472f"/><rect x="137" y="30" width="23" height="8" rx="2" fill="#8a3a26"/>
-    <rect x="36" y="90" width="128" height="88" rx="4" fill="#fff6e6" stroke="#2e7d6b" stroke-width="3"/>
+    <rect x="36" y="90" width="128" height="88" rx="4" fill="#fff6e6" stroke="#6a42b0" stroke-width="3"/>
     <path d="M14 94L100 24L186 94Z" fill="#ab1a1f" stroke="#7f1216" stroke-width="3" stroke-linejoin="round"/>
     <path d="M100 76c-8-5-13-10-13-15a6.5 6.5 0 0 1 13-2a6.5 6.5 0 0 1 13 2c0 5-5 10-13 15Z" fill="#fff"/>
-    <rect x="88" y="122" width="26" height="56" rx="13" fill="#2e7d6b"/><circle cx="108" cy="152" r="2" fill="#ffd58a"/>
-    <rect x="48" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#2e7d6b" stroke-width="3"/><path d="M62 108v28M48 122h28" stroke="#2e7d6b" stroke-width="2.5"/>
-    <rect x="126" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#2e7d6b" stroke-width="3"/><path d="M140 108v28M126 122h28" stroke="#2e7d6b" stroke-width="2.5"/>
-    <path d="M8 178H192" stroke="#6bb5a1" stroke-width="5" stroke-linecap="round"/>
+    <rect x="88" y="122" width="26" height="56" rx="13" fill="#6a42b0"/><circle cx="108" cy="152" r="2" fill="#ffd58a"/>
+    <rect x="48" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#6a42b0" stroke-width="3"/><path d="M62 108v28M48 122h28" stroke="#6a42b0" stroke-width="2.5"/>
+    <rect x="126" y="108" width="28" height="28" rx="3" fill="#ffd58a" stroke="#6a42b0" stroke-width="3"/><path d="M140 108v28M126 122h28" stroke="#6a42b0" stroke-width="2.5"/>
+    <path d="M8 178H192" stroke="#9c7dd6" stroke-width="5" stroke-linecap="round"/>
   </symbol>
   <symbol id="camp-house-out" viewBox="0 0 200 190">
     <g fill="#fbf7ee" stroke="#b9c7c2" stroke-width="3" stroke-dasharray="7 6" stroke-linejoin="round">
@@ -428,7 +428,7 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
         <div class="seg" id="rangeSeg"><button data-range="7">7 days</button><button data-range="30" class="on">30 days</button><button data-range="90">90 days</button></div>
       </div>
       <div class="kpis">
-        <div class="card kpi" style="--c:#2e7d6b"><div class="kpi-ic"><i class="fa fa-eye"></i></div><div><b id="kViews">–</b><span>Page views</span></div></div>
+        <div class="card kpi" style="--c:#6a42b0"><div class="kpi-ic"><i class="fa fa-eye"></i></div><div><b id="kViews">–</b><span>Page views</span></div></div>
         <div class="card kpi" style="--c:#d98e1f"><div class="kpi-ic"><i class="fa fa-users"></i></div><div><b id="kVisitors">–</b><span>Visitors</span></div></div>
         <div class="card kpi" style="--c:#ab1a1f"><div class="kpi-ic"><i class="fa fa-hand-holding-heart"></i></div><div><b id="kDonate">–</b><span>Donate clicks</span></div></div>
         <div class="card kpi" style="--c:#1ebe5a"><div class="kpi-ic"><i class="fab fa-whatsapp"></i></div><div><b id="kWa">–</b><span>WhatsApp chats</span></div></div>
@@ -668,15 +668,17 @@ const num = v => { const n = Number(String(v).replace(/,/g, '').trim()); return 
 
 
 const nf = n => Number(n || 0).toLocaleString('en-MY');
-const PAGE_NAMES = { index:'Home', 'our-care':'Our Care', 'success-stories':'Success Stories', moments:'Moments', blog:'Blog', 'get-involved':'Get Involved', faq:'FAQ' };
+const PAGE_NAMES = { index:'Home', 'our-care':'Our Care', stories:'Stories', 'success-stories':'Success Stories (old page)', moments:'Moments', blog:'Blog', 'get-involved':'Get Involved', faq:'FAQ' };
 const WA_LABELS = { help:'Seek Help / general', volunteer:'Volunteer', sponsor:'Sponsor a child', visit:'Schedule a visit', csr:'Company partnership (CSR)' };
+const FORM_LABELS = { help:'Seek Help', volunteer:'Volunteer', sponsor:'Sponsor a child', csr:'Company partnership (CSR)', giveHope:'Give Hope', enquiry:'Enquiry / schedule a visit' };
 const CLICK_STYLE = {
+  form:           { name:'Google Form',   icon:'fa-file-lines',        c:'#2c7be5' },
   donate:         { name:'Donate button', icon:'fa-hand-holding-heart', c:'#ab1a1f' },
   whatsapp:       { name:'WhatsApp',      icon:'fab fa-whatsapp',      c:'#1ebe5a' },
   phone:          { name:'Phone call',    icon:'fa-phone',             c:'#2c3e50' },
-  directions:     { name:'Get directions',icon:'fa-route',             c:'#2e7d6b' },
+  directions:     { name:'Get directions',icon:'fa-route',             c:'#6a42b0' },
   volunteer_form: { name:'Volunteer form',icon:'fa-hands-holding-child',c:'#d98e1f' },
-  give_hope:      { name:'Give Hope page',icon:'fa-seedling',          c:'#3b9480' }
+  give_hope:      { name:'Give Hope page',icon:'fa-seedling',          c:'#7b55c2' }
 };
 let sb = null, me = null, recovering = false, range = 30;
 
@@ -823,7 +825,7 @@ function drawStats(s){
   if (!clicks.length){ list.innerHTML = '<p class="empty">No button clicks recorded yet.</p>'; return; }
   list.innerHTML = clicks.slice(0, 8).map(c => {
     const st = CLICK_STYLE[c.name] || { name: c.name, icon: 'fa-arrow-pointer', c: '#6e8087' };
-    const sub = c.name === 'whatsapp' ? (WA_LABELS[c.label] || c.label) : (c.name === 'phone' || c.name === 'post_open' ? c.label : '');
+    const sub = c.name === 'whatsapp' ? (WA_LABELS[c.label] || c.label) : c.name === 'form' ? (FORM_LABELS[c.label] || c.label) : (c.name === 'phone' || c.name === 'post_open' ? c.label : '');
     const ic = st.icon.startsWith('fab') ? st.icon : 'fa ' + st.icon;
     return `<div class="click-row"><span class="ci" style="background:${st.c}"><i class="${ic}"></i></span><span>${esc(st.name)}${sub ? `<small>${esc(sub)}</small>` : ''}</span><em>${nf(c.count)}</em></div>`;
   }).join('');
@@ -836,7 +838,7 @@ function barList(el, rows, emptyText){
 }
 function donut(el, rows){
   if (!rows.length){ el.innerHTML = '<p class="empty">No data yet.</p>'; return; }
-  const colors = { desktop:'#2e7d6b', mobile:'#f2a93b', tablet:'#d9467a', unknown:'#9aa9ae' };
+  const colors = { desktop:'#6a42b0', mobile:'#f2a93b', tablet:'#d9467a', unknown:'#9aa9ae' };
   const names = { desktop:'Computer', mobile:'Phone', tablet:'Tablet', unknown:'Unknown' };
   const total = rows.reduce((a, r) => a + r.views, 0), R = 52, C = 2 * Math.PI * R;
   let off = 0;
@@ -855,13 +857,13 @@ function lineChart(el, rows){
   const every = Math.ceil(rows.length / 7);
   const xl = rows.map((r, i) => i % every && i !== rows.length - 1 ? '' : `<text x="${X(i)}" y="${H - 6}" text-anchor="middle" font-size="11" fill="#9aa9ae">${r.date.toLocaleDateString('en-MY', { day:'numeric', month:'short' })}</text>`).join('');
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-    <defs><linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b9480" stop-opacity=".28"/><stop offset="1" stop-color="#3b9480" stop-opacity="0"/></linearGradient></defs>
+    <defs><linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7b55c2" stop-opacity=".28"/><stop offset="1" stop-color="#7b55c2" stop-opacity="0"/></linearGradient></defs>
     ${grid}${xl}
     <path d="${line('views')} L${X(rows.length - 1)} ${Y(0)} L${X(0)} ${Y(0)} Z" fill="url(#gv)"/>
-    <path d="${line('views')}" fill="none" stroke="#3b9480" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="${line('views')}" fill="none" stroke="#7b55c2" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
     <path d="${line('visitors')}" fill="none" stroke="#f2a93b" stroke-width="2.5" stroke-dasharray="6 5" stroke-linejoin="round" stroke-linecap="round"/>
     <line id="guide" x1="0" x2="0" y1="${P.t}" y2="${H - P.b}" stroke="#2c3e50" stroke-opacity=".25" stroke-dasharray="3 3" visibility="hidden"/>
-    <circle id="dotV" r="5" fill="#fff" stroke="#3b9480" stroke-width="2.5" visibility="hidden"/>
+    <circle id="dotV" r="5" fill="#fff" stroke="#7b55c2" stroke-width="2.5" visibility="hidden"/>
     <circle id="dotU" r="5" fill="#fff" stroke="#f2a93b" stroke-width="2.5" visibility="hidden"/>
     <rect x="${P.l}" y="0" width="${W - P.l - P.r}" height="${H}" fill="transparent" id="hit"/>
   </svg><div class="tip" id="tip"></div>`;
