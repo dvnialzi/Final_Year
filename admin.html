@@ -313,6 +313,86 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
 @media(max-width:900px){.grid2{grid-template-columns:1fr}.pv{grid-template-columns:1fr}.pv-house{display:none}}
 @media(max-width:700px){.crow{grid-template-columns:64px 1fr}.cthumb{width:64px;height:52px}.crow .pill{grid-column:2;justify-self:start}.cact{grid-column:1 / -1;justify-content:flex-end}}
 @media(max-width:560px){.form .row{grid-template-columns:1fr}.log li{grid-template-columns:auto 1fr}.log .ic{grid-row:span 3}.log .when{grid-column:2;white-space:normal}}
+
+/* ═══ Form responses, FAQ and admin team ═══ */
+.nbadge{margin-left:auto;min-width:1.5rem;height:1.5rem;padding:0 .45rem;border-radius:999px;background:var(--brand-red);color:#fff;font-size:.72rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.rtabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.rtabs button{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .9rem;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:.85rem;font-weight:700;color:var(--ink-700);transition:all var(--t)}
+.rtabs button:hover{border-color:var(--leaf-400)}
+.rtabs button span{color:var(--ink-400);font-weight:600}
+.rtabs button em{font-style:normal;font-size:.68rem;font-weight:800;color:#fff;background:var(--brand-red);padding:.12rem .45rem;border-radius:999px}
+.rtabs button.on{background:var(--leaf-700);border-color:var(--leaf-700);color:#fff}
+.rtabs button.on span{color:rgba(255,255,255,.75)}
+.rbar{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem;font-size:.85rem;color:var(--ink-500)}
+.rbar .grow{flex:1}
+.rlist{display:flex;flex-direction:column;gap:.6rem}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:16px;transition:border-color var(--t),box-shadow var(--t)}
+.rcard:hover{border-color:var(--leaf-100)}
+.rcard[open]{border-color:var(--leaf-400);box-shadow:var(--shadow)}
+.rcard summary{list-style:none;display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;cursor:pointer}
+.rcard summary::-webkit-details-marker{display:none}
+.rcard summary:focus-visible{outline:3px solid var(--leaf-400);outline-offset:2px;border-radius:16px}
+.rst{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;gap:.35rem;width:7.8rem;font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.32rem .6rem;border-radius:999px}
+.rst.new{background:#fbe9ea;color:var(--brand-red)}
+.rst.in_progress{background:var(--cream);color:var(--sun-d)}
+.rst.done{background:var(--leaf-50);color:var(--leaf-700)}
+.rst.archived{background:#eef1f3;color:var(--ink-500)}
+.rmain{flex:1;min-width:0;display:flex;flex-direction:column;gap:.15rem}
+.rmain b{font-size:.95rem;color:var(--ink-900);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rmain span{font-size:.82rem;color:var(--ink-500);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rmeta{display:flex;flex-direction:column;align-items:flex-end;gap:.15rem;font-size:.76rem;color:var(--ink-400);text-align:right;flex-shrink:0;max-width:40%}
+.rmeta .rform{font-weight:700;color:var(--leaf-700)}
+.rmeta .rtags{display:flex;gap:.7rem}
+.rchev{color:var(--ink-300);transition:transform var(--t)}
+.rcard[open] .rchev{transform:rotate(180deg)}
+.rbody{border-top:1px solid var(--line);padding:1.1rem}
+.rgrid{display:grid;grid-template-columns:1.35fr 1fr;gap:1.4rem;align-items:start}
+.rfields{display:flex;flex-direction:column;gap:.8rem}
+.rfields dt{font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-400)}
+.rfields dd{font-size:.92rem;color:var(--ink-900);line-height:1.55;word-break:break-word;margin:.15rem 0 0}
+.rfields a{color:var(--leaf-700);font-weight:600}
+.rfields a.wa{display:inline-flex;align-items:center;gap:.3rem;margin-left:.6rem;color:#1a9e4b;font-size:.82rem}
+.rside{display:flex;flex-direction:column;gap:.85rem;background:var(--leaf-50);border-radius:14px;padding:1rem}
+.rnotes h4{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-500);margin-bottom:.5rem}
+.rnotes ul,.team{list-style:none;padding:0}
+.rnotes ul{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem}
+.rnotes li{position:relative;background:#fff;border-radius:12px;padding:.65rem 2.8rem .65rem .8rem;font-size:.88rem;color:var(--ink-700);line-height:1.5}
+.rnotes li.none{padding:.3rem 0;background:none;color:var(--ink-400)}
+.rnotes li small{display:block;color:var(--ink-400);font-size:.74rem;margin-top:.25rem}
+.rnotes li .icon-btn{position:absolute;right:.45rem;top:.45rem;width:30px;height:30px;border-radius:9px;font-size:.75rem}
+.rnotes textarea{margin-bottom:.5rem;resize:vertical}
+.rerr{border-color:#f1d0d2}
+.rerr b{display:block;color:var(--brand-red);margin-bottom:.35rem}
+.rerr p{font-size:.9rem;color:var(--ink-500);margin-bottom:.8rem}
+.more-wrap{display:flex;justify-content:center;margin-top:1rem}
+.rsetup{margin-bottom:1.2rem}
+.rsetup ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.92rem;color:var(--ink-700);margin:.6rem 0 1rem}
+.rsetup ol code{background:var(--leaf-50);color:var(--leaf-800);padding:.05rem .35rem;border-radius:6px;font-size:.85em}
+.rsetup .code{max-height:240px;overflow:auto;margin:.4rem 0 1.1rem}
+.rsetup .row2{margin-bottom:.9rem}
+.flist{display:flex;flex-direction:column;gap:.6rem}
+.frow{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:16px;padding:.85rem 1rem;transition:border-color var(--t)}
+.frow:hover{border-color:var(--leaf-100)}
+.frow.off .fmain{opacity:.55}
+.fmove{display:flex;flex-direction:column;gap:.3rem}
+.fmove .icon-btn{width:32px;height:28px;border-radius:8px;font-size:.72rem}
+.icon-btn:disabled{opacity:.3;pointer-events:none}
+.fmain{flex:1;min-width:0}
+.fmain b{display:block;font-size:.95rem;color:var(--ink-900)}
+.fmain span{display:block;font-size:.85rem;color:var(--ink-500);margin-top:.1rem}
+.fmain p{font-size:.84rem;color:var(--ink-400);margin-top:.3rem;line-height:1.5}
+.fform{margin-bottom:1.2rem;display:flex;flex-direction:column;gap:.9rem}
+.fform-act{display:flex;gap:.6rem;flex-wrap:wrap}
+.team{display:flex;flex-direction:column;gap:.55rem;margin:.7rem 0 1.1rem}
+.team li{display:flex;align-items:center;gap:.8rem;padding:.6rem .7rem;border:1px solid var(--line);border-radius:14px}
+.team li.empty{border:0;padding:.3rem 0}
+.team .av{width:36px;height:36px;border-radius:50%;background:var(--leaf-100);color:var(--leaf-800);font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.team li div{flex:1;min-width:0}
+.team b{display:block;font-size:.9rem;color:var(--ink-900);overflow:hidden;text-overflow:ellipsis}
+.team b em{font-style:normal;font-weight:600;color:var(--ink-400)}
+.team small{display:block;font-size:.76rem;color:var(--ink-400)}
+@media(max-width:900px){.rgrid{grid-template-columns:1fr}}
+@media(max-width:600px){.rcard summary{flex-wrap:wrap;gap:.5rem .8rem}.rmain{flex-basis:calc(100% - 3rem);order:2}.rst{width:auto;order:1}.rchev{order:1;margin-left:auto}.rmeta{order:3;flex-direction:row;flex-wrap:wrap;align-items:center;max-width:none;width:100%;text-align:left;gap:.3rem .7rem}.frow{flex-wrap:wrap}.fmove{flex-direction:row}.rsetup .row2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -402,6 +482,8 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
       <a href="#dashboard" data-nav="dashboard"><i class="fa fa-chart-line"></i> Dashboard</a>
       <a href="#campaigns" data-nav="campaigns"><i class="fa fa-bullhorn"></i> Campaigns</a>
       <a href="#posts" data-nav="posts"><i class="fa fa-newspaper"></i> Blog posts</a>
+      <a href="#responses" data-nav="responses"><i class="fa fa-inbox"></i> Form responses <span class="nbadge" id="respBadge" hidden></span></a>
+      <a href="#faqs" data-nav="faqs"><i class="fa fa-circle-question"></i> FAQ</a>
       <a href="#account" data-nav="account"><i class="fa fa-user-gear"></i> My account</a>
     </nav>
     <div class="side-foot">
@@ -619,6 +701,73 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
     </section>
 
     <!-- ACCOUNT -->
+
+    <!-- FORM RESPONSES: read from the Google Sheet, follow-up saved in Supabase -->
+    <section class="view" data-view="responses" hidden>
+      <div class="card rsetup" id="respSetup" hidden>
+        <h2><i class="fa fa-plug"></i> Connect your Google Sheet</h2>
+        <p class="lead" style="margin-bottom:.4rem">The form responses stay in your Google Sheet. A small script inside the sheet hands them to this dashboard, and only after it has checked that you’re logged in as an admin.</p>
+        <p class="msg err" id="setWarn"></p>
+        <ol>
+          <li>Open your Google Sheet, then <b>Extensions → Apps Script</b>.</li>
+          <li>Delete what’s there, paste the code below (press <b>Copy code</b>), then press <b>Save</b>.</li>
+          <li><b>Deploy → New deployment</b> → the gear icon → <b>Web app</b>. Set <b>Execute as: Me</b> and <b>Who has access: Anyone</b>. Press <b>Deploy</b> and allow access.</li>
+          <li>Copy the <b>Web app</b> link (it ends in <code>/exec</code>) and paste it below.</li>
+          <li>In the sheet, press <b>Share</b> and set General access to <b>Restricted</b>, so only your team can open it directly.</li>
+        </ol>
+        <div class="code" id="gasBox"><span id="gasText"></span><button type="button" class="btn btn-ghost btn-sm" id="gasCopy"><i class="fa fa-copy"></i> Copy code</button></div>
+        <div class="row2">
+          <label class="f">Google Sheet link<small>The sheet where all the form responses go.</small><input class="in" id="setSheet" type="url" placeholder="https://docs.google.com/spreadsheets/d/…" autocomplete="off"></label>
+          <label class="f">Web app link<small>From step 4. It ends in /exec.</small><input class="in" id="setScript" type="url" placeholder="https://script.google.com/macros/s/…/exec" autocomplete="off"></label>
+        </div>
+        <div class="fform-act">
+          <button class="btn btn-primary" type="button" id="setSave"><i class="fa fa-check ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Save and load responses</button>
+          <button class="btn btn-ghost" type="button" id="setClose" hidden>Close</button>
+        </div>
+      </div>
+      <div id="respMain" hidden>
+        <div class="toolbar">
+          <div class="search"><i class="fa fa-magnifying-glass"></i><input class="in" id="respSearch" type="search" placeholder="Search names, numbers, messages, notes…"></div>
+          <div class="seg" id="respSeg"><button data-st="open" class="on">To do</button><button data-st="new">New</button><button data-st="in_progress">In progress</button><button data-st="done">Done</button><button data-st="archived">Archived</button><button data-st="all">All</button></div>
+        </div>
+        <div class="rtabs" id="respTabs"></div>
+        <div class="rbar">
+          <span id="respInfo"></span><span class="grow"></span>
+          <button class="btn btn-ghost btn-sm" type="button" id="respRefresh"><i class="fa fa-rotate ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Refresh</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="respCsv"><i class="fa fa-file-arrow-down"></i> Export CSV</button>
+          <a class="btn btn-ghost btn-sm" id="respSheet" href="#" target="_blank" rel="noopener"><i class="fa fa-table"></i> Open Google Sheet</a>
+          <button class="btn btn-ghost btn-sm" type="button" id="respSetBtn"><i class="fa fa-gear"></i> Settings</button>
+        </div>
+        <div class="rlist" id="respList"></div>
+      </div>
+    </section>
+
+    <!-- FAQ: questions shown on faq.html after the six standard ones -->
+    <section class="view" data-view="faqs" hidden>
+      <p class="lead">Questions you add here appear on the FAQ page, after the six standard questions. Hide a question to take it off the website without deleting it, and use the arrows to change the order.</p>
+      <div class="card fform" id="faqForm" hidden>
+        <h2><i class="fa fa-circle-question"></i> <span id="faqFormTitle">Add a question</span></h2>
+        <div class="row2">
+          <label class="f">Question (English)<input class="in" id="fqEn" maxlength="200"></label>
+          <label class="f">Question (中文) <small>Optional</small><input class="in" id="fqZh" maxlength="200"></label>
+        </div>
+        <div class="row2">
+          <label class="f">Answer (English)<small>Leave an empty line between paragraphs. Put **two stars** around words to make them bold.</small><textarea class="in" id="faEn" rows="6" maxlength="3000"></textarea></label>
+          <label class="f">Answer (中文) <small>Optional. Visitors who switch to 中文 see this.</small><textarea class="in" id="faZh" rows="6" maxlength="3000"></textarea></label>
+        </div>
+        <label class="check"><input type="checkbox" id="fqPub" checked><span>Show it on the FAQ page<small>Untick to save it without showing it.</small></span></label>
+        <div class="fform-act">
+          <button class="btn btn-primary" type="button" id="faqSave"><i class="fa fa-check ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Save question</button>
+          <button class="btn btn-ghost" type="button" id="faqCancel">Cancel</button>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="search"><i class="fa fa-magnifying-glass"></i><input class="in" id="faqSearch" type="search" placeholder="Search questions…"></div>
+        <button class="btn btn-primary" type="button" id="faqAdd"><i class="fa fa-plus"></i> Add a question</button>
+      </div>
+      <div id="faqList"></div>
+    </section>
+
     <section class="view" data-view="account" hidden>
       <div class="acc">
         <div class="card">
@@ -630,15 +779,13 @@ textarea.in{resize:vertical;min-height:110px;line-height:1.6}
           </form>
         </div>
         <div class="card">
-          <h2><i class="fa fa-user-plus"></i> Add another admin</h2>
-          <ol>
-            <li>In Supabase, open <b>Authentication → Users → Add user</b> and create their login (email + password).</li>
-            <li>Open <b>SQL Editor</b>, paste the line below with <b>their</b> email, and press <b>Run</b>.</li>
-          </ol>
-          <div class="code" id="adminSql">insert into public.admins (user_id, email)
-select id, email from auth.users
-where email = 'their-email@example.com'
-on conflict do nothing;<button type="button" class="btn btn-ghost btn-sm" id="copySql"><i class="fa fa-copy"></i> Copy</button></div>
+          <h2><i class="fa fa-users-gear"></i> Admin team</h2>
+          <p class="hint">Everyone here can log in to this dashboard.</p>
+          <ul class="team" id="teamList"><li class="empty">Loading…</li></ul>
+          <form id="teamForm" novalidate>
+            <label class="f">Give someone admin access<small>Create their login first in Supabase: <b>Authentication → Users → Add user</b>, with “Auto Confirm User” ticked. Then type the same email here.</small><input class="in" type="email" id="teamEmail" placeholder="name@example.com" autocomplete="off"></label>
+            <button class="btn btn-primary" type="submit" style="align-self:flex-start"><i class="fa fa-user-plus ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Give admin access</button>
+          </form>
         </div>
       </div>
     </section>
@@ -647,6 +794,100 @@ on conflict do nothing;<button type="button" class="btn btn-ghost btn-sm" id="co
 
 <div class="toast" id="toast" role="status"><i class="fa fa-circle-check"></i><span></span></div>
 
+<!-- The Google Apps Script code shown in Form responses → Settings -->
+<script type="text/plain" id="gasCode">
+/* ─────────────────────────────────────────────────────────────────────────
+   Amitabha Foundation Children Home: form responses for the admin dashboard
+
+   This little program lives inside your Google Sheet. When the admin dashboard
+   asks for the form responses, it first checks with Supabase that the person
+   is logged in as an admin. Anyone else gets nothing back.
+
+   HOW TO SET IT UP (about 5 minutes, done once)
+   1. Open the Google Sheet with the form responses.
+   2. Extensions → Apps Script. Delete what is there, paste ALL of this, press Save.
+   3. Deploy → New deployment → the gear next to "Select type" → Web app.
+        Execute as:      Me
+        Who has access:  Anyone
+      Press Deploy, then Authorize access and allow it (choose your Google account;
+      if Google warns the app is unverified: Advanced → Go to … (unsafe). It is
+      your own script).
+   4. Copy the "Web app" link (it ends in /exec) and paste it into the admin
+      dashboard: Form responses → Settings → Save.
+   If you change this code later: Deploy → Manage deployments → edit (pencil)
+   → Version: New version → Deploy. The link stays the same.
+   ───────────────────────────────────────────────────────────────────────── */
+
+const SUPABASE_URL = '__SUPABASE_URL__';
+const SUPABASE_KEY = '__SUPABASE_KEY__';   // the Publishable key, the same one as in supabase-config.js
+const SHEET_ID     = '__SHEET_ID__';       // the long code in the Google Sheet's link
+const MAX_ROWS     = 1000;                 // newest responses sent per tab
+
+function doPost(e) {
+  let body = {};
+  try { body = JSON.parse((e && e.postData && e.postData.contents) || '{}'); } catch (err) {}
+  if (!isAdmin_(body.token)) return json_({ ok: false, error: 'not_admin' });
+  try {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    return json_({ ok: true, url: ss.getUrl(), sheets: readTabs_(ss) });
+  } catch (err) {
+    return json_({ ok: false, error: 'sheet', detail: String(err && err.message || err).slice(0, 200) });
+  }
+}
+
+function doGet() {
+  return json_({ ok: false, error: 'This link only works from the admin dashboard.' });
+}
+
+/* true only when the token belongs to someone in the admins table */
+function isAdmin_(token) {
+  if (!token || typeof token !== 'string' || token.length > 5000) return false;
+  const cache = CacheService.getScriptCache();
+  const key = 'admin_' + Utilities.base64EncodeWebSafe(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, token));
+  if (cache.get(key) === '1') return true;
+  const res = UrlFetchApp.fetch(SUPABASE_URL.replace(/\/+$/, '') + '/rest/v1/rpc/is_admin', {
+    method: 'post',
+    contentType: 'application/json',
+    payload: '{}',
+    muteHttpExceptions: true,
+    headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + token }
+  });
+  const ok = res.getResponseCode() === 200 && res.getContentText().trim() === 'true';
+  if (ok) cache.put(key, '1', 300);   // remember for 5 minutes
+  return ok;
+}
+
+/* every tab: its name, the form it belongs to, the column names and the responses (newest first) */
+function readTabs_(ss) {
+  return ss.getSheets().map(function (sh) {
+    const range = sh.getDataRange();
+    const shown = range.getDisplayValues();
+    if (!shown.length || shown[0].every(function (c) { return c === ''; })) return null;
+    const raw = range.getValues();
+    let title = sh.getName(), formUrl = '';
+    try {
+      formUrl = sh.getFormUrl() || '';
+      if (formUrl) title = FormApp.openByUrl(formUrl).getTitle() || title;
+    } catch (err) {}
+    const rows = [];
+    for (let r = shown.length - 1; r >= 1 && rows.length < MAX_ROWS; r--) {
+      const cells = shown[r];
+      if (cells.every(function (c) { return c === ''; })) continue;
+      const t = raw[r][0];
+      rows.push({
+        id: sh.getSheetId() + ':' + (t instanceof Date ? t.getTime() : 'row' + (r + 1)),
+        time: t instanceof Date ? t.toISOString() : '',
+        cells: cells
+      });
+    }
+    return { gid: sh.getSheetId(), name: sh.getName(), title: title, headers: shown[0], total: rows.length, rows: rows };
+  }).filter(function (x) { return x; });
+}
+
+function json_(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+</script>
 <script>
 const cfg = window.CH_SUPABASE || {};
 const KEY = cfg.publishableKey || cfg.anonKey || '';
@@ -742,6 +983,7 @@ async function enter(session){
   try { localStorage.setItem('ch_staff', '1'); } catch (e){}   // visits from this browser are no longer counted in the statistics
   screen('app');
   route();
+  formsBadgeInBackground();
 }
 
 /* ── login / forgot / reset ── */
@@ -898,18 +1140,21 @@ function route(){
   const h = location.hash.replace('#', '') || 'dashboard';
   lastHash = '#' + h;
   const [name, id] = h.split('/');
-  const view = { campaigns: 'campaigns', campaign: 'campaign', posts: 'posts', post: 'post', account: 'account' }[name] || 'dashboard';
+  const view = { campaigns: 'campaigns', campaign: 'campaign', posts: 'posts', post: 'post', responses: 'responses', faqs: 'faqs', account: 'account' }[name] || 'dashboard';
   $$('.view').forEach(v => v.hidden = v.dataset.view !== view);
   $$('.side nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === ({ campaign: 'campaigns', post: 'posts' }[view] || view)));
   $('#topNew').hidden = !['dashboard', 'campaigns'].includes(view);
   $('#topPost').hidden = !['dashboard', 'posts'].includes(view);
-  $('#pageTitle').textContent = { dashboard: 'Dashboard', campaigns: 'Campaigns', campaign: 'Campaign', posts: 'Blog posts', post: 'Blog post', account: 'My account' }[view];
+  $('#pageTitle').textContent = { dashboard: 'Dashboard', campaigns: 'Campaigns', campaign: 'Campaign', posts: 'Blog posts', post: 'Blog post', responses: 'Form responses', faqs: 'FAQ', account: 'My account' }[view];
   window.scrollTo(0, 0);
   if (view === 'dashboard'){ loadStats(); ensureCampaigns().then(drawFront); }
   if (view === 'campaigns'){ ensureCampaigns(true).then(renderList); loadLog(null); }
   if (view === 'campaign') openCampaign(id || 'new');
   if (view === 'posts') loadPosts(true);
   if (view === 'post') openPost(id || 'new');
+  if (view === 'responses') openResponses();
+  if (view === 'faqs') loadFaqs();
+  if (view === 'account') renderTeam();
 }
 
 /* ═══ CAMPAIGNS ═══ */
@@ -1384,9 +1629,455 @@ $('#pwForm').addEventListener('submit', async e => {
   if (error) return toast(friendly(error), true);
   $('#newPass').value = $('#newPass2').value = ''; toast('Your new password is saved.');
 });
-$('#copySql').addEventListener('click', async () => {
-  const text = $('#adminSql').firstChild.textContent.trim();
-  try { await navigator.clipboard.writeText(text); toast('Copied. Paste it into the Supabase SQL Editor.'); } catch(e){ toast('Select the text and copy it manually.', true); }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FORM RESPONSES
+   The answers come from the Google Sheet (through the Apps Script web app).
+   What staff do with them (status, who looks after it, notes) is saved in Supabase.
+   ═══════════════════════════════════════════════════════════════════════ */
+const SHEET_DEFAULT = 'https://docs.google.com/spreadsheets/d/1Pz8vbCHbkmvU4-ZxZIpvgErIfaFaKJ5rpOc4JUUEcMk/edit';
+const RSTATUS = { new: ['New', 'fa-circle-dot'], in_progress: ['In progress', 'fa-spinner'], done: ['Done', 'fa-circle-check'], archived: ['Archived', 'fa-box-archive'] };
+const PHONE_HEAD = /phone|tel|mobile|whats|contact|h\/p|\bhp\b|电话|手机|联络|联系|telefon/i;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let settings = null, team = null, forms = null, rowMap = new Map(), follow = {}, notesBy = {};
+let rTab = 'all', rStatus = 'open', rShown = 30, formsLoading = null, setupOpen = false;
+
+const sheetIdOf = u => (String(u || '').match(/\/spreadsheets\/d\/([a-zA-Z0-9_-]{20,})/) || [])[1] || '';
+const validScript = u => /^https:\/\/script\.google\.com\/(?:a\/macros\/[^/\s]+|macros)\/s\/[\w-]+\/exec$/.test(String(u || '').trim());
+const fmtTime = d => d ? new Date(d).toLocaleString('en-MY', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' }) : '';
+const notSetUp = e => /schema cache|does not exist/i.test((e && e.message) || '');   // the tables or functions haven’t been created yet
+const SETUP_MSG = 'This part of the dashboard needs the new database tables. In Supabase open SQL Editor, paste supabase-features.sql and press Run, then refresh this page.';
+
+async function loadSettings(force){
+  if (settings && !force) return settings;
+  const { data, error } = await sb.from('app_settings').select('key,value');
+  settings = {};
+  if (error){ settings._error = error; return settings; }
+  (data || []).forEach(r => settings[r.key] = r.value || '');
+  return settings;
+}
+async function saveSetting(key, value){
+  const { error } = await sb.from('app_settings').upsert({ key, value }, { onConflict: 'key' });
+  if (error) throw error;
+  settings[key] = value;
+}
+
+/* ask the Apps Script for the responses, sending this admin's login so it can check it */
+async function fetchForms(){
+  const url = String(settings.forms_url || '').trim();
+  if (!validScript(url)) throw new Error('Add the Web app link in Settings first.');
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) throw new Error('Your login has expired. Please log in again.');
+  const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 40000);
+  let res;
+  try {
+    res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ token: session.access_token }), signal: ctl.signal });
+  } catch (e){
+    throw new Error(e.name === 'AbortError' ? 'The Google Sheet took too long to answer. Press Refresh to try again.'
+      : 'Couldn’t reach the Web app link. Check the link in Settings, and that the deployment’s “Who has access” is set to “Anyone”.');
+  } finally { clearTimeout(timer); }
+  let j;
+  try { j = await res.json(); } catch (e){ throw new Error('The Web app link didn’t send back form responses. Check that you copied the link that ends in /exec, and that “Who has access” is “Anyone”.'); }
+  if (!j || !j.ok){
+    if (j && j.error === 'not_admin') throw new Error('The script in the Google Sheet couldn’t confirm your admin login. Check SUPABASE_URL and SUPABASE_KEY at the top of the script, then deploy a new version (Deploy → Manage deployments → edit → New version).');
+    if (j && j.error === 'sheet') throw new Error('The script couldn’t open the sheet. Check SHEET_ID at the top of the script. ' + (j.detail || ''));
+    throw new Error((j && j.error) || 'The script in the Google Sheet answered with an error.');
+  }
+  return j;
+}
+
+async function loadForms(force){
+  if (forms && !force) return forms;
+  if (formsLoading) return formsLoading;
+  formsLoading = (async () => {
+    const j = await fetchForms();
+    const [f, n] = await Promise.all([
+      sb.from('form_followups').select('*'),
+      sb.from('form_notes').select('*').order('created_at', { ascending: true })
+    ]);
+    if (f.error) throw f.error;
+    if (n.error) throw n.error;
+    rowMap = new Map();
+    (j.sheets || []).forEach(sh => (sh.rows || []).forEach(r => { r.sheet = sh; rowMap.set(r.id, r); }));
+    follow = {}; (f.data || []).forEach(x => follow[x.response_id] = x);
+    notesBy = {}; (n.data || []).forEach(x => (notesBy[x.response_id] = notesBy[x.response_id] || []).push(x));
+    forms = j;
+    return forms;
+  })();
+  try { return await formsLoading; } finally { formsLoading = null; }
+}
+
+const statusOf = r => (follow[r.id] && follow[r.id].status) || 'new';
+const allRows = () => [...rowMap.values()];
+function updateBadge(){
+  const n = allRows().filter(r => statusOf(r) === 'new').length, b = $('#respBadge');
+  b.textContent = n > 99 ? '99+' : n; b.hidden = !n;
+}
+async function formsBadgeInBackground(){
+  try { await loadSettings(); if (validScript(settings.forms_url)) { await loadForms(); updateBadge(); } } catch (e){}
+}
+
+/* ── the page ── */
+async function openResponses(force){
+  await loadSettings(force);
+  const ok = validScript(settings.forms_url);
+  $('#respMain').hidden = !ok;
+  showSetup(!ok || setupOpen);
+  if (!ok) return;
+  $('#respSheet').href = settings.forms_sheet || SHEET_DEFAULT;
+  const box = $('#respList');
+  if (!forms || force) box.innerHTML = '<p class="empty"><i class="fa fa-circle-notch fa-spin"></i> Loading form responses from the Google Sheet…</p>';
+  ensureTeam();
+  try { await loadForms(force); }
+  catch (e){
+    $('#respTabs').innerHTML = ''; $('#respInfo').textContent = '';
+    box.innerHTML = '<div class="card rerr"><b>Couldn’t load the form responses</b><p>' + esc(notSetUp(e) ? SETUP_MSG : (e.message || friendly(e))) + '</p><button class="btn btn-ghost btn-sm" type="button" data-opensetup><i class="fa fa-gear"></i> Open Settings</button></div>';
+    $('[data-opensetup]', box).addEventListener('click', () => { setupOpen = true; showSetup(true); });
+    return;
+  }
+  if (forms.url) $('#respSheet').href = forms.url;
+  renderResponses(); updateBadge();
+}
+
+function showSetup(on){
+  $('#respSetup').hidden = !on;
+  $('#setClose').hidden = !validScript(settings && settings.forms_url);
+  const warn = $('#setWarn');
+  if (settings && settings._error){ warn.textContent = notSetUp(settings._error) ? SETUP_MSG : friendly(settings._error); warn.className = 'msg err'; }
+  else { warn.textContent = ''; warn.className = 'msg'; }
+  if (!on) return;
+  $('#setSheet').value = settings.forms_sheet || SHEET_DEFAULT;
+  $('#setScript').value = settings.forms_url || '';
+  drawGas();
+}
+function gasCode(){
+  return $('#gasCode').textContent.replace(/^\n/, '')
+    .replace('__SUPABASE_URL__', PROJECT_URL).replace('__SUPABASE_KEY__', KEY)
+    .replace('__SHEET_ID__', sheetIdOf($('#setSheet').value) || sheetIdOf(SHEET_DEFAULT));
+}
+function drawGas(){ $('#gasText').textContent = gasCode(); }
+$('#setSheet').addEventListener('input', drawGas);
+$('#gasCopy').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(gasCode()); toast('Code copied. Paste it into Apps Script.'); } catch (e){ toast('Select the code and copy it manually.', true); }
+});
+$('#setClose').addEventListener('click', () => { setupOpen = false; showSetup(false); });
+$('#respSetBtn').addEventListener('click', () => { setupOpen = true; showSetup(true); $('#respSetup').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+$('#setSave').addEventListener('click', async e => {
+  const btn = e.currentTarget, sheet = $('#setSheet').value.trim(), url = $('#setScript').value.trim();
+  if (!sheetIdOf(sheet)) return toast('That doesn’t look like a Google Sheet link. Copy it from the address bar of the sheet.', true);
+  if (!validScript(url)) return toast('The Web app link should start with https://script.google.com/ and end in /exec.', true);
+  busy(btn, true);
+  try { await saveSetting('forms_sheet', sheet); await saveSetting('forms_url', url); }
+  catch (err){ busy(btn, false); return toast(notSetUp(err) ? SETUP_MSG : friendly(err), true); }
+  busy(btn, false); toast('Saved. Loading the form responses…');
+  setupOpen = false; forms = null; settings._error = null;
+  openResponses();
+});
+
+$('#respSearch').addEventListener('input', () => { rShown = 30; renderResponses(); });
+$$('#respSeg button').forEach(b => b.addEventListener('click', () => {
+  rStatus = b.dataset.st; rShown = 30; $$('#respSeg button').forEach(x => x.classList.toggle('on', x === b)); renderResponses();
+}));
+$('#respRefresh').addEventListener('click', async e => {
+  const btn = e.currentTarget; busy(btn, true);
+  await openResponses(true); busy(btn, false);
+  if (forms) toast('Form responses are up to date.');
+});
+$('#respCsv').addEventListener('click', exportCsv);
+
+function renderTabs(){
+  const tabs = [{ key: 'all', title: 'All forms', rows: allRows() }]
+    .concat((forms.sheets || []).map(sh => ({ key: String(sh.gid), title: sh.title || sh.name, rows: sh.rows || [] })));
+  if (!tabs.some(t => t.key === rTab)) rTab = 'all';
+  $('#respTabs').innerHTML = tabs.map(t => {
+    const n = t.rows.filter(r => statusOf(r) === 'new').length;
+    return '<button type="button" data-tab="' + esc(t.key) + '" class="' + (t.key === rTab ? 'on' : '') + '">' + esc(t.title) + ' <span>' + t.rows.length + '</span>' + (n ? '<em>' + n + ' new</em>' : '') + '</button>';
+  }).join('');
+  $$('#respTabs button').forEach(b => b.addEventListener('click', () => { rTab = b.dataset.tab; rShown = 30; renderResponses(); }));
+}
+function filteredRows(){
+  const q = $('#respSearch').value.trim().toLowerCase();
+  let rows = rTab === 'all' ? allRows() : allRows().filter(r => String(r.sheet.gid) === rTab);
+  rows = rows.filter(r => { const st = statusOf(r); return rStatus === 'all' || (rStatus === 'open' ? st === 'new' || st === 'in_progress' : st === rStatus); });
+  if (q) rows = rows.filter(r => (r.cells.join(' ') + ' ' + ((follow[r.id] || {}).assigned_to || '') + ' ' + (notesBy[r.id] || []).map(n => n.body).join(' ')).toLowerCase().includes(q));
+  return rows.sort((a, b) => (b.time || '').localeCompare(a.time || ''));
+}
+function renderResponses(){
+  if (!forms) return;
+  renderTabs();
+  const box = $('#respList'), rows = filteredRows();
+  $('#respInfo').textContent = rows.length + (rows.length === 1 ? ' response' : ' responses');
+  if (!rowMap.size){
+    box.innerHTML = '<div class="card" style="text-align:center;padding:2.2rem"><p style="font-family:var(--display);font-size:1.3rem;color:var(--ink-900);margin-bottom:.4rem">No form responses yet</p><p class="empty">When someone fills in one of your Google Forms, their answers appear here.</p></div>';
+    return;
+  }
+  if (!rows.length){
+    box.innerHTML = '<p class="empty">' + (rStatus === 'open' && !$('#respSearch').value.trim() ? 'Nothing to do here: every response is done or archived. 🎉' : 'No responses match.') + '</p>';
+    return;
+  }
+  box.innerHTML = rows.slice(0, rShown).map(respCard).join('')
+    + (rows.length > rShown ? '<div class="more-wrap"><button class="btn btn-ghost" type="button" id="respMore">Show more (' + (rows.length - rShown) + ' more)</button></div>' : '');
+  $$('.rcard', box).forEach(wireCard);
+  const more = $('#respMore'); if (more) more.addEventListener('click', () => { rShown += 30; renderResponses(); });
+}
+function previewOf(r){
+  const out = [];
+  r.cells.forEach((c, i) => {
+    if ((i === 0 && r.time) || !c || out.length >= 3) return;
+    out.push(c.length > 70 ? c.slice(0, 67) + '…' : c);
+  });
+  return out;
+}
+function summaryHtml(r){
+  const st = statusOf(r), f = follow[r.id] || {}, notes = notesBy[r.id] || [], p = previewOf(r);
+  return '<span class="rst ' + st + '"><i class="fa ' + RSTATUS[st][1] + '"></i>' + RSTATUS[st][0] + '</span>'
+    + '<div class="rmain"><b>' + esc(p[0] || '(no answers)') + '</b><span>' + esc(p.slice(1).join(' · ')) + '</span></div>'
+    + '<div class="rmeta"><span class="rform">' + esc(r.sheet.title || r.sheet.name) + '</span><span>' + esc(fmtTime(r.time)) + '</span>'
+    + (f.assigned_to || notes.length ? '<span class="rtags">' + (f.assigned_to ? '<span><i class="fa fa-user"></i> ' + esc(f.assigned_to.split('@')[0]) + '</span>' : '') + (notes.length ? '<span><i class="fa fa-note-sticky"></i> ' + notes.length + '</span>' : '') + '</span>' : '')
+    + '</div><i class="fa fa-chevron-down rchev"></i>';
+}
+const respCard = r => '<details class="rcard" data-rid="' + esc(r.id) + '"><summary>' + summaryHtml(r) + '</summary><div class="rbody"></div></details>';
+
+function waNumber(v){ let d = String(v).replace(/\D/g, ''); if (d.startsWith('0')) d = '6' + d; return d; }
+function valueHtml(head, v){
+  const s = String(v).trim();
+  if (EMAIL_RE.test(s)) return '<a href="mailto:' + esc(s) + '">' + esc(s) + '</a>';
+  if (PHONE_HEAD.test(head) && /^\+?[\d\s\-()]{8,20}$/.test(s)) return '<a href="tel:' + esc(s.replace(/[^\d+]/g, '')) + '">' + esc(s) + '</a><a class="wa" href="https://wa.me/' + waNumber(s) + '" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>';
+  if (/^https?:\/\/\S+$/.test(s)) return '<a href="' + esc(s) + '" target="_blank" rel="noopener">' + esc(s) + '</a>';
+  return esc(s).replace(/\n/g, '<br>');
+}
+function teamOptions(cur){
+  const emails = (team || []).map(t => t.email).filter(Boolean);
+  if (cur && !emails.includes(cur)) emails.push(cur);
+  return emails.map(e => '<option value="' + esc(e) + '"' + (e === cur ? ' selected' : '') + '>' + esc(e) + '</option>').join('');
+}
+function notesHtml(r){
+  const ns = notesBy[r.id] || [];
+  if (!ns.length) return '<li class="none">No notes yet.</li>';
+  return ns.map(n => '<li><p>' + esc(n.body).replace(/\n/g, '<br>') + '</p><small>' + esc(n.author_email || 'Staff') + ' · ' + esc(fmtTime(n.created_at)) + '</small>'
+    + '<button type="button" class="icon-btn del" data-rdelnote="' + esc(n.id) + '" title="Delete this note" aria-label="Delete this note"><i class="fa fa-trash"></i></button></li>').join('');
+}
+function bodyHtml(r){
+  const f = follow[r.id] || {}, st = statusOf(r);
+  const fields = r.sheet.headers.map((h, i) => [h || 'Column ' + (i + 1), r.cells[i] || '', i]).filter(([, v, i]) => v !== '' && !(i === 0 && r.time));
+  return '<div class="rgrid"><dl class="rfields">'
+    + (r.time ? '<div><dt>Sent</dt><dd>' + esc(fmtTime(r.time)) + '</dd></div>' : '')
+    + fields.map(([h, v]) => '<div><dt>' + esc(h) + '</dt><dd>' + valueHtml(h, v) + '</dd></div>').join('') + '</dl>'
+    + '<div class="rside">'
+    +   '<label class="f">Status<select class="in" data-rstatus>' + Object.keys(RSTATUS).map(k => '<option value="' + k + '"' + (k === st ? ' selected' : '') + '>' + RSTATUS[k][0] + '</option>').join('') + '</select></label>'
+    +   '<label class="f">Looked after by<select class="in" data-rassign><option value="">Nobody yet</option>' + teamOptions(f.assigned_to) + '</select></label>'
+    +   '<small class="hint" data-rchanged>' + (f.updated_by ? 'Last changed by ' + esc(f.updated_by) + ', ' + esc(fmtTime(f.updated_at)) : '') + '</small>'
+    +   '<div class="rnotes"><h4>Notes</h4><ul>' + notesHtml(r) + '</ul>'
+    +     '<textarea class="in" rows="2" maxlength="2000" placeholder="For example: Called on 12 Nov, visiting on Saturday" data-rnote></textarea>'
+    +     '<button class="btn btn-primary btn-sm" type="button" data-raddnote><i class="fa fa-plus ic"></i><i class="fa fa-circle-notch fa-spin spin"></i> Add note</button></div>'
+    + '</div></div>';
+}
+function wireCard(det){
+  det.addEventListener('toggle', () => {
+    if (!det.open) return;
+    const r = rowMap.get(det.dataset.rid); if (!r) return;
+    const body = $('.rbody', det); body.innerHTML = bodyHtml(r);
+    $('[data-rstatus]', body).addEventListener('change', e => setFollow(r, { status: e.target.value }, det));
+    $('[data-rassign]', body).addEventListener('change', e => setFollow(r, { assigned_to: e.target.value || null }, det));
+    $('[data-raddnote]', body).addEventListener('click', e => addNote(r, det, e.currentTarget));
+    wireNotes(r, det);
+  });
+}
+function refreshCard(det, r){
+  $('summary', det).innerHTML = summaryHtml(r);
+  const f = follow[r.id] || {}, sel = $('[data-rstatus]', det), ch = $('[data-rchanged]', det);
+  if (sel) sel.value = statusOf(r);
+  if (ch) ch.textContent = f.updated_by ? 'Last changed by ' + f.updated_by + ', ' + fmtTime(f.updated_at) : '';
+  renderTabs(); updateBadge();
+}
+async function setFollow(r, fields, det, quiet){
+  const prev = follow[r.id] || {};
+  const row = Object.assign({ response_id: r.id, form_title: String(r.sheet.title || r.sheet.name || '').slice(0, 160), status: statusOf(r), assigned_to: prev.assigned_to || null }, fields);
+  const { data, error } = await sb.from('form_followups').upsert(row, { onConflict: 'response_id' }).select().single();
+  if (error){ toast(notSetUp(error) ? SETUP_MSG : friendly(error), true); refreshCard(det, r); return false; }
+  follow[r.id] = data;
+  if (!quiet) toast('status' in fields ? 'Marked as ' + RSTATUS[data.status][0].toLowerCase() + '.' : (data.assigned_to ? data.assigned_to + ' is looking after this one.' : 'Nobody is looking after this one now.'));
+  refreshCard(det, r); return true;
+}
+async function addNote(r, det, btn){
+  const ta = $('[data-rnote]', det), text = ta.value.trim();
+  if (!text) return toast('Write the note first.', true);
+  busy(btn, true);
+  const { data, error } = await sb.from('form_notes').insert({ response_id: r.id, body: text }).select().single();
+  if (error){ busy(btn, false); return toast(notSetUp(error) ? SETUP_MSG : friendly(error), true); }
+  (notesBy[r.id] = notesBy[r.id] || []).push(data); ta.value = '';
+  let moved = false;
+  if (statusOf(r) === 'new') moved = await setFollow(r, { status: 'in_progress' }, det, true);   // someone is on it now
+  busy(btn, false);
+  $('.rnotes ul', det).innerHTML = notesHtml(r); wireNotes(r, det); refreshCard(det, r);
+  toast(moved ? 'Note added. Marked as in progress.' : 'Note added.');
+}
+function wireNotes(r, det){
+  $$('[data-rdelnote]', det).forEach(b => b.addEventListener('click', async () => {
+    if (!confirm('Delete this note? This can’t be undone.')) return;
+    const { error } = await sb.from('form_notes').delete().eq('id', b.dataset.rdelnote);
+    if (error) return toast(friendly(error), true);
+    notesBy[r.id] = (notesBy[r.id] || []).filter(n => n.id !== b.dataset.rdelnote);
+    $('.rnotes ul', det).innerHTML = notesHtml(r); wireNotes(r, det); refreshCard(det, r);
+    toast('Note deleted.');
+  }));
+}
+function exportCsv(){
+  if (!forms) return;
+  const rows = filteredRows();
+  if (!rows.length) return toast('There are no responses to export with these filters.', true);
+  const heads = [];
+  rows.forEach(r => r.sheet.headers.forEach(h => { if (h && !heads.includes(h)) heads.push(h); }));
+  const table = [['Form', ...heads, 'Status', 'Looked after by', 'Notes']];
+  rows.forEach(r => {
+    const f = follow[r.id] || {};
+    table.push([r.sheet.title || r.sheet.name, ...heads.map(h => { const i = r.sheet.headers.indexOf(h); return i >= 0 ? r.cells[i] || '' : ''; }),
+      RSTATUS[statusOf(r)][0], f.assigned_to || '', (notesBy[r.id] || []).map(n => n.body).join(' | ')]);
+  });
+  const cell = c => {
+    c = String(c == null ? '' : c);
+    if (/^[=@]/.test(c) || (/^[+\-]/.test(c) && !/^[+\-]?[\d\s()\-]+$/.test(c))) c = "'" + c;   // stop spreadsheets running it as a formula
+    return /[",\r\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c;
+  };
+  const csv = '\ufeff' + table.map(row => row.map(cell).join(',')).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'form-responses-' + new Date().toISOString().slice(0, 10) + '.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  toast('Downloaded ' + rows.length + (rows.length === 1 ? ' response.' : ' responses.'));
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FAQ: add, edit, hide or show, reorder and delete questions for faq.html
+   ═══════════════════════════════════════════════════════════════════════ */
+let faqs = null, faqEdit = null;
+async function loadFaqs(){
+  const box = $('#faqList');
+  if (!faqs) box.innerHTML = '<p class="empty"><i class="fa fa-circle-notch fa-spin"></i> Loading questions…</p>';
+  const { data, error } = await sb.from('faqs').select('*').order('position', { ascending: true }).order('created_at', { ascending: true });
+  if (error){ faqs = []; box.innerHTML = '<div class="card rerr"><b>Couldn’t load the questions</b><p>' + esc(notSetUp(error) ? SETUP_MSG : friendly(error)) + '</p></div>'; return; }
+  faqs = data || []; renderFaqs();
+}
+$('#faqSearch').addEventListener('input', renderFaqs);
+function renderFaqs(){
+  const box = $('#faqList'); if (!faqs) return;
+  const q = $('#faqSearch').value.trim().toLowerCase();
+  if (!faqs.length){
+    box.innerHTML = '<div class="card" style="text-align:center;padding:2.2rem"><p style="font-family:var(--display);font-size:1.3rem;color:var(--ink-900);margin-bottom:.4rem">No questions added yet</p><p class="empty" style="margin-bottom:1rem">The FAQ page shows its six standard questions. Questions you add here appear after them.</p><button class="btn btn-primary" type="button" data-faqfirst><i class="fa fa-plus"></i> Add the first question</button></div>';
+    $('[data-faqfirst]', box).addEventListener('click', () => openFaqForm(null));
+    return;
+  }
+  const rows = faqs.filter(f => !q || [f.question_en, f.question_zh, f.answer_en, f.answer_zh].join(' ').toLowerCase().includes(q));
+  if (!rows.length){ box.innerHTML = '<p class="empty">No questions match.</p>'; return; }
+  box.innerHTML = '<div class="flist">' + rows.map(f => {
+    const i = faqs.indexOf(f), shown = f.published;
+    return '<div class="frow' + (shown ? '' : ' off') + '">'
+      + '<div class="fmove"><button class="icon-btn" type="button" data-fmove="-1" data-id="' + f.id + '" title="Move up" aria-label="Move up"' + (i === 0 || q ? ' disabled' : '') + '><i class="fa fa-arrow-up"></i></button>'
+      + '<button class="icon-btn" type="button" data-fmove="1" data-id="' + f.id + '" title="Move down" aria-label="Move down"' + (i === faqs.length - 1 || q ? ' disabled' : '') + '><i class="fa fa-arrow-down"></i></button></div>'
+      + '<div class="fmain"><b>' + esc(f.question_en) + '</b>' + (f.question_zh ? '<span>' + esc(f.question_zh) + '</span>' : '')
+      + '<p>' + esc((a => a.length > 170 ? a.slice(0, 167) + '…' : a)(f.answer_en.replace(/\*\*/g, ''))) + '</p></div>'
+      + '<span class="pill ' + (shown ? 'pub' : 'draft') + '"><i class="fa ' + (shown ? 'fa-eye' : 'fa-eye-slash') + '"></i>' + (shown ? 'Shown' : 'Hidden') + '</span>'
+      + '<div class="pact"><button class="icon-btn" type="button" data-fedit="' + f.id + '" title="Edit" aria-label="Edit"><i class="fa fa-pen"></i></button>'
+      + '<button class="icon-btn" type="button" data-ftoggle="' + f.id + '" title="' + (shown ? 'Hide from the website' : 'Show on the website') + '" aria-label="' + (shown ? 'Hide from the website' : 'Show on the website') + '"><i class="fa ' + (shown ? 'fa-eye-slash' : 'fa-eye') + '"></i></button>'
+      + '<button class="icon-btn del" type="button" data-fdel="' + f.id + '" title="Delete" aria-label="Delete"><i class="fa fa-trash"></i></button></div></div>';
+  }).join('') + '</div>';
+  const byId = id => faqs.find(f => f.id === id);
+  $$('[data-fmove]', box).forEach(b => b.addEventListener('click', () => moveFaq(b.dataset.id, +b.dataset.fmove)));
+  $$('[data-fedit]', box).forEach(b => b.addEventListener('click', () => openFaqForm(byId(b.dataset.fedit))));
+  $$('[data-ftoggle]', box).forEach(b => b.addEventListener('click', () => toggleFaq(byId(b.dataset.ftoggle))));
+  $$('[data-fdel]', box).forEach(b => b.addEventListener('click', () => deleteFaq(byId(b.dataset.fdel))));
+}
+function openFaqForm(f){
+  faqEdit = f || null;
+  $('#faqFormTitle').textContent = f ? 'Edit question' : 'Add a question';
+  $('#fqEn').value = f ? f.question_en : ''; $('#fqZh').value = f ? f.question_zh || '' : '';
+  $('#faEn').value = f ? f.answer_en : ''; $('#faZh').value = f ? f.answer_zh || '' : '';
+  $('#fqPub').checked = f ? f.published : true;
+  $('#faqForm').hidden = false; $('#faqForm').scrollIntoView({ behavior: 'smooth', block: 'start' }); $('#fqEn').focus();
+}
+function closeFaqForm(){ $('#faqForm').hidden = true; faqEdit = null; }
+$('#faqAdd').addEventListener('click', () => openFaqForm(null));
+$('#faqCancel').addEventListener('click', closeFaqForm);
+$('#faqSave').addEventListener('click', async e => {
+  const btn = e.currentTarget;
+  const row = { question_en: $('#fqEn').value.trim(), question_zh: $('#fqZh').value.trim() || null,
+                answer_en: $('#faEn').value.trim(), answer_zh: $('#faZh').value.trim() || null, published: $('#fqPub').checked };
+  if (!row.question_en) return toast('Please write the question in English.', true);
+  if (!row.answer_en) return toast('Please write the answer in English.', true);
+  busy(btn, true);
+  let res;
+  if (faqEdit) res = await sb.from('faqs').update(row).eq('id', faqEdit.id).select().single();
+  else { row.position = faqs && faqs.length ? Math.max(...faqs.map(f => f.position)) + 1 : 0; res = await sb.from('faqs').insert(row).select().single(); }
+  busy(btn, false);
+  if (res.error) return toast(notSetUp(res.error) ? SETUP_MSG : friendly(res.error), true);
+  toast(faqEdit ? 'Question updated.' : (row.published ? 'Question added. It’s on the FAQ page now.' : 'Question saved. It’s hidden from the website.'));
+  closeFaqForm(); loadFaqs();
+});
+async function moveFaq(id, dir){
+  const i = faqs.findIndex(f => f.id === id), j = i + dir;
+  if (i < 0 || j < 0 || j >= faqs.length) return;
+  const order = faqs.slice(); [order[i], order[j]] = [order[j], order[i]];
+  const changes = order.map((f, k) => [f, k]).filter(([f, k]) => f.position !== k);
+  const results = await Promise.all(changes.map(([f, k]) => sb.from('faqs').update({ position: k }).eq('id', f.id)));
+  const bad = results.find(r => r.error);
+  if (bad) toast(friendly(bad.error), true);
+  loadFaqs();
+}
+async function toggleFaq(f){
+  const { error } = await sb.from('faqs').update({ published: !f.published }).eq('id', f.id);
+  if (error) return toast(friendly(error), true);
+  toast(f.published ? 'Hidden from the FAQ page.' : 'Shown on the FAQ page.');
+  loadFaqs();
+}
+async function deleteFaq(f){
+  if (!confirm('Delete this question?\n\n“' + f.question_en + '”\n\nThis can’t be undone. To take it off the website but keep it, use Hide instead.')) return;
+  const { error } = await sb.from('faqs').delete().eq('id', f.id);
+  if (error) return toast(friendly(error), true);
+  if (faqEdit && faqEdit.id === f.id) closeFaqForm();
+  toast('Question deleted.'); loadFaqs();
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ADMIN TEAM: see, add and remove who can use this dashboard
+   ═══════════════════════════════════════════════════════════════════════ */
+async function ensureTeam(force){
+  if (team && !force) return team;
+  const { data, error } = await sb.rpc('admin_list');
+  team = error ? (team || []) : (data || []);
+  return team;
+}
+async function renderTeam(){
+  const ul = $('#teamList');
+  const { data, error } = await sb.rpc('admin_list');
+  if (error){ ul.innerHTML = '<li class="empty">' + esc(notSetUp(error) ? SETUP_MSG : friendly(error)) + '</li>'; return; }
+  team = data || [];
+  ul.innerHTML = team.map(t => {
+    const mine = me && t.user_id === me.id;
+    return '<li><span class="av">' + esc((t.email || '?').charAt(0).toUpperCase()) + '</span><div><b>' + esc(t.email) + (mine ? ' <em>(you)</em>' : '') + '</b>'
+      + '<small>Admin since ' + esc(fmtDate(t.added_at)) + (t.last_sign_in_at ? ' · last logged in ' + esc(fmtDate(t.last_sign_in_at)) : ' · hasn’t logged in yet') + '</small></div>'
+      + (mine ? '' : '<button type="button" class="icon-btn del" data-tdel="' + esc(t.user_id) + '" title="Remove admin access" aria-label="Remove admin access"><i class="fa fa-user-minus"></i></button>') + '</li>';
+  }).join('') || '<li class="empty">No admins found.</li>';
+  $$('[data-tdel]', ul).forEach(b => b.addEventListener('click', async () => {
+    const t = team.find(x => x.user_id === b.dataset.tdel); if (!t) return;
+    if (!confirm('Remove admin access for ' + t.email + '?\n\nThey won’t be able to use this dashboard any more. Their login itself stays in Supabase, so you can give access again later.')) return;
+    const { error } = await sb.rpc('admin_remove', { p_user: t.user_id });
+    if (error) return toast(friendly(error), true);
+    toast(t.email + ' is no longer an admin.'); renderTeam();
+  }));
+}
+$('#teamForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const email = $('#teamEmail').value.trim();
+  if (!EMAIL_RE.test(email)) return toast('Please enter their full email address.', true);
+  const btn = $('#teamForm button[type=submit]'); busy(btn, true);
+  const { data, error } = await sb.rpc('admin_add', { p_email: email });
+  busy(btn, false);
+  if (error) return toast(notSetUp(error) ? SETUP_MSG : friendly(error), true);
+  $('#teamEmail').value = ''; toast((data || email) + ' can now log in to the dashboard.');
+  renderTeam();
 });
 </script>
 </body>

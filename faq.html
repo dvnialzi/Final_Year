@@ -312,6 +312,10 @@ body{padding-top:var(--header-h)}
 .staff-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;color:rgba(255,255,255,.4);transition:color var(--t)}
 .staff-link:hover{color:rgba(255,255,255,.9)}
 .staff-link i{font-size:.65rem}
+/* Questions added in the admin dashboard: English / 中文 both in the page, the language switch picks one */
+.db-faq .zh{display:none}
+html[lang="zh"] .db-faq .en.has-zh{display:none}
+html[lang="zh"] .db-faq .zh{display:revert}
 /* Header layout: logo on the left; menu, language icon and buttons grouped on the right */
 .nav{margin-left:auto;gap:.1rem}
 /* header spans the whole screen width (no centered box), like the reference: logo near the left edge, buttons near the right edge */
@@ -723,6 +727,35 @@ document.querySelectorAll('.mfaq-card').forEach(card => {
     if (!open){ card.classList.add('open'); const a = card.querySelector('.mfaq-a'); a.style.maxHeight = a.scrollHeight + 'px'; }
   });
 });
+
+/* Questions added in the admin dashboard (FAQ page in admin.html): shown after the six questions above */
+(function(){
+  const grid = document.querySelector('.mfaq-grid'); if (!grid) return;
+  const S = window.CH_SUPABASE || {}, KEY = S.publishableKey || S.anonKey || '';
+  if (!S.url || !KEY || /^sb_secret_/.test(KEY) || /YOUR-|PASTE-/.test(S.url + KEY)) return;
+  const BASE = (u => { u = String(u || '').trim(); const d = u.match(/supabase\.com\/dashboard\/project\/([a-z0-9-]+)/i); if (d) return 'https://' + d[1] + '.supabase.co'; try { return new URL(u).origin; } catch(e){ return u.replace(/\/+$/, ''); } })(S.url);
+  const headers = { apikey: KEY }; if (!/^sb_/.test(KEY)) headers.Authorization = 'Bearer ' + KEY;
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+  // empty line = new paragraph, **words** = bold (everything else is shown as plain text)
+  const rich = s => esc(s).split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).map(p => p.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')).join('<br><br>');
+  fetch(BASE + '/rest/v1/faqs?published=eq.true&order=position.asc,created_at.asc&select=id,question_en,question_zh,answer_en,answer_zh', { headers, cache: 'no-store' })
+    .then(r => r.ok ? r.json() : [])
+    .then(rows => (Array.isArray(rows) ? rows : []).forEach(f => {
+      const zq = f.question_zh ? '<span class="zh">' + esc(f.question_zh) + '</span>' : '';
+      const za = f.answer_zh ? '<div class="zh">' + rich(f.answer_zh) + '</div>' : '';
+      const card = document.createElement('div');
+      card.className = 'mfaq-card db-faq';
+      card.innerHTML = '<button class="mfaq-q" type="button"><span class="mfaq-q-text"><span class="en' + (zq ? ' has-zh' : '') + '">' + esc(f.question_en) + '</span>' + zq + '</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>'
+        + '<div class="mfaq-a"><div class="mfaq-a-inner"><div class="en' + (za ? ' has-zh' : '') + '">' + rich(f.answer_en) + '</div>' + za + '</div></div>';
+      card.querySelector('.mfaq-q').addEventListener('click', () => {
+        const open = card.classList.contains('open');
+        document.querySelectorAll('.mfaq-card.open').forEach(c => { c.classList.remove('open'); c.querySelector('.mfaq-a').style.maxHeight = '0'; });
+        if (!open){ card.classList.add('open'); const a = card.querySelector('.mfaq-a'); a.style.maxHeight = a.scrollHeight + 'px'; }
+      });
+      grid.appendChild(card);
+    }))
+    .catch(() => {});
+})();
 
 /* Moving drawings: pause while off screen (saves battery on phones) */
 (function(){
